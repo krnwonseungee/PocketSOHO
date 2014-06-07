@@ -4,8 +4,8 @@ class CreateBusinesses < ActiveRecord::Migration
       t.string :name
       t.string :location
       t.string :description
-      t.date :slogan
-      t.boolean :image_url
+      t.string :slogan
+      t.string :image_url
 
       t.timestamps
     end
