@@ -1,2 +1,4 @@
-class BusinessOwner < User
+module User
+  class BusinessOwner < Base
+  end
 end

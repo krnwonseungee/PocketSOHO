@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def home
-    @businesses = Business.all
+    @businesses = Business.all #change to find_by_user_id
+    @customers = User::Customer.all #change to find_by_business_id
   end
 
   def new

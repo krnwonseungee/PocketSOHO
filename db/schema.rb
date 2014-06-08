@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140607164722) do
     t.string   "location"
     t.string   "email"
     t.string   "image_url"
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

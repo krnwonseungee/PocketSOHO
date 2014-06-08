@@ -1,2 +1,4 @@
-class Customer < User
+module User
+  class Customer < Base
+  end
 end
