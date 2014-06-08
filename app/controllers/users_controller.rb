@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def home
-
+    @businesses = Business.all
   end
 
   def new
