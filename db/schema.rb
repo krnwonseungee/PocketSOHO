@@ -34,8 +34,7 @@ ActiveRecord::Schema.define(version: 20140607164722) do
   create_table "messages", force: true do |t|
     t.text     "text"
     t.integer  "business_id"
-    t.integer  "messageable_id"
-    t.string   "messageable_type"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
