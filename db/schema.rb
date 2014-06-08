@@ -16,20 +16,19 @@ ActiveRecord::Schema.define(version: 20140607164722) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "business_owners", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+  create_table "businesses", force: true do |t|
+    t.string   "name"
     t.string   "location"
-    t.string   "emali"
+    t.string   "description"
+    t.string   "slogan"
     t.string   "image_url"
-    t.integer  "business_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "businesses_users", id: false, force: true do |t|
     t.integer "business_id"
-    t.integer "business_owner_id"
+    t.integer "user_id"
   end
 
   create_table "messages", force: true do |t|
@@ -42,10 +41,10 @@ ActiveRecord::Schema.define(version: 20140607164722) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "location"
-    t.string   "description"
-    t.string   "slogan"
+    t.string   "email"
     t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
