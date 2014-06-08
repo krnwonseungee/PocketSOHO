@@ -1,0 +1,11 @@
+<div id="user-nav-bar">
+<%= link_to user_homepage_path(@user.id) do %>
+  <i class="fa fa-home"></i>
+  <% end %>
+  <a href="#"><i class="fa fa-calendar"></i></a>
+  <%= link_to user_messages_path(@user.id) do %>
+    <i class="fa fa-envelope-o"></i>
+  <% end %>
+  Hello, User
+  <%= link_to 'Log Out', session_path(session) %>
+</div>

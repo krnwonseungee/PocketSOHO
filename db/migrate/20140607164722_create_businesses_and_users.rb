@@ -6,7 +6,6 @@ class CreateBusinessesAndUsers < ActiveRecord::Migration
       t.string :description
       t.string :slogan
       t.string :image_url
-
       t.timestamps
     end
 
@@ -17,7 +16,6 @@ class CreateBusinessesAndUsers < ActiveRecord::Migration
       t.string :email
       t.string :image_url
       t.string :type
-
       t.timestamps
     end
 
