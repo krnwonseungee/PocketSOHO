@@ -17,4 +17,16 @@
   </a>
 <% end %>
 
+<h3>My Customers</h3>
+<i class="fa fa-minus-circle"></i>
+<%= link_to 'Create New', new_user_path %>
+<% @customers.each do |customer| %>
+  <a href="users/<%= customer.id %>">
+    <%= customer.name %>
+    <%= customer.image_url %>
+    <%= link_to 'Edit', edit_user_path(customer.id)  %>
+  </a>
+<% end %>
+
+
 
