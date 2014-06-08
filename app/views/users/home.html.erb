@@ -1,0 +1,20 @@
+<h1>PocketSOHO</h1>
+<div id="user-nav-bar">
+  <i class="fa fa-calendar"></i>
+  <i class="fa fa-envelope-o"></i>
+  Hello, User
+  <%= link_to 'Log Out', session_path(session) %>
+</div>
+
+<h3>My Businesses</h3>
+<i class="fa fa-minus-circle"></i>
+<%= link_to 'Create New', new_business_path %>
+<% @businesses.each do |business| %>
+  <a href="businesses/<%= business.id %>">
+    <%= business.name %>
+    <%= business.image_url %>
+    <%= link_to 'Edit', edit_business_path(business.id)  %>
+  </a>
+<% end %>
+
+
