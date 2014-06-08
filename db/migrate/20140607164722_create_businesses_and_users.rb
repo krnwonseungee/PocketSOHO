@@ -16,6 +16,7 @@ class CreateBusinessesAndUsers < ActiveRecord::Migration
       t.string :location
       t.string :email
       t.string :image_url
+      t.string :type
 
       t.timestamps
     end
