@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
   def index
-    @user = User.find_by_email(session[:email])
+    @user = User.find(session[:user_id])
     @messages = @user.messages
   end
 
@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @user = User.find_by_email(session[:email])
+    @user = User.find(session[:user_id])
     @message = Message.find(params[:id])
     if @user.type == "BusinessOwner"
       @thread_messages = Message.where("business_owner_id = ? AND customer_id = ?", @user.id, @message.customer_id )
