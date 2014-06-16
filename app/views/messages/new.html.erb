@@ -1,0 +1,5 @@
+Create new message
+<%= form_for @message, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <p><%= f.text_area :text, size: "60x12" %></p>
+  <p><%= f.submit "Create" %></p>
+<% end %>
