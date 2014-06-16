@@ -2,7 +2,7 @@ PocketSOHO::Application.routes.draw do
   root 'welcome#index'
 
   resources :sessions, only: [:new, :create, :destroy]
-  get '/user/home', to: 'users#home', as: :user_homepage
+  get '/settings', to: 'users#settings', as: :user_settings
 
   resources :businesses, only: [:new, :create, :show, :edit, :update, :destroy]
 
