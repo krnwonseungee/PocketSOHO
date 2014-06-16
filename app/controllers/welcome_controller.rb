@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
       @businesses = Business.all #change to find_by_user_id
       render "home"
     else
-      render "index"
+      render "info"
     end
   end
 
