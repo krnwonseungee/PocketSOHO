@@ -1,0 +1,11 @@
+Show messages
+<table>
+  <% @thread_messages.each do |message| %>
+    <tr>
+      <td>
+        <%= message.text %>
+        <%= message.created_at %>
+      </td>
+    </tr>
+  <% end %>
+</table>
