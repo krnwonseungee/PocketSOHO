@@ -6,6 +6,7 @@ class CreateBusinessesAndUsers < ActiveRecord::Migration
       t.string :description
       t.string :slogan
       t.string :image_url
+      t.belongs_to :business_owner
       t.timestamps
     end
 
@@ -19,9 +20,9 @@ class CreateBusinessesAndUsers < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :businesses_users, id: false do |t|
-      t.belongs_to :business
-      t.belongs_to :user
-    end
+    # create_table :businesses_users, id: false do |t|
+    #   t.belongs_to :business
+    #   t.belongs_to :user
+    # end
   end
 end
