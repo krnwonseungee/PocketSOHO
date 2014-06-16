@@ -3,13 +3,21 @@
 <h3>My Business</h3>
 <i class="fa fa-minus-circle"></i>
 <%= link_to 'Create New', new_business_path %>
-<% @businesses.each do |business| %>
-  <a href="businesses/<%= business.id %>">
-    <%= business.name %>
-    <%= business.image_url %>
-    <%= link_to 'Edit', edit_business_path(business.id)  %>
-  </a>
-<% end %>
+<table>
+  <% @businesses.each do |business| %>
+    <tr>
+      <td>
+        <%= link_to business_path(business) do %>
+          <%= business.name %>
+          <%= business.image_url %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_business_path(business.id)  %>
+      </td>
+    </tr>
+  <% end %>
+</table>
 
 <h3>My Customers</h3>
 <i class="fa fa-minus-circle"></i>
