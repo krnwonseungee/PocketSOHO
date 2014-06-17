@@ -1,4 +1,4 @@
-class Thread < ActiveRecord::Base
+class Conversation < ActiveRecord::Base
   has_one :customer
   has_one :business_owner
   has_many :messages

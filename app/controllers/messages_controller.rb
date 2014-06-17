@@ -13,9 +13,9 @@ class MessagesController < ApplicationController
     @new_message = Message.new
     @message = Message.find(params[:id])
     if @user.type == "BusinessOwner"
-      @thread_messages = Message.where("business_owner_id = ? AND customer_id = ?", @user.id, @message.customer_id )
+      @conversation_messages = Message.where("business_owner_id = ? AND customer_id = ?", @user.id, @message.customer_id )
     else
-      @thread_messages = Message.where("business_owner_id = ? AND customer_id = ?", @message.business_owner_id, @user.id )
+      @conversation_messages = Message.where("business_owner_id = ? AND customer_id = ?", @message.business_owner_id, @user.id )
     end
   end
 
