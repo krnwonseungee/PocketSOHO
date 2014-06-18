@@ -2,7 +2,10 @@ class MessagesController < ApplicationController
 
   def index
     @user = User.find(session[:user_id])
-    @messages = @user.messages
+    @recent_conversations = Array.new
+    Conversation.where("business_owner_id = ?", @user.id ).each do |thread|
+      @recent_conversations << thread.messages.last
+    end
   end
 
   def new
