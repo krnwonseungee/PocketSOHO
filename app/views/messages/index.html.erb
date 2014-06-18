@@ -16,6 +16,9 @@
         <%= BusinessOwner.find(message.business_owner_id).first_name %> Biz
       <% end %>
     </td>
+    <td>
+      <%= message.updated_at %>
+    </td>
   </tr>
 <% end %>
 </table>
