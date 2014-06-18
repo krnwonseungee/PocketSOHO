@@ -2,7 +2,7 @@
 <input type="search" placeholder="Search for Specific Messages">
 <a href="#">(Create New Message)</a>
 <table>
-<% @user.messages.each do |message| %>
+<% @recent_conversations.each do |message| %>
   <tr>
     <td>
       <%= link_to user_message_path(@user, message.id) do %>
