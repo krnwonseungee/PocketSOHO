@@ -9,7 +9,7 @@ class CreateMessagesAndConversations < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :conversations, id: false do |t|
+    create_table :conversations do |t|
       t.belongs_to :business_owner
       t.belongs_to :customer
     end

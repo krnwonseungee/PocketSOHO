@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140607164722) do
     t.datetime "updated_at"
   end
 
-  create_table "conversations", id: false, force: true do |t|
+  create_table "conversations", force: true do |t|
     t.integer "business_owner_id"
     t.integer "customer_id"
   end
