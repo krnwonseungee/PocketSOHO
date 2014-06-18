@@ -24,12 +24,9 @@ class MessagesController < ApplicationController
 
   def create
     @user = User.find(session[:user_id])
-    if @user.type == "BusinessOwner"
-      Message.create( text: params[:message][:text], customer_id: 2, business_owner_id: @user.id )
-    else
-      Message.create( text: params[:message][:text], customer_id: @user.id, business_owner_id: 1 )
-    end
-    redirect_to user_messages_path(@user.id)
+    print Message.last
+    Message.create( text: params[:message][:text], customer_id: Message.last.customer_id, business_owner_id: Message.last.business_owner_id )
+    redirect_to user_message_path( @user.id, Message.last.id )
   end
 
   def destroy
