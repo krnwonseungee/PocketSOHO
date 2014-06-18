@@ -1,0 +1,21 @@
+<h1>My Inbox</h1>
+<input type="search" placeholder="Search for Specific Messages">
+<a href="#">(Create New Message)</a>
+<table>
+<% @recent_conversations.each do |message| %>
+  <tr>
+    <td>
+      <%= link_to user_message_path(@user, message.id) do %>
+      <%= message.text %>
+      <% end %>
+    </td>
+    <td>
+      <% if @user.type == "BusinessOwner" %>
+        <%= Customer.find(message.customer_id).first_name  %>
+      <% else  %>
+        <%= BusinessOwner.find(message.business_owner_id).first_name %> Biz
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>

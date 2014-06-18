@@ -1,13 +1,13 @@
 PocketSOHO::Application.routes.draw do
-  scope module: 'welcome' do
-    root 'welcome#index'
-    resources :sessions, only: [:new, :create, :destroy]
-    get '/dashboard', to: 'welcome#dashboard', as: 'dashboard'
-  end
+  root 'welcome#index'
 
-  resources :messages, only: [:index, :new, :create, :show, :destroy]
-  resources :businesses
-  resources :biz_owners
-  resources :customers
+  resources :sessions, only: [:new, :create, :destroy]
+  get '/settings', to: 'users#settings', as: :user_settings
+
+  resources :businesses, only: [:new, :create, :show, :edit, :update, :destroy]
+
+  resources :users, only: [:new, :create, :show, :edit, :update, :destroy] do
+    resources :messages, only: [:index, :new, :create, :show, :destroy]
+  end
 
 end

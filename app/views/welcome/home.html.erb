@@ -1,0 +1,39 @@
+<h1>PocketSOHO</h1>
+
+<h3>My Business</h3>
+<i class="fa fa-minus-circle"></i>
+<%= link_to 'Create New', new_business_path %>
+<table>
+  <% @businesses.each do |business| %>
+    <tr>
+      <td>
+        <%= link_to business_path(business) do %>
+          <%= business.name %>
+          <%= business.image_url %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_business_path(business.id)  %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<h3>My Services</h3>
+<i class="fa fa-minus-circle"></i>
+<a href="#">Search for Businesses</a>
+
+<h3>My Upcoming Appointments</h3>
+<a href="#">See All Appointments</a>
+
+<h3>My Invoices</h3>
+(Graph)
+
+<!-- headings:
+name
+my services
+new message
+schedule
+finances + graph
+
+ -->
