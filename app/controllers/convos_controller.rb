@@ -1,4 +1,4 @@
-class MessagesController < ApplicationController
+class ConvosController < ApplicationController
 
   def index
     @user = User.find(session[:user_id])

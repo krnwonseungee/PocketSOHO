@@ -5,7 +5,7 @@
 <% @recent_conversations.each do |message| %>
   <tr>
     <td>
-      <%= link_to user_message_path(@user, message.id) do %>
+      <%= link_to user_convo_path(@user, message.id) do %>
       <%= message.text %>
       <% end %>
     </td>
