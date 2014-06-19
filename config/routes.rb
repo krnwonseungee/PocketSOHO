@@ -7,7 +7,7 @@ PocketSOHO::Application.routes.draw do
   resources :businesses, only: [:new, :create, :show, :edit, :update, :destroy]
 
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy] do
-    resources :convos, only: [:index, :new, :create, :show, :destroy]
+    resources :conversations, only: [:index, :new, :create, :show, :destroy]
   end
 
 end
