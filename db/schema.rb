@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140627162922) do
   create_table "conversations", force: true do |t|
     t.integer "business_owner_id"
     t.integer "customer_id"
+    t.boolean "opened_by_receiver", default: false
   end
 
   create_table "messages", force: true do |t|
@@ -41,7 +42,6 @@ ActiveRecord::Schema.define(version: 20140627162922) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "sender_id"
-    t.boolean  "opened"
   end
 
   create_table "users", force: true do |t|
