@@ -3,10 +3,16 @@ class ConversationsController < ApplicationController
   def index
     @user = User.find(session[:user_id])
     @recent_conversations = Array.new
-    Conversation.where("business_owner_id = ?", @user.id ).each do |thread|
-      @recent_conversations << thread.messages.last
+    if @user.type == "BusinessOwner"
+      Conversation.where("business_owner_id = ?", @user.id ).each do |thread|
+        @recent_conversations << thread.messages.last
+      end
+    else
+      Conversation.where("customer_id = ?", @user.id ).each do |thread|
+        @recent_conversations << thread.messages.last
+      end
     end
-    @recent_conversations.sort_by!{ |msg| msg.updated_at }.reverse!
+      @recent_conversations.sort_by!{ |msg| msg.updated_at }.reverse!
   end
 
   def new
