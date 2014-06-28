@@ -37,7 +37,7 @@ class ConversationsController < ApplicationController
     @current_conversation = Conversation.find(session[:conversation_id])
     puts "CREATE PARAMS!! #{params}"
     puts "SESSION MESSAGE ID!! #{session[:conversation_id]}"
-    Message.create( text: params[:message][:text], customer_id: @current_conversation.customer_id, business_owner_id: @current_conversation.business_owner_id )
+    Message.create( text: params[:message][:text], customer_id: @current_conversation.customer_id, business_owner_id: @current_conversation.business_owner_id, sender_id: @user.id )
     redirect_to user_conversation_path( @user.id, session[:conversation_id] )
   end
 
