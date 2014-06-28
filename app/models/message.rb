@@ -4,10 +4,9 @@ class Message < ActiveRecord::Base
   belongs_to :business
   belongs_to :conversation
 
-  after_initialize :init
+  before_create :assign_conversation_id
 
-  def init
-    self.opened = false
+  def assign_conversation_id
     if Message.where("business_owner_id = ? AND customer_id = ?", self.business_owner_id, self.customer_id ).empty?
       self.conversation_id = Conversation.create( business_owner_id: self.business_owner_id, customer_id: self.customer_id ).id
     else
