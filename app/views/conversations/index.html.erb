@@ -3,7 +3,13 @@
 <a href="#">(Create New Message)</a>
 <table>
 <% @recent_conversations.each do |message| %>
-  <tr>
+
+  <% if message.conversation.opened_by_receiver %>
+    <tr>
+  <% else %>
+    <tr style="font-weight:bold">
+  <% end %>
+
     <td>
       <%= link_to user_conversation_path(@user, message.conversation_id) do %>
       <%= message.text %>
