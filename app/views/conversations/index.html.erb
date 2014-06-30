@@ -2,7 +2,7 @@
 
 <!-- <input type="search" placeholder="Search by name" id="inbox-searchbar"> -->
 <%= form_tag({controller: "conversations", action: "results"}, method: "post", id: "inbox-searchbar") do %>
-  <%= search_field( :convos, :results ) %>
+  <%= search_field( :convos, :results, placeholder: "Search messages" ) %>
 <% end %>
 
 <a href="#">(Create New Message)</a>
