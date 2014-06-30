@@ -1,31 +1,39 @@
 <h1>My Inbox</h1>
-<input type="search" placeholder="Search by name" id="inbox-searchbar">
-<a href="#">(Create New Message)</a>
-<table>
-<% @recent_conversations.each do |message| %>
-  <% if @user.type == "BusinessOwner" && message.conversation.seen_by_business_owner %>
-    <tr>
-  <% elsif @user.type == "Customer" && message.conversation.seen_by_customer %>
-    <tr>
-  <% else %>
-    <tr style="font-weight:bold">
-  <% end %>
 
-    <td>
-      <%= link_to user_conversation_path(@user, message.conversation_id) do %>
-      <%= message.text %>
-      <% end %>
-    </td>
-    <td>
-      <% if @user.type == "BusinessOwner" %>
-        <%= Customer.find(message.customer_id).first_name  %>
-      <% else  %>
-        <%= BusinessOwner.find(message.business_owner_id).first_name %> Biz
-      <% end %>
-    </td>
-    <td>
-      <%= message.updated_at %>
-    </td>
-  </tr>
+<!-- <input type="search" placeholder="Search by name" id="inbox-searchbar"> -->
+<%= form_tag({controller: "conversations", action: "results"}, method: "post", id: "inbox-searchbar") do %>
+  <%= search_field( :convos, :results ) %>
 <% end %>
-</table>
+
+<a href="#">(Create New Message)</a>
+<div id="message-list">
+  <table>
+  <% @recent_conversations.each do |message| %>
+    <% if @user.type == "BusinessOwner" && message.conversation.seen_by_business_owner %>
+      <tr>
+    <% elsif @user.type == "Customer" && message.conversation.seen_by_customer %>
+      <tr>
+    <% else %>
+      <tr style="font-weight:bold">
+    <% end %>
+
+      <td>
+        <%= link_to user_conversation_path(@user, message.conversation_id) do %>
+        <%= message.text %>
+        <% end %>
+      </td>
+      <td>
+        <% if @user.type == "BusinessOwner" %>
+          <%= Customer.find(message.customer_id).first_name  %>
+        <% else  %>
+          <%= BusinessOwner.find(message.business_owner_id).first_name %> Biz
+        <% end %>
+      </td>
+      <td>
+        <%= message.updated_at %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
