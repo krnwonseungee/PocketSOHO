@@ -23,11 +23,12 @@ class ConversationsController < ApplicationController
     @user = User.find(session[:user_id])
     @new_message = Message.new
     @conversation = Conversation.find(params[:id])
-    @conversation.update( opened_by_receiver: true )
     if @user.type == "BusinessOwner"
       @conversation_messages = Conversation.where("business_owner_id = ? AND customer_id = ?", @user.id, @conversation.customer_id ).first.messages
+      @conversation.update( seen_by_business_owner: true )
     else
       @conversation_messages = Conversation.where("business_owner_id = ? AND customer_id = ?", @conversation.business_owner_id, @user.id ).first.messages
+      @conversation.update( seen_by_customer: true )
     end
     session[:conversation_id] = @conversation.id
   end
@@ -35,9 +36,15 @@ class ConversationsController < ApplicationController
   def create
     @user = User.find(session[:user_id])
     @current_conversation = Conversation.find(session[:conversation_id])
-    puts "CREATE PARAMS!! #{params}"
-    puts "SESSION MESSAGE ID!! #{session[:conversation_id]}"
-    Message.create( text: params[:message][:text], customer_id: @current_conversation.customer_id, business_owner_id: @current_conversation.business_owner_id, sender_id: @user.id )
+    @new_message = Message.create( text: params[:message][:text], customer_id: @current_conversation.customer_id, business_owner_id: @current_conversation.business_owner_id, sender_id: @user.id )
+    if @user.type == "BusinessOwner"
+      puts "update seen_by_customer"
+      @new_message.conversation.update( seen_by_customer: false )
+    else
+      puts "update seen_by_biz_owner"
+      puts "#{@new_message}"
+      @new_message.conversation.update( seen_by_business_owner: false )
+    end
     redirect_to user_conversation_path( @user.id, session[:conversation_id] )
   end
 
