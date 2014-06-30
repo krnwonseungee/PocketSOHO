@@ -4,8 +4,9 @@ Inbox.Controller = function(){}
 
 Inbox.Controller.prototype = {
   bind: function(){
-    $('body').on("keyup", "#inbox-searchbar", function(){
-      var inboxSearchTerm = $( '#inbox-searchbar' ).val();
+    $("#convos_results").keyup(function(e){
+      e.preventDefault();
+      var inboxSearchTerm = $( '#convos_results' ).val();
       inboxController.searchBarSubmit(inboxSearchTerm);
     })
   },
