@@ -1,1 +1,44 @@
-main.css.scss
+// Styling for main layout
+
+// Color variables
+$main-blue: #3399FF;
+$white: #FFFFFF;
+$dark-blue: #4747B5;
+$grey: #CCCCCC;
+
+body {
+  background-color: $main-blue;
+
+  #user-nav-bar {
+    color: $grey;
+    float: right;
+
+    .fa {
+      color: $white;
+    }
+
+    a {
+      color: $grey;
+    }
+  }
+
+  .user-content {
+    margin-left: 20px;
+
+    h1, fa {
+      color: $white;
+    }
+
+    h3 {
+      color: $white;
+    }
+
+    h3, p, a, .fa, tr {
+      color: $dark-blue;
+    }
+
+    td {
+      padding-right: 10px;
+    }
+  }
+}
