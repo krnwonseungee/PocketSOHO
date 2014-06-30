@@ -4,7 +4,7 @@
       <i class="fa fa-home"></i>
     <% end %>
     <a href="#"><i class="fa fa-calendar"></i></a>
-    <%= link_to user_messages_path(@user.id) do %>
+    <%= link_to user_conversations_path(@user.id) do %>
       <i class="fa fa-envelope-o"></i>
     <% end %>
     Hello, <%= @user.first_name %>

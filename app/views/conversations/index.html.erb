@@ -3,9 +3,16 @@
 <a href="#">(Create New Message)</a>
 <table>
 <% @recent_conversations.each do |message| %>
-  <tr>
+  <% if @user.type == "BusinessOwner" && message.conversation.seen_by_business_owner %>
+    <tr>
+  <% elsif @user.type == "Customer" && message.conversation.seen_by_customer %>
+    <tr>
+  <% else %>
+    <tr style="font-weight:bold">
+  <% end %>
+
     <td>
-      <%= link_to user_message_path(@user, message.id) do %>
+      <%= link_to user_conversation_path(@user, message.conversation_id) do %>
       <%= message.text %>
       <% end %>
     </td>
@@ -15,6 +22,9 @@
       <% else  %>
         <%= BusinessOwner.find(message.business_owner_id).first_name %> Biz
       <% end %>
+    </td>
+    <td>
+      <%= message.updated_at %>
     </td>
   </tr>
 <% end %>

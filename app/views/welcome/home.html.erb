@@ -1,23 +1,31 @@
 <h1>PocketSOHO</h1>
 
-<h3>My Business</h3>
-<i class="fa fa-minus-circle"></i>
-<%= link_to 'Create New', new_business_path %>
-<table>
-  <% @businesses.each do |business| %>
-    <tr>
+<h3>My New Messages</h3>
+<% if @unread_conversations.empty? %>
+  <p>You have no new messages! Click <%= link_to "here", user_conversations_path(@user.id) %> to view your inbox.</p>
+<% else %>
+  <table>
+  <% @unread_conversations.each do |message| %>
+      <tr style="font-weight:bold">
       <td>
-        <%= link_to business_path(business) do %>
-          <%= business.name %>
-          <%= business.image_url %>
+        <%= link_to user_conversation_path(@user, message.conversation_id) do %>
+        <%= message.text %>
         <% end %>
       </td>
       <td>
-        <%= link_to 'Edit', edit_business_path(business.id)  %>
+        <% if @user.type == "BusinessOwner" %>
+          <%= Customer.find(message.customer_id).first_name  %>
+        <% else  %>
+          <%= BusinessOwner.find(message.business_owner_id).first_name %> Biz
+        <% end %>
+      </td>
+      <td>
+        <%= message.updated_at %>
       </td>
     </tr>
-  <% end %>
-</table>
+    <% end %>
+  </table>
+<% end %>
 
 <h3>My Services</h3>
 <i class="fa fa-minus-circle"></i>
@@ -26,7 +34,7 @@
 <h3>My Upcoming Appointments</h3>
 <a href="#">See All Appointments</a>
 
-<h3>My Invoices</h3>
+<h3>My Finances</h3>
 (Graph)
 
 <!-- headings:
