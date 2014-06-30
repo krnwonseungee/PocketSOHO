@@ -50,7 +50,7 @@ class ConversationsController < ApplicationController
   end
 
   def results
-    print "SEARCHBAR PARAMS!!!! #{params}"
-    @results = MessageSearcher.new.retrieve_relevant_messages
+    puts "SEARCHBAR PARAMS #{params}"
+    render :json => MessageSearcher.new.retrieve_relevant_messages(params["search_term"])
   end
 end
