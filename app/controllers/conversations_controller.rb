@@ -38,11 +38,8 @@ class ConversationsController < ApplicationController
     @current_conversation = Conversation.find(session[:conversation_id])
     @new_message = Message.create( text: params[:message][:text], customer_id: @current_conversation.customer_id, business_owner_id: @current_conversation.business_owner_id, sender_id: @user.id )
     if @user.type == "BusinessOwner"
-      puts "update seen_by_customer"
       @new_message.conversation.update( seen_by_customer: false )
     else
-      puts "update seen_by_biz_owner"
-      puts "#{@new_message}"
       @new_message.conversation.update( seen_by_business_owner: false )
     end
     redirect_to user_conversation_path( @user.id, session[:conversation_id] )
@@ -50,5 +47,10 @@ class ConversationsController < ApplicationController
 
   def destroy
 
+  end
+
+  def results
+    puts "SEARCHBAR PARAMS #{params}"
+    render :json => MessageSearcher.new.retrieve_relevant_messages(params["search_term"])
   end
 end
