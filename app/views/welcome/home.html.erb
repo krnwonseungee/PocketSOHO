@@ -23,7 +23,7 @@
             <% end %>
           </td>
           <td>
-            <%= message.updated_at.to_date %>
+            <%= message.updated_at.strftime("%m/%d/%Y %I:%M%p") %>
           </td>
         </tr>
         <% end %>
