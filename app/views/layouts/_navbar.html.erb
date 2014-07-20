@@ -7,7 +7,7 @@
     <%= link_to user_conversations_path(@user.id) do %>
       <i class="fa fa-envelope-o"></i>
     <% end %>
-    Hello, <%= @user.first_name %>
+    Hello, <%= @user.first_name %> (<%= @user.type %>)
     <%= link_to 'Log Out', session_path(session.id), method: :delete %>
   <% end %>
 </div>
