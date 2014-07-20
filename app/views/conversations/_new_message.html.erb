@@ -1,5 +1,5 @@
-Create new message
 <%= form_for @new_message, url: {action: "create"}, html: {class: "new_message"} do |f| %>
+  <p><%= f.select :customer_id, Customer.all  %></p>
   <p><%= f.text_area :text, size: "60x12" %></p>
   <p><%= f.submit "Create" %></p>
 <% end %>
