@@ -8,6 +8,7 @@
   <% end %>
 
   <a href="#">(Create New Message)</a>
+  <%= render :partial => 'new_message' %>
   <div id="message-list">
     <table>
     <% @recent_conversations.each do |message| %>
