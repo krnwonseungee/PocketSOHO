@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627190522) do
+ActiveRecord::Schema.define(version: 20140719191622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,13 +32,13 @@ ActiveRecord::Schema.define(version: 20140627190522) do
     t.integer "customer_id"
     t.boolean "seen_by_customer",       default: false
     t.boolean "seen_by_business_owner", default: false
+    t.integer "business_id"
   end
 
   create_table "messages", force: true do |t|
     t.text     "text"
     t.integer  "business_owner_id"
     t.integer  "customer_id"
-    t.integer  "business_id"
     t.integer  "conversation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20140627190522) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "business_id"
   end
 
 end
