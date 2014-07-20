@@ -3,6 +3,7 @@ class ConversationsController < ApplicationController
   def index
     @user = User.find(session[:user_id])
     @recent_conversations = Array.new
+    @new_message = Message.new
     if @user.type == "BusinessOwner"
       Conversation.where("business_owner_id = ?", @user.id ).each do |thread|
         @recent_conversations << thread.messages.last
@@ -21,7 +22,8 @@ class ConversationsController < ApplicationController
   def show
     puts "SHOW PARAMS!! #{params}"
     @user = User.find(session[:user_id])
-    @new_message = Message.new
+    puts "USER ID #{@user.id}"
+    @new_thread_msg = Message.new
     @conversation = Conversation.find(params[:id])
     if @user.type == "BusinessOwner"
       @recipient_name = "#{Customer.find(@conversation.customer_id).first_name} #{Customer.find(@conversation.customer_id).last_name}"
