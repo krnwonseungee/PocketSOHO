@@ -5,10 +5,13 @@ class ConversationsController < ApplicationController
     @recent_conversations = Array.new
     @new_message = Message.new
     if @user.type == "BusinessOwner"
-      Conversation.where("business_owner_id = ?", @user.id ).each do |thread|
+        # @recipient_list = Customer.where( business_id: Business.where( "business_owner_id = ? ", @user.id).pluck(:id) ).pluck(:first_name)
+        Conversation.where("business_owner_id = ?", @user.id ).each do |thread|
         @recent_conversations << thread.messages.last
       end
+
     else
+      # @recipient_list = BusinessOwner.where( business_id: @user.business_id ).pluck(:first_name) #FIX SO BUSINESS2 SHOWS
       Conversation.where("customer_id = ?", @user.id ).each do |thread|
         @recent_conversations << thread.messages.last
       end
@@ -39,8 +42,18 @@ class ConversationsController < ApplicationController
 
   def create
     @user = User.find(session[:user_id])
-    @current_conversation = Conversation.find(session[:conversation_id])
-    @new_message = Message.create( text: params[:message][:text], customer_id: @current_conversation.customer_id, business_owner_id: @current_conversation.business_owner_id, sender_id: @user.id )
+    if Conversation.where( "business_owner_id = ? AND customer_id = ?", @user.id, Customer.find_by_first_name(params[:customer_id]) ).empty? #if this thread doesn't exist yet
+      if @user.type == "BusinessOwner"
+        @new_message = Message.create( text: params[:message][:text], customer_id: params[:customer_id], business_owner_id: @user.id, sender_id: @user.id )
+      else
+        @new_message = Message.create( text: params[:message][:text], customer_id: @user.id, business_owner_id: params[:customer_id], sender_id: @user.id )
+      end
+
+    else
+      @current_conversation = Conversation.find(session[:conversation_id])
+      @new_message = Message.create( text: params[:message][:text], customer_id: @current_conversation.customer_id, business_owner_id: @current_conversation.business_owner_id, sender_id: @user.id )
+    end
+
     if @user.type == "BusinessOwner"
       @new_message.conversation.update( seen_by_customer: false )
     else
