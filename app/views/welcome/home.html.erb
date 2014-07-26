@@ -19,7 +19,7 @@
             <% if @user.type == "BusinessOwner" %>
               <%= Customer.find(message.customer_id).first_name  %>
             <% else  %>
-              <%= BusinessOwner.find(message.business_owner_id).first_name %> Biz
+              <%= BusinessOwner.find(message.business_owner_id).first_name %>
             <% end %>
           </td>
           <td>
