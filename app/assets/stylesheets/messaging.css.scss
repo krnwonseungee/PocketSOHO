@@ -1,32 +1,22 @@
 #inbox {
 
+	.user-content {
+		margin-left: 30px;
+	}
+
+	.banner {
+		position: relative;
+		margin-right: 0px;
+		width: 200px;
+	}
+
 	table, tr {
 		border: 1px solid black;
 		width: 85%;
 
 		tr {
-
-			&.biz-row {
-				height: 85px;
-			}
-
 			&.msg-row {
 				height: 58px;
-			}
-
-			.biz-name-col {
-				padding-left: 24px;
-				width: 20%;
-			}
-
-			.biz-img-col {
-			}
-
-			.biz-edit-col {
-				width: 79%;
-				text-align: right;
-				padding-right: 64px;
-
 			}
 
 			.msg-sender-col {
@@ -47,26 +37,4 @@
 
 		}
 	}
-
-	.banner {
-		position: relative;
-		margin-left: 30px;
-		margin-right: 0px;
-		width: 200px;
-
-	}
-
-	#user-home-categories {
-		margin-left: 30px;
-		margin-top: 44px;
-
-		.biz-img {
-			width: 60px;
-		}
-
-		.create-new {
-			margin: -30px 0px 0px 177px;
-		}
-	}
-
 }
