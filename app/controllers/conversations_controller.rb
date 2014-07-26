@@ -31,7 +31,8 @@ class ConversationsController < ApplicationController
       @conversation_messages = Conversation.where("business_owner_id = ? AND customer_id = ?", @user.id, @conversation.customer_id ).first.messages
       @conversation.update( seen_by_business_owner: true )
     else
-      @recipient_name = "#{BusinessOwner.find(@conversation.business_owner_id).first_name} #{BusinessOwner.find(@conversation.business_owner_id).last_name}"
+      @recipient_user = BusinessOwner.find(@conversation.business_owner_id)
+      @recipient_name = "#{@recipient_user.first_name} #{@recipient_user.last_name}"
       @conversation_messages = Conversation.where("business_owner_id = ? AND customer_id = ?", @conversation.business_owner_id, @user.id ).first.messages
       @conversation.update( seen_by_customer: true )
     end
