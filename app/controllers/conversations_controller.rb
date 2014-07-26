@@ -26,7 +26,8 @@ class ConversationsController < ApplicationController
     @new_thread_msg = Message.new
     @conversation = Conversation.find(params[:id])
     if @user.type == "BusinessOwner"
-      @recipient_name = "#{Customer.find(@conversation.customer_id).first_name} #{Customer.find(@conversation.customer_id).last_name}"
+      @recipient_user = Customer.find(@conversation.customer_id)
+      @recipient_name = "#{@recipient_user.first_name} #{@recipient_user.last_name}"
       @conversation_messages = Conversation.where("business_owner_id = ? AND customer_id = ?", @user.id, @conversation.customer_id ).first.messages
       @conversation.update( seen_by_business_owner: true )
     else

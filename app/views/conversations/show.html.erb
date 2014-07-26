@@ -1,5 +1,5 @@
 <div class="user-content">
-  <h1>Conversation with <%= @recipient_name %></h1>
+  <div class="banner"><h4>Conversation with <%= @recipient_name %> <%= image_tag( @recipient_user.image_url, :class => 'user-img' ) %></h4></div>
   <table>
     <% @conversation_messages.each do |message| %>
       <% if message.sender_id == @user.id %>
