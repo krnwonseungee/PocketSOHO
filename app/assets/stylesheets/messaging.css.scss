@@ -37,4 +37,28 @@
 
 		}
 	}
+
+	input#convos_results {
+		position: absolute;
+		margin: -40px 0px 0px 175px;
+	}
+}
+
+
+#show-convo {
+
+	.user-content {
+		margin-left: 30px;
+	}
+
+	.banner {
+		position: relative;
+		margin-right: 0px;
+		width: 400px;
+	}
+
+	.user-img {
+		height: 50px;
+		margin: 0px 0px 24px 6px;
+	}
 }

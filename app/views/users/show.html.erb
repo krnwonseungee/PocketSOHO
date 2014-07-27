@@ -1,0 +1,29 @@
+<div id="user-profile">
+  <div class="user-content">
+
+    <br><br>
+    <div class="banner">
+        <h4><%= @profile_user.type %></h4>
+        <h2><%= Business.find( @profile_user.business_id ).name %></h2>
+    </div>
+    <%= image_tag( @profile_user.image_url, :class => 'user-img' ) %>
+
+    <% if @profile_user.id == @user.id  %><br>
+        <%= render partial: 'edit_button' %>
+    <% end %>
+
+    <div class="user-info" id="name"><%= @profile_user.first_name %> <%= @profile_user.last_name %></div>
+    <div class="user-info" id="location"><%= @profile_user.city %>, <%= @profile_user.state %></div>
+    <div class="user-info" id="phone"></div><%= @profile_user.phone %></div>
+    <div class="user-info" id="email"><%= @profile_user.email %></div>
+    <div class="user-info" id="member-since">Member Since: <%= @profile_user.created_at.strftime("%m/%d/%Y") %></div>
+
+    <% if @profile_user.id != @user.id  %><br>
+        <%= render partial: 'send_msg_button' %>
+    <% end %>
+
+
+
+
+  </div>
+</div>
