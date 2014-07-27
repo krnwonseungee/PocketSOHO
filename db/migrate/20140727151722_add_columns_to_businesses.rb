@@ -4,5 +4,6 @@ class AddColumnsToBusinesses < ActiveRecord::Migration
     add_column :businesses, :state, :string
     remove_column :businesses, :description, :string
     add_column :businesses, :description, :text
+    add_column :businesses, :description, :text
   end
 end

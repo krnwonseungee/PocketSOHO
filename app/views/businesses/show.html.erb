@@ -1,6 +1,18 @@
 <div id="biz-profile">
-	<h1><%= @business.name %></h1>
+	<div class="user-content">
+		<br><br>
+		<div class="biz-title"><h1><%= @business.name %></h1></div>
 
-	<%= image_tag( @business.image_url, :class => 'biz-img' ) %>
+		<%= image_tag( @business.image_url, :class => 'biz-img' ) %>
 
+		<div class="location"><p><%= @business.city %>, <%= @business.state %></p></div>
+		<div class="description"><p><%= @business.description %></p></div>
+
+		<p>Owner(s):</p><%= link_to user_path( @biz_owner.id ) do %>
+		<%= image_tag( @biz_owner.image_url, :class => 'biz-owner-img' ) %>
+		<p><%= @biz_owner.first_name %> <%= @biz_owner.last_name %><% end %></p>
+		<button>Message <i class="fa fa-envelope-o"></i></button>
+
+
+	</div>
 </div>
