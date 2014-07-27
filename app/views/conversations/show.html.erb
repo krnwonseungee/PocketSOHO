@@ -1,19 +1,21 @@
-<div class="user-content">
-  <div class="banner"><h4>Conversation with <%= @recipient_name %> <%= image_tag( @recipient_user.image_url, :class => 'user-img' ) %></h4></div>
-  <table>
-    <% @conversation_messages.each do |message| %>
-      <% if message.sender_id == @user.id %>
-        <tr style="background-color: lightgrey">
-      <% else %>
-        <tr style="background-color: lightblue">
-      <% end %>
-        <td>
-          <%= message.text %>
-          <%= message.created_at %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-<%= render :partial => 'new_thread_msg' %>
+<div id="show-convo">
+	<div class="user-content">
+	  <div class="banner"><h3>Conversation with <%= @recipient_name %> <%= image_tag( @recipient_user.image_url, :class => 'user-img' ) %></h3></div>
+	  <table>
+	    <% @conversation_messages.each do |message| %>
+	      <% if message.sender_id == @user.id %>
+	        <tr style="background-color: lightgrey">
+	      <% else %>
+	        <tr style="background-color: lightblue">
+	      <% end %>
+	        <td>
+	          <%= message.text %>
+	          <%= message.created_at %>
+	        </td>
+	      </tr>
+	    <% end %>
+	  </table>
+	<%= render :partial => 'new_thread_msg' %>
 
+	</div>
 </div>
