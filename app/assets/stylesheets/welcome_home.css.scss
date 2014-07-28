@@ -11,10 +11,6 @@
 				height: 85px;
 			}
 
-			&.msg-row {
-				height: 58px;
-			}
-
 			.biz-name-col {
 				padding-left: 24px;
 				width: 20%;
@@ -30,6 +26,10 @@
 
 			}
 
+			&.msg-row {
+				height: 58px;
+			}
+
 			.msg-sender-col {
 				width: 25%;
 				padding: 0px 20px 0px 24px;
@@ -41,6 +41,26 @@
 			}
 
 			.msg-text-col {
+				width: 79%;
+				padding-right: 64px;
+
+			}
+
+			&.appt-row {
+				height: 58px;
+			}
+
+			.appt-date-col {
+				width: 15%;
+				padding: 0px 20px 0px 24px;
+
+			}
+
+			.appt-time-col {
+				width: 13%;
+			}
+
+			.appt-details-col {
 				width: 79%;
 				padding-right: 64px;
 
