@@ -1,0 +1,21 @@
+<table>
+<% @unread_conversations.each do |message| %>
+   <tr style="font-weight:bold"  class="msg-row">
+<td class="msg-sender-col">
+  <% if @user.type == "BusinessOwner" %>
+    <%= Customer.find(message.customer_id).first_name%>  <%=Customer.find(message.customer_id).last_name %>
+  <% else  %>
+    <%= BusinessOwner.find(message.business_owner_id).first_name%> <%=BusinessOwner.find(message.business_owner_id).last_name %>
+  <% end %>
+</td>
+<td class="msg-date-col">
+  <%= message.updated_at.strftime("%m/%d/%Y %I:%M%p") %>
+</td>
+<td class="msg-text-col">
+  <%= link_to user_conversation_path(@user, message.conversation_id) do %>
+  <%= message.text %>
+  <% end %>
+</td>
+   </tr>
+  <% end %>
+</table>
