@@ -26,8 +26,15 @@ class AppointmentsController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
-    @business = Business.find(params[:id])
-    @biz_owner = User.find(@business.business_owner_id)
+    @appointment = Appointment.find( params[:id])
+    @business = Business.find(@appointment.business_id)
+    if @user.type == "BusinessOwner"
+      @appt_person = Customer.find( @appointment.customer_id )
+      @img_url = @appt_person.image_url
+    else
+      @appt_person = BusinessOwner.find( @appointment.business_owner_id )
+      @img_url = @business.image_url
+    end
   end
 
   def update
