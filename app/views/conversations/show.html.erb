@@ -10,9 +10,9 @@
 	  <table>
 	    <% @conversation_messages.each do |message| %>
 	      <% if message.sender_id == @user.id %>
-	        <tr style="background-color: lightgrey" class="msg-row" >
+	        <tr style="background-color: ghostwhite" class="msg-row" >
 	      <% else %>
-	        <tr style="background-color: lightblue" class="msg-row" >
+	        <tr style="background-color: #E8E8ED" class="msg-row" >
 	      <% end %>
 	        <td class="msg-sender-col"><%= User.find( message.sender_id ).first_name %> <%= User.find( message.sender_id ).last_name %></td>
 	        <td class="msg-date-col">(<%= message.created_at.strftime("%m/%d/%Y %I:%M%p") %>)</td>
