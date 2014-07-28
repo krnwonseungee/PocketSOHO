@@ -16,3 +16,7 @@ BusinessOwner.first.messages.create( text: "hey twin", customer_id: 3, business_
 Customer.find(3).messages.create( text: "hey girl!", customer_id: 3, business_owner_id: 1, sender_id: 3, business_id: 1  )
 Customer.find(4).messages.create( text: "hey! - bob", customer_id: 4, business_owner_id: 1, sender_id: 4, business_id: 1 )
 Appointment.create( notes: "first appointment!", customer_id: 3, business_owner_id: 1, business_id: 1, date: Date.today, time: Time.now )
+Appointment.create( notes: "2nd appointment!", customer_id: 3, business_owner_id: 1, business_id: 1, date: (Date.today + 1.day), time: Time.now )
+Appointment.create( notes: "3rd appointment!", customer_id: 3, business_owner_id: 1, business_id: 1, date: (Date.today + 2.day), time: Time.now )
+Appointment.create( notes: "4th appointment!", customer_id: 3, business_owner_id: 1, business_id: 1, date: (Date.today + 3.day), time: Time.now )
+Appointment.create( notes: "5th appointment!", customer_id: 3, business_owner_id: 1, business_id: 1, date: (Date.today + 4.day), time: Time.now )

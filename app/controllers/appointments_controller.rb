@@ -3,10 +3,11 @@ class AppointmentsController < ApplicationController
   def index
     @user = User.find(session[:user_id])
       if @user.type == "BusinessOwner"
-          @appointments = @appointments = Appointment.where( "business_owner_id = ?", @user.id )
+          @appointments = Appointment.where( "business_owner_id = ?", @user.id )
       else
           @appointments = Appointment.where( "customer_id = ?", @user.id )
       end
+      @appointment_dates = @appointments.pluck( :date )
 
   end
 
