@@ -4,7 +4,9 @@
     <%= link_to root_path do %>
       <i class="fa fa-home"></i>
     <% end %>
-    <a href="#"><i class="fa fa-calendar"></i></a>
+    <%= link_to user_appointments_path(@user.id) do %>
+	      <i class="fa fa-calendar"></i></a>
+    <% end %>
     <%= link_to user_conversations_path(@user.id) do %>
 	      <i class="fa fa-envelope-o"></i>
     <% end %>

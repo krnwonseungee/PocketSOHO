@@ -1,0 +1,23 @@
+<div id="indiv-appt">
+	<div class="user-content">
+	<div class="banner">
+		<h3>Appointment with <%= @appt_person.first_name %> <%= @appt_person.last_name %></h3>
+		<button>Edit</button>
+		<h5><%= @business.name %></h5>
+	</div>
+
+	<div class="appt-details">
+		<table>
+			<tr>
+		            <td><%= @appointment.time.strftime("%m/%d/%Y") %> @<%= @appointment.time.strftime("%I:%M%p") %></td>
+			</tr>
+		</table>
+		<div class="appt-pic">
+			<%= image_tag(@img_url) %>
+		</div>
+	</div>
+
+
+
+	</div>
+</div>

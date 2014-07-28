@@ -1,0 +1,29 @@
+<div id="appointments-list">
+	<div class="user-content">
+		<div class="banner"><h1>My Appointments</h1></div>
+
+			<% @appointment_dates.each do |date| %>
+				<h3><%= date.strftime("%A, %b %d %y") %></h3>
+					<table>
+					  <% @appointments.where( "date = ?", Date.new( date.year, date.month, date.day) ).each do |appt| %>
+					  <tr class="appt-row">
+					    <td class="appt-date-col"><%= appt.time.strftime("%m/%d/%Y") %></td>
+					    <td class="appt-time-col">@<%= appt.time.strftime("%I:%M%p") %></td>
+					    <td class="appt-details-col">
+					      <%= link_to user_appointment_path( @user.id, appt.id ) do %>
+					      Appointment with <%= Business.find( appt.business_id ).name %>
+					      (
+					      <% if @user.type == "BusinessOwner" %>
+					        <%= Customer.find( appt.customer_id ).first_name %> <%= Customer.find( appt.customer_id ).last_name %>
+					      <% else %>
+					        <%= BusinessOwner.find( appt.business_owner_id ).first_name %> <%= BusinessOwner.find( appt.business_owner_id ).last_name %>
+					        <% end %>
+					      )
+					      <% end %>
+					    </td>
+					  </tr>
+					  <% end %>
+					</table>
+			<% end %>
+	</div>
+</div>
