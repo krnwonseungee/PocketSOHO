@@ -1,4 +1,4 @@
-#inbox {
+#inbox, {
 
 	.user-content {
 		margin-left: 30px;
@@ -54,11 +54,53 @@
 	.banner {
 		position: relative;
 		margin-right: 0px;
-		width: 400px;
+		width: 500px;
 	}
 
 	.user-img {
 		height: 50px;
 		margin: 0px 0px 24px 6px;
+	}
+
+	table, tr {
+		width: 85%;
+
+		tr {
+			&.msg-row {
+				height: 58px;
+			}
+
+			.msg-sender-col {
+				width: 14%;
+				padding: 0px 20px 0px 24px;
+
+			}
+
+			.msg-date-col {
+				width: 15%;
+				font-size: 11px;
+			}
+
+			.msg-text-col {
+				width: 79%;
+				padding: 11px;
+
+			}
+
+		}
+	}
+
+	.new-thread-msg {
+		margin-top: 20px;
+
+		textarea {
+			width: 85%;
+			height: 120px;
+			resize: none;
+		}
+
+		input[type=submit] {
+			margin-left: 40%;
+		}
 	}
 }
