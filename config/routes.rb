@@ -8,6 +8,7 @@ PocketSOHO::Application.routes.draw do
 
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy] do
     resources :conversations, only: [:index, :new, :create, :show, :destroy]
+    resources :appointments
   end
 
   post '/conversations/results', to: 'conversations#results', as: :inbox_results
