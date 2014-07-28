@@ -3,10 +3,10 @@ class Conversation < ActiveRecord::Base
   has_one :business_owner
   has_many :messages
 
-  # before_save :assign_default_vals
+  # before_create :assign_business_id
 
-  # def assign_default_vals
-  #   self.opened_by_receiver = false
+  # def assign_business_id
+  #   self.business_id = self.messages.first.business_id
   # end
 
 end

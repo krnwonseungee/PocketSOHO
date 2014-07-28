@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20140727181422) do
   enable_extension "plpgsql"
 
   create_table "appointments", force: true do |t|
-    t.text     "text"
     t.integer  "customer_id"
     t.integer  "business_owner_id"
     t.integer  "business_id"
@@ -44,15 +43,16 @@ ActiveRecord::Schema.define(version: 20140727181422) do
   create_table "conversations", force: true do |t|
     t.integer "business_owner_id"
     t.integer "customer_id"
+    t.integer "business_id"
     t.boolean "seen_by_customer",       default: false
     t.boolean "seen_by_business_owner", default: false
-    t.integer "business_id"
   end
 
   create_table "messages", force: true do |t|
     t.text     "text"
     t.integer  "business_owner_id"
     t.integer  "customer_id"
+    t.integer  "business_id"
     t.integer  "conversation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
