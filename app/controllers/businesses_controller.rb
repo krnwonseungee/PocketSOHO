@@ -1,12 +1,10 @@
 class BusinessesController < ApplicationController
   def new
     @user = User.find(session[:user_id])
-    @business = Business.find(params[:id])
   end
 
   def create
     @user = User.find(session[:user_id])
-    @business = Business.find(params[:id])
   end
 
   def edit

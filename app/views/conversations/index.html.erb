@@ -33,7 +33,7 @@
 	        </td>
 	        <td class="msg-text-col">
 	          <%= link_to user_conversation_path(@user, message.conversation_id) do %>
-	          <%= message.text %>
+	          <%= message.text[0..60] %>...
 	          <% end %>
 	        </td>
 	      </tr>
