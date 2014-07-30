@@ -1,6 +1,9 @@
 <div id="appointments-list">
 	<div class="user-content">
-		<div class="banner"><h1>My Appointments</h1></div>
+		<div class="banner">
+			<h1>My Appointments</h1>
+			<%= link_to "Calendar View", appointments_calendar_path %>
+		</div>
 
 			<% @appointment_dates.each do |date| %>
 				<h3><%= date.strftime("%A, %b %d %y") %></h3>
