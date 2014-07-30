@@ -49,6 +49,6 @@ class AppointmentsController < ApplicationController
   def calendar
     @user = User.find(session[:user_id])
     @appointments_by_date = Appointment.all.group_by(&:date)
-    @date = Date.today
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 end
