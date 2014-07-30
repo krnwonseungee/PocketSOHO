@@ -45,4 +45,9 @@ class AppointmentsController < ApplicationController
   def destroy
     @user = User.find(session[:user_id])
   end
+
+  def calendar
+    @user = User.find(session[:user_id])
+    @date = Date.today
+  end
 end
