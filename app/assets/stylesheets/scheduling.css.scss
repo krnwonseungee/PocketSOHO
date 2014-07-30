@@ -136,3 +136,30 @@
   }
 }
 
+#indiv-appt {
+
+	.appt-header {
+		display: inline-block;
+	}
+	.appt-img {
+		width: 120px;
+	}
+
+	.banner {
+		position: relative;
+		margin-right: 0px;
+		width: 500px;
+
+		button {
+		margin-left: 8px;
+	}
+
+		h5 {
+			margin-top: -2px;
+		}
+	}
+
+	.user-content {
+		margin-left: 30px;
+	}
+}
