@@ -9,11 +9,12 @@
 	<div class="appt-details">
 		<table>
 			<tr>
-		            <td><%= @appointment.time.strftime("%m/%d/%Y") %> @<%= @appointment.time.strftime("%I:%M%p") %></td>
+		            <td><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> @<%= @appointment.time.strftime("%I:%M%p") %></td>
 			</tr>
+		      <tr><td><%= @appointment.notes %></td></tr>
 		</table>
 		<div class="appt-pic">
-			<%= image_tag(@img_url) %>
+			<%= image_tag(@img_url, :class => 'appt-img') %>
 		</div>
 	</div>
 
