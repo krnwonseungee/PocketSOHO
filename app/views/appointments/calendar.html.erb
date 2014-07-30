@@ -1,0 +1,15 @@
+<h2 id="month">
+	<%= link_to "<", date: @date.prev_month %>
+	<%= @date.strftime("%B %Y") %>
+	<%= link_to ">", date: @date.next_month %>
+</h2>
+<%= calendar @date do |date| %>
+	  <%= date.day %>
+      <% if @appointments_by_date[date] %>
+	      <ul>
+	        <% @appointments_by_date[date].each do |appt| %>
+		          <li><%= link_to "Appt", user_appointment_path( @user.id, appt.id ) %></li>
+	        <% end %>
+	      </ul>
+      <% end %>
+<% end %>

@@ -30,9 +30,11 @@ class AppointmentsController < ApplicationController
     @business = Business.find(@appointment.business_id)
     if @user.type == "BusinessOwner"
       @appt_person = Customer.find( @appointment.customer_id )
+      @upcoming_appts = Appointment.where( "customer_id = ? AND date > ?", @appointment.customer_id,  Date.today )
       @img_url = @appt_person.image_url
     else
       @appt_person = BusinessOwner.find( @appointment.business_owner_id )
+      @upcoming_appts = Appointment.where( "business_owner_id = ? AND date > ?", @appointment.business_owner_id,  Date.today )
       @img_url = @business.image_url
     end
   end
@@ -44,5 +46,11 @@ class AppointmentsController < ApplicationController
 
   def destroy
     @user = User.find(session[:user_id])
+  end
+
+  def calendar
+    @user = User.find(session[:user_id])
+    @appointments_by_date = Appointment.all.group_by(&:date)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 end
