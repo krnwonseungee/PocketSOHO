@@ -12,6 +12,7 @@
 			<table>
 				<div class="appt-text">
 					<tr>
+						<%= render partial: 'message_user_button' %>
 				            <td><span class='note-attr'>Time: </span><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> @<%= @appointment.time.strftime("%I:%M%p") %></td>
 					</tr>
 				      <tr>
