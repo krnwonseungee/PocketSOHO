@@ -21,7 +21,9 @@
 				</div>
 			</table>
 			<div class="appt-pic">
+				<%= link_to user_path(@appt_person.id) do %>
 				<%= image_tag(@img_url, :class => 'appt-img') %>
+				<% end %>
 			</div>
 		</div>
 
