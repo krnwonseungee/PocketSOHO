@@ -1,3 +1,13 @@
+<h3>My Upcoming Appointments</h3>
+<div class="create-new-appt">
+  <i class="fa fa-minus-circle"></i>
+  <%= link_to 'Create New', new_business_path %>
+</div>
+
+  <span class="sync-cal">
+    <i class="fa fa-refresh"></i>
+  <a href="#">Sync Calendar</a>
+</span>
 <table>
   <% @appointments.each do |appt| %>
   <tr class="appt-row">
