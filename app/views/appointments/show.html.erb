@@ -1,32 +1,39 @@
 <div id="indiv-appt">
 	<div class="user-content">
-	<div class="banner">
-		<div class="appt-header">
-			<h3>Appointment with <%= @appt_person.first_name %> <%= @appt_person.last_name %></h3>
-		</div>
-		<button>Edit</button>
-		<h5><%= @business.name %></h5>
-	</div>    
+		<div class="banner">
+			<div class="appt-header">
+				<h3>Appointment with <%= @appt_person.first_name %> <%= @appt_person.last_name %></h3>
+			</div>
+			<%= render partial: 'edit_button'  if@user.type == "BusinessOwner" %>
+			<h5><%= @business.name %></h5>
+		</div>    
 
-	<div class="appt-details">
-		<table>
-			<tr>
-		            <td><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> @<%= @appointment.time.strftime("%I:%M%p") %></td>
-			</tr>
-		      <tr><td><%= @appointment.notes %></td></tr>
-		</table>
-		<div class="appt-pic">
-			<%= image_tag(@img_url, :class => 'appt-img') %>
+		<div class="appt-details">
+			<table>
+				<div class="appt-text">
+					<tr>
+				            <td><span class='note-attr'>Time: </span><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> @<%= @appointment.time.strftime("%I:%M%p") %></td>
+					</tr>
+				      <tr>
+				      	<td><div id="appt-notes"><span class='note-attr'>Notes: </span><%= @appointment.notes %></div></td>
+				      </tr>
+				</div>
+			</table>
+			<div class="appt-pic">
+				<%= image_tag(@img_url, :class => 'appt-img') %>
+			</div>
 		</div>
-	</div>
 
-	<div class="upcoming-appts">
-		<table>
-		<% @upcoming_appts.each do |appt|  %>
-			<tr><td><%= link_to user_appointment_path( @user.id, appt.id) do  %><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> @<%= @appointment.time.strftime("%I:%M%p") %><% end %></td></tr>
-		<% end %>
-		</table>
-	</div>
+		<div class="upcoming-appts">
+			<h3>Upcoming Appointments:</h3>
+			<div id="links">
+			<table>
+					<% @upcoming_appts.each do |appt|  %>
+						<tr><td><%= link_to user_appointment_path( @user.id, appt.id) do  %><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> @<%= @appointment.time.strftime("%I:%M%p") %><% end %></td></tr>
+					<% end %>
+			</table>
+			</div>
+		</div>
 
 
 
