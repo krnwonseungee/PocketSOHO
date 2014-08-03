@@ -38,6 +38,7 @@ end
 gem 'pg_search'
 
 gem "google-api-client", :git => 'git://github.com/krnwonseungee/google-api-ruby-client.git'
+gem 'simple-form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
