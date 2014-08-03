@@ -37,7 +37,7 @@ end
 
 gem 'pg_search'
 
-gem "google-api-client"
+gem "google-api-client", :git => 'git://github.com/krnwonseungee/google-api-ruby-client.git'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -50,3 +50,9 @@ gem "google-api-client"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'byebug'
+end

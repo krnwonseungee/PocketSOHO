@@ -14,4 +14,8 @@ PocketSOHO::Application.routes.draw do
 
   post '/conversations/results', to: 'conversations#results', as: :inbox_results
 
+  get '/oauth2authorize', to: 'google_calendars#oauth2authorize'
+  get '/oauth2callback', to: 'google_calendars#oauth2callback'
+  get '/calendar_final', to: 'google_calendars#final'
+
 end
