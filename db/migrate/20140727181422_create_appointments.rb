@@ -6,7 +6,7 @@ class CreateAppointments < ActiveRecord::Migration
       t.belongs_to :business
       t.text :notes
       t.date :date
-      t.time :time
+      t.datetime :time
       t.timestamps
     end
   end
