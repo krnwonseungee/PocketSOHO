@@ -20,3 +20,5 @@ Appointment.create( notes: "2nd appointment!", customer_id: 3, business_owner_id
 Appointment.create( notes: "3rd appointment!", customer_id: 3, business_owner_id: 1, business_id: 1, date: (Date.today + 2.day), time: Time.now )
 Appointment.create( notes: "4th appointment!", customer_id: 3, business_owner_id: 1, business_id: 1, date: (Date.today + 3.day), time: Time.now )
 Appointment.create( notes: "5th appointment!", customer_id: 3, business_owner_id: 1, business_id: 1, date: (Date.today + 4.day), time: Time.now )
+Invoice.create( customer_id: 2, business_id: 1, amount: 100.00, due_date: Date.today )
+Invoice.create( customer_id: 2, business_id: 1, amount: 100.00, due_date: (Date.today + 2.week) )
