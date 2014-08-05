@@ -9,9 +9,13 @@ PocketSOHO::Application.routes.draw do
 
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy] do
     resources :conversations, only: [:index, :new, :create, :show, :destroy]
-    resources :appointments
   end
+  resources :appointments
 
   post '/conversations/results', to: 'conversations#results', as: :inbox_results
+
+  get '/oauth2authorize', to: 'google_calendars#oauth2authorize'
+  get '/oauth2callback', to: 'google_calendars#oauth2callback'
+  get '/calendar_final', to: 'google_calendars#final'
 
 end

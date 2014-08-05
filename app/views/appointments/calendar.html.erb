@@ -8,7 +8,7 @@
       <% if @appointments_by_date[date] %>
 	      <ul>
 	        <% @appointments_by_date[date].each do |appt| %>
-		          <li><%= link_to "Appt", user_appointment_path( @user.id, appt.id ) %></li>
+		          <li><%= link_to "Appt", appointment_path( appt.id ) %></li>
 	        <% end %>
 	      </ul>
       <% end %>

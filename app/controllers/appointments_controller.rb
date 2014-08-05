@@ -13,10 +13,20 @@ class AppointmentsController < ApplicationController
 
   def new
     @user = User.find(session[:user_id])
+    @appointment = Appointment.new
   end
 
   def create
     @user = User.find(session[:user_id])
+    @appointment = Appointment.create(
+      customer_id: params["appointment"]["customer_id"].to_i,
+      business_owner_id: params["appointment"]["business_owner_id"].to_i,
+      business_id: params["appointment"]["business_id"].to_i,
+      notes: params["appointment"]["notes"],
+      date: Date.new(Date.today.year, params["monthList"].to_i, params["dateList"].to_i),
+      time: DateTime.new(Date.today.year, params["monthList"].to_i, params["dateList"].to_i, params["hourList"].to_i, params["minutesList"].to_i)
+      )
+    redirect_to appointments_path
   end
 
   def edit
@@ -54,3 +64,11 @@ class AppointmentsController < ApplicationController
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 end
+
+private
+
+private
+
+  def appointment_params
+    params.require(:appointment).permit(:customer_id, :business_owner_id, :business_id, :notes, :date, :time)
+  end

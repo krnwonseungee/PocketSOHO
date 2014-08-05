@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140727181422) do
     t.integer  "business_id"
     t.text     "notes"
     t.date     "date"
-    t.time     "time"
+    t.datetime "time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

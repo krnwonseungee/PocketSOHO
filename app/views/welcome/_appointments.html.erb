@@ -1,7 +1,7 @@
 <h3>My Upcoming Appointments</h3>
 <div class="create-new-appt">
   <i class="fa fa-minus-circle"></i>
-  <%= link_to 'Create New', new_business_path %>
+  <%= link_to 'Create New', new_appointment_path%>
 </div>
 
   <span class="sync-cal">
@@ -14,7 +14,7 @@
     <td class="appt-date-col"><%= appt.time.strftime("%m/%d/%Y") %></td>
     <td class="appt-time-col">@<%= appt.time.strftime("%I:%M%p") %></td>
     <td class="appt-details-col">
-      <%= link_to user_appointment_path( @user.id, appt.id ) do %>
+      <%= link_to appointment_path( appt.id ) do %>
       Appointment with <%= Business.find( appt.business_id ).name %>
       (
       <% if @user.type == "BusinessOwner" %>
