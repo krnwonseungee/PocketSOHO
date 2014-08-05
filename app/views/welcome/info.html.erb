@@ -1,13 +1,22 @@
-<h1>PocketSOHO</h1>
+<%= stylesheet_link_tag 'welcome_info' %>
 
-Please Log In
+<div id="welcome-info">
+	<h1>PocketSOHO</h1>
 
-<p>Facebook</p>
-<p>LinkedIn</p>
+	Please Log In
 
-<%= link_to "Sign up with E-mail", new_user_path %>
+	<div class="social-wrap c">
+	    <button class="facebook">Sign in with Facebook</button><br>
+    	    <button class="twitter">Sign in with LinkedIn</button>
+	</div>
 
-<%= form_tag(sessions_path) %>
-  <p><%= text_field_tag(:email, nil, placeholder: "E-mail") %></p>
-  <p><%= password_field_tag(:password, nil, placeholder: "Password") %></p>
-  <%= submit_tag("Log in with E-mail") %>
+	<%= link_to "Sign up with E-mail", new_user_path %>
+
+	<%= form_tag(sessions_path) %>
+	  <p><%= text_field_tag(:email, nil, placeholder: "E-mail") %></p>
+	  <p><%= password_field_tag(:password, nil, placeholder: "Password") %></p>
+	  <%= submit_tag("Log in with E-mail") %>
+</div>
+
+
+

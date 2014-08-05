@@ -1,0 +1,106 @@
+#inbox, {
+
+	.user-content {
+		margin-left: 30px;
+	}
+
+	.banner {
+		position: relative;
+		margin-right: 0px;
+		width: 200px;
+	}
+
+	table, tr {
+		border: 1px solid black;
+		width: 85%;
+
+		tr {
+			&.msg-row {
+				height: 58px;
+			}
+
+			.msg-sender-col {
+				width: 25%;
+				padding: 0px 20px 0px 24px;
+
+			}
+
+			.msg-date-col {
+				width: 20%;
+			}
+
+			.msg-text-col {
+				width: 79%;
+				padding-right: 64px;
+
+			}
+
+		}
+	}
+
+	input#convos_results {
+		position: absolute;
+		margin: -40px 0px 0px 175px;
+	}
+}
+
+
+#show-convo {
+
+	.user-content {
+		margin-left: 30px;
+	}
+
+	.banner {
+		position: relative;
+		margin-right: 0px;
+		width: 500px;
+	}
+
+	.user-img {
+		height: 50px;
+		margin: 0px 0px 24px 6px;
+	}
+
+	table, tr {
+		width: 85%;
+
+		tr {
+			&.msg-row {
+				height: 58px;
+			}
+
+			.msg-sender-col {
+				width: 14%;
+				padding: 0px 20px 0px 24px;
+
+			}
+
+			.msg-date-col {
+				width: 15%;
+				font-size: 11px;
+			}
+
+			.msg-text-col {
+				width: 79%;
+				padding: 11px;
+
+			}
+
+		}
+	}
+
+	.new-thread-msg {
+		margin-top: 20px;
+
+		textarea {
+			width: 85%;
+			height: 120px;
+			resize: none;
+		}
+
+		input[type=submit] {
+			margin-left: 40%;
+		}
+	}
+}

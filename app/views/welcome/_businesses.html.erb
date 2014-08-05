@@ -1,18 +1,19 @@
-<h3>My Business</h3>
-<i class="fa fa-minus-circle"></i>
-<%= link_to 'Create New', new_business_path %>
+<h3>My Businesses</h3>
+
+<div class="create-new-biz">
+	<i class="fa fa-minus-circle"></i>
+	<%= link_to 'Create New', new_business_path %>
+</div>
+
 <table>
   <% @businesses.each do |business| %>
-    <tr>
-      <td>
-        <%= link_to business_path(business) do %>
-          <%= business.name %>
-          <%= business.image_url %>
-        <% end %>
-      </td>
-      <td>
-        <%= link_to 'Edit', edit_business_path(business.id)  %>
-      </td>
+    <tr class="biz-row">
+
+        <td class="biz-name-col"><%= link_to business_path(business) do %><%= business.name %><% end %></td>
+        <td class="biz-img-col"><%= link_to business_path(business) do %><%= image_tag( business.image_url, :class => 'biz-img' ) %><% end %></td>
+
+      <td class="biz-edit-col"><%= link_to 'Edit', edit_business_path(business.id)  %></td>
+
     </tr>
   <% end %>
 </table>

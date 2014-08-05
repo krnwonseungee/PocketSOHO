@@ -1,0 +1,30 @@
+#biz-profile{
+	text-align: center;
+	.user-content {
+		margin-left: 30px;
+	}
+
+	.biz-title {
+		position: relative;
+		margin-right: 0px;
+	}
+
+	.biz-img {
+		height: 164px;
+		margin: 18px 0px 24px 0px;
+	}
+
+	.biz-owner-img {
+		height: 100px;
+	}
+
+	.location {
+		font-weight: bold;
+	}
+
+	.description {
+		width: 60%;
+		margin: 0 auto;
+		padding: 15px;
+	}
+}

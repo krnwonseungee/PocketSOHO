@@ -1,19 +1,26 @@
-<div class="user-content">
-  <h1>Conversation with <%= @recipient_name %></h1>
-  <table>
-    <% @conversation_messages.each do |message| %>
-      <% if message.sender_id == @user.id %>
-        <tr style="background-color: lightgrey">
-      <% else %>
-        <tr style="background-color: lightblue">
-      <% end %>
-        <td>
-          <%= message.text %>
-          <%= message.created_at %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-
-<%= render partial: 'new_thread_msg' %>
+<div id="show-convo">
+	<div class="user-content">
+	  <div class="banner">
+	  	<h3>
+	  		Conversation with <%= link_to user_path( @recipient_user.id ) do  %>
+	  		<%= @recipient_name %> <%= image_tag( @recipient_user.image_url, :class => 'user-img' ) %>
+	  		<% end %>
+	  	</h3>
+	  </div>
+	  <table>
+	    <% @conversation_messages.each do |message| %>
+	      <% if message.sender_id == @user.id %>
+	        <tr style="background-color: ghostwhite" class="msg-row" >
+	      <% else %>
+	        <tr style="background-color: #E8E8ED" class="msg-row" >
+	      <% end %>
+	        <td class="msg-sender-col"><%= User.find( message.sender_id ).first_name %> <%= User.find( message.sender_id ).last_name %></td>
+	        <td class="msg-date-col">(<%= message.created_at.strftime("%m/%d/%Y %I:%M%p") %>)</td>
+	        <td class="msg-text-col"><%= message.text %></td>
+	        </td>
+	      </tr>
+	    <% end %>
+	  </table>
+	<%= render :partial => 'new_thread_msg' %>
+	</div>
 </div>

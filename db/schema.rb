@@ -11,34 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719191622) do
+ActiveRecord::Schema.define(version: 20140727181422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "appointments", force: true do |t|
+    t.integer  "customer_id"
+    t.integer  "business_owner_id"
+    t.integer  "business_id"
+    t.text     "notes"
+    t.date     "date"
+    t.datetime "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "businesses", force: true do |t|
     t.string   "name"
     t.string   "location"
-    t.string   "description"
     t.string   "slogan"
     t.string   "image_url"
     t.integer  "business_owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "city"
+    t.string   "state"
+    t.text     "description"
   end
 
   create_table "conversations", force: true do |t|
     t.integer "business_owner_id"
     t.integer "customer_id"
+    t.integer "business_id"
     t.boolean "seen_by_customer",       default: false
     t.boolean "seen_by_business_owner", default: false
-    t.integer "business_id"
   end
 
   create_table "messages", force: true do |t|
     t.text     "text"
     t.integer  "business_owner_id"
     t.integer  "customer_id"
+    t.integer  "business_id"
     t.integer  "conversation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -55,6 +69,9 @@ ActiveRecord::Schema.define(version: 20140719191622) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "business_id"
+    t.string   "city"
+    t.string   "state"
+    t.string   "phone"
   end
 
 end

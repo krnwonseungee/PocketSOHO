@@ -1,5 +1,7 @@
-Create new message
-<%= form_for @new_thread_msg, url: {action: "create"}, html: {class: "new_message"} do |f| %>
-  <p><%= f.text_area :text, size: "60x12" %></p>
-  <p><%= f.submit "Create" %></p>
-<% end %>
+<div class="new-thread-msg">
+  Reply to <%= @recipient_user.first_name %> <%= @recipient_user.last_name %>
+  <%= form_for @new_thread_msg, url: {action: "create"}, html: {class: "new_message"} do |f| %>
+    <p><%= f.text_area :text %></p>
+    <p><%= f.submit "SEND" %></p>
+  <% end %>
+</div>

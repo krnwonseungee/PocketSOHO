@@ -1,44 +1,45 @@
-<div class="user-content">
+<div id="inbox">
+	<div class="user-content">
 
-  <h1>My Inbox</h1>
+	  <div class="banner"><h1>My Inbox</h1></div>
 
-  <!-- <input type="search" placeholder="Search by name" id="inbox-searchbar"> -->
-  <%= form_tag({controller: "conversations", action: "results"}, method: "post", id: "inbox-searchbar") do %>
-    <%= search_field( :convos, :results, placeholder: "Search messages" ) %>
-  <% end %>
+	  <!-- <input type="search" placeholder="Search by name" id="inbox-searchbar"> -->
+	  <%= form_tag({controller: "conversations", action: "results"}, method: "post", id: "inbox-searchbar") do %>
+	    <%= search_field( :convos, :results, placeholder: "Search messages" ) %>
+	  <% end %>
 
-  <a href="#">(Create New Message)</a>
-  <%= render :partial => 'new_message' %>
-  <div id="message-list">
-    <table>
-    <% @recent_conversations.each do |message| %>
-      <% if @user.type == "BusinessOwner" && message.conversation.seen_by_business_owner %>
-        <tr>
-      <% elsif @user.type == "Customer" && message.conversation.seen_by_customer %>
-        <tr>
-      <% else %>
-        <tr style="font-weight:bold">
-      <% end %>
+	  <a href="#">(Create New Message)</a>
+	  <div id="message-list">
+	    <table>
+	    <% @recent_conversations.each do |message| %>
+	      <% if @user.type == "BusinessOwner" && message.conversation.seen_by_business_owner %>
+	        <tr class="msg-row">
+	      <% elsif @user.type == "Customer" && message.conversation.seen_by_customer %>
+	        <tr class="msg-row">
+	      <% else %>
+	        <tr style="font-weight:bold" class="msg-row">
+	      <% end %>
 
-        <td>
-          <%= link_to user_conversation_path(@user, message.conversation_id) do %>
-          <%= message.text %>
-          <% end %>
-        </td>
-        <td>
-          <% if @user.type == "BusinessOwner" %>
-            <%= Customer.find(message.customer_id).first_name  %>
-            <%= Customer.find(message.customer_id).last_name  %>
-          <% else  %>
-            <%= BusinessOwner.find(message.business_owner_id).first_name %> Biz
-          <% end %>
-        </td>
-        <td>
-          <%= message.updated_at.strftime("%m/%d/%Y %I:%M%p") %>
-        </td>
-      </tr>
-    <% end %>
-    </table>
-  </div>
+	        <td class="msg-sender-col">
+	          <% if @user.type == "BusinessOwner" %>
+	            <%= Customer.find(message.customer_id).first_name  %>
+	            <%= Customer.find(message.customer_id).last_name  %>
+	          <% else  %>
+	            <%= BusinessOwner.find(message.business_owner_id).first_name %> Biz
+	          <% end %>
+	        </td>
+	        <td class="msg-date-col">
+	          <%= message.updated_at.strftime("%m/%d/%Y %I:%M%p") %>
+	        </td>
+	        <td class="msg-text-col">
+	          <%= link_to user_conversation_path(@user, message.conversation_id) do %>
+	          <%= message.text[0..60] %>...
+	          <% end %>
+	        </td>
+	      </tr>
+	    <% end %>
+	    </table>
+	  </div>
 
+	</div>
 </div>

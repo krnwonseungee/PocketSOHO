@@ -12,6 +12,7 @@ class CreateMessagesAndConversations < ActiveRecord::Migration
     create_table :conversations do |t|
       t.belongs_to :business_owner
       t.belongs_to :customer
+      t.belongs_to :business
     end
   end
 end

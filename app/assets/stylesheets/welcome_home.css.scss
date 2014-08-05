@@ -1,0 +1,105 @@
+#welcome-home {
+
+	table, tr {
+		border: 1px solid black;
+		width: 85%;
+		margin-top: 3px;
+
+		tr {
+
+			&.biz-row {
+				height: 85px;
+			}
+
+			.biz-name-col {
+				padding-left: 24px;
+				width: 20%;
+			}
+
+			.biz-img-col {
+			}
+
+			.biz-edit-col {
+				width: 79%;
+				text-align: right;
+				padding-right: 64px;
+
+			}
+
+			&.msg-row {
+				height: 58px;
+			}
+
+			.msg-sender-col {
+				width: 25%;
+				padding: 0px 20px 0px 24px;
+
+			}
+
+			.msg-date-col {
+				width: 20%;
+			}
+
+			.msg-text-col {
+				width: 79%;
+				padding-right: 64px;
+
+			}
+
+			&.appt-row {
+				height: 58px;
+			}
+
+			.appt-date-col {
+				width: 15%;
+				padding: 0px 20px 0px 24px;
+
+			}
+
+			.appt-time-col {
+				width: 13%;
+			}
+
+			.appt-details-col {
+				width: 79%;
+				padding-right: 64px;
+
+			}
+
+		}
+	}
+
+	.banner {
+		position: relative;
+		margin-left: 30px;
+		margin-right: 0px;
+		width: 100px;
+
+	}
+
+	#user-home-categories {
+		margin-left: 30px;
+		margin-top: 44px;
+
+		.biz-img {
+			width: 60px;
+		}
+
+		.create-new-biz {
+			margin: -30px 0px 0px 177px;
+		}
+
+		.create-new-appt {
+			margin: -30px 0px 0px 326px;
+		}
+
+		.sync-cal {
+			margin: -20px 0px 0px 425px;
+			position: absolute;
+		}
+
+		.appts-scroll {
+		}
+	}
+
+}
