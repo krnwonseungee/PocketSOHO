@@ -4,7 +4,10 @@ class CreateInvoices < ActiveRecord::Migration
       t.belongs_to :customer
       t.belongs_to :business
       t.decimal :amount
+      t.date :due_date
       t.boolean :paid, default: false
+      t.boolean :paid_on_time
       t.timestamps
     end
+  end
 end
