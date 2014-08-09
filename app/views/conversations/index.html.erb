@@ -8,7 +8,7 @@
 	    <%= search_field( :convos, :results, placeholder: "Search messages by Name" ) %>
 	  <% end %>
 
-	  <a href="#">(Create New Message)</a>
+	  <%= link_to "Create New Message", new_user_conversation_path(@user.id) %>
 	  <div id="message-list" data-ng-controller="inboxController">
 	    <table>
 	    <% @recent_conversations.each do |message| %>
