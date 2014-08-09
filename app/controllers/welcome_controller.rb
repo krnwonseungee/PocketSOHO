@@ -9,13 +9,15 @@ class WelcomeController < ApplicationController
         Conversation.where("business_owner_id = ? AND seen_by_business_owner = ?", @user.id, false ).each do |thread|
           @unread_conversations << thread.messages.last
         end
-        @appointments = Appointment.where( "business_owner_id = ?", @user.id )
+        ##CHANGE. ONLY DISPLAYING FIRST 3 NOW
+        @appointments = Appointment.where( "business_owner_id = ?", @user.id ).take(3)
 
       else
         Conversation.where("customer_id = ? AND seen_by_customer = ?", @user.id, false ).each do |thread|
           @unread_conversations << thread.messages.last
         end
-        @appointments = Appointment.where( "customer_id = ?", @user.id )
+        ##CHANGE. ONLY DISPLAYING FIRST 3 NOW
+        @appointments = Appointment.where( "customer_id = ?", @user.id ).take(3)
       end
       @unread_conversations.sort_by!{ |msg| msg.updated_at }.reverse!
       render "home"

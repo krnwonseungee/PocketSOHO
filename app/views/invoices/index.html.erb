@@ -1,0 +1,26 @@
+<div id="appointments-list">
+  <div class="user-content">
+    <div class="banner">
+      <h1>My Invoices</h1>
+      <!--<%= link_to "Calendar View", appointments_calendar_path %>-->
+    </div>
+
+      <% @invoice_dates.each do |date| %>
+        <h3><%= date.strftime("%A, %b %d %y") %></h3>
+          <table>
+            <% @invoices.where( "due_date = ?", Date.new( date.year, date.month, date.day) ).each do |invoice| %>
+            <tr class="appt-row">
+              <td class="appt-details-col">
+                <%= link_to invoice_path( invoice.id ) do %>
+                <%= Business.find( invoice.business_id ).name %>
+                <% end %>
+              </td>
+              <td class="appt-details-col">
+                $<%= number_with_precision( invoice.amount, precision: 2, delimiter: ',') %>
+              </td>
+            </tr>
+            <% end %>
+          </table>
+      <% end %>
+  </div>
+</div>
