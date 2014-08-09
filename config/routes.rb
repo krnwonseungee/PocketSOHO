@@ -6,11 +6,13 @@ PocketSOHO::Application.routes.draw do
   get '/appointments/calendar', to: 'appointments#calendar'
 
   resources :businesses, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :appointments
+  resources :invoices
+
 
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy] do
     resources :conversations, only: [:index, :new, :create, :show, :destroy]
   end
-  resources :appointments
 
   post '/conversations/results', to: 'conversations#results', as: :inbox_results
 

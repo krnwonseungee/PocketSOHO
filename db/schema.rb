@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140727181422) do
+ActiveRecord::Schema.define(version: 20140804223022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,17 @@ ActiveRecord::Schema.define(version: 20140727181422) do
     t.integer "business_id"
     t.boolean "seen_by_customer",       default: false
     t.boolean "seen_by_business_owner", default: false
+  end
+
+  create_table "invoices", force: true do |t|
+    t.integer  "customer_id"
+    t.integer  "business_id"
+    t.decimal  "amount"
+    t.date     "due_date"
+    t.boolean  "paid",         default: false
+    t.boolean  "paid_on_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "messages", force: true do |t|
