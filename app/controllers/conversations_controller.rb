@@ -17,6 +17,11 @@ class ConversationsController < ApplicationController
       end
     end
       @recent_conversations.sort_by!{ |msg| msg.updated_at }.reverse!
+
+      respond_to do |format|
+        format.html
+        format.any(:json) { render request.format.to_sym => @recent_conversations }
+      end
   end
 
   def new
@@ -70,6 +75,9 @@ class ConversationsController < ApplicationController
 
   def results
     puts "SEARCHBAR PARAMS #{params}"
+    business_owner_id = BusinessOwner.where( "first_name = ? OR last_name = ?", params[:search_term].camelize, params[:search_term].camelize )
+    customer_id = params[:search_term]
+    Conversation.where( "business_owner_id = ? OR customer_id", business_owner_id, customer_id )
     render :json => MessageSearcher.new.retrieve_relevant_messages(params["search_term"])
   end
 end
