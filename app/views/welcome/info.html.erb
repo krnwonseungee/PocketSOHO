@@ -2,10 +2,13 @@
 <html>
 <head>
 	<title>PocketSOHO - Sign Up Now!</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,700' rel='stylesheet' type='text/css'>
+
+	<%= javascript_include_tag 'main' %>
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 </head>
 <body>
@@ -18,11 +21,11 @@
 					<li><a href="#who-we-are">Who We Are</a></li>
 					<li><a href="#why-us">Why Us?</a></li>
 					<li><a href="#connect">Connect</a></li>
-					<li><a href="/log_in">Log In</a></li>
+					<li id="log-in"><a href="/log_in">Log In</a></li>
 				</ul>
 			</div>
 		</div>
-		<div id="splash"></div>
+		<div id="splash">Focus on what you love teaching.</div>
 		<div class="container" id="welcome-content">
 			<div id="about">
 				<h3>About</h3>
@@ -42,11 +45,22 @@
 
 			<div id="connect">
 				<h3>Connect</h3>
-				<p>Connect</p>
+				<p>Connect with us! :) </p>
+				<p>
+					<a href="#"><i class="fa fa-facebook-square"></i></a>
+					<a href="#"><i class="fa fa-google-plus-square"></i></a>
+					<a href="#"><i class="fa fa-phone-square"></i></a>
+					<a href="#"><i class="fa fa-envelope-square"></i></a>
+				</p>
 			</div>
 
 
 		</div>
 	</div>
+
+
+	<footer>
+
+	</footer>
 </body>
 </html>

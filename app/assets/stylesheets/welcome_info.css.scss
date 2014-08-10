@@ -26,9 +26,19 @@
 
     #welcome-content {
         margin-top: 1%;
-        width: 30%;
+        width: 55%;
         text-align: center;
         z-index: 2;
+
+        h3 {
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        i {
+            font-size: 38px;
+            padding-right: 2px;
+        }
 
     }
 }
