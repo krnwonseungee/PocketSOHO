@@ -13,7 +13,7 @@
 	    <table>
 	    <% @recent_conversations.each do |message| %>
 	      <% if @user.type == "BusinessOwner" && message.conversation.seen_by_business_owner %>
-	        <tr class="msg-row" ng=>
+	        <tr class="msg-row">
 	      <% elsif @user.type == "Customer" && message.conversation.seen_by_customer %>
 	        <tr class="msg-row">
 	      <% else %>
