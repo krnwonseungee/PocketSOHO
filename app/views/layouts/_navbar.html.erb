@@ -15,6 +15,6 @@
     <% end %>
 
     Hello, <%= @user.first_name %> (<%= @user.type %>)
-    <%= link_to 'Log Out', session_path(session.id), method: :delete %>
+    <%= link_to 'Log Out', delete_session_path %>
   <% end %>
 </div>
