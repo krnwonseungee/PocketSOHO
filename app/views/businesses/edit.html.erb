@@ -1,4 +1,15 @@
 <div id="biz-edit">
-	<h1></h1>
+	<h1>Edit <%= @business.name %></h1>
+    <%= simple_form_for @business, url: { action: "update"} do |f| %>
+      <%= f.input :name %>
+      <%= f.input :image_url %>
+      <%= f.input :slogan %>
+      <%= f.input :city %>
+      <%= f.input :state %>
+      <%= f.input :description %>
+      <%= f.button :submit %>
+      <%= link_to "Delete Business", business_path(@business.id), method: :delete, data: { confirm: 'You sure?' } %>
+      <% end %>
+
 
 </div>

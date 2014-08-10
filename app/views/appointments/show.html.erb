@@ -28,11 +28,11 @@
 		</div>
 
 		<div class="upcoming-appts">
-			<h3>Upcoming Appointments:</h3>
+			<h3>Other Upcoming Appointments:</h3>
 			<div id="links">
 			<table>
 					<% @upcoming_appts.each do |appt|  %>
-						<tr><td><%= link_to user_appointment_path( @user.id, appt.id) do  %><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> @<%= @appointment.time.strftime("%I:%M%p") %><% end %></td></tr>
+						<tr><td><%= link_to appointment_path( appt.id) do  %><%= appt.time.strftime("%m/%d/%Y (%a)") %> @<%= @appointment.time.strftime("%I:%M%p") %><% end %></td></tr>
 					<% end %>
 			</table>
 			</div>

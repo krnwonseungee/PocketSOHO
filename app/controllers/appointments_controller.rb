@@ -8,7 +8,6 @@ class AppointmentsController < ApplicationController
           @appointments = Appointment.where( "customer_id = ?", @user.id )
       end
       @appointment_dates = @appointments.pluck( :date )
-
   end
 
   def new
@@ -20,7 +19,7 @@ class AppointmentsController < ApplicationController
     @user = User.find(session[:user_id])
     @appointment = Appointment.create(
       customer_id: params["appointment"]["customer_id"].to_i,
-      business_owner_id: params["appointment"]["business_owner_id"].to_i,
+      business_owner_id: @user.id,
       business_id: params["appointment"]["business_id"].to_i,
       notes: params["appointment"]["notes"],
       date: Date.new(Date.today.year, params["monthList"].to_i, params["dateList"].to_i),
@@ -42,6 +41,7 @@ class AppointmentsController < ApplicationController
       @appt_person = Customer.find( @appointment.customer_id )
       @upcoming_appts = Appointment.where( "customer_id = ? AND date > ?", @appointment.customer_id,  Date.today )
       @img_url = @appt_person.image_url
+      debugger
     else
       @appt_person = BusinessOwner.find( @appointment.business_owner_id )
       @upcoming_appts = Appointment.where( "business_owner_id = ? AND date > ?", @appointment.business_owner_id,  Date.today )
