@@ -1,1 +1,12 @@
-simple_form_for
+<div id="appt-edit">
+  <h1>Edit Appointment with <%= @appt_person.first_name %> <%= @appt_person.last_name %></h1>
+    <%= simple_form_for @appointment, url: { action: "update"} do |f| %>
+      <%= f.input :notes %>
+      <%= f.input :time %>
+      <%= f.button :submit %>
+      <%= link_to "Delete Appointment", appointment_path(@appointment.id), method: :delete, data: { confirm: 'You sure?' } %>
+      <% end %>
+
+
+</div>
+

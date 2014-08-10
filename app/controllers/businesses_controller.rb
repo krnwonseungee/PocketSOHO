@@ -19,23 +19,6 @@ class BusinessesController < ApplicationController
   end
 
   def update
-
-    {"utf8"=>"✓",
-     "authenticity_token"=>"TkIe9vuuWmDNaivNPLrm7W8D/iWuttpPPv0a2N1OYsE=",
-     "business"=>
-       {"name"=>"Sample Biz",
-       "location"=>"",
-       "slogan"=>"",
-       "city"=>"San Francisco",
-       "state"=>"CA",
-       "description"=>"Lorem ipsum dolor sit amet,
-       odio ignota cetero id vim,
-       mea modo vide fabulas ad. His id animal aliquando,
-       et cibo utamur vim. Id etiam dissentias sed,
-       has prompta delicatissimi cu. Id mei probo novum harum,
-       per falli utinam labores ut. Ei sed reque harum."},
-     "commit"=>"Update Business",
-     "id"=>"1"}
     @user = User.find(session[:user_id])
     @business = Business.find(params[:id])
     @business.update( business_params )
