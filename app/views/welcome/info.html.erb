@@ -1,22 +1,52 @@
-<%= stylesheet_link_tag 'welcome_info' %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PocketSOHO - Sign Up Now!</title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,700' rel='stylesheet' type='text/css'>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+</head>
+<body>
+	<div id="welcome-info">
+		<div class="navbar navbar-fixed-top custom" role="navigation">
+			<div class="container">
+			<div class="logo"><h1>PocketSOHO</h1></div>
+				<ul class="nav navbar-nav">
+					<li><a href="#about">About</a></li>
+					<li><a href="#who-we-are">Who We Are</a></li>
+					<li><a href="#why-us">Why Us?</a></li>
+					<li><a href="#connect">Connect</a></li>
+					<li><a href="/log_in">Log In</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="splash"></div>
+		<div class="container" id="welcome-content">
+			<div id="about">
+				<h3>About</h3>
+				<p>Tablet publishing HTML5 mobile first really simple syndication meetups white board walls. User experience iterate algorithm gamification semantic web value add market research stealth. </p>
+			</div>
 
-<div id="welcome-info">
-	<h1>PocketSOHO</h1>
+			<div id="who-we-are">
+				<h3>Who We Are</h3>
+				<p>Lorem lean startup ipsum product market fit customer development acquihire technical cofounder. User engagement A/B testing shrink a market venture capital pitch deck. Social bookmarking group buying crowded market pivot onboarding freemium prototype ping pong. Early stage disruptive ecosystem community outreach dynamic location based strategic investor. </p>
+				<p>Accelerator photo sharing business school drop out ramen hustle crush it revenue traction platforms. Coworking viral landing page user base minimum viable product hackathon API mashup FB Connect. Main differentiators business model micro economics marketplace equity augmented reality human computer interaction. Board members super angel preferred stock. Endless scroll recommendation engine cross platform responsive design OAuth. </p>
+			</div>
 
-	Please Log In
+			<div id="why-us">
+				<h3>Why Us</h3>
+				<p>Accelerator photo sharing business school drop out ramen hustle crush it revenue traction platforms. Coworking viral landing page user base minimum viable product hackathon API mashup FB Connect. Main differentiators business model micro economics marketplace equity augmented reality human computer interaction. Board members super angel preferred stock. Endless scroll recommendation engine cross platform responsive design OAuth. </p>
+			</div>
 
-	<div class="social-wrap c">
-	    <button class="facebook">Sign in with Facebook</button><br>
-    	    <button class="twitter">Sign in with LinkedIn</button>
+			<div id="connect">
+				<h3>Connect</h3>
+				<p>Connect</p>
+			</div>
+
+
+		</div>
 	</div>
-
-	<%= link_to "Sign up with E-mail", new_user_path %>
-
-	<%= form_tag(sessions_path) %>
-	  <p><%= text_field_tag(:email, nil, placeholder: "E-mail") %></p>
-	  <p><%= password_field_tag(:password, nil, placeholder: "Password") %></p>
-	  <%= submit_tag("Log in with E-mail") %>
-</div>
-
-
-
+</body>
+</html>

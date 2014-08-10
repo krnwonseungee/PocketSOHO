@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+
   def index
     if session[:user_id]
       @user = User.find(session[:user_id])
@@ -22,7 +23,7 @@ class WelcomeController < ApplicationController
       @unread_conversations.sort_by!{ |msg| msg.updated_at }.reverse!
       render "home"
     else
-      render "info"
+      render "info", layout: false
     end
   end
 
@@ -30,4 +31,6 @@ class WelcomeController < ApplicationController
     @user = User.find(session[:user_id])
     @businesses = Business.all #change to find_by_user_id
   end
+
+private
 end

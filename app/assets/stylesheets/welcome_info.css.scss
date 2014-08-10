@@ -1,15 +1,37 @@
 #welcome-info {
-	text-align: center;
+    text-align: center;
 
-	button {
-		display: inline-block;
-	}
+    .navbar-fixed-top.custom {
+        background-color: white;
+    }
+
+    .navbar-nav {
+        display: inline-block;
+        float: right;
+        z-index: 500;
+        font-size: 18px;
+        width: 78%;
+
+        li {
+            padding-right: 9%;
+        }
+    }
+
+    #splash {
+        background-image: url("splash.jpg");
+        height: 750px;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+
+    #welcome-content {
+        margin-top: 1%;
+        width: 30%;
+        text-align: center;
+        z-index: 2;
+
+    }
 }
-
-
-
-
-
 
 
 
