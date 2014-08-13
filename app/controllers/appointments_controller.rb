@@ -40,10 +40,12 @@ class AppointmentsController < ApplicationController
     @business = Business.find(@appointment.business_id)
     if @user.type == "BusinessOwner"
       @appt_person = Customer.find( @appointment.customer_id )
+      @conversation = Conversation.find_by_customer_id_and_business_owner_id( @appt_person, @user.id )
       @upcoming_appts = Appointment.where( "customer_id = ? AND date > ?", @appointment.customer_id,  Date.today )
       @img_url = @appt_person.image_url
     else
       @appt_person = BusinessOwner.find( @appointment.business_owner_id )
+      @conversation = Conversation.find_by_customer_id_and_business_owner_id( @user.id, @appt_person)
       @upcoming_appts = Appointment.where( "business_owner_id = ? AND date > ?", @appointment.business_owner_id,  Date.today )
       @img_url = @business.image_url
     end

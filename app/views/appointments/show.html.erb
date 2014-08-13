@@ -5,7 +5,7 @@
 				<h3>Appointment with <%= @appt_person.first_name %> <%= @appt_person.last_name %></h3>
 			</div>
 			<%= render partial: 'edit_button'  if@user.type == "BusinessOwner" %>
-			<h5><%= @business.name %></h5>
+			<h5><%= link_to( @business.name, business_path(@business) ) %></h5>
 		</div>    
 
 		<div class="appt-details">
