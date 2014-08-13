@@ -41,40 +41,20 @@ class ConversationsController < ApplicationController
 
   def create
     @user = User.find(session[:user_id])
-    debugger
-    if @very_new_message
-      puts "YES VERY NEW MESSAGE"
-      ## ADD FOR CUSTOMER
-      if @user.type == "BusinessOwner"
-        recipient_name_array = params[:message][:customer_id].split(" ")
-        recipient_customer = Customer.find(first_name: recipient_name_array[0], last_name: recipient_name_array[1])
-        Message.create( text: params[:message][:text], customer_id: recipient_customer.id, business_id: 1, business_owner_id: @user.id, sender_id: @user.id )
-        redirect_to user_conversations_path( @user.id )
-      end
+    @current_conversation = Conversation.find(session[:conversation_id])
+    @new_message = Message.create( text: params[:message][:text], customer_id: @current_conversation.customer_id, business_owner_id: @current_conversation.business_owner_id, sender_id: @user.id )
+    if @user.type == "BusinessOwner"
+      @new_message.conversation.update( seen_by_customer: false )
     else
-      if Conversation.where( "business_owner_id = ? AND customer_id = ?", @user.id, Customer.find_by_first_name(params[:customer_id]) ).empty? #if this thread doesn't exist yet
-        if @user.type == "BusinessOwner"
-          @new_message = Message.create( text: params[:message][:text], customer_id: params[:customer_id], business_owner_id: @user.id, sender_id: @user.id )
-        else
-          @new_message = Message.create( text: params[:message][:text], customer_id: @user.id, business_owner_id: params[:customer_id], sender_id: @user.id )
-        end
-
-      else
-        @current_conversation = Conversation.find(session[:conversation_id])
-        @new_message = Message.create( text: params[:message][:text], customer_id: @current_conversation.customer_id, business_owner_id: @current_conversation.business_owner_id, sender_id: @user.id )
-      end
-
-      if @user.type == "BusinessOwner"
-        @new_message.conversation.update( seen_by_customer: false )
-      else
-        @new_message.conversation.update( seen_by_business_owner: false )
-      end
-      redirect_to user_conversation_path( @user.id, session[:conversation_id] )
+      @new_message.conversation.update( seen_by_business_owner: false )
     end
+    redirect_to user_conversation_path( @user.id, session[:conversation_id] )
   end
 
   def show
+    puts "SHOW PARAMS!! #{params}"
     @user = User.find(session[:user_id])
+    puts "USER ID #{@user.id}"
     @new_thread_msg = Message.new
     @conversation = Conversation.find(params[:id])
     if @user.type == "BusinessOwner"
