@@ -1,8 +1,10 @@
 PocketSOHO::Application.routes.draw do
   root 'welcome#index'
 
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:create, :destroy]
   get '/settings', to: 'users#settings', as: :user_settings
+  get '/log_in', to: 'sessions#new'
+  get '/log_out', to: 'sessions#log_out', as: :delete_session
   get '/appointments/calendar', to: 'appointments#calendar'
 
   resources :businesses, only: [:new, :create, :show, :edit, :update, :destroy]

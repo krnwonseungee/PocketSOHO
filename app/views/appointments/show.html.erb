@@ -5,7 +5,7 @@
 				<h3>Appointment with <%= @appt_person.first_name %> <%= @appt_person.last_name %></h3>
 			</div>
 			<%= render partial: 'edit_button'  if@user.type == "BusinessOwner" %>
-			<h5><%= @business.name %></h5>
+			<h5><%= link_to( @business.name, business_path(@business) ) %></h5>
 		</div>    
 
 		<div class="appt-details">
@@ -28,11 +28,19 @@
 		</div>
 
 		<div class="upcoming-appts">
-			<h3>Upcoming Appointments:</h3>
+			<h3>Other Upcoming Appointments:</h3>
 			<div id="links">
 			<table>
 					<% @upcoming_appts.each do |appt|  %>
-						<tr><td><%= link_to user_appointment_path( @user.id, appt.id) do  %><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> @<%= @appointment.time.strftime("%I:%M%p") %><% end %></td></tr>
+						<tr><td>
+							<% if appt.id != @appointment.id %>
+								<%= link_to appointment_path( appt.id) do  %>
+									<%= appt.time.strftime("%m/%d/%Y (%a)") %> @<%= appt.time.strftime("%I:%M%p") %>
+								<% end %>
+							<% else  %>
+								<%= appt.time.strftime("%m/%d/%Y (%a)") %> @<%= appt.time.strftime("%I:%M%p") %>
+							<% end %>
+						</td></tr>
 					<% end %>
 			</table>
 			</div>

@@ -1,12 +1,15 @@
 class SessionsController < ApplicationController
 
+  def log_in
+  end
+
   def create
     @user = User.find_by_email(params[:email])
     session[:user_id] = @user.id
     redirect_to root_path
   end
 
-  def destroy
+  def log_out
     session.destroy
     redirect_to root_path
   end

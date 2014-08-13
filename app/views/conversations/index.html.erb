@@ -5,11 +5,11 @@
 
 	  <!-- <input type="search" placeholder="Search by name" id="inbox-searchbar"> -->
 	  <%= form_tag({controller: "conversations", action: "results"}, method: "post", id: "inbox-searchbar") do %>
-	    <%= search_field( :convos, :results, placeholder: "Search messages" ) %>
+	    <%= search_field( :convos, :results, placeholder: "Search messages by Name" ) %>
 	  <% end %>
 
-	  <a href="#">(Create New Message)</a>
-	  <div id="message-list">
+	  <%= link_to "Create New Message", new_user_conversation_path(@user.id) %>
+	  <div id="message-list" data-ng-controller="inboxController">
 	    <table>
 	    <% @recent_conversations.each do |message| %>
 	      <% if @user.type == "BusinessOwner" && message.conversation.seen_by_business_owner %>

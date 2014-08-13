@@ -1,15 +1,74 @@
 #welcome-info {
-	text-align: center;
+    text-align: center;
 
-	button {
-		display: inline-block;
-	}
+    .navbar-fixed-top.custom {
+        background-color: white;
+
+        .logo {
+            font-weight: bold;
+
+            a {
+                color: black;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .navbar-nav {
+        display: inline-block;
+        float: right;
+        z-index: 500;
+        font-size: 18px;
+        width: 78%;
+
+        li {
+            padding-right: 9%;
+        }
+    }
+
+    .section {
+        padding-bottom: 10%;
+        font-size: 24px;
+
+        p {
+            color: gray;
+        }
+    }
+
+    #splash {
+        background-image: url("splash.jpg");
+        height: 750px;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        font-size: 72px;
+        color: white;
+        z-index: 400;
+
+        #splash-signup {
+            z-index: 500;
+            color: #494848;
+            position: absolute;
+        }
+    }
+
+    #welcome-content {
+        margin-top: 1%;
+        width: 55%;
+        text-align: center;
+        z-index: 2;
+
+        h3 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        i {
+            font-size: 38px;
+            padding-right: 2px;
+        }
+
+    }
 }
-
-
-
-
-
 
 
 

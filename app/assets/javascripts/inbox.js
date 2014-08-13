@@ -1,13 +1,14 @@
 Inbox = {}
-Inbox.Controller = function(){}
+Inbox.controller = function(){}
 
 
-Inbox.Controller.prototype = {
+Inbox.controller.prototype = {
   bind: function(){
     $("#convos_results").keyup(function(e){
       e.preventDefault();
       var inboxSearchTerm = $( '#convos_results' ).val();
-      inboxController.searchBarSubmit(inboxSearchTerm);
+      // console.log(inboxSearchTerm)
+      inboxcontroller.searchBarSubmit(inboxSearchTerm);
     })
   },
 
@@ -17,6 +18,7 @@ Inbox.Controller.prototype = {
       beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
       url: "/conversations/results",
       data: { search_term: searchTerm },
+      dataType: 'json',
       success: function(){ console.log("success") },
       error: function(){ console.log("error") },
     }).done(function(data){
@@ -26,7 +28,8 @@ Inbox.Controller.prototype = {
 }
 
 $(document).ready(function(){
-  inboxController.bind();
+  inboxcontroller.bind();
 })
 
-inboxController = new Inbox.Controller
+inboxcontroller = new Inbox.controller
+//

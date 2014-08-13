@@ -8,7 +8,7 @@
 			<% @appointment_dates.each do |date| %>
 				<h3><%= date.strftime("%A, %b %d %y") %></h3>
 					<table>
-					  <% @appointments.where( "date = ?", Date.new( date.year, date.month, date.day) ).each do |appt| %>
+					  <% @appointments.where( "date = ?", DateTime.new( date.year, date.month, date.day) ).each do |appt| %>
 					  <tr class="appt-row">
 					    <td class="appt-date-col"><%= appt.time.strftime("%m/%d/%Y") %></td>
 					    <td class="appt-time-col">@<%= appt.time.strftime("%I:%M%p") %></td>
@@ -24,6 +24,7 @@
 					      )
 					      <% end %>
 					    </td>
+					    <td class="appt-edit-col"><%= link_to 'Edit', edit_appointment_path(appt.id)  %></td>
 					  </tr>
 					  <% end %>
 					</table>
