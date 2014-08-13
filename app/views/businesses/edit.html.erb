@@ -1,5 +1,5 @@
 <div id="biz-edit">
-	<h1>Edit <%= @business.name %></h1>
+      <h1>Edit <%= @business.name %></h1>
     <%= simple_form_for @business, url: { action: "update"} do |f| %>
       <%= f.input :name %>
       <%= f.input :image_url %>

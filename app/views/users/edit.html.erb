@@ -1,0 +1,14 @@
+<div id="user-edit">
+      <h1>Edit <%= @user.first_name %> <%= @user.last_name %></h1>
+    <%= simple_form_for @user, url: { action: "update"} do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :city %>
+      <%= f.input :state %>
+      <%= f.input :email %>
+      <%= f.input :image_url %>
+      <%= f.input :phone %>
+      <%= f.button :submit %>
+      <%= link_to "Cancel Account", user_path(@user.id), method: :delete, data: { confirm: 'You sure?' } %>
+      <% end %>
+</div>

@@ -11,7 +11,9 @@
 		<p>Owner(s):</p><%= link_to user_path( @biz_owner.id ) do %>
 		<%= image_tag( @biz_owner.image_url, :class => 'biz-owner-img' ) %>
 		<p><%= @biz_owner.first_name %> <%= @biz_owner.last_name %><% end %></p>
-		<button>Message <i class="fa fa-envelope-o"></i></button>
+		<% if @user.type == "Customer" && ( @user.id != @business.business_owner_id ) %>
+			<%= render partial: 'message_biz_button' %>
+		<% end %>
 
 
 	</div>

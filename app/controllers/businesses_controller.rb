@@ -16,6 +16,9 @@ class BusinessesController < ApplicationController
     @user = User.find(session[:user_id])
     @business = Business.find(params[:id])
     @biz_owner = User.find(@business.business_owner_id)
+    if @user.type == "Customer"
+      @conversation = Conversation.find_by_customer_id_and_business_owner_id( @user.id, @biz_owner.id )
+    end
   end
 
   def update
