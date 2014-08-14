@@ -47,6 +47,7 @@ GEM
       addressable (>= 2.3.1)
       extlib (>= 0.9.15)
       multi_json (>= 1.0.0)
+    bcrypt (3.1.7)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -67,6 +68,12 @@ GEM
     columnize (0.8.9)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
+    devise (3.2.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.1)
     extlib (0.9.16)
@@ -91,6 +98,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.10.1)
     multipart-post (2.0.0)
+    orm_adapter (0.5.0)
     pg (0.17.1)
     pg_search (0.7.6)
       activerecord (>= 3.1)
@@ -156,6 +164,8 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     uuidtools (2.1.4)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -165,6 +175,7 @@ DEPENDENCIES
   binding_of_caller
   byebug
   coffee-rails (~> 4.0.0)
+  devise
   google-api-client!
   jbuilder (~> 1.2)
   jquery-rails

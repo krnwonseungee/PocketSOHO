@@ -45,6 +45,9 @@ PocketSOHO::Application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+  # default URL options for mailer (for Devise)
+  config.action_mailer.default_url_options = { host: 'ACTUAL DOMAIN NAME' }
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 

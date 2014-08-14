@@ -36,6 +36,7 @@ group :doc do
 end
 
 gem 'pg_search'
+gem 'devise'
 
 gem "google-api-client", :git => 'git://github.com/krnwonseungee/google-api-ruby-client.git'
 gem 'simple_form'
