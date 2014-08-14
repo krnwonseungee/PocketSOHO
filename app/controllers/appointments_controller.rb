@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
+  before_filter :set_user
 
   def index
-    @user = User.find(session[:user_id])
       if @user.type == "BusinessOwner"
           @appointments = Appointment.where( "business_owner_id = ?", @user.id )
       else
@@ -11,12 +11,10 @@ class AppointmentsController < ApplicationController
   end
 
   def new
-    @user = User.find(session[:user_id])
     @appointment = Appointment.new
   end
 
   def create
-    @user = User.find(session[:user_id])
     @appointment = Appointment.create(
       customer_id: params["appointment"]["customer_id"].to_i,
       business_owner_id: @user.id,
@@ -29,13 +27,11 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
-    @user = User.find(session[:user_id])
     @appointment = Appointment.find(params[:id])
     @appt_person = Customer.find( @appointment.customer_id )
   end
 
   def show
-    @user = User.find(session[:user_id])
     @appointment = Appointment.find( params[:id])
     @business = Business.find(@appointment.business_id)
     if @user.type == "BusinessOwner"
@@ -52,7 +48,6 @@ class AppointmentsController < ApplicationController
   end
 
   def update
-    @user = User.find(session[:user_id])
     @appointment = Appointment.find(params[:id])
     @appointment.update(appointment_params)
     @appointment.update(date: @appointment.time.to_date )
@@ -60,16 +55,18 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(session[:user_id])
   end
 
   def calendar
-    @user = User.find(session[:user_id])
     @appointments_by_date = Appointment.all.group_by(&:date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
 private
+
+  def set_user
+    @user = current_user
+  end
 
   def appointment_params
     params.require(:appointment).permit(:customer_id, :business_owner_id, :business_id, :notes, :time)

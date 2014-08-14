@@ -1,7 +1,7 @@
 class ConversationsController < ApplicationController
+  before_filter :set_user
 
   def index
-    @user = User.find(session[:user_id])
     @recent_conversations = Array.new
     @new_message = Message.new
     if @user.type == "BusinessOwner"
@@ -25,7 +25,6 @@ class ConversationsController < ApplicationController
   end
 
   def new
-    @user = User.find(session[:user_id])
     @very_new_message = Message.new
     @recipient_list = []
     @business_id = @user.business_id
@@ -40,7 +39,6 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    @user = User.find(session[:user_id])
     @current_conversation = Conversation.find(session[:conversation_id])
     @new_message = Message.create( text: params[:message][:text], customer_id: @current_conversation.customer_id, business_owner_id: @current_conversation.business_owner_id, sender_id: @user.id )
     if @user.type == "BusinessOwner"
@@ -53,7 +51,6 @@ class ConversationsController < ApplicationController
 
   def show
     puts "SHOW PARAMS!! #{params}"
-    @user = User.find(session[:user_id])
     puts "USER ID #{@user.id}"
     @new_thread_msg = Message.new
     @conversation = Conversation.find(params[:id])
@@ -81,5 +78,11 @@ class ConversationsController < ApplicationController
     customer_id = params[:search_term]
     Conversation.where( "business_owner_id = ? OR customer_id", business_owner_id, customer_id )
     render :json => MessageSearcher.new.retrieve_relevant_messages(params["search_term"])
+  end
+
+  private
+
+  def set_user
+    @user = current_user
   end
 end

@@ -1,7 +1,7 @@
 class InvoicesController < ApplicationController
+  before_filter :set_user
 
   def index
-    @user = User.find(session[:user_id])
       if @user.type == "BusinessOwner"
         ##FIX
           @invoices = Invoice.where( "business_id = ?", @user.businesses.first.id )
@@ -12,26 +12,26 @@ class InvoicesController < ApplicationController
   end
 
   def create
-    @user = User.find(session[:user_id])
   end
 
   def new
-    @user = User.find(session[:user_id])
   end
 
   def show
-    @user = User.find(session[:user_id])
   end
 
   def edit
-    @user = User.find(session[:user_id])
   end
 
   def update
-    @user = User.find(session[:user_id])
   end
 
   def destroy
-    @user = User.find(session[:user_id])
+  end
+
+  private
+
+  def set_user
+    @user = current_user
   end
 end
