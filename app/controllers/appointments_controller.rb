@@ -12,11 +12,21 @@ class AppointmentsController < ApplicationController
 
   def new
     @appointment = Appointment.new
+    @appt_person_list = {}
+    @business_id = @user.business_id
+      recipient_first_names = Customer.where( "business_id =?", @business_id ).pluck(:first_name)
+      recipient_last_names = Customer.where( "business_id =?", @business_id ).pluck(:last_name)
+      recipient_first_names.each_with_index do |val, i|
+        full_name = recipient_first_names[i] + " " + recipient_last_names[i]
+        @appt_person_list[ full_name ] = Customer.where( "business_id =?", @business_id )[i]
+      end
   end
 
   def create
-    @appointment = Appointment.create(
-      customer_id: params["appointment"]["customer_id"].to_i,
+      customer_name = params[:appointment][:customer_id].split(" ")
+      @appt_person = Customer.find_by_first_name_and_last_name(customer_name[0], customer_name[1])
+      @appointment = Appointment.create(
+      customer_id: @appt_person.id,
       business_owner_id: @user.id,
       business_id: params["appointment"]["business_id"].to_i,
       notes: params["appointment"]["notes"],

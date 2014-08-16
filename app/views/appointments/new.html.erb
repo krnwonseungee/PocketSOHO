@@ -1,7 +1,8 @@
+<h1>Create an Appointment</h1>
 <%= form_for @appointment do |f| %>
   <div class="field">
-    <%= f.label :customer_id %><br />
-    <%= f.text_field :customer_id %>
+    <%= f.label :customer_id, as: 'Appointment with' %><br />
+    <%= f.select :customer_id, @appt_person_list.keys %><br />
   </div>
   <div class="field">
     <%= f.label :business_id %><br />
