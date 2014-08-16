@@ -8,7 +8,9 @@ app.controller('inboxController', ['$scope', '$http', function($scope, $http){
   $http.get("/users/" + userId + "/conversations.json").success(function(data){
     $scope.messages = data;
     console.log(b=$scope.messages)
-  })
+  });
+
+  $scope.searchWords = "";
 }])
 
 

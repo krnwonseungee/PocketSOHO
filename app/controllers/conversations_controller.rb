@@ -10,7 +10,8 @@ class ConversationsController < ApplicationController
           message_attr_hash = thread.messages.last.attributes
           message_attr_hash[:sender_name] = Customer.find(message_attr_hash['customer_id']).first_name + ' ' + Customer.find(message_attr_hash['customer_id']).last_name
           message_attr_hash[:read_by_current_user] = thread.seen_by_business_owner
-          message_attr_hash[:abbrev_text] = message_attr_hash['text'][0..60]
+          message_attr_hash[:abbrev_text] = message_attr_hash['text'][0..60] + "..."
+          message_attr_hash[:formatted_updated_at] = message_attr_hash['updated_at'].strftime("%m/%d/%Y %I:%M%p")
         @recent_conversations << message_attr_hash
         # byebug
       end
@@ -19,9 +20,10 @@ class ConversationsController < ApplicationController
       # @recipient_list = BusinessOwner.where( business_id: @user.business_id ).pluck(:first_name) #FIX SO BUSINESS2 SHOWS
       Conversation.where("customer_id = ?", @user.id ).each do |thread|
           message_attr_hash = thread.messages.last.attributes
-          message_attr_hash['sender_name'] = Customer.find(message_attr_hash['business_owner_id']).first_name + ' ' + Customer.find(message_attr_hash['business_owner_id']).last_name
+          message_attr_hash['sender_name'] = BusinessOwner.find(message_attr_hash['business_owner_id']).first_name + ' ' + BusinessOwner.find(message_attr_hash['business_owner_id']).last_name
           message_attr_hash['read_by_current_user'] = thread.seen_by_customer
-          message_attr_hash['abbrev_text'] = message_attr_hash['text'][0..60]
+          message_attr_hash['abbrev_text'] = message_attr_hash['text'][0..60] + "..."
+          message_attr_hash[:formatted_updated_at] = message_attr_hash['updated_at'].strftime("%m/%d/%Y %I:%M%p")
         @recent_conversations << message_attr_hash
       end
     end
