@@ -1,19 +1,18 @@
 class BusinessesController < ApplicationController
+  before_filter :set_user
+
   def new
-    @user = User.find(session[:user_id])
   end
 
   def create
-    @user = User.find(session[:user_id])
+    Business.create(business_params)
   end
 
   def edit
-    @user = User.find(session[:user_id])
     @business = Business.find(params[:id])
   end
 
   def show
-    @user = User.find(session[:user_id])
     @business = Business.find(params[:id])
     @biz_owner = User.find(@business.business_owner_id)
     if @user.type == "Customer"
@@ -22,19 +21,21 @@ class BusinessesController < ApplicationController
   end
 
   def update
-    @user = User.find(session[:user_id])
     @business = Business.find(params[:id])
     @business.update( business_params )
     redirect_to root_path
   end
 
   def destroy
-    @user = User.find(session[:user_id])
     @business = Business.find(params[:id])
     @business.destroy
   end
 
   private
+
+  def set_user
+    @user = current_user
+  end
 
   def business_params
     params.require(:business).permit(:name, :location, :slogan, :image_url, :city, :state, :description)

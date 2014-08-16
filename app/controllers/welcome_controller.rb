@@ -1,9 +1,9 @@
 class WelcomeController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:settings]
+  before_filter :set_user
 
   def index
-    if session[:user_id]
-      @user = User.find(session[:user_id])
+    if user_signed_in?
       @businesses = Business.all #change to find_by_user_id
       @unread_conversations = Array.new
 
@@ -29,9 +29,12 @@ class WelcomeController < ApplicationController
   end
 
   def settings
-    @user = User.find(session[:user_id])
     @businesses = Business.all #change to find_by_user_id
   end
 
 private
+
+  def set_user
+    @user = current_user
+  end
 end
