@@ -8,6 +8,7 @@
 	  <input type="search" placeholder="Search messages" id="inbox-searchbar" ng-model="searchWords">
 
 	  <div id="message-list">
+
 	    <table>
 		       <tr class="msg-row" ng-repeat="message in messages | filter: searchWords" ng-style="{ 'font-weight': getReadStatus(message) }">
 

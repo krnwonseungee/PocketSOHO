@@ -36,18 +36,20 @@
     }
 
     #splash {
-        background-image: url("splash.jpg");
-        height: 750px;
+        background-image: url("splash2.jpg");
+        height: 450px;
         background-size: 100% auto;
         background-repeat: no-repeat;
-        font-size: 72px;
+        font-size: 48px;
         color: white;
-        z-index: 400;
+        z-index: 2;
 
         #splash-signup {
-            z-index: 500;
+            z-index: 5;
             color: #494848;
             position: absolute;
+            top: 30%;
+            left: 30%;
         }
     }
 
