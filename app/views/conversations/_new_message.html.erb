@@ -1,5 +1,9 @@
 <%= form_for @new_message, url: {action: "create"}, html: {class: "new_message"} do |f| %>
+<% if @user.type =="BusinessOwner" %>
   <p><label>Recipient:</label><%= f.select :customer_id, @recipient_list.keys  %></p>
+<% else %>
+  <p><label>Recipient:</label><%= f.select :business_owner_id, @recipient_list.keys  %></p>
+<% end %>
   <p><%= f.text_area :text, size: "60x12" %></p>
   <p><%= f.submit "Create" %></p>
 <% end %>

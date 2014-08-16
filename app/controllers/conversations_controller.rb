@@ -46,15 +46,20 @@ class ConversationsController < ApplicationController
         full_name = recipient_first_names[i] + " " + recipient_last_names[i]
         @recipient_list[ full_name ] = Customer.where( "business_id =?", @business_id )[i]
       end
+    else
+      recipient_first_names = BusinessOwner.where( "business_id =?", @business_id ).pluck(:first_name)
+      recipient_last_names = BusinessOwner.where( "business_id =?", @business_id ).pluck(:last_name)
+      recipient_first_names.each_with_index do |val, i|
+        full_name = recipient_first_names[i] + " " + recipient_last_names[i]
+        @recipient_list[ full_name ] = BusinessOwner.where( "business_id =?", @business_id )[i]
+      end
     end
   end
 
   def create
     puts "CREATE!! #{params}"
     puts "SESSION IN CREATE!! #{session[:conversation_id]}"
-    @current_business = Business.find_by_business_owner_id(@user.id)
-    # creating message from CONVERSATIONS#NEW
-    # byebug
+    @current_business = Business.find(@user.business_id)
     if params[:message][:customer_id]
       customer_name = params[:message][:customer_id].split(" ")
       @recipient = Customer.find_by_first_name_and_last_name(customer_name[0], customer_name[1])
