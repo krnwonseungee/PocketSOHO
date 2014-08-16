@@ -3,13 +3,19 @@
 
 	  <div class="banner"><h1>My Inbox</h1></div>
 
-	  <!-- <input type="search" placeholder="Search by name" id="inbox-searchbar"> -->
-	  <%= form_tag({controller: "conversations", action: "results"}, method: "post", id: "inbox-searchbar") do %>
+	  <!--<%= form_tag({controller: "conversations", action: "results"}, method: "post", id: "inbox-searchbar") do %>
 	    <%= search_field( :convos, :results, placeholder: "Search messages by Name" ) %>
-	  <% end %>
+	  <% end %>-->
 
 	  <%= link_to "Create New Message", new_user_conversation_path(@user.id) %>
-	  <div id="message-list" data-ng-controller="inboxController">
+
+	  <div id="results-msg-list" ng-controller="inboxController">
+		<input type="search" placeholder="Search by name" id="inbox-searchbar" ng-model="test">
+		<h1>Hello {{test}}</h1>
+	  </div>
+
+
+	  <div id="message-list">
 	    <table>
 	    <% @recent_conversations.each do |message| %>
 	      <% if @user.type == "BusinessOwner" && message.conversation.seen_by_business_owner %>

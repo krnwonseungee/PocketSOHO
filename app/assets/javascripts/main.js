@@ -1,4 +1,4 @@
-// app = angular.module('pocketSOHO', []);
+app = angular.module('pocketSOHO', []);
 
 // $('a[href^=#]').on('click',function(e) {
 //     e.preventDefault();
