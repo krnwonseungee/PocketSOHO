@@ -1,7 +1,7 @@
 //isolates user id by parsing through URL
 var userId = window.location.href.split("/")[4]
-// console.log(a=userId)
 
+///////////////////////////////////////////////////////////////
 // creates inbox controller
 app.controller('inboxController', ['$scope', '$http', function($scope, $http){
 
@@ -11,41 +11,22 @@ app.controller('inboxController', ['$scope', '$http', function($scope, $http){
   });
 
   $scope.searchWords = "";
+
+  $scope.getReadStatus = function(message){
+    if(message.read_by_current_user == false){
+      return "bold";
+    }
+    else {
+      return "normal";
+    }
+  }
+
+  $scope.noResults = function(numberResults){
+    if(numberResults == 0){
+      return "block"
+    }
+    else{
+      return "none"
+    }
+  }
 }])
-
-
-// Inbox = {}
-// Inbox.controller = function(){}
-
-
-// Inbox.controller.prototype = {
-//   bind: function(){
-//     $("#convos_results").keyup(function(e){
-//       e.preventDefault();
-//       var inboxSearchTerm = $( '#convos_results' ).val();
-//       // console.log(inboxSearchTerm)
-//       inboxcontroller.searchBarSubmit(inboxSearchTerm);
-//     })
-//   },
-
-//   searchBarSubmit: function(searchTerm){
-//     $.ajax({
-//       type: 'post',
-//       beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-//       url: "/conversations/results",
-//       data: { search_term: searchTerm },
-//       dataType: 'json',
-//       success: function(){ console.log("success") },
-//       error: function(){ console.log("error") },
-//     }).done(function(data){
-//       console.log(data)
-//     })
-//   },
-// }
-
-// $(document).ready(function(){
-//   inboxcontroller.bind();
-// })
-
-// inboxcontroller = new Inbox.controller
-// //
