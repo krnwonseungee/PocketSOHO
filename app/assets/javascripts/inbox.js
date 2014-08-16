@@ -11,6 +11,16 @@ app.controller('inboxController', ['$scope', '$http', function($scope, $http){
   });
 
   $scope.searchWords = "";
+
+  $scope.getReadStatus = function(message){
+    // debugger
+    if(message.read_by_current_user == false){
+      return "bold";
+    }
+    else {
+      return "normal";
+    }
+  }
 }])
 
 

@@ -11,7 +11,7 @@ class ConversationsController < ApplicationController
           message_attr_hash[:sender_name] = Customer.find(message_attr_hash['customer_id']).first_name + ' ' + Customer.find(message_attr_hash['customer_id']).last_name
           message_attr_hash[:read_by_current_user] = thread.seen_by_business_owner
           message_attr_hash[:abbrev_text] = message_attr_hash['text'][0..60] + "..."
-          message_attr_hash[:formatted_updated_at] = message_attr_hash['updated_at'].strftime("%m/%d/%Y %I:%M%p")
+          message_attr_hash[:formatted_updated_at] = message_attr_hash['updated_at'].strftime("%m/%d/%Y @%I:%M%p")
         @recent_conversations << message_attr_hash
         # byebug
       end
@@ -23,7 +23,7 @@ class ConversationsController < ApplicationController
           message_attr_hash['sender_name'] = BusinessOwner.find(message_attr_hash['business_owner_id']).first_name + ' ' + BusinessOwner.find(message_attr_hash['business_owner_id']).last_name
           message_attr_hash['read_by_current_user'] = thread.seen_by_customer
           message_attr_hash['abbrev_text'] = message_attr_hash['text'][0..60] + "..."
-          message_attr_hash[:formatted_updated_at] = message_attr_hash['updated_at'].strftime("%m/%d/%Y %I:%M%p")
+          message_attr_hash[:formatted_updated_at] = message_attr_hash['updated_at'].strftime("%m/%d/%Y @%I:%M%p")
         @recent_conversations << message_attr_hash
       end
     end
@@ -54,21 +54,25 @@ class ConversationsController < ApplicationController
     puts "SESSION IN CREATE!! #{session[:conversation_id]}"
     @current_business = Business.find_by_business_owner_id(@user.id)
     # creating message from CONVERSATIONS#NEW
+    # byebug
     if params[:message][:customer_id]
       customer_name = params[:message][:customer_id].split(" ")
-      @recipient_customer = Customer.find_by_first_name_and_last_name(customer_name[0], customer_name[1])
-      if @user.type == "BusinessOwner"
-        @new_message = Message.create(text: params[:message][:text], business_owner_id: @user.id, customer_id: @recipient_customer.id, business_id: @current_business.id, sender_id: @user.id)
-        @new_message.conversation.update( seen_by_customer: false )
-        redirect_to user_conversation_path( @user.id, @new_message.conversation.id )
-      else
-        #TENTATIVE (if customer is creating new conversation w/biz owner)
-      end
-    # creating message from CONVERSATIONS#SHOW
+      @recipient = Customer.find_by_first_name_and_last_name(customer_name[0], customer_name[1])
+      @new_message = Message.create(text: params[:message][:text], business_owner_id: @user.id, customer_id: @recipient.id, business_id: @current_business.id, sender_id: @user.id)
+      @new_message.conversation.update( seen_by_customer: false )
+      redirect_to user_conversation_path( @user.id, @new_message.conversation.id )
+
+    elsif params[:message][:business_owner_id]
+      business_owner_name = params[:message][:business_owner_id].split(" ")
+      @recipient = BusinessOwner.find_by_first_name_and_last_name(business_owner_name[0], business_owner_name[1])
+      @new_message = Message.create(text: params[:message][:text], business_owner_id: @recipient.id, customer_id: @user.id, business_id: @current_business.id, sender_id: @user.id)
+      @new_message.conversation.update( seen_by_business_owner: false )
+      redirect_to user_conversation_path( @user.id, @new_message.conversation.id )
+
     else
       @current_conversation = Conversation.find(session[:conversation_id])
       @new_message = Message.create( text: params[:message][:text], customer_id: @current_conversation.customer_id, business_owner_id: @current_conversation.business_owner_id, sender_id: @user.id )
-      @new_message.conversation.update( seen_by_customer: false )
+      @user.type == "BusinessOwner"? @new_message.conversation.update( seen_by_customer: false ) : @new_message.conversation.update( seen_by_business_owner: false )
       redirect_to user_conversation_path( @user.id, session[:conversation_id] )
     end
   end

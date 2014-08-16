@@ -3,31 +3,24 @@
 
 	  <div class="banner"><h1>My Inbox</h1></div>
 
-	  <!--<%= form_tag({controller: "conversations", action: "results"}, method: "post", id: "inbox-searchbar") do %>
-	    <%= search_field( :convos, :results, placeholder: "Search messages by Name" ) %>
-	  <% end %>-->
-
 	  <%= link_to "Create New Message", new_user_conversation_path(@user.id) %>
 
-	  <input type="search" placeholder="Search by name" id="inbox-searchbar" ng-model="searchWords">
-	  <h1>Hello {{searchWords}}</h1>
+	  <input type="search" placeholder="Search messages" id="inbox-searchbar" ng-model="searchWords">
 
 	  <div id="message-list">
 	    <table>
-	        <tr class="msg-row" ng-repeat="message in messages | filter: searchWords">
+		       <tr class="msg-row" ng-repeat="message in messages | filter: searchWords" ng-style="{ 'font-weight': getReadStatus(message) }">
+		       <!-- <tr class="msg-row" ng-repeat="message in messages | filter: searchWords" style="font-weight:bold" ng-if="message.read_by_current_user == 'false'"> -->
 
-	        <td class="msg-sender-col">
-	        	{{message.sender_name}}
-	        </td>
-	        <td class="msg-date-col">
-	        	{{message.formatted_updated_at}}
-	        </td>
-	        <td class="msg-text-col">
-	        	<a href="/users/{{message.sender_id}}/conversations/{{message.conversation_id}}" >
-	        	{{message.abbrev_text}}
-		     </a>
-	        </td>
-	      </tr>
+		        <td class="msg-sender-col">{{message.sender_name}}</td>
+		        <td class="msg-date-col">{{message.formatted_updated_at}}</td>
+		        <td class="msg-text-col">
+		        	<a href="/users/{{message.sender_id}}/conversations/{{message.conversation_id}}" >
+		        	{{message.abbrev_text}}
+			     </a>
+		        </td>
+
+		      </tr>
 	    </table>
 	  </div>
 
