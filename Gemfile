@@ -40,6 +40,8 @@ gem 'devise'
 
 gem "google-api-client", :git => 'git://github.com/krnwonseungee/google-api-ruby-client.git'
 gem 'simple_form'
+# gem 'omniauth'
+# gem 'omniauth-linkedin'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
