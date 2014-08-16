@@ -20,4 +20,13 @@ app.controller('inboxController', ['$scope', '$http', function($scope, $http){
       return "normal";
     }
   }
+
+  $scope.noResults = function(numberResults){
+    if(numberResults == 0){
+      return "block"
+    }
+    else{
+      return "none"
+    }
+  }
 }])
