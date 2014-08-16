@@ -25,7 +25,7 @@ class ConversationsController < ApplicationController
   end
 
   def new
-    @very_new_message = Message.new
+    @new_message = Message.new
     @recipient_list = {}
     @business_id = @user.business_id
     if @user.type == "BusinessOwner"
