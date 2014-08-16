@@ -5,6 +5,7 @@ class BusinessesController < ApplicationController
   end
 
   def create
+    Business.create(business_params)
   end
 
   def edit
