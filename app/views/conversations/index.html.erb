@@ -10,10 +10,10 @@
 	  <div id="message-list">
 	    <table>
 		       <tr class="msg-row" ng-repeat="message in messages | filter: searchWords" ng-style="{ 'font-weight': getReadStatus(message) }">
-		       <!-- <tr class="msg-row" ng-repeat="message in messages | filter: searchWords" style="font-weight:bold" ng-if="message.read_by_current_user == 'false'"> -->
 
 		        <td class="msg-sender-col">{{message.sender_name}}</td>
 		        <td class="msg-date-col">{{message.formatted_updated_at}}</td>
+
 		        <td class="msg-text-col">
 		        	<a href="/users/{{message.sender_id}}/conversations/{{message.conversation_id}}" >
 		        	{{message.abbrev_text}}
