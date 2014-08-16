@@ -5,12 +5,12 @@ var userId = window.location.href.split("/")[4]
 // creates inbox controller
 app.controller('inboxController', ['$scope', '$http', function($scope, $http){
 
-  $scope.test = "Test Value"
+  $http.get("/users/" + userId + "/conversations.json").success(function(data){
+    $scope.messages = data;
+    console.log(b=$scope.messages)
+  });
 
-  // $http.get("/users/" + userId + "/conversations.json").success(function(data){
-  //   $scope.messages = data;
-  //   console.log(b=$scope.messages)
-  // })
+  $scope.searchWords = "";
 }])
 
 
