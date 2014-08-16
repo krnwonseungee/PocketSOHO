@@ -7,16 +7,25 @@ class ConversationsController < ApplicationController
     if @user.type == "BusinessOwner"
         # @recipient_list = Customer.where( business_id: Business.where( "business_owner_id = ? ", @user.id).pluck(:id) ).pluck(:first_name)
         Conversation.where("business_owner_id = ?", @user.id ).each do |thread|
-        @recent_conversations << thread.messages.last
+          message_attr_hash = thread.messages.last.attributes
+          message_attr_hash[:sender_name] = Customer.find(message_attr_hash['customer_id']).first_name + ' ' + Customer.find(message_attr_hash['customer_id']).last_name
+          message_attr_hash[:read_by_current_user] = thread.seen_by_business_owner
+          message_attr_hash[:abbrev_text] = message_attr_hash['text'][0..60]
+        @recent_conversations << message_attr_hash
+        # byebug
       end
 
     else
       # @recipient_list = BusinessOwner.where( business_id: @user.business_id ).pluck(:first_name) #FIX SO BUSINESS2 SHOWS
       Conversation.where("customer_id = ?", @user.id ).each do |thread|
-        @recent_conversations << thread.messages.last
+          message_attr_hash = thread.messages.last.attributes
+          message_attr_hash['sender_name'] = Customer.find(message_attr_hash['business_owner_id']).first_name + ' ' + Customer.find(message_attr_hash['business_owner_id']).last_name
+          message_attr_hash['read_by_current_user'] = thread.seen_by_customer
+          message_attr_hash['abbrev_text'] = message_attr_hash['text'][0..60]
+        @recent_conversations << message_attr_hash
       end
     end
-      @recent_conversations.sort_by!{ |msg| msg.updated_at }.reverse!
+      @recent_conversations.sort_by!{ |msg| msg['updated_at'] }.reverse!
 
       respond_to do |format|
         format.html

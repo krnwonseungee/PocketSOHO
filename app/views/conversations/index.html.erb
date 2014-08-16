@@ -1,4 +1,4 @@
-<div id="inbox">
+<div id="inbox" ng-controller="inboxController">
 	<div class="user-content">
 
 	  <div class="banner"><h1>My Inbox</h1></div>
@@ -9,37 +9,28 @@
 
 	  <%= link_to "Create New Message", new_user_conversation_path(@user.id) %>
 
-	  <div id="results-msg-list" ng-controller="inboxController">
-		<input type="search" placeholder="Search by name" id="inbox-searchbar" ng-model="test">
-		<h1>Hello {{test}}</h1>
-	  </div>
+	  <input type="search" placeholder="Search by name" id="inbox-searchbar" ng-model="test">
+	  <h1>Hello {{test}}</h1>
 
 
 	  <div id="message-list">
 	    <table>
 	    <% @recent_conversations.each do |message| %>
-	      <% if @user.type == "BusinessOwner" && message.conversation.seen_by_business_owner %>
-	        <tr class="msg-row">
-	      <% elsif @user.type == "Customer" && message.conversation.seen_by_customer %>
+  	      <% if  message[:read_by_current_user] == true %>
 	        <tr class="msg-row">
 	      <% else %>
 	        <tr style="font-weight:bold" class="msg-row">
 	      <% end %>
 
 	        <td class="msg-sender-col">
-	          <% if @user.type == "BusinessOwner" %>
-	            <%= Customer.find(message.customer_id).first_name  %>
-	            <%= Customer.find(message.customer_id).last_name  %>
-	          <% else  %>
-	            <%= BusinessOwner.find(message.business_owner_id).first_name %> Biz
-	          <% end %>
+	          <%= message[:sender_name] %>
 	        </td>
 	        <td class="msg-date-col">
-	          <%= message.updated_at.strftime("%m/%d/%Y %I:%M%p") %>
+	          <%= message['updated_at'].strftime("%m/%d/%Y %I:%M%p") %>
 	        </td>
 	        <td class="msg-text-col">
-	          <%= link_to user_conversation_path(@user, message.conversation_id) do %>
-	          <%= message.text[0..60] %>...
+	          <%= link_to user_conversation_path(@user, message['conversation_id']) do %>
+	          <%= message[:abbrev_text]%>...
 	          <% end %>
 	        </td>
 	      </tr>
