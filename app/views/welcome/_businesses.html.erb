@@ -12,7 +12,7 @@
         <td class="biz-name-col"><%= link_to business_path(business) do %><%= business.name %><% end %></td>
         <td class="biz-img-col"><%= link_to business_path(business) do %><%= image_tag( business.image_url, :class => 'biz-img' ) %><% end %></td>
 
-      <td class="biz-edit-col"><%= link_to 'Edit', edit_business_path(business.id)  %></td>
+      <td class="biz-slogan-col"><%= link_to 'Edit', edit_business_path(business.id)  %></td>
 
     </tr>
   <% end %>

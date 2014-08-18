@@ -1,8 +1,10 @@
 <h3>My Upcoming Appointments</h3>
+<% if @user.type == "BusinessOwner" %>
 <div class="create-new-appt">
   <i class="fa fa-minus-circle"></i>
   <%= link_to 'Create New', new_appointment_path%>
 </div>
+<% end %>
 
   <span class="sync-cal">
     <i class="fa fa-refresh"></i>

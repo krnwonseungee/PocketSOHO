@@ -9,7 +9,7 @@
   <% end %>
 </td>
 <td class="msg-date-col">
-  <%= message.updated_at.strftime("%m/%d/%Y %I:%M%p") %>
+  <%= message.updated_at.strftime("%m/%d/%Y @%I:%M%p") %>
 </td>
 <td class="msg-text-col">
   <%= link_to user_conversation_path(@user, message.conversation_id) do %>
