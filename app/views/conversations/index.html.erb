@@ -2,12 +2,13 @@
 	<div class="user-content">
 
 	  <div class="banner"><h1>My Inbox</h1></div>
-
+	  <% if @recent_conversations.length != 0 %>
 	  <%= link_to "Create New Message", new_user_conversation_path(@user.id) %>
+	  <% end %>
 
 	  <input type="search" placeholder="Search messages" id="inbox-searchbar" ng-model="searchWords">
 
-  	<div id="no-messages" ng-style=" { 'display': noResults((messages | filter: searchWords).length) }">Your search returned no results.</div>
+  	<div id="no-messages" ng-style=" { 'display': noResults((messages | filter: searchWords).length) }">No Messages. Click <%= link_to "here", new_user_conversation_path(@user.id) %> to create a message. </div>
 
 	  <div id="message-list" >
 

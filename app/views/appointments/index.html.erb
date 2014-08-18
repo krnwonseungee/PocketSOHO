@@ -4,6 +4,11 @@
 			<h1>My Appointments</h1>
 			<%= link_to "Calendar View", appointments_calendar_path %>
 		</div>
+			<% if @appointments.length == 0 %>
+				<div id="no-appts">
+					<p>You have no appointments scheduled right now. Click <%= link_to "here", new_appointment_path %> to schedule one. :) </p>
+				</div>
+			<% end %>
 
 			<% @appointment_dates.each do |date| %>
 				<h3><%= date.strftime("%A, %b %d %y") %></h3>

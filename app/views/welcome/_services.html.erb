@@ -1,3 +1,18 @@
 <h3>My Services</h3>
+<!--
+Not adding search functionality for now
 <i class="fa fa-minus-circle"></i>
 <a href="#">Search for Businesses</a>
+-->
+<table>
+  <% @businesses.each do |business| %>
+    <tr class="biz-row">
+
+        <td class="biz-name-col"><%= link_to business_path(business) do %><%= business.name %><% end %></td>
+        <td class="biz-img-col"><%= link_to business_path(business) do %><%= image_tag( business.image_url, :class => 'biz-img' ) %><% end %></td>
+
+      <td class="biz-edit-col"><%= business.slogan %></td>
+
+    </tr>
+  <% end %>
+</table>
