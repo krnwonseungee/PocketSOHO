@@ -4,7 +4,11 @@
     <br><br>
     <div class="banner">
         <h4><%= @profile_user.type %></h4>
-        <h2><%= Business.find( @profile_user.business_id ).name %></h2>
+        <% if @profile_user.business_id %>
+            <h2><%= Business.find( @profile_user.business_id ).name %></h2>
+        <% else %>
+            <%= link_to "Create a Business", new_business_path %>
+        <% end %>
     </div>
     <%= image_tag( @profile_user.image_url, :class => 'user-img' ) %>
 
