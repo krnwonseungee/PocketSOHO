@@ -2,10 +2,11 @@ class UsersController < ApplicationController
   before_filter :set_user
 
   def new
+    @new_customer = @user.businesses.first.customers.new
   end
 
   def create
-
+    @new_customer = @user.businesses.first.customers.new
   end
 
   def edit
@@ -21,7 +22,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    user_params = params[:user]
+
+    user_params = params[@user.class.name.underscore.downcase.to_sym]
     user_params.permit!
     @user.update( user_params )
     redirect_to user_path(@user)
