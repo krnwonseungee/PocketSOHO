@@ -2,10 +2,13 @@ class BusinessesController < ApplicationController
   before_filter :set_user
 
   def new
+    @new_business = Business.new
   end
 
   def create
-    Business.create(business_params)
+    @new_business = Business.create(business_params)
+    @new_business.update( business_owner_id: @user.id )
+    redirect_to root_path
   end
 
   def edit
