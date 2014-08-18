@@ -14,7 +14,7 @@ class CreateBusinessesAndUsers < ActiveRecord::Migration
       t.string :last_name
       t.string :location
       t.string :email
-      t.string :image_url
+      t.string :image_url, default: "http://www.imcslc.ca/imc/includes/themes/imc/images/layout/img_placeholder_avatar.jpg"
       t.string :type
       t.timestamps
     end
