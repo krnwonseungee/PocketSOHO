@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    user_params = params[:business_owner] || params[:customer]
+    user_params = params[:user]
     user_params.permit!
     @user.update( user_params )
     redirect_to user_path(@user)
