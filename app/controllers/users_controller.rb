@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @new_customer = @user.businesses.first.customers.new
+    @new_customer = @user.businesses.first.customers.create(params[:customer])
+    redirect_to root_path
   end
 
   def edit
