@@ -1,0 +1,25 @@
+<div id="show-invoice">
+  <div class="user-content">
+    <br><br>
+    <div class="invoice-title"><h1>Invoice Due <%= @invoice.due_date.strftime('%_m/%-d/%Y') %></h1>
+      <p><%= @invoice.business.name %></p>
+    </div>
+
+    <table>
+      <tr><td>Customer: <%= @invoice.customer.first_name %> <%= @invoice.customer.last_name %></td></tr>
+      <tr><td>Location: <%= @invoice.customer.city %>, <%= @invoice.customer.state %></td></tr>
+      <tr><td>E-mail: <%= @invoice.customer.email %></td></tr>
+    </table>
+
+    <button>Pay</button>
+
+    <div id="total-due">Total Due: $<%= number_with_precision(@invoice.amount, delimiter: ',', precision: 2 ) %></div>
+
+
+
+
+
+
+
+  </div>
+</div>
