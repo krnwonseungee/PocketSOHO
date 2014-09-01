@@ -1,15 +1,62 @@
-<h2>Sign in</h2>
+<%= stylesheet_link_tag "mvpready-admin" %>
+<body class="account-bg">
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
+  <div class="account-wrapper">
+
+    <div class="account-body">
+
+      <h3>Welcome back to pocketSOHO.</h3>
+
+      <h5>Please sign in to get access. :)</h5>
+
+      <br>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <a href="javascript:;" class="btn btn-twitter btn-block">
+          <i class="fa fa-twitter"></i>
+          &nbsp;&nbsp;Login with Twitter
+          </a>
+        </div> <!-- /.col -->
+
+        <div class="col-sm-6">
+          <a href="javascript:;" class="btn btn-facebook btn-block">
+          <i class="fa fa-facebook"></i>
+          &nbsp;&nbsp;Login with Facebook
+          </a>
+        </div> <!-- /.col -->
+
+      </div> <!-- /.row -->
+
+      <span class="account-or-social text-muted">OR, SIGN IN BELOW</span>
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form account-form'}) do |f| %>
+  <div class="form-group">
+    <%= f.input :email, required: false, autofocus: true, label: false, placeholder: "Email", input_html: {class: 'form-control'} %>
+    <%= f.input :password, required: false, label: false, placeholder: "Password", input_html: {class: 'form-control'} %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign in" %>
+    <button type="submit" class="btn btn-primary btn-block btn-lg" tabindex="4">Signin &nbsp; <i class="fa fa-play-circle"></i></button>
   </div>
 <% end %>
 
+    </div> <!-- /.account-body -->
+
 <%= render "devise/shared/links" %>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Core JS -->
+<script src="./js/libs/jquery-1.10.2.min.js"></script>
+<script src="./js/libs/bootstrap.min.js"></script>
+
+<!--[if lt IE 9]>
+<script src="./js/libs/excanvas.compiled.js"></script>
+<![endif]-->
+<!-- App JS -->
+
+
+</body>
+
