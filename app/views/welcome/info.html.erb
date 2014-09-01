@@ -1,66 +1,1086 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-	<title>PocketSOHO - Sign Up Now!</title>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300,700' rel='stylesheet' type='text/css'>
+  <title>PocketSOHO: The best business app for individual service providers.</title>
 
-	<%= javascript_include_tag 'main' %>
-	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Favicon -->
+  <%= favicon_link_tag 'favicon.ico' %>
+
+  <!-- Google Font: Open Sans -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300,700">
+
+  <!-- Font Awesome CSS -->
+  <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' %>
+
+  <!-- Bootstrap CSS -->
+  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+
+  <!-- App CSS -->
+  <%= stylesheet_link_tag 'mvpready-landing' %>
+  <%= stylesheet_link_tag 'mvpready-flat' %>
+  <%= stylesheet_link_tag 'animate' %>
+   <%= stylesheet_link_tag 'custom' %>
+
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+
+
 </head>
-<body>
-	<div id="welcome-info">
-		<div class="navbar navbar-fixed-top custom" role="navigation">
-			<div class="container">
-			<div class="logo"><a href="#"><h1>PocketSOHO</h1></a></div>
-				<ul class="nav navbar-nav">
-					<li><a href="#about">ABOUT</a></li>
-					<li><a href="#why-us">WHY US?</a></li>
-					<li><a href="#connect">CONNECT</a></li>
-					<li id="log-in"><a href="/users/sign_in">LOG IN</a></li>
-				</ul>
-			</div>
-		</div>
-		<div id="splash">
-			<div id="splash-signup">
-				<p><i class="fa fa-calendar"></i> Schedule appointments with ease</p>
-				<p><i class="fa fa-envelope-o"></i> Send messages to your clients</p>
-				<p><i class="fa fa-usd"></i> GET PAID!</p>
-			</div>
-		</div>
-		<div class="container" id="welcome-content">
-			<div class="section" id="about">
-				<h3>About</h3>
-				<p>Tablet publishing HTML5 mobile first really simple syndication meetups white board walls. User experience iterate algorithm gamification semantic web value add market research stealth. </p>
-			</div>
 
-			<div class="section" id="why-us">
-				<h3>Why Us</h3>
-				<p>Accelerator photo sharing business school drop out ramen hustle crush it revenue traction platforms. Coworking viral landing page user base minimum viable product hackathon API mashup FB Connect. </p>
-			</div>
+<body class=" ">
 
-			<div class="section" id="connect">
-				<h3>Connect</h3>
-				<p>Connect with us! :) </p>
-				<p>
-					<a href="#"><i class="fa fa-facebook-square"></i></a>
-					<a href="#"><i class="fa fa-linkedin-square"></i></a>
-					<a href="#"><i class="fa fa-google-plus-square"></i></a>
-					<a href="#"><i class="fa fa-phone-square"></i></a>
-					<a href="#"><i class="fa fa-envelope-square"></i></a>
-				</p>
-			</div>
+<div id="wrapper">
+
+  <header class="navbar navbar-inverse" role="banner">
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <a href="http://www.pocketsoho.com/" class="navbar-brand navbar-brand-img">
+          <%= image_tag("logo1.svg", alt: "pocketSOHO", id: "logo") %>
+          <!-- <img id="logo" src="./img/logo1.svg" alt="pocketSOHO"> -->
+        </a>
+
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="fa fa-bars"></i>
+        </button>
+      </div> <!-- /.navbar-header -->
 
 
-		</div>
-	</div>
+      <nav class="collapse navbar-collapse" role="navigation">
+
+        <ul class="nav navbar-nav navbar-right mainnav-menu">
+
+          <li class="active">
+            <a href="./index.html">Home</a>
+          </li>
+
+          <li class="">
+            <a href="#">About</a>
+          </li>
+
+          <li class="">
+            <a href="#">Team</a>
+          </li>
+
+          <li class="">
+            <a href="#">Pricing</a>
+          </li>
+
+          <li class="">
+            <a href="#">Contact</a>
+          </li>
+
+          <!-- <li class="dropdown">
+
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+            Dropdown
+            <i class="mainnav-caret"></i>
+            </a>
+
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="./page-notifications.html">
+                <i class="fa fa-bell"></i>
+                &nbsp;&nbsp;Notifications
+                </a>
+              </li>
+
+              <li>
+                <a href="./components-icons.html">
+                <i class="fa fa-smile-o"></i>
+                &nbsp;&nbsp;Font Icons
+                </a>
+              </li>
+
+            </ul>
+
+          </li> -->
+
+          <li>
+            <a href="../admin/account-login-social.html">Login</a>
+          </li>
+
+        </ul>
+
+        <!-- <ul class="nav navbar-nav navbar-social navbar-left">
+
+          <li>
+            <a href="javascript:;" class="ui-tooltip" title="Facebook" data-placement="bottom">
+              <i class="fa fa-facebook"></i>
+              <span class="navbar-social-label">Facebook</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="javascript:;" class="ui-tooltip" title="Twitter" data-placement="bottom">
+              <i class="fa fa-twitter"></i>
+              <span class="navbar-social-label">Twitter</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="javascript:;" class="ui-tooltip" title="Google+" data-placement="bottom">
+              <i class="fa fa-google-plus"></i>
+              <span class="navbar-social-label">Google+</span>
+            </a>
+          </li>
+
+        </ul> -->
+
+      </nav>
+
+    </div> <!-- /.container -->
+
+  </header>
 
 
-	<footer>
 
-	</footer>
+    <div class="masthead">
+
+      <div class="container">
+            <!-- starts carousel -->
+
+        <div id="masthead-carousel" class="carousel masthead-carousel slide">
+          <div class="carousel-inner">
+
+            <div id="slide1" class="item active">
+
+              <div class="row">
+
+                <div class="col-md-6 masthead-text animated fadeInDownBig">
+                  <h1 class="masthead-title">Introducing pocketSOHO</h1>
+
+                  <p class="masthead-">
+                  Your Small Office & Home Office has become easier than ever before. A brief summary of pocketSOHO should be stated here.
+                  </p>
+
+                  <br>
+
+                  <div class="masthead-actions">
+                   <!--  <a href="./page-features.html" class="btn btn-transparent btn-jumbo">
+                    Learn More
+                    </a> -->
+
+                    <a href="../admin/account-signup.html" id="signup" class="btn btn-primary btn-jumbo">
+                    Get Started
+                    </a>
+                  </div> <!-- /.masthead-actions -->
+                </div> <!-- /.masthead-text -->
+
+                <!-- <div class="col-md-6 masthead-img animated fadeInUpBig">
+                  <img src="img/masthead/mobile.png" alt="slide2" class="img-responsive" />
+                </div>  --><!-- /.masthead-img -->
+
+              </div> <!-- /.row -->
+
+            </div> <!-- /.item -->
+
+            <div class="item">
+
+              <div class="row">
+
+                <div class="col-md-6 masthead-text animated fadeInLeftBig">
+                  <h1 class="masthead-title">Send message to your clients.</h1>
+
+                  <p class="masthead-">
+                  A brief description of scheduling feasture's benefit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi ut aliquip ex ea commodo consequat.
+                  </p>
+
+                  <br>
+
+                  <div class="masthead-actions">
+                    <!-- <a href="./page-features.html" class="btn btn-transparent btn-jumbo">
+                    Learn More
+                    </a> -->
+
+                    <a href="../admin/account-signup.html" class="btn btn-primary btn-jumbo">
+                    Create an Account
+                    </a>
+                  </div> <!-- /.masthead-actions -->
+                </div> <!-- /.masthead-text -->
+
+                <div class="col-md-6 masthead-img animated fadeInRightBig">
+                  <form class="form masthead-form well">
+
+                    <h3 class="text-center">Start Your Free Trial!</h3>
+
+                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, earum.</p>
+
+                    <br>
+
+                    <div class="form-group">
+                      <!-- <label class="" for="full_name">Full Name</label> -->
+                      <input type="text" id="full_name" placeholder="Your Name" class="form-control">
+                    </div> <!-- /.form-group -->
+
+                    <div class="form-group">
+                      <!-- <label class="" for="email_address">Email Address</label> -->
+                      <input type="email" id="email_address" placeholder="Your Email" class="form-control">
+                    </div> <!-- /.form-group -->
+
+                    <div class="form-group">
+                      <!-- <label class="" for="organization">Organization</label> -->
+                      <input type="text" id="organization" placeholder="Organization Name" class="form-control">
+                    </div> <!-- /.form-group -->
+
+                    <div class="form-group">
+                      <button type="submit" ic="formsubmit" class="btn btn-secondary btn-jumbo btn-block">Get Started Today!</button>
+                    </div> <!-- /.form-group -->
+
+                  </form>
+                </div> <!-- /.masthead-img -->
+
+              </div> <!-- /.row -->
+
+            </div> <!-- /.item -->
+
+            <div class="item">
+
+              <div class="row">
+
+                <div class="col-md-6 masthead-text animated fadeInUpBig">
+                  <h1 class="masthead-title">Schedule Your Appointments With Ease.</h1>
+
+                  <p class="masthead-">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi ut aliquip ex ea commodo consequat.
+                  </p>
+
+                  <br>
+
+                  <div class="masthead-actions">
+                    <!-- <a href="./page-features.html" class="btn btn-transparent btn-jumbo">
+                    Learn More
+                    </a> -->
+
+                    <a href="../admin/account-signup.html" class="btn btn-primary btn-jumbo">
+                    Create an Account
+                    </a>
+                  </div> <!-- /.masthead-actions -->
+                </div> <!-- /.masthead-text -->
+
+                <div class="col-md-6 masthead-img animated pulse">
+                	<%= image_tag "ipad.png", alt: "slide2", class: "img-responsive" %>
+                </div> <!-- /.masthead-img -->
+
+              </div> <!-- /.row -->
+
+            </div> <!-- /.item -->
+
+            <div class="item">
+
+              <div class="row">
+
+                <div class="col-md-6 masthead-text animated fadeInDownBig">
+                  <h1 class="masthead-title">Get paid on time.</h1>
+
+                  <p class="masthead-">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi ut aliquip ex ea commodo consequat.
+                  </p>
+
+                  <br>
+
+                  <div class="masthead-actions">
+                    <!-- <a href="./page-features.html" class="btn btn-transparent btn-jumbo">
+                    Learn More
+                    </a> -->
+
+                    <a href="../admin/account-signup.html" class="btn btn-primary btn-jumbo">
+                    Create an Account
+                    </a>
+                  </div> <!-- /.masthead-actions -->
+                </div> <!-- /.masthead-text -->
+                <div class="col-md-6 masthead-img animated fadeInUpBig">
+                	<%= image_tag "mobile.png", alt: "slide2", class: "img-responsive" %>
+                </div>  <!-- /.masthead-img-->
+                <!-- <div class="col-md-6 masthead-img animated fadeInUpBig">
+                  <iframe src="http://player.vimeo.com/video/57175742?title=0&amp;byline=0&amp;portrait=0&amp;color=e2007a" style="width: 85%; height: 325px;"></iframe>
+
+                </div> --> <!-- /.masthead-img -->
+
+              </div> <!-- /.row -->
+
+            </div> <!-- /.item -->
+
+          </div>  <!-- /.carousel-inner -->
+          <!-- Carousel nav -->
+
+          <div class="carousel-controls">
+            <a class="carousel-control left" href="#masthead-carousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#masthead-carousel" data-slide="next">&rsaquo;</a>
+          </div>
+
+        </div> <!-- /.masthead-carousel -->
+
+        </div>
+
+    </div> <!-- /.masthead -->
+
+
+
+    <div class="content">
+
+      <div class="container">
+
+        <h4 class="content-title">
+          <span class="about">Meet pocket<em class="soho">SOHO</em></span>
+        </h4>
+
+        <br>
+
+        <div class="row">
+
+          <div class="mini-feature">
+          	<%= image_tag "schedule01.svg", class: "pocketfeature" %>
+            <!-- <i class="fa fa-globe mini-feature-icon text-secondary"></i> -->
+
+            <div class="mini-feature-text">
+              <h5 class="mini-feature-title">Schedule Appointments</h5>
+              <p>Our themes are designed to display well on most modern devices, including desktops, tablets, and mobile devices. </p>
+            </div>
+          </div> <!-- /.mini-feature -->
+
+          <div class="mini-feature">
+          	<%= image_tag "message01.svg", class: "pocketfeature" %>
+            <!-- <i class="fa fa-dashboard mini-feature-icon text-secondary"></i> -->
+
+            <div class="mini-feature-text">
+              <h5 class="mini-feature-title">Instant Communication with Clients</h5>
+
+              <p>Our themes are designed to display well on most modern devices, including desktops, tablets, and mobile devices. </p>
+            </div>
+          </div> <!-- /.mini-feature -->
+
+          <div class="mini-feature">
+            <%= image_tag "payment01.svg", class: "pocketfeature", alt: "Payment" %>
+            <!-- <i class="fa fa-html5 mini-feature-icon text-secondary"></i> -->
+
+            <div class="mini-feature-text">
+              <h5 class="mini-feature-title">Send Invoices and Get Paid</h5>
+
+              <p>Built using HTML5 and CSS3, our themes can be integrated with multiple platforms including Ruby On Rails, PHP, Django, and many others.</p>
+            </div>
+          </div>
+
+        </div> <!-- /.row -->
+
+        <!-- <div class="row">
+
+          <div class="mini-feature">
+            <i class="fa fa-globe mini-feature-icon text-secondary"></i>
+
+            <div class="mini-feature-text">
+              <h5 class="mini-feature-title">Wide Browser Support</h5>
+              <p>Our themes are designed to display well on most modern devices, including desktops, tablets, and mobile devices. </p>
+            </div>
+          </div>
+
+          <div class="mini-feature">
+            <i class="fa fa-dashboard mini-feature-icon text-secondary"></i>
+
+            <div class="mini-feature-text">
+              <h5 class="mini-feature-title">Dashboard Layouts</h5>
+
+              <p>Our themes are designed to display well on most modern devices, including desktops, tablets, and mobile devices. </p>
+            </div>
+          </div>
+
+          <div class="mini-feature">
+            <i class="fa fa-html5 mini-feature-icon text-secondary"></i>
+
+            <div class="mini-feature-text">
+              <h5 class="mini-feature-title">HTML5 &amp; CSS3</h5>
+
+              <p>Built using HTML5 and CSS3, our themes can be integrated with multiple platforms including Ruby On Rails, PHP, Django, and many others.</p>
+            </div>
+          </div>
+
+        </div>  -->
+
+
+        <div class="row-divider"></div> <!-- /.row-divider -->
+
+
+        <div id="inside-bg" class="row">
+
+          <div class="col-sm-6 col-sm-push-6">
+
+            <h4 class="content-title">
+              <span class="feature-description">What's Inside</span>
+            </h4>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, autem, quos, dicta, tempora omnis beatae aspernatur repellat aperiam fugit enim animi temporibus magnam tempore quae impedit velit voluptatum consequuntur cupiditate.</p>
+
+            <br>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <ul class="icons-list">
+                  <li>
+                    <i class="icon-li fa fa-check text-primary"></i>
+                    Custom Header Images
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-check text-primary"></i>
+                    Unlimited Portfolios & Blogs
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-check text-primary"></i>
+                    Millions Of Page Combinations
+                  </li>
+                </ul>
+              </div>
+
+              <div class="col-sm-6">
+                <ul class="icons-list">
+                  <li>
+                    <i class="icon-li fa fa-check text-primary"></i>
+                    Custom Header Images
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-check text-primary"></i>
+                    Unlimited Portfolios & Blogs
+                  </li>
+                  <li>
+                    <i class="icon-li fa fa-check text-primary"></i>
+                    Millions Of Page Combinations
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <br>
+
+            <a href="../admin/account-signup.html" class="smallbtn btn btn-default">Sign Up Today</a>
+
+            <br><br><br>
+
+          </div> <!-- /.col -->
+
+
+
+          <div class="col-sm-6 col-sm-pull-6 text-center">
+
+            <br><br>
+            <%= image_tag "macbook.png", class: "img-responsive", alt: "Macbook" %>
+
+          </div> <!-- /.col -->
+
+        </div> <!-- /.row -->
+
+
+
+        <div class="row-divider"></div> <!-- /.row-divider -->
+
+
+
+        <!-- <div class="row">
+
+          <div class="col-sm-6">
+
+            <h4 class="content-title">
+              <span>Latest News</span>
+            </h4>
+
+            <div class="recent-news">
+
+              <div class="recent-news-item clearfix"><div class="recent-news-item-date">13<span>Jan</span></div>
+                <div class="recent-news-item-description">
+                  <h5 class="recent-news-item-title"><a href="http://inovado.mintithemes.com/this-is-a-standard-post/" title="This is a Standard Post">This is a Standard Post</a></h5>
+                  <span class="recent-news-item-comments">7 Comments</span>
+                  <div class="recent-news-item-excerpt">Praesent augue arcu, ornare ut tincidunt eu, mattis a libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames... <a href="http://inovado.mintithemes.com/this-is-a-standard-post/" class="recent-news-item-more">Read More →</a></div>
+                </div>
+              </div>
+
+              <div class="recent-news-item clearfix"><div class="recent-news-item-date">04<span>Jan</span></div>
+                <div class="recent-news-item-description">
+                  <h5 class="recent-news-item-title"><a href="http://inovado.mintithemes.com/this-is-a-standard-post/" title="This is a Standard Post">This is a Standard Post</a></h5>
+                  <span class="recent-news-item-comments">2 Comments</span>
+                  <div class="recent-news-item-excerpt">Praesent augue arcu, ornare ut tincidunt eu, mattis a libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames... <a href="http://inovado.mintithemes.com/this-is-a-standard-post/" class="recent-news-item-more">Read More →</a></div>
+                </div>
+              </div>
+
+            </div>
+
+            <br class="visible-xs">
+
+          </div>  -->
+
+
+
+         <!--  <div class="col-sm-6">
+
+            <h4 class="content-title">
+              <span>Testimonials</span>
+
+              <a class="btn btn-default btn-sm carousel-prev" href="#clients-carousel" data-slide="prev">&lsaquo;</a>
+              <a class="btn btn-default btn-sm carousel-next" href="#clients-carousel" data-slide="next">&rsaquo;</a>
+            </h4>
+
+            <div id="clients-carousel" class="carousel slide" data-interval="0">
+              <div class="carousel-inner">
+
+                <div class="item active">
+
+                  <div class="testimonial">
+
+                    <p class="testimonial-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, sed, nulla, provident porro quaerat aperiam eum tempore fugiat dicta obcaecati itaque adipisci perspiciatis unde voluptatibus architecto vitae reiciendis distinctio incidunt! Tempore quae impedit velit voluptatum consequuntur cupiditate.
+                    </p>
+
+                    <div class="testimonials-arrow"></div>
+
+                    <div class="testimonial-author">
+                      <div class="testimonial-image"><img alt="" src="./img/avatars/avatar-1-lg.jpg"></div>
+
+                      <div class="testimonial-author-info">
+                        <h5><a href="#">Rod Howard</a></h5> Jumpstart Themes
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="item">
+
+                  <div class="testimonial">
+
+                    <p class="testimonial-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, sed, nulla, provident porro quaerat aperiam eum tempore fugiat dicta obcaecati itaque adipisci perspiciatis unde voluptatibus architecto vitae reiciendis distinctio incidunt! Tempore quae impedit velit voluptatum consequuntur cupiditate.
+                    </p>
+
+                    <div class="testimonials-arrow"></div>
+
+                    <div class="testimonial-author">
+                      <div class="testimonial-image"><img alt="" src="./img/avatars/avatar-2-lg.jpg"></div>
+
+                      <div class="testimonial-author-info">
+                        <h5><a href="#">Nikita Williams</a></h5> Nikita Chanel
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div> -->
+
+
+
+        <!-- <div class="row-divider"></div>  -->
+        <div class="content">
+
+          <div class="container">
+
+            <h4 class="content-title">
+              <span class="about">Meet Our Team</span>
+            </h4>
+
+            <br>
+
+            <div class="row">
+
+              <div class="mini-feature">
+                 <!-- <i class="fa fa-globe mini-feature-icon text-secondary"></i> -->
+
+                  <div class="mini-feature-text">
+                    <h5 class="mini-feature-title">Sumi Levy | </h5>
+                    <p>Our themes are designed to display well on most modern devices, including desktops, tablets, and mobile devices. </p>
+                  </div>
+              </div> <!-- /.mini-feature -->
+
+              <div class="mini-feature">
+                <!-- <i class="fa fa-dashboard mini-feature-icon text-secondary"></i> -->
+
+              <div class="mini-feature-text">
+                <%= image_tag "janet.png", class: "pocketfeature", alt: "Janet Yi" %>
+                <h5 class="team-member">Janet Yi</h5>
+                <h6 class="team-member-title">Front-End Developer | @RosaCodie</h6>
+                <p>Our themes are designed to display well on most modern devices, including desktops, tablets, and mobile devices. </p>
+              </div>
+          </div> <!-- /.mini-feature -->
+
+          <div class="mini-feature">
+            <!-- <i class="fa fa-html5 mini-feature-icon text-secondary"></i> -->
+
+            <div class="mini-feature-text">
+              <%= image_tag "rosa.png", class: "pocketfeature", alt: "Rosa Choi" %>
+              <h5 class="team-member">Rosa Choi</h5>
+              <h6 class="team-member-title">Front-End Developer | @RosaCodie</h6>
+              <p>Built using HTML5 and CSS3, our themes can be integrated with multiple platforms including Ruby On Rails, PHP, Django, and many others.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+        <!-- <div class="carousel-container">
+        <div class="row">
+
+          <div class="col-sm-12">
+
+            <h4 class="content-title">
+              <span>See Our Clients</span>
+
+              <a class="btn btn-default btn-sm carousel-prev" href="#" data-slide="prev">&lsaquo;</a>
+              <a class="btn btn-default btn-sm carousel-next" href="#" data-slide="next">&rsaquo;</a>
+            </h4>
+
+            <ul class="clients-list">
+              <li>
+                <img src="./img/clients/logo1-grayscale.png" class="img-responsive" alt="Client Logo">
+              </li>
+              <li>
+                <img src="./img/clients/logo2-grayscale.png" class="img-responsive" alt="Client Logo">
+              </li>
+              <li>
+                <img src="./img/clients/logo3-grayscale.png" class="img-responsive" alt="Client Logo">
+              </li>
+              <li>
+                <img src="./img/clients/logo4-grayscale.png" class="img-responsive" alt="Client Logo">
+              </li>
+              <li>
+                <img src="./img/clients/logo5-grayscale.png" class="img-responsive" alt="Client Logo">
+              </li>
+              <li>
+                <img src="./img/clients/logo6-grayscale.png" class="img-responsive" alt="Client Logo">
+              </li>
+            </ul>
+
+
+
+          </div>
+
+        </div>
+        </div>  -->
+        <div class="content">
+
+      <div class="container">
+          <h4 class="content-title">
+              <span class="about">Pricing</span>
+            </h4>
+
+            <br>
+
+        <div class="text-center">
+          <h2 class="30days">Start your 30-day free trial today!</h2>
+          <h4 class="trial">No sign-up fees. No credit card required. No long-term commitments.</h4>
+
+          <br>
+
+          <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-default active" style="width: 125px;">
+                <input type="radio" name="options" id="option1"> Monthly
+              </label>
+              <label class="btn btn-default" style="width: 125px;">
+                <input type="radio" name="options" id="option2"> Yearly <small>(15% off)</small>
+              </label>
+            </div>
+
+          <br><br><br><br>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+
+              <div class="row">
+
+                <div class="col-sm-4">
+
+                  <div class="pricing-plan">
+
+                    <div class="pricing-header">
+                      <h3 class="pricing-plan-title">Starter</h3>
+                      <p class="pricing-plan-label">For Individuals</p>
+                    </div>
+
+                    <div class="pricing-plan-price">
+                      <span class="pricing-plan-amount">$9</span> / month
+                    </div>
+
+                    <ul class="pricing-plan-details">
+                      <li><strong>10 GB</strong> Disk Space</li>
+                      <li><strong>5</strong> Sub Domains</li>
+                      <li><strong>10</strong> MySQL Databases</li>
+                      <li><strong>1</strong> User</li>
+                    </ul>
+
+                    <a href="../admin/account-signup.html" class="choosebtn btn btn-primary">Choose Plan</a>
+
+                  </div> <!-- /.pricing-plan -->
+
+                </div> <!-- /.col -->
+
+
+                <div class="col-sm-4">
+
+                  <div class="pricing-plan">
+
+                    <div class="pricing-header">
+                      <h3 class="pricing-plan-title">Basic</h3>
+                      <p class="pricing-plan-label">For blogs &amp; small business</p>
+                    </div>
+
+                    <div class="pricing-plan-price">
+                      <span class="pricing-plan-amount">$24</span> / month
+                    </div>
+
+                    <ul class="pricing-plan-details">
+                      <li><strong>20 GB</strong> Disk Space</li>
+                      <li><strong>10</strong> Sub Domains</li>
+                      <li><strong>50</strong> MySQL Databases</li>
+                      <li><strong>Unlimited</strong> Users</li>
+                    </ul>
+
+                    <a href="../admin/account-signup.html" class="choosebtn btn btn-primary">Choose Plan</a>
+
+                  </div> <!-- /.pricing-plan -->
+
+                </div> <!-- /.col -->
+
+
+                <div class="col-sm-4">
+                  <div class="pricing-plan">
+
+                    <div class="pricing-plan-ribbon-secondary ui-tooltip" title="" data-original-title="Best Value!">
+                      <i class="fa fa-star"></i>
+                    </div>
+
+                    <div class="pricing-header">
+                      <h3 class="pricing-plan-title">Pro</h3>
+                      <p class="pricing-plan-label">For consultants</p>
+                    </div>
+
+                    <div class="pricing-plan-price">
+                      <span class="pricing-plan-amount">$49</span> / month
+                    </div>
+
+                    <ul class="pricing-plan-details">
+                      <li><span class="pricing-plan-help" title="" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." data-original-title="What's a user?"><strong>40 GB</strong> Disk Space</span></li>
+                      <li><span class="pricing-plan-help" title="" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." data-original-title="What's a project?"><strong>20</strong> Sub Domains</span></li>
+                      <li><span class="pricing-plan-help" title="" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." data-original-title="What's storage for?"><strong>80</strong> MySQL Databases</span></li>
+                      <li><span class="pricing-plan-help" title="" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." data-original-title="What's storage for?"><strong>Unlimited</strong> Users</span></li>
+                    </ul>
+
+                    <a href="../admin/account-signup.html" class="choosebtn btn btn-primary">Choose Plan</a>
+
+                  </div> <!-- /.pricing-plan -->
+
+                </div> <!-- /.col -->
+
+              </div> <!-- /.row -->
+
+            </div> <!-- /.col -->
+
+          </div> <!-- /.row -->
+
+          <br>
+
+          <!-- <h4 class="text-center">
+            Need More?
+            <span>We offer larger plans for companies with even more contacts.</span>
+            <a href="javascript:;">Learn More &nbsp;<i class="fa fa-external-link"></i></a>
+          </h4> -->
+
+          <br><br><br><br>
+
+          <div class="row">
+
+            <div class="col-md-12">
+              <h3 class="content-title">
+                <span>All Plans Come With</span>
+              </h3>
+            </div> <!-- /.row -->
+
+          <div class="col-md-3 col-sm-6">
+            <ul class="icons-list">
+              <li>
+                <i class="icon-li fa fa-check-square"></i>
+
+                Free Setup
+              </li>
+
+              <li>
+                <i class="icon-li fa fa-check-square"></i>
+
+                SSL Protection
+              </li>
+
+              <li>
+                <i class="icon-li fa fa-check-square"></i>
+
+                Unlimited Downloads
+              </li>
+
+              <li>
+                <i class="icon-li fa fa-check-square"></i>
+
+                Unlimited Pushes
+              </li>
+            </ul>
+          </div><!-- /.col -->
+
+          <div class="col-md-3 col-sm-6">
+            <ul class="icons-list">
+
+              <li>
+              <i class="icon-li fa fa-check-square"></i>
+
+                Over the Air Install and Update
+              </li>
+
+              <li>
+              <i class="icon-li fa fa-check-square"></i>
+
+                Realtime Dashboard
+              </li>
+
+              <li>
+              <i class="icon-li fa fa-check-square"></i>
+
+                Package History Archive
+              </li>
+
+              <li>
+              <i class="icon-li fa fa-check-square"></i>
+
+                Easy to Use Interface
+              </li>
+           </ul>
+          </div><!-- /.col -->
+
+          <div class="col-md-3 col-sm-6">
+            <ul class="icons-list">
+
+              <li>
+              <i class="icon-li fa fa-check-square"></i>
+
+                Full Featured
+              </li>
+
+              <li>
+              <i class="icon-li fa fa-check-square"></i>
+
+                Crash Reporting (with SDK)
+              </li>
+
+              <li>
+              <i class="icon-li fa fa-check-square"></i>
+
+                Custom Event Logging
+              </li>
+
+              <li>
+              <i class="icon-li fa fa-check-square"></i>
+
+                Commandline Tools
+              </li>
+            </ul>
+          </div><!-- /.col -->
+
+          <div class="col-md-3 col-sm-6">
+            <ul class="icons-list">
+
+              <li>
+              <i class="icon-li fa fa-check-square"></i>
+
+                Over the Air Install and Update
+              </li>
+
+              <li>
+              <i class="icon-li fa fa-check-square"></i>
+
+                Realtime Dashboard
+              </li>
+
+              <li>
+              <i class="icon-li fa fa-check-square"></i>
+
+                Package History Archive
+              </li>
+
+              <li>
+              <i class="icon-li fa fa-check-square"></i>
+
+                Easy to Use Interface
+              </li>
+            </ul>
+          </div><!-- /.col -->
+
+        </div> <!-- /.row -->
+
+      </div> <!-- /.container -->
+
+    </div> <!-- /.content -->
+
+
+
+      </div>
+
+    </div>
+
+
+
+
+</div> <!-- /#wrapper -->
+
+<footer id="contactus" class="footer">
+
+	<div class="container">
+
+      <div class="row">
+
+        <div class="col-sm-4">
+          <h4 class="content-title">
+            <span>Contact Us</span>
+          </h4>
+          <ul class="icons-list">
+              <li>
+                <i class="icon-li fa fa-map-marker"></i>
+                123 Northwest Way <br>
+                San Francisco, CA 94183
+              </li>
+
+              <li>
+                <i class="icon-li fa fa-phone"></i>
+                +1 415 123 4567
+              </li>
+
+              <li>
+                <i class="icon-li fa fa-envelope"></i>
+                <a href="mailto:info@mvpready.com">info@pocketsoho.com</a>
+              </li>
+            </ul>
+        </div> <!-- /.col -->
+
+
+        <!-- <div class="col-sm-3">
+
+          <h4 class="content-title">
+            <span>Twitter Feed</span>
+          </h4>
+
+          <div id="tweets"></div>
+        </div>  -->
+
+
+        <div class="col-sm-4">
+
+          <h4 class="content-title">
+            <span>Stay Connected</span>
+          </h4>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, nam quae veniam optio sunt exercitationem.</p>
+
+          <br>
+
+          <ul class="footer-social-link">
+            <li>
+              <a href="javascript:;" class="ui-tooltip" title="Facebook" data-placement="bottom">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" class="ui-tooltip" title="Twitter" data-placement="bottom">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" class="ui-tooltip" title="Google+" data-placement="bottom">
+                <i class="fa fa-google-plus"></i>
+              </a>
+            </li>
+          </ul>
+
+        </div> <!-- /.col -->
+
+
+        <div class="col-sm-4">
+
+        <h4 class="content-title">
+          <span>Stay Updated</span>
+        </h4>
+
+        <p>Get emails about new theme launches &amp;  future updates.</p>
+
+        <form action="/" class="form">
+
+          <div class="form-group">
+            <!-- <label>Email: <span class="required">*</span></label> -->
+            <input class="form-control" id="newsletter_email" name="newsletter_email" type="text" value="" required="" placeholder="Email Address">
+          </div> <!-- /.form-group -->
+
+          <div class="form-group">
+            <button class="btn btn-transparent">Subscribe Me</button>
+          </div> <!-- /.form-group -->
+
+        </form>
+
+      </div> <!-- /.col -->
+
+      </div> <!-- /.row -->
+
+	</div> <!-- /.container -->
+
+</footer>
+
+<footer class="copyright">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-sm-12">
+        <p>Copyright &copy; 2014 pocketSOHO.</p>
+      </div> <!-- /.col -->
+
+    </div> <!-- /.row -->
+
+  </div>
+</footer>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./js/libs/jquery-1.10.2.min.js"></script>
+<script src="./js/libs/bootstrap.min.js"></script>
+
+<script src="./js/plugins/timeago/jquery.timeago.js"></script>
+<script src="./js/plugins/tweetable/tweetable.jquery.min.js"></script>
+
+<!--[if lt IE 9]>
+<script src="./js/libs/excanvas.compiled.js"></script>
+<![endif]-->
+
+
+<!-- Plugin JS -->
+<script src="./js/plugins/carouFredSel/jquery.carouFredSel-6.2.1-packed.js"></script>
+
+  <!-- App JS -->
+<script src="./js/mvpready-core.js"></script>
+<script src="./js/mvpready-landing.js"></script>
+
+
 </body>
 </html>
