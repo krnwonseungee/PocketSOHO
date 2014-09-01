@@ -22,7 +22,7 @@
   <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' %>
 
   <!-- Bootstrap CSS -->
-  <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+  <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
 
   <!-- App CSS -->
   <%= stylesheet_link_tag 'mvpready-landing' %>
@@ -1063,11 +1063,11 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="./js/libs/jquery-1.10.2.min.js"></script>
-<script src="./js/libs/bootstrap.min.js"></script>
-
-<script src="./js/plugins/timeago/jquery.timeago.js"></script>
-<script src="./js/plugins/tweetable/tweetable.jquery.min.js"></script>
+<%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" %>
+<%= javascript_include_tag "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" %>
+<%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js" %>
+<%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js" %>
+<%= javascript_include_tag "tweetable.jquery.min" %>
 
 <!--[if lt IE 9]>
 <script src="./js/libs/excanvas.compiled.js"></script>
@@ -1075,11 +1075,11 @@
 
 
 <!-- Plugin JS -->
-<script src="./js/plugins/carouFredSel/jquery.carouFredSel-6.2.1-packed.js"></script>
+<%= javascript_include_tag "jquery.carouFredSel-6.2.1-packed" %>
 
   <!-- App JS -->
-<script src="./js/mvpready-core.js"></script>
-<script src="./js/mvpready-landing.js"></script>
+<%= javascript_include_tag "mvpready-core" %>
+<%= javascript_include_tag "mvpready-landing" %>
 
 
 </body>
