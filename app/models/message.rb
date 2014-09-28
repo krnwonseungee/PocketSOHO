@@ -8,9 +8,9 @@ class Message < ActiveRecord::Base
 
   def assign_conversation_attr
     if Message.where("business_owner_id = ? AND customer_id = ?", self.business_owner_id, self.customer_id ).empty?
-      self.conversation_id = Conversation.create( business_owner_id: self.business_owner_id, customer_id: self.customer_id, business_id: self.business_id ).id
+      self.conversation = Conversation.create( business_owner_id: self.business_owner_id, customer_id: self.customer_id, business_id: self.business_id )
     else
-      self.conversation_id = Message.where("business_owner_id = ? AND customer_id = ?", self.business_owner_id, self.customer_id ).first.conversation_id
+      self.conversation = Message.where("business_owner_id = ? AND customer_id = ?", self.business_owner_id, self.customer_id ).first.conversation
     end
   end
 
