@@ -11,15 +11,19 @@
       <tr><td>E-mail: <%= @invoice.customer.email %></td></tr>
     </table>
 
-    <button>Pay</button>
 
     <div id="total-due">Total Due: $<%= number_with_precision(@invoice.amount, delimiter: ',', precision: 2 ) %></div>
 
-
-
-
-
-
-
   </div>
+
+  <form action="" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="sk_test_ojiObsvjs0jA6zt5Dh99Ku5m Roll Key"
+    data-amount="2000"
+    data-name="PocketSOHO"
+    data-description="Monthly Invoice"
+    data-image="/assets/payment01.svg">
+  </script>
+</form>
 </div>
