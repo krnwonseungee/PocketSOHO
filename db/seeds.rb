@@ -25,8 +25,8 @@ Appointment.all.each do |appt|
   appt.update( date: appt.time.to_date )
 end
 
-Invoice.create( customer_id: 2, business_id: 1, amount: 100.00, due_date: Date.today )
-Invoice.create( customer_id: 2, business_id: 1, amount: 100.00, due_date: (Date.today + 2.week) )
+# Invoice.create( customer_id: 2, business_id: 1, amount: 100.00, due_date: Date.today )
+# Invoice.create( customer_id: 2, business_id: 1, amount: 100.00, due_date: (Date.today + 2.week) )
 
 User.create(first_name: "Tae", last_name: "Yi", email: "tae@sample.com", business_id: 1, city: "San Francisco", state: "CA", image_url: "http://www.imcslc.ca/imc/includes/themes/imc/images/layout/img_placeholder_avatar.jpg", password: "password", password_confirmation: "password", type: "Customer" )
 User.create(first_name: "Hong", last_name: "Yi", email: "hong@sample.com", business_id: 1, city: "San Francisco", state: "CA", image_url: "http://www.imcslc.ca/imc/includes/themes/imc/images/layout/img_placeholder_avatar.jpg", password: "password", password_confirmation: "password", type: "Customer" )

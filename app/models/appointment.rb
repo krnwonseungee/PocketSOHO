@@ -7,7 +7,7 @@ class Appointment < ActiveRecord::Base
   before_create :assign_invoice_id
 
   def assign_invoice_id
-
+    # self.invoice =
   end
 end
 
