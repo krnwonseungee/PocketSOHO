@@ -15,11 +15,11 @@ BusinessOwner.first.messages.create( text: "hi", customer_id: 2, business_owner_
 BusinessOwner.first.messages.create( text: "hey twin", customer_id: 3, business_owner_id: 1, sender_id: 1, business_id: 1  )
 User.find_by_first_name("Twin").messages.create( text: "hey girl!", customer_id: 3, business_owner_id: 1, sender_id: 3, business_id: 1  )
 User.find_by_first_name("Bob").messages.create( text: "hey! - bob", customer_id: 4, business_owner_id: 1, sender_id: 4, business_id: 1 )
-Appointment.create( notes: "first appointment!", customer_id: 3, business_owner_id: 1, business_id: 1, time: Time.now )
-Appointment.create( notes: "2nd appointment!", customer_id: 3, business_owner_id: 1, business_id: 1, time: (Time.now + 1.day) )
-Appointment.create( notes: "3rd appointment!", customer_id: 3, business_owner_id: 1, business_id: 1, time: (Time.now + 2.day) )
-Appointment.create( notes: "4th appointment!", customer_id: 3, business_owner_id: 1, business_id: 1, time: (Time.now + 3.day) )
-Appointment.create( notes: "5th appointment!", customer_id: 3, business_owner_id: 1, business_id: 1, time: (Time.now + 4.day) )
+Appointment.create( notes: "first appointment!", amount: 50.00, customer_id: 3, business_owner_id: 1, business_id: 1, time: Time.now )
+Appointment.create( notes: "2nd appointment!", amount: 50.00, customer_id: 3, business_owner_id: 1, business_id: 1, time: (Time.now + 1.day) )
+Appointment.create( notes: "3rd appointment!", amount: 50.00, customer_id: 3, business_owner_id: 1, business_id: 1, time: (Time.now + 2.day) )
+Appointment.create( notes: "4th appointment!", amount: 50.00, customer_id: 3, business_owner_id: 1, business_id: 1, time: (Time.now + 3.day) )
+Appointment.create( notes: "5th appointment!", amount: 50.00, customer_id: 3, business_owner_id: 1, business_id: 1, time: (Time.now + 4.day) )
 
 Appointment.all.each do |appt|
   appt.update( date: appt.time.to_date )

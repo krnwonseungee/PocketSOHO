@@ -5,6 +5,7 @@ class CreateAppointments < ActiveRecord::Migration
       t.belongs_to :business_owner
       t.belongs_to :business
       t.belongs_to :invoice
+      t.decimal :amount
       t.text :notes
       t.date :date
       t.datetime :time

@@ -15,8 +15,8 @@
 					<table>
 					  <% @appointments.where( "date = ?", DateTime.new( date.year, date.month, date.day) ).each do |appt| %>
 					  <tr class="appt-row">
-					    <td class="appt-date-col"><%= appt.time.strftime("%m/%d/%Y") %></td>
-					    <td class="appt-time-col">@<%= appt.time.strftime("%I:%M%p") %></td>
+					    <td class="appt-date-col"><%= appt.time.strftime("%m/%d/%Y") %>@<%= appt.time.strftime("%I:%M%p") %></td>
+					    <td class="appt-time-col">$<%= number_with_precision(appt.amount, precision: 2, delimter: ',') %></td>
 					    <td class="appt-details-col">
 					      <%= link_to appointment_path( appt.id ) do %>
 					      Appointment with <%= Business.find( appt.business_id ).name %>
