@@ -20,6 +20,11 @@
 
 	    <h3>My Finances</h3>
 	    <p>(Graph)</p>
+	    <% if @invoices.empty? %>
+	      <p>You have no new invoices. </p>
+	    <% else %>
+	    	<%= render partial: 'invoices' %>
+	    <% end %>
 	  </div>
 	</div>
 </div>
