@@ -24,4 +24,7 @@ PocketSOHO::Application.routes.draw do
   get '/oauth2callback', to: 'google_calendars#oauth2callback'
   get '/calendar_final', to: 'google_calendars#final'
 
+  # StripeJS
+  resources :charges
+
 end
