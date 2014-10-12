@@ -4,6 +4,7 @@
       <h1>My Invoices</h1>
       <!--<%= link_to "Calendar View", appointments_calendar_path %>-->
     </div>
+    <%= render partial: 'graph' %>
 
       <% @invoice_dates.each do |date| %>
         <h3><%= date.strftime("%A, %b %d %y") %></h3>
@@ -24,3 +25,4 @@
       <% end %>
   </div>
 </div>
+<%= javascript_include_tag "finance_graph" %>
