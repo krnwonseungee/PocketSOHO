@@ -30,6 +30,13 @@ class InvoicesController < ApplicationController
   def destroy
   end
 
+  def get_invoices
+    @invoices = Invoice.all
+    respond_to do |format|
+      format.json { render json: @invoices }
+    end
+  end
+
   private
 
   def set_user
