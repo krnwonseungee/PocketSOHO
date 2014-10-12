@@ -23,8 +23,10 @@
 	    <% if @invoices.empty? %>
 	      <p>You have no new invoices. </p>
 	    <% else %>
+	      <%= render partial: 'invoices/graph' %>
 	    	<%= render partial: 'invoices' %>
 	    <% end %>
 	  </div>
 	</div>
 </div>
+<%= javascript_include_tag "finance_graph" %>

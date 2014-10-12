@@ -42,6 +42,8 @@ class UsersController < ApplicationController
 
   def set_user
     @user = current_user
+    puts "USER SET! #{@user}"
+    redirect_to root_path if @user.nil?
   end
 
   # def user_params

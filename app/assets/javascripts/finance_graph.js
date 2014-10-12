@@ -1,9 +1,6 @@
-// $(document).ready(console.log('document ready!'))
 window.onLoad = initializeChart();
 
 function initializeChart() {
-    console.log('body loaded!')
-    // debugger
     var ctx = $("#myChart").get(0).getContext("2d");
 
     var data = {
