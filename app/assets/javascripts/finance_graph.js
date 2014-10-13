@@ -3,9 +3,21 @@ window.onLoad = initializeChart();
 function initializeChart() {
     var invoices = [];
 
-    function setInvoices(response){
+    function parseInvoiceData(response){
       invoices = response
-      console.log('setting invoices here' + invoices)
+      var dataObjArr = []
+      for (var i = 0; i < invoices.length; i++) {
+        // debugger
+        var eachInvoice = invoices[i]
+        var dataObject = {}
+        dueMonth = eachInvoice['due_month']
+        floatAmt = parseFloat(eachInvoice['amount'])
+        dataObject[dueMonth] = floatAmt
+        dataObjArr.push(dataObject)
+      }
+
+
+      console.log(dataObjArr)
     }
 
     function getInvoices(){
@@ -13,11 +25,8 @@ function initializeChart() {
         type: 'get',
         url: '/get_invoices',
         dataType: 'json',
-        // error: console.log('error!'),
-        // success: console.log('success!')
       }).done(function(response){
-        // console.log(r=response)
-        setInvoices(response);
+        parseInvoiceData(response);
       })
     }
 
@@ -35,13 +44,6 @@ function initializeChart() {
                 pointColor: "rgba(220,220,220,1)",
                 pointStrokeColor: "#fff",
                 data: [65, 59, 90, 81, 56, 55, 40]
-            },
-            {
-                fillColor: "rgba(151,187,205,0.5)",
-                strokeColor: "rgba(151,187,205,1)",
-                pointColor: "rgba(151,187,205,1)",
-                pointStrokeColor: "#fff",
-                data: [28, 48, 40, 19, 96, 27, 100]
             }
         ]
     }

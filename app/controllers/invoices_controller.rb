@@ -31,9 +31,15 @@ class InvoicesController < ApplicationController
   end
 
   def get_invoices
-    @invoices = Invoice.all
+    invoices = Invoice.all
+    @invoice_data = [];
+    invoices.each do |i|
+      invoices_hash = i.attributes
+      invoices_hash['due_month'] = i.attributes['due_date'].month
+      @invoice_data.push(invoices_hash)
+    end
     respond_to do |format|
-      format.json { render json: @invoices }
+      format.json { render json: @invoice_data }
     end
   end
 
