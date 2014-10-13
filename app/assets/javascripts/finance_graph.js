@@ -1,8 +1,14 @@
 window.onLoad = initializeChart();
 
 function initializeChart() {
+    var invoices = [];
+
+    function setInvoices(response){
+      invoices = response
+      console.log('setting invoices here' + invoices)
+    }
+
     function getInvoices(){
-      // debugger
       $.ajax({
         type: 'get',
         url: '/get_invoices',
@@ -10,7 +16,8 @@ function initializeChart() {
         // error: console.log('error!'),
         // success: console.log('success!')
       }).done(function(response){
-        console.log(response)
+        // console.log(r=response)
+        setInvoices(response);
       })
     }
 
