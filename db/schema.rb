@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140814052116) do
     t.integer  "customer_id"
     t.integer  "business_owner_id"
     t.integer  "business_id"
+    t.integer  "invoice_id"
+    t.decimal  "amount"
     t.text     "notes"
     t.date     "date"
     t.datetime "time"

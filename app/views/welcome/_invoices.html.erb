@@ -1,19 +1,15 @@
-<div id="appointments-list">
-  <div class="user-content">
-    <div class="banner">
-      <h1>My Invoices</h1>
-      <!--<%= link_to "Calendar View", appointments_calendar_path %>-->
-    </div>
-    <%= render partial: 'graph' %>
-
-      <% @invoice_dates.each do |date| %>
+<% @invoice_dates.each do |date| %>
         <h3><%= date.strftime("%A, %b %d %y") %></h3>
           <table>
             <% @invoices.where( "due_date = ?", Date.new( date.year, date.month, date.day) ).each do |invoice| %>
             <tr class="appt-row">
               <td class="appt-details-col">
                 <%= link_to invoice_path( invoice.id ) do %>
-                <%= Business.find( invoice.business_id ).name %>
+                  <% if @user.type == 'BusinessOwner' %>
+                    <%= Customer.find( invoice.customer_id ).first_name %> <%= Customer.find( invoice.customer_id ).last_name %>
+                  <% else %>
+                    <%= Business.find( invoice.business_id ).name %>
+                  <% end %>
                 <% end %>
               </td>
               <td class="appt-details-col">
@@ -23,6 +19,3 @@
             <% end %>
           </table>
       <% end %>
-  </div>
-</div>
-<%= javascript_include_tag "finance_graph" %>

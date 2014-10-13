@@ -12,6 +12,7 @@ PocketSOHO::Application.routes.draw do
   resources :businesses, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :appointments
   resources :invoices
+  get 'get_invoices', to: 'invoices#get_invoices'
 
 
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy] do
@@ -23,5 +24,8 @@ PocketSOHO::Application.routes.draw do
   get '/oauth2authorize', to: 'google_calendars#oauth2authorize'
   get '/oauth2callback', to: 'google_calendars#oauth2callback'
   get '/calendar_final', to: 'google_calendars#final'
+
+  # StripeJS
+  resources :charges
 
 end

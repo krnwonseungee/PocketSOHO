@@ -40,6 +40,8 @@ gem 'devise'
 
 gem "google-api-client", :git => 'git://github.com/krnwonseungee/google-api-ruby-client.git'
 gem 'simple_form'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'whenever', require: false
 # gem 'omniauth'
 # gem 'omniauth-linkedin'
 
