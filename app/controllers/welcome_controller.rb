@@ -9,6 +9,8 @@ class WelcomeController < ApplicationController
         return ""
       end
       @unread_conversations = Array.new
+      @invoices = Invoice.where("business_id = ? AND due_date = ?", @user.business_id, Date.new(Date.today.year, Date.today.month, -1))
+      @invoice_dates = @invoices.pluck( :due_date )
 
       if @user.type == "BusinessOwner"
         @businesses = Business.where( "business_owner_id = ?", @user.id )
@@ -17,6 +19,7 @@ class WelcomeController < ApplicationController
         end
         ##CHANGE. ONLY DISPLAYING FIRST 3 NOW
         @appointments = Appointment.where( "business_owner_id = ?", @user.id ).take(3)
+
 
       else
         @businesses = Business.where( "id = ?", @user.business_id ) # change for multiple businesses
