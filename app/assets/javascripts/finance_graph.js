@@ -1,64 +1,58 @@
 window.onLoad = initializeChart();
 
 function initializeChart() {
-    var invoices = [];
+    var invoices = []
+    var monthLabelList = []
+    var amountList = []
+    var myData = []
 
     function parseInvoiceData(response){
       invoices = response
-      var dataObjArr = []
       for (var i = 0; i < invoices.length; i++) {
-        // debugger
         var eachInvoice = invoices[i]
         var dataObject = {}
         dueMonth = eachInvoice['due_month']
+        monthLabelList.push(dueMonth)
         floatAmt = parseFloat(eachInvoice['amount'])
-        dataObject[dueMonth] = floatAmt
-        dataObjArr.push(dataObject)
+        // dataObject[dueMonth] = floatAmt
+        // dataObjArr.push(dataObject)
       }
-
-
-      console.log(dataObjArr)
+      setMonthLabelList(monthLabelList)
+      console.log(monthLabelList)
     }
 
-    function getInvoices(){
-      $.ajax({
-        type: 'get',
-        url: '/get_invoices',
-        dataType: 'json',
-      }).done(function(response){
-        parseInvoiceData(response);
-      })
-    }
+    $.ajax({
+      type: 'get',
+      url: '/get_invoices',
+      dataType: 'json',
+      success: function(response){
+        myData = response
+        var totalRevenue = 0;
+          for (var i=0; i < myData.length; i++) {
+            var eachInvoice = myData[i]
+            var floatAmt = parseFloat(eachInvoice['amount'])
+            totalRevenue += floatAmt
+            amountList.push(totalRevenue)
+            dueMonth = eachInvoice['due_month']
+            monthLabelList.push(dueMonth)
+          }
 
-    getInvoices();
+          var ctx = $("#myChart").get(0).getContext("2d");
 
-    var ctx = $("#myChart").get(0).getContext("2d");
+          var data = {
+              labels: monthLabelList,
+              datasets: [
+                  {
+                      fillColor: "rgba(220,220,220,0.5)",
+                      strokeColor: "rgba(220,220,220,1)",
+                      pointColor: "rgba(220,220,220,1)",
+                      pointStrokeColor: "#fff",
+                      data: amountList
+                  }
+              ]
+          }
 
-    var data = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'],
-        datasets: [
-            {
-                fillColor: "rgba(220,220,220,0.5)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                data: [65, 59, 90, 81, 56, 55, 40]
-            }
-        ]
-    }
-
-    var myNewChart = new Chart(ctx).Line(data);
-
-    //   createIpsumAjaxRequest: function(){
-    //     $.ajax({
-    //       type: "get",
-    //       url: "/get_ipsum",
-    //     }).done(function(data){
-    //       view.renderIpsum(data);
-    //     })
-    //   }
-    // }
-
-
+          var myNewChart = new Chart(ctx).Line(data, {bezierCurve: false});
+      }
+    })
 }
