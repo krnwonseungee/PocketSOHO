@@ -42,8 +42,12 @@ gem "google-api-client", :git => 'git://github.com/krnwonseungee/google-api-ruby
 gem 'simple_form'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'whenever', require: false
-# gem 'omniauth'
-# gem 'omniauth-linkedin'
+
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'twitter'
+
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
 group :production do
   gem 'rails_12factor'
@@ -59,7 +63,7 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
 
 group :development do
   gem 'better_errors'

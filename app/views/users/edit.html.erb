@@ -6,6 +6,7 @@
       <%= f.input :city %>
       <%= f.input :state %>
       <%= f.input :email %>
+      <%= f.input :type, collection: ['BusinessOwner', 'Customer'] %>
       <%= f.input :image_url %>
       <%= f.input :phone %>
       <%= f.button :submit %>
