@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
-         :omniauthable, :omniauth_providers => [:twitter, :facebook]
+         :omniauthable, :omniauth_providers => [:twitter, :facebook, :linkedin]
   scope :business_owners, -> { where(type: 'Business Owner') }
   scope :customers, -> { where(type: 'Customer') }
 
@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       user.encrypted_password = Devise.friendly_token[0,20]
-      user.twitter_handle = auth.info.name   # assuming the user model has a name
+      # user.twitter_handle = auth.info.name   # assuming the user model has a name
       user.image_url = auth.info.image # assuming the user model has an image
     end
   end
