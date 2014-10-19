@@ -45,6 +45,7 @@ gem 'whenever', require: false
 
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 gem 'twitter'
 
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
