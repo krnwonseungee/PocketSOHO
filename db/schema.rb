@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 20141019040739) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "provider"
-    t.integer  "uid"
+    t.string   "uid"
     t.string   "twitter_handle"
   end
 

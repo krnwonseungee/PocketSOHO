@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
-         :omniauthable, :omniauth_providers => [:twitter]
+         :omniauthable, :omniauth_providers => [:twitter, :facebook]
   scope :business_owners, -> { where(type: 'Business Owner') }
   scope :customers, -> { where(type: 'Customer') }
 
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 
   def self.new_with_session(params, session)
     super.tap do |user|
-      if data = session["devise.twitter_data"] && session["devise.twitter_data"]["extra"]["raw_info"]
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
       end
     end

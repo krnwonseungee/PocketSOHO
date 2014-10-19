@@ -18,10 +18,7 @@
         </div> <!-- /.col -->
 
         <div class="col-sm-6">
-          <a href="javascript:;" class="btn btn-facebook btn-block">
-          <i class="fa fa-facebook"></i>
-          &nbsp;&nbsp;Login with Facebook
-          </a>
+          <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
         </div> <!-- /.col -->
 
       </div> <!-- /.row -->
