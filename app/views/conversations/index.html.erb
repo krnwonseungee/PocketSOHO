@@ -6,9 +6,9 @@
       <div class="new-chat row">
           <div class="col-md-8 col-sm-push-3 col-sm-8 col-sm-push-2">
         <!-- <div class="col-md-8"> -->
-            <a class="new-ms" href="./new-message.html">
-              <i class="fa fa-pencil-square-o">Create New Message</i>
-            </a>
+            <%= link_to new_user_conversation_path(@user), class: 'new-ms' do %>
+                <i class="fa fa-pencil-square-o">Create New Message</i>
+            <% end %>
           </div>
           <div class="col-md-8 col-sm-push-3 col-sm-8 col-sm-push-2">
           <!-- <div class="col-md-8"> -->
