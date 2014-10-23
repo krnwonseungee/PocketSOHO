@@ -127,11 +127,13 @@
               <li class="divider"></li>
 
               <li>
-                <a href="./account-login.html">
+                <%= link_to  destroy_user_session_path, :method => :delete do  %>
                   <i class="fa fa-sign-out"></i>
                   &nbsp;&nbsp;Logout
-                </a>
+                <% end %>
               </li>
+                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+
 
             </ul>
 
@@ -160,6 +162,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Core JS -->
+<%= javascript_include_tag :defaults %>
 <%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" %>
 <%= javascript_include_tag "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" %>
 
