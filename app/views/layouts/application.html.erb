@@ -25,6 +25,10 @@
   <%= stylesheet_link_tag    "mvpready-flat"%>
   <%= stylesheet_link_tag    "custom"%>
 
+<!-- jQuery & Angular  -->
+  <%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" %>
+<%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js" %>
+
   <!-- Favicon -->
   <link rel="shortcut icon" href="./img/ico/favicon.png">
   <link rel="shortcut icon" href="./img/ico/favicon32x32.png">
@@ -132,8 +136,6 @@
                   &nbsp;&nbsp;Logout
                 <% end %>
               </li>
-                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-
 
             </ul>
 
@@ -163,7 +165,6 @@
 ================================================== -->
 <!-- Core JS -->
 <%= javascript_include_tag :defaults %>
-<%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" %>
 <%= javascript_include_tag "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" %>
 
 <!--[if lt IE 9]>

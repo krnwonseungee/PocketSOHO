@@ -1,4 +1,4 @@
-<div class="message-content content">
+<div class="message-content content"data-ng-app="pocketSOHO">
 
     <div class="container">
             <h3 class="content-title"><%= image_tag "chat_icon.svg", id: 'chaticon', alt: 'Chat Icon' %><u>My Messages</u></h3>
@@ -25,7 +25,7 @@
          <!-- <div class="col-md-8"> -->
          <div class="col-md-8 col-sm-push-3 col-sm-8 col-sm-push-2">
 
-          <div class="table-responsive">
+          <div class="table-responsive" id="inbox" ng-controller="inboxController">
 
           <table class="table table-striped table-bordered thumbnail-table">
                   <thead>
@@ -35,61 +35,16 @@
                         </tr>
                   </thead>
                     <tbody>
-                        <tr>
+                        <tr class="msg-row" ng-repeat="message in messages | filter: searchWords" ng-style="{ 'font-weight': getReadStatus(message) }">
                               <td>
-                                 <div class="thumbnail">
-                                    <img src="./img/avatars/avatar-5-md copy.jpg" width="125" alt="Gallery Image" />
-                                    <p class="sender">Rosa Choi</p>
-                                </div> <!-- /.thumbnail -->
+                                 {{message.sender_name}}
                               </td>
                               <td class="valign-middle">
-                                  <a href="javascript:;" title="">Feb 12, 2012. 12:28</a>
-                                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                                  <div class ="message-action text-left valign-middle">
-                                      <button class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i></button>
-                                      &nbsp;
-                                      <button class="btn btn-xs btn-secondary"><i class="fa fa-times"></i></button>
-                                  </div>
+                                  {{message.abbrev_text}}
                               </td>
                         </tr>
 
                         <tr>
-                              <td class="valign-middle">
-                              <div class="thumbnail">
-                                  <img src="./img/avatars/avatar-4-md.jpg" width="125" alt="Gallery Image" />
-                                  <p class="sender">name</p>
-                              </div> <!-- /.thumbnail -->
-                              </td>
-                              <td class="valign-middle">
-                                  <a href="javascript:;" title="">Feb 12, 2012. 12:28</a>
-                                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                                  <div class ="message-action text-left valign-middle">
-                                      <button class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i></button>
-                                      &nbsp;
-                                      <button class="btn btn-xs btn-secondary"><i class="fa fa-times"></i></button>
-                                  </div>
-                              </td>
-                        </tr>
-
-                        <tr>
-                              <td class="valign-middle">
-                              <div class="thumbnail">
-                                  <img src="./img/avatars/avatar-4-md.jpg" width="125" alt="Gallery Image" />
-                                  <p class="sender">name</p>
-                              </div> <!-- /.thumbnail -->
-                              </td>
-                              <td class="valign-middle">
-                                  <a href="javascript:;" title="">Feb 12, 2012. 12:28</a>
-                                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                                  <div class ="message-action text-left valign-middle">
-                                      <button class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i></button>
-                                      &nbsp;
-                                      <button class="btn btn-xs btn-secondary"><i class="fa fa-times"></i></button>
-                                  </div>
-                              </td>
-                        </tr>
-
-                         <tr>
                               <td class="valign-middle">
                               <div class="thumbnail">
                                   <img src="./img/avatars/avatar-4-md.jpg" width="125" alt="Gallery Image" />
@@ -151,5 +106,7 @@
 
 
     </div> <!-- /.container -->
+    <%= javascript_include_tag "main", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "inbox", "data-turbolinks-track" => true %>
 
   </div> <!-- .content -->
