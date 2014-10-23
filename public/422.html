@@ -4,11 +4,11 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-  <title>Profile &middot; pocketSOHO</title>
+  <title>Page Not Found &middot; pocketSOHO</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-  <meta name="description" content="PocketSOHO: My Dashboard - User Profile">
+  <meta name="description" content="PocketSOHO: The best business app for small office\home office">
 
   <!-- Google Font: Open Sans -->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic">
@@ -21,9 +21,9 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
   <!-- App CSS -->
-  <%= stylesheet_link_tag    "mvpready-admin"%>
-  <%= stylesheet_link_tag    "mvpready-flat"%>
-  <%= stylesheet_link_tag    "custom"%>
+  <link rel="stylesheet" href="assets/mvpready-admin.css">
+  <link rel="stylesheet" href="assets/mvpready-flat.css">
+   <link href="assets/custom.css" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./img/ico/favicon.png">
@@ -38,7 +38,7 @@
 
 <body class=" ">
 
-<div id="wrapper">
+<div id="wrapper" class="error-page">
 
   <header class="navbar navbar-inverse" role="banner">
 
@@ -47,104 +47,18 @@
       <div class="navbar-header">
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
-          <%= image_tag "mobilemenu-logo.svg", alt: 'pocketSOHO', id: "logo2"%>
-          <%= image_tag "mobilemenu-logo1.svg", alt: 'pocketSOHO', id: "logo3"%>
+          <img id="logo2" src="assets/mobilemenu-logo.svg" alt="pocketSOHO">
+          <img id="logo3" src="assets/mobilemenu-logo1.svg" alt="pocketSOHO">
         </button>
 
-          <a href="http://www.pocketsoho.com" class="navbar-brand navbar-brand-img">
-          <%= image_tag "logo.svg", alt: 'pocketSOHO', id: "logo"%>
+        <a href="http://www.pocketsoho.com" class="navbar-brand navbar-brand-img">
+          <img id="logo" src="assets/logo.svg" alt="pocketSOHO">
         </a>
       </div> <!-- /.navbar-header -->
-
-
-      <nav class="collapse navbar-collapse" role="navigation">
-
-           <ul class="nav navbar-nav noticebar navbar-left">
-
-          <li class="dropdown">
-            <%= link_to root_path do %>
-              <i class="fa fa-home ui-tooltip" data-toggle="tooltip" data-placement="bottom" title="home"></i>
-            <% end %>
-          </li>
-
-          <li class="dropdown">
-            <%= link_to user_conversations_path(@user) do  %>
-              <i class="fa fa-envelope ui-tooltip" data-toggle="tooltip" data-placement="bottom" title="my messages"></i>
-            <% end %>
-          </li>
-
-          <li class="dropdown">
-            <%= link_to appointments_path do  %>
-              <i class="fa fa-calendar ui-tooltip" data-toggle="tooltip" data-placement="bottom" title="my appointments"></i>
-            <% end %>
-          </li>
-
-           <li class="dropdown">
-            <a href="./page-notifications.html">
-              <i class="fa fa-dollar ui-tooltip" data-toggle="tooltip" data-placement="bottom" title="my payments"></i>
-            </a>
-          </li>
-
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-
-           <li>
-            <a class="hello" href="#">Hello, Janet</a>
-          </li>
-
-          <li class="dropdown navbar-profile">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
-              <%= image_tag "avatars/janet-xs.jpg", alt: '', class: "navbar-profile-avatar" %>
-              <span class="navbar-profile-label">janet@janet.me &nbsp;</span>
-              <i class="fa fa-caret-down"></i>
-            </a>
-
-            <ul class="dropdown-menu" role="menu">
-
-              <li>
-                <%= link_to user_path(@user) do %>
-                    <i class="fa fa-user"></i>
-                    &nbsp;&nbsp;My Profile
-                <% end %>
-                </a>
-              </li>
-
-              <!-- <li>
-                <a href="./page-pricing.html">
-                  <i class="fa fa-dollar"></i>
-                  &nbsp;&nbsp;Plans & Billing
-                </a>
-              </li> -->
-
-              <li>
-                <a href="./page-settings.html">
-                  <i class="fa fa-cogs"></i>
-                  &nbsp;&nbsp;Settings
-                </a>
-              </li>
-
-              <li class="divider"></li>
-
-              <li>
-                <a href="./account-login.html">
-                  <i class="fa fa-sign-out"></i>
-                  &nbsp;&nbsp;Logout
-                </a>
-              </li>
-
-            </ul>
-
-          </li>
-
-        </ul>
-
-      </nav>
 
     </div> <!-- /.container -->
 
   </header>
-
 
   <div class="error-content content">
 
@@ -183,15 +97,15 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Core JS -->
-<%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" %>
-<%= javascript_include_tag "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" %>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 <!--[if lt IE 9]>
 <script src="./js/libs/excanvas.compiled.js"></script>
 <![endif]-->
 <!-- App JS -->
-<%= javascript_include_tag "mvpready-core" %>
-<%= javascript_include_tag "mvpready-admin" %>
+<script src="assets/mvpready-core.js"></script>
+<script src="assets/mvpready-admin.js"></script>
 
 </body>
 </html>

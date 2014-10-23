@@ -385,7 +385,7 @@ a.appt-edit:hover {
 /* Error Page*/
 /* ----------------------------------------------- */
 .error-page {
-  background: url(../img/photos/berries.jpg) center top no-repeat;
+  background: url(photos/berries.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
