@@ -275,11 +275,13 @@ a {
   margin: auto; }
 
 .sender {
-  padding: 3px 0;
+  width: 80px;
+  padding: 3px 0 0;
+  font-size: 11px;
   text-align: center; }
 
 td {
-  height: 110px; }
+  height: 120px; }
 
 .message-action .btn-primary,
 .message-action .btn-secondary {

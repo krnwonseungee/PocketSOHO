@@ -36,24 +36,15 @@
                   </thead>
                     <tbody>
                         <tr class="msg-row" ng-repeat="message in messages | filter: searchWords" ng-style="{ 'font-weight': getReadStatus(message) }">
-                              <td>
-                                 {{message.sender_name}}
-                              </td>
-                              <td class="valign-middle">
-                                  {{message.abbrev_text}}
-                              </td>
-                        </tr>
-
-                        <tr>
                               <td class="valign-middle">
                               <div class="thumbnail">
-                                  <img src="./img/avatars/avatar-4-md.jpg" width="125" alt="Gallery Image" />
-                                  <p class="sender">name</p>
+                                  <img ng-src="{{message.sender_image}}" width="125" alt="Gallery Image" />
+                                  <p class="sender">{{message.sender_name}}</p>
                               </div> <!-- /.thumbnail -->
                               </td>
                               <td class="valign-middle">
-                                  <a href="javascript:;" title="">Feb 12, 2012. 12:28</a>
-                                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                  <a href="javascript:;" title="">{{message.formatted_updated_at}}</a>
+                                  <p>{{message.abbrev_text}}</p>
                                   <div class ="message-action text-left valign-middle">
                                       <button class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i></button>
                                       &nbsp;
@@ -61,7 +52,6 @@
                                   </div>
                               </td>
                         </tr>
-
                         </tbody>
                        </table>
 
