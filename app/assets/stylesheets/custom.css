@@ -1,184 +1,589 @@
-body,
-h1, h2, h3, h4, h5, h6 {
-	font-family: "Open-Sans", sans-serif;
-    	-webkit-font-smoothing: antialiased;
-    	font-size: 16px;
-    	color: #444444;
+/* Setting Color Palette*/
+
+$mainColor1: #8CC640;
+$mainColor2: #F48A1F;
+$mainColor3: #1B2846;
+$darkGray: #444444;
+$ligthGray: #CCCCCC;
+
+/* Font*/
+@mixin mainFont {
+  font-family: "Open-Sans", sans-serif;
+      -webkit-font-smoothing: antialiased;
 }
 
-/*NavBar*/
-.navbar-inverse {
-  margin-bottom: 0;
-  position: fixed;
-  width: 100%;
-  z-index: 5;
-  background-color: rgba(255,255,255,0.9);
+/* Setting Background Image*/
+@mixin bgimg {
+  background-size: cover;
+  -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
 }
+
+/* BoxShadow Prefix*/
+
+@mixin boxShadow {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Sign Up Button*/
+
+@mixin signupButton {
+  padding: 0.6em 2em;
+  font-size: 20px;
+  line-height: 1.5;
+  background-color: $mainColor1;
+  border: 1px solid $mainColor1;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+/* Mobile Menu*/
+@mixin mobileMenuClose {
+  display: none;
+}
+
+
+
+/* BODY*/
+/* ----------------------------------------------- */
+@mixin body {
+  font-family: "Open-Sans", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 16px;
+      color: $darkGray;
+      background-color: #FFFFFF;
+}
+a {
+  color: $mainColor1;
+}
+
+/* NAV-BAR*/
+/* ----------------------------------------------- */
 #logo {
-	width: 65%;
-	padding-top: 24px;
+  width: 90%;
+  padding-top: 17px;
+}
+.navbar {
+  @include boxShadow;
+}
+.navbar-inverse {
+  position: fixed;
+  z-index: 100 !important;
+  width: 100%;
+  background-color: rgba(255,255,255,0.9);
+  border-bottom: none;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #757575;
+  color: $mainColor1;
   text-shadow: none;
 }
-.navbar-inverse .navbar-nav>li>a:hover {
-  color: #757575;
+.account-wrapper {
+  padding-top: 80px;
 }
-.navbar-inverse .navbar-toggle {
-	color: #8fc647;
+.navbar-inverse .navbar-nav > li > a:hover {
+  background-color: transparent;
+  color: darken($mainColor1, 20%);
 }
-.navbar-inverse .navbar-toggle:hover {
-	color: #ffffff;
-	background-color: #8fc647;
-}
+.navbar-collapse.in {
+  background-color: $mainColor3;
 
+}
+/*.navbar-inverse .navbar-nav > li.active > a,
+.navbar-inverse .navbar-nav > li.active > a:hover,
+.navbar-inverse .navbar-nav > li.active > a:active,
+.navbar-inverse .navbar-nav > li.active > a:focus {
+  background-color: #8CC640;
+}
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #8CC640;
+}*/
 
-/*Masthead - Main Splash Image Section*/
-.masthead {
-	/*min-height: 800px;*/
-	padding-top: 3em;
-	background: url(softbg.jpg) center top no-repeat;
-	/*hairdresser and dogwalker*/
-	-webkit-background-size: cover;
-    	-moz-background-size: cover;
-    	-o-background-size: cover;
-    	background-size: cover;
+/* Account SignUp*/
+/* ----------------------------------------------- */
+#account-signup {
+  background: url(../img/photos/pianoteacher.jpg) center top no-repeat;
+  @include bgimg;
 }
-.masthead-title {
-	font-family: "Open-Sans", sans-serif;
-    	-webkit-font-smoothing: antialiased;
- 	font-weight: 400;
+#account-login {
+  background: url(../img/photos/working.jpg) center top no-repeat;
+  @include bgimg;
 }
-
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary
-.content {
-	background-color: #8fc647;
-	border: none;
+#reset-password {
+  background: url(../img/photos/personaltrainer.jpg) center top no-repeat;
+  @include bgimg;
 }
-.masthead-carousel .carousel-control.left, .masthead-carousel .carousel-control.right {
-	background-color: #74a138;
+#social-login {
+  background: url(../img/photos/makeup-artist.jpg) center top no-repeat;
+  @include bgimg;
 }
-.well {
-	background-color: rgba(0,0,0,0.3);
-	border: 1px solid #e3e3e3;
+.account-or-social {
+  color: $darkGray;
 }
-.text-center {
-	color: #f4f2f3;
+.account-wrapper {
+  padding-bottom: 0;
 }
-.form-control {
-	/*background-color: rgba(0,0,0,0.3);*/
-	/*color: #f4f2f3;*/
+.account-body {
+  background-color: rgba(255,255,255,0.2);
+  border: 0;
 }
-.btn-secondary, .btn-secondary {
-	border: 1px solid #f4f2f3;
-	background-color: rgba(116,161,56,0.8)
+.account-body h3 {
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4)
 }
-.btn-secondary:hover, .btn-secondary:focus {
-	/*background-color: #fab616;*/
-	background-color: #000;
-	color: #ffffff;
-	border: 1px solid #f4f2f3;
+#account-login .account-body h5 {
+  color: $mainColor2;
 }
-
-
-/*About Section*/
-.content-title span {
-	border-bottom: 1px solid #8fc647;
+#reset-password .account-body {
+  top: 13em;
 }
-.about {
-	padding-top: 1.5em;
-	font-size: 3em;
+#reset-password .account-body h2 {
+  color: #FFFFFF;
 }
-.soho {
-	color: #74a138;
-	font-style: normal;
+#reset-password .form-group a {
+  color: $mainColor3;
+  font-size: 14px;
 }
-.text-primary, .text-primary:hover {
-	color: #fab616 ;
+.account-body h5 {
+  color: $mainColor3;
 }
-.mini-feature-text {
-	padding-left: 0;
+#account-login .account-footer p {
+  color: $mainColor3;
 }
-.smallbtn {
-	border: 1px solid #fab616;
-	box-shadow: none;
+#account-login .account-footer p a {
+  color: $mainColor1;
 }
-.smallbtn:hover {
-	background-color: #fab616;
-	border: 1px solid #fab616;
+.account-footer p {
+  color: #FFFFFF;
+  font-size: 16px;
 }
-.mini-feature-title {
-	text-transform: uppercase;
-	font-size: 18px;
-	color: #000;
+.account-footer p a {
+  color: $mainColor2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  font-size: 16px;
 }
-.pocketfeature {
-	width: 80%;
+.btn-primary,
+.btn-secondary {
+  @include signupButton;
 }
-.feature-description {
-	font-size: 18px;
-	color: #74a138;
+.btn-secondary,
+.btn-primary {
+  background-color: $mainColor1;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
 }
-
-/*Team Section*/
-.team-member {
-	font-size: 18px;
+.btn-secondary:hover,
+.btn-primary:hover {
+  background-color: $mainColor2;
+  border: 1px solid #FFFFFF;
 }
-.team-member-title {
-	color: #74a138;
-	font-size: 16px;
+/*input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus {
+  background-color: rgba(255,255,255,0.6);
+  box-shadow: 0 0 5px rgba(140, 198, 64, 0.8);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(140, 198, 64, 0.8);
+}*/
+.checkbox-inline input[type=submit]:focus,
+.form-group button[type=submit]:focus {
+  outline: none;
 }
-
-
-/*Princing Section*/
-.pricing-plan-amount {
-	color: #74a138;
+.checkbox-inline {
+  color: $mainColor3;
 }
-.pricing-plan-ribbon-secondary {
-	background-color: #fab616;
+.checkbox-inline a {
+  color: $mainColor3;
 }
-.choosebtn {
-	color: #757575;
+.checkbox-inline a:hover {
+  color: $mainColor1;
 }
-.pricing-header {
-	background-color: #1c2947;
-}
-.pricing-plan-title {
-	color: #bbd490;
-}
-
-
-/*Contact Us Section*/
-#contactus {
-	background: url(softbg6.jpg) center top no-repeat;
-	-webkit-background-size: cover;
-    	-moz-background-size: cover;
-    	-o-background-size: cover;
-    	background-size: cover;
+#back-to-top {
+  background-color: rgba(140, 198, 64, 0.6);
 }
 #back-to-top:hover {
-	background-color: #74a138;
+  background-color: $mainColor1;
 }
-.footer a {
-	color: #8fc647;
+.pull-left small {
+  color: #FFFFFF;
+  font-size: 13px;
 }
-.footer-social-link li a {
-	color: #8fc647;
+.pull-right small a {
+  color: $mainColor1;
+  font-size: 13px;
+}
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle.is-open {
+  background-color: $mainColor1;
+}
+
+.btn-twitter {
+  background-color: #1e87bd;
+  border: 1px solid darken(#1e87bd, 10%);
+}
+
+/* Form Validation*/
+/* ----------------------------------------------- */
+.mainnav {
+  padding-top: 5em;
+  background-color: $mainColor3;
+}
+.badge {
+  background-color: $mainColor2;
+}
+.fa-search {
+  color: $mainColor1;
+}
+.noticebar-empty-title {
+  color: $mainColor2;
+}
+.btn-danger {
+  background-color: $mainColor2;
+  border-radius: 0;
+  border-color: $mainColor2;
+}
+.btn-danger:hover {
+  background-color: darken( $mainColor2, 10% );
+  border-color: darken( $mainColor2, 10% );
 }
 .copyright {
-	background-color: #f4f2f3;
-	color: #74a138;
-	font-size: 14px;
+  color: $mainColor1;
 }
-.footer .content-title {
-	border-bottom-color: rgba(255,255,255,0.2);
+.footer {
+  background-color: $mainColor3;
+  border-top: 0;
 }
-.masthead .btn-transparent, .footer .btn-transparent {
-	background-color: rgba(0,0,0,0.3);
+.mainnav-collapse input[type=text]:focus {
+  background-color: #FFFFFF;
+  width: 100%;
+  padding: 3px 10px 3px 5px;
+  margin: 0;
 }
-.masthead .btn-transparent:hover, .footer .btn-transparent:hover {
-	color: #000;
-	background-color: #ffffff;
-	border: 1px solid #ffffff;
+.text-primary {
+  color: $mainColor2;
+}
+.error-details .input-group .form-control:first-child {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.error-details .input-group .btn-secondary {
+  margin-left: 5px;
+  padding: 2px 20px;
+  vertical-align: middle;
+  border-radius: 20px;
+}
+.error-details .input-group .btn-secondary .fa-search {
+  color: #FFFFFF;
+}
+
+
+/* Admin - Index - Main Dashboard*/
+/* ----------------------------------------------- */
+
+.fa-home {
+  font-size: 1.2em;
+}
+.nav li a.hello {
+  font-size: 1.3em;
+}
+.message-content,
+.newmessage-content,
+.profile-content,
+.setting-content,
+.pricing-content,
+.dashboard-content,
+.appt-content,
+.error-content {
+  padding-top: 10em;
+}
+.message-content h3 u,
+.appt-content h3 u {
+  font-size: 1.5em;
+  @include mainFont;
+  font-weight: 700;
+}
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+}
+.sender {
+  padding: 3px 0;
+  text-align: center;
+}
+td {
+  height: 110px;
+}
+.message-action .btn-primary,
+.message-action .btn-secondary{
+  padding: 0.15em 0.55em;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary.active {
+  background-color: $mainColor2;
+  border-color: $mainColor2;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  background-color: darken($mainColor1, 10%);
+  border-color: darken($mainColor1, 10%);
+}
+#chaticon,
+#appticon {
+  width: 100px;
+  padding-right: 1em;
+}
+.content-title {
+  border-bottom: 0;
+}
+a.new-ms {
+  padding: 0.4em 2em;
+  border: 1px solid $mainColor1;
+  background-color: $mainColor1;
+}
+.new-chat {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 1.2em;
+}
+.new-chat a {
+  color: #FFFFFF;
+}
+.new-chat a:hover {
+  background-color: lighten($mainColor1, 30%);
+  color: darken($mainColor1, 20%);
+}
+.send-button {
+  padding: 0.3em 6em;
+  font-size: 16px;
+  background-color: $mainColor2;
+  /*border: 1px solid $mainColor2;*/
+  color: #FFFFFF;
+  text-shadow: 0 0 0;
+}
+.valign-middle {
+  padding-left: 5px;
+}
+#newbiz-btn,
+#newcustomer-btn {
+  font-size: 16px;
+  padding: 0.3em 1em;
+}
+.pagination {
+  list-style: none;
+}
+.page-right {
+  padding-right: 10px;
+}
+.pagination > li > a:hover,
+.pagination > li > a:active {
+  background-color: $mainColor1;
+}
+
+/* Appointments Page*/
+/* ----------------------------------------------- */
+.appt-title {
+  padding-top: 1.2em;
+}
+.appt-title u {
+  border-bottom: 1px solid $mainColor2;
+}
+.alert-success {
+  background-color: darken($mainColor1, 5%);
+  border: 1px solid darken($mainColor1, 5%);
+  font-size: 15px;
+}
+.appt-tomorrow {
+  background-color: darken($ligthGray, 10%);
+  border: 1px solid darken($ligthGray, 10%);
+}
+a.appt-biz,
+a.appt-edit {
+  color: #FFFFFF;
+  padding-left: 10px;
+}
+a.appt-biz:hover,
+a.appt-edit:hover {
+  color: $mainColor3;
+}
+.fa-calendar-o {
+  padding-right: 5px;
+}
+.fa-usd {
+  padding-left: 10px;
+}
+
+
+/* Error Page*/
+/* ----------------------------------------------- */
+.error-page {
+  background: url(../img/photos/berries.jpg) center top no-repeat;
+  @include bgimg;
+}
+.error-details {
+  padding-top: 20px;
+}
+.error-code {
+  font-size: 60px;
+  color: $mainColor3;
+  line-height: 1.2;
+  font-weight: 700;
+  @include mainFont;
+}
+.error-message {
+  font-size: 1.2em;
+}
+.pocketsoho-home {
+  color: darken($mainColor1, 20%);
+
+}
+.pocketsoho-home:hover {
+  color: lighten($mainColor2, 20%);
+}
+.oops {
+  color: $mainColor2;
+  font-size: 2.2em;
+}
+
+/* Admin - User Setting Page - Main Dashboard*/
+/* ----------------------------------------------- */
+.nav-layout-sidebar > .active > a {
+  color: $mainColor2;
+}
+.nav-layout-sidebar > .active > a:hover {
+  color: $mainColor1;
+}
+#sidebar-menu {
+  z-index: 1;
+}
+#save-change,
+#save-change1,
+#save-change2 {
+  padding: 0.4em 1.4em;
+}
+#cancel-change,
+#cancel-change1,
+#cancel-change2 {
+  padding: 0.9em 4.4em;
+}
+.pricing-plan-amount {
+  color: $mainColor1;
+}
+.btn-primary.disabled {
+  background-color: $mainColor2;
+  border-color: $mainColor2;
+}
+.pricing-plan-ribbon-secondary {
+  background-color: $mainColor2;
+}
+.pricing-header {
+  background-color: $mainColor3;
+}
+.brief-instr {
+  font-size: 12px;
+}
+
+
+@media (max-width: 767px) {
+  #logo2,
+  #logo3 {
+    width: 40px;
+  }
+  #logo3 {
+    display: none;
+  }
+  .navbar-inverse .navbar-toggle:hover {
+    background-color: rgba(255,255,255,0.9);
+  }
+
+  .navbar-inverse .navbar-toggle.is-open {
+    background-color: rgba(255,255,255,0.9);
+
+  }
+  .mainnav-form {
+    border-top: 0;
+    border-bottom: 0;
+  }
+  #logo {
+    width: 50%;
+    padding-top: 20px;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+    cursor: pointer;
+    color: lighten($mainColor2, 10%);
+  }
+  .avatar-img {
+    width: 60px !important;
+  }
+  .table-responsive>.table>thead>tr>th,
+   .table-responsive>.table>tbody>tr>th,
+   .table-responsive>.table>tfoot>tr>th,
+   .table-responsive>.table>thead>tr>td,
+   .table-responsive>.table>tbody>tr>td,
+   .table-responsive>.table>tfoot>tr>td {
+    white-space: normal;
+   }
+}
+
+
+@media (max-width: 480px) {
+  .navbar-header a {
+    width: 230px;
+  }
+  #logo {
+    width: 50%;
+    padding-top: 20px;
+  }
+  .account-body h3 {
+    font-size: 20px;
+  }
+  .account-footer p,
+  .account-footer p a {
+    font-size: 12px;
+  }
+  .checkbox-inline a {
+    font-size: 12px;
+  }
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.3em 2em;
+  }
+  #account-login .account-footer p {
+    color: $ligthGray;
+  }
+  #account-signup {
+    background: url(../img/photos/mobile-piano.jpg) center top no-repeat;
+    @include bgimg;
+  }
+
+  #account-login {
+    background: url(../img/photos/mobile-working.jpg) center top no-repeat;
+    @include bgimg;
+  }
+
+  #reset-password {
+    background: url(../img/photos/mobile-trainer.jpg) center top no-repeat;
+    @include bgimg;
+  }
+  #social-login {
+    background: url(../img/photos/makeup-mobile.jpg) center top no-repeat;
+    @include bgimg;
+  }
+
+  #reset-password .account-body {
+    top: 7em;
+  }
+  .dropdown-menu>li>a {
+  color: $ligthGray;
+  }
+
 }
