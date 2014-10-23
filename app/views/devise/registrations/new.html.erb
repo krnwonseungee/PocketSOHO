@@ -1,161 +1,70 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-<head>
-  <title>Login Social: : pocketSOHO</title>
+<div class="account-wrapper">
 
-  <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-  <meta name="description" content="PocketSOHO: The best business app for small office\home office">
+  <div class="account-body">
 
-  <!-- Google Font: Open Sans -->
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300,700">
+    <h3>Welcome back to pocketSOHO</h3>
 
-  <!-- Font Awesome CSS -->
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <h5>Please sign in to get access.</h5>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <br>
 
-  <!-- App CSS -->
-  <%= stylesheet_link_tag    "mvpready-admin", media: "all" %>
-  <%= stylesheet_link_tag    "mvpready-flat", media: "all" %>
-  <%= stylesheet_link_tag    "custom", media: "all" %>
+    <div class="row">
 
-  <!-- Favicon -->
-  <%= favicon_link_tag 'favicon.ico' %>
-  <link rel="shortcut icon" href="./img/ico/favicon.png">
-  <link rel="shortcut icon" href="./img/ico/favicon32x32.png">
-
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-  <![endif]-->
-</head>
-
-<body id="social-login" class="account-bg">
-
-  <header class="navbar navbar-inverse" role="banner">
-
-    <div class="container">
-
-      <div class="navbar-header">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <%= image_tag "mobilemenu-logo.svg", alt: "pocketSOHO", id: "logo2" %>
-          <img id="logo2" src="./img/mobilemenu-logo.svg" alt="pocketSOHO">
-          <img id="logo3" src="./img/mobilemenu-logo1.svg" alt="pocketSOHO">
-        </button>
-
-        <a href="http://www.pocketsoho.com" class="navbar-brand navbar-brand-img">
-          <img id="logo" src="./img/logo.svg" alt="pocketSOHO">
+      <div class="col-sm-6">
+        <a href="javascript:;" class="btn btn-twitter btn-block">
+        <i class="fa fa-linkedin"></i>
+        &nbsp;&nbsp;Login with LinkedIn
         </a>
-      </div> <!-- /.navbar-header -->
+      </div> <!-- /.col -->
 
-      <nav class="collapse navbar-collapse" role="navigation">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="../landing/index.html"><i class="fa fa-angle-double-left"></i> &nbsp;Back to Home</a>
-          </li>
-        </ul>
-      </nav>
+      <div class="col-sm-6">
+        <a href="javascript:;" class="btn btn-facebook btn-block">
+        <i class="fa fa-facebook"></i>
+        &nbsp;&nbsp;Login with Facebook
+        </a>
+      </div> <!-- /.col -->
 
-    </div> <!-- /.container -->
+    </div> <!-- /.row -->
 
-  </header>
+    <span class="account-or-social text-muted">OR, SIGN IN BELOW</span>
 
-  <div class="account-wrapper">
+    <form class="form account-form" method="POST" action="/">
 
-    <div class="account-body">
+      <div class="form-group">
+        <label for="login-username" class="placeholder-hidden">Username</label>
+        <input type="text" class="form-control" id="login-username" placeholder="Username" tabindex="1">
+      </div> <!-- /.form-group -->
 
-      <h3>Welcome back to pocketSOHO</h3>
+      <div class="form-group">
+        <label for="login-password" class="placeholder-hidden">Password</label>
+        <input type="password" class="form-control" id="login-password" placeholder="Password" tabindex="2">
+      </div> <!-- /.form-group -->
 
-      <h5>Please sign in to get access.</h5>
+      <div class="form-group clearfix">
+        <div class="pull-left">
+          <label class="checkbox-inline">
+          <input type="checkbox" class="" value="" tabindex="3"> <small>Remember me</small>
+          </label>
+        </div>
 
-      <br>
+        <div class="pull-right">
+          <small><a href="./account-forgot.html">Forgot Password?</a></small>
+        </div>
+      </div> <!-- /.form-group -->
 
-      <div class="row">
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block btn-lg" tabindex="4">Signin &nbsp; <i class="fa fa-play-circle"></i></button>
+      </div> <!-- /.form-group -->
 
-        <div class="col-sm-6">
-          <a href="javascript:;" class="btn btn-twitter btn-block">
-          <i class="fa fa-linkedin"></i>
-          &nbsp;&nbsp;Login with LinkedIn
-          </a>
-        </div> <!-- /.col -->
+    </form>
 
-        <div class="col-sm-6">
-          <a href="javascript:;" class="btn btn-facebook btn-block">
-          <i class="fa fa-facebook"></i>
-          &nbsp;&nbsp;Login with Facebook
-          </a>
-        </div> <!-- /.col -->
+  </div> <!-- /.account-body -->
 
-      </div> <!-- /.row -->
+  <div class="account-footer">
+    <p>
+    Don't have an account? &nbsp;
+    <a href="./account-signup.html" class="">Create an Account!</a>
+    </p>
+  </div> <!-- /.account-footer -->
 
-      <span class="account-or-social text-muted">OR, SIGN IN BELOW</span>
-
-      <form class="form account-form" method="POST" action="./index.html">
-
-        <div class="form-group">
-          <label for="login-username" class="placeholder-hidden">Username</label>
-          <input type="text" class="form-control" id="login-username" placeholder="Username" tabindex="1">
-        </div> <!-- /.form-group -->
-
-        <div class="form-group">
-          <label for="login-password" class="placeholder-hidden">Password</label>
-          <input type="password" class="form-control" id="login-password" placeholder="Password" tabindex="2">
-        </div> <!-- /.form-group -->
-
-        <div class="form-group clearfix">
-          <div class="pull-left">
-            <label class="checkbox-inline">
-            <input type="checkbox" class="" value="" tabindex="3"> <small>Remember me</small>
-            </label>
-          </div>
-
-          <div class="pull-right">
-            <small><a href="./account-forgot.html">Forgot Password?</a></small>
-          </div>
-        </div> <!-- /.form-group -->
-
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-block btn-lg" tabindex="4">Signin &nbsp; <i class="fa fa-play-circle"></i></button>
-        </div> <!-- /.form-group -->
-
-      </form>
-
-    </div> <!-- /.account-body -->
-
-    <div class="account-footer">
-      <p>
-      Don't have an account? &nbsp;
-      <a href="./account-signup.html" class="">Create an Account!</a>
-      </p>
-    </div> <!-- /.account-footer -->
-
-  </div> <!-- /.account-wrapper -->
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Core JS -->
-<script src="./js/libs/jquery-1.10.2.min.js"></script>
-<script src="./js/libs/bootstrap.min.js"></script>
-
-<!--[if lt IE 9]>
-<script src="./js/libs/excanvas.compiled.js"></script>
-<![endif]-->
-<!-- App JS -->
-<script src="./js/mvpready-core.js"></script>
-<script src="./js/mvpready-admin.js"></script>
-
-<!-- Plugin JS -->
-<script src="./js/mvpready-account.js"></script>
-
-
-
-</body>
-</html>
+</div> <!-- /.account-wrapper -->
