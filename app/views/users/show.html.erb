@@ -1,33 +1,87 @@
-<div id="user-profile">
-  <div class="user-content">
+  <div class="profile-content content">
 
-    <br><br>
-    <div class="banner">
-        <h4><%= @profile_user.type %></h4>
-        <% if @profile_user.business_id %>
-            <h2><%= Business.find( @profile_user.business_id ).name %></h2>
-        <% else %>
-            <%= link_to "Create a Business", new_business_path %>
-        <% end %>
-    </div>
-    <%= image_tag( @profile_user.image_url, :class => 'user-img' ) %>
+    <div class="container">
 
-    <% if @profile_user.id == @user.id  %><br>
-        <%= render partial: 'edit_button' %>
-    <% end %>
+      <div class="row">
 
-    <div class="user-info" id="name"><%= @profile_user.first_name %> <%= @profile_user.last_name %></div>
-    <div class="user-info" id="location"><%= @profile_user.city %>, <%= @profile_user.state %></div>
-    <div class="user-info" id="phone"></div><%= @profile_user.phone %></div>
-    <div class="user-info" id="email"><%= @profile_user.email %></div>
-    <div class="user-info" id="member-since">Member Since: <%= @profile_user.created_at.strftime("%m/%d/%Y") %></div>
+        <div class="col-md-3 col-sm-5">
 
-    <% if @profile_user.id != @user.id  %><br>
-        <%= render partial: 'send_msg_button' %>
-    <% end %>
+          <div class="profile-avatar">
+            <%= image_tag "avatars/janet-lg.jpg", alt: 'Profile Image', class: 'profile-avatar-img thumbnail' %>
+          </div> <!-- /.profile-avatar -->
+
+          <!-- <div class="list-group">
+
+            <a href="javascript:;" class="list-group-item">
+              <i class="fa fa-asterisk text-primary"></i> &nbsp;&nbsp;Activity Feed
+
+              <i class="fa fa-chevron-right list-group-chevron"></i>
+            </a>
+
+            <a href="javascript:;" class="list-group-item">
+              <i class="fa fa-book text-primary"></i> &nbsp;&nbsp;Projects
+
+              <i class="fa fa-chevron-right list-group-chevron"></i>
+              <span class="badge">3</span>
+            </a>
+
+            <a href="javascript:;" class="list-group-item">
+              <i class="fa fa-envelope text-primary"></i> &nbsp;&nbsp;Messages
+
+              <i class="fa fa-chevron-right list-group-chevron"></i>
+            </a>
+
+            <a href="javascript:;" class="list-group-item">
+              <i class="fa fa-group text-primary"></i> &nbsp;&nbsp;Friends
+
+              <i class="fa fa-chevron-right list-group-chevron"></i>
+            </a>
+
+            <a href="javascript:;" class="list-group-item">
+              <i class="fa fa-cog text-primary"></i> &nbsp;&nbsp;Settings
+
+              <i class="fa fa-chevron-right list-group-chevron"></i>
+            </a>
+          </div> --> <!-- /.list-group -->
+
+        </div> <!-- /.col -->
 
 
 
+        <div class="col-md-6 col-sm-7">
 
-  </div>
-</div>
+          <h3>Janet Yi</h3>
+
+          <h5 class="text-muted">Software Engineer</h5>
+
+          <hr>
+
+          <p>
+            <!-- <a href="javascript:;" class="btn btn-primary">Follow Janet</a>
+            &nbsp;&nbsp; -->
+            <a href="javascript:;" class="btn btn-secondary">Send Message</a>
+          </p>
+
+          <hr>
+
+          <ul class="icons-list">
+            <li><i class="icon-li fa fa-envelope"></i> support@jumpstartthemes.com</li>
+            <li><i class="icon-li fa fa-heart"></i> Member Since October 2014</li>
+            <li><i class="icon-li fa fa-map-marker"></i> San Francisco, CA</li>
+          </ul>
+
+          <br>
+
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</p>
+
+
+          </div> <!-- /.col -->
+
+
+        </div> <!-- /.row -->
+
+        <br><br>
+
+    </div> <!-- /.container -->
+
+  </div> <!-- .content -->

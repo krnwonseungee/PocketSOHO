@@ -68,15 +68,15 @@
           </li>
 
           <li class="dropdown">
-            <a href="./page-messages.html">
+            <%= link_to user_conversations_path(@user) do  %>
               <i class="fa fa-envelope ui-tooltip" data-toggle="tooltip" data-placement="bottom" title="my messages"></i>
-            </a>
+            <% end %>
           </li>
 
           <li class="dropdown">
-            <a href="./page-appointments.html">
+            <%= link_to appointments_path do  %>
               <i class="fa fa-calendar ui-tooltip" data-toggle="tooltip" data-placement="bottom" title="my appointments"></i>
-            </a>
+            <% end %>
           </li>
 
            <li class="dropdown">
@@ -95,7 +95,7 @@
 
           <li class="dropdown navbar-profile">
             <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
-              <%= image_tag "janet-xs.jpg", alt: '', class: "navbar-profile-avatar" %>
+              <%= image_tag "avatars/janet-xs.jpg", alt: '', class: "navbar-profile-avatar" %>
               <span class="navbar-profile-label">janet@janet.me &nbsp;</span>
               <i class="fa fa-caret-down"></i>
             </a>
@@ -103,9 +103,10 @@
             <ul class="dropdown-menu" role="menu">
 
               <li>
-                <a href="./page-profile.html">
-                  <i class="fa fa-user"></i>
-                  &nbsp;&nbsp;My Profile
+                <%= link_to user_path(@user) do %>
+                    <i class="fa fa-user"></i>
+                    &nbsp;&nbsp;My Profile
+                <% end %>
                 </a>
               </li>
 
@@ -144,93 +145,8 @@
 
   </header>
 
-  <div class="profile-content content">
 
-    <div class="container">
-
-      <div class="row">
-
-        <div class="col-md-3 col-sm-5">
-
-          <div class="profile-avatar">
-            <img src="./img/avatars/avatar-3-lg.jpg" class="profile-avatar-img thumbnail" alt="Profile Image">
-          </div> <!-- /.profile-avatar -->
-
-          <!-- <div class="list-group">
-
-            <a href="javascript:;" class="list-group-item">
-              <i class="fa fa-asterisk text-primary"></i> &nbsp;&nbsp;Activity Feed
-
-              <i class="fa fa-chevron-right list-group-chevron"></i>
-            </a>
-
-            <a href="javascript:;" class="list-group-item">
-              <i class="fa fa-book text-primary"></i> &nbsp;&nbsp;Projects
-
-              <i class="fa fa-chevron-right list-group-chevron"></i>
-              <span class="badge">3</span>
-            </a>
-
-            <a href="javascript:;" class="list-group-item">
-              <i class="fa fa-envelope text-primary"></i> &nbsp;&nbsp;Messages
-
-              <i class="fa fa-chevron-right list-group-chevron"></i>
-            </a>
-
-            <a href="javascript:;" class="list-group-item">
-              <i class="fa fa-group text-primary"></i> &nbsp;&nbsp;Friends
-
-              <i class="fa fa-chevron-right list-group-chevron"></i>
-            </a>
-
-            <a href="javascript:;" class="list-group-item">
-              <i class="fa fa-cog text-primary"></i> &nbsp;&nbsp;Settings
-
-              <i class="fa fa-chevron-right list-group-chevron"></i>
-            </a>
-          </div> --> <!-- /.list-group -->
-
-        </div> <!-- /.col -->
-
-
-
-        <div class="col-md-6 col-sm-7">
-
-          <h3>Janet Yi</h3>
-
-          <h5 class="text-muted">Software Engineer</h5>
-
-          <hr>
-
-          <p>
-            <!-- <a href="javascript:;" class="btn btn-primary">Follow Janet</a>
-            &nbsp;&nbsp; -->
-            <a href="javascript:;" class="btn btn-secondary">Send Message</a>
-          </p>
-
-          <hr>
-
-          <ul class="icons-list">
-            <li><i class="icon-li fa fa-envelope"></i> support@jumpstartthemes.com</li>
-            <li><i class="icon-li fa fa-heart"></i> Member Since October 2014</li>
-            <li><i class="icon-li fa fa-map-marker"></i> San Francisco, CA</li>
-          </ul>
-
-          <br>
-
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</p>
-
-
-          </div> <!-- /.col -->
-
-
-        </div> <!-- /.row -->
-
-        <br><br>
-
-    </div> <!-- /.container -->
-
-  </div> <!-- .content -->
+  <%= yield %>
 
 </div> <!-- /#wrapper -->
 
@@ -244,15 +160,15 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Core JS -->
-<script src="./js/libs/jquery-1.10.2.min.js"></script>
-<script src="./js/libs/bootstrap.min.js"></script>
+<%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" %>
+<%= javascript_include_tag "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" %>
 
 <!--[if lt IE 9]>
 <script src="./js/libs/excanvas.compiled.js"></script>
 <![endif]-->
 <!-- App JS -->
-<script src="./js/mvpready-core.js"></script>
-<script src="./js/mvpready-admin.js"></script>
+<%= javascript_include_tag "mvpready-core" %>
+<%= javascript_include_tag "mvpready-admin" %>
 
 </body>
 </html>
