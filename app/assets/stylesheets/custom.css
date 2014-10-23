@@ -1,97 +1,47 @@
 /* Setting Color Palette*/
-
-$mainColor1: #8CC640;
-$mainColor2: #F48A1F;
-$mainColor3: #1B2846;
-$darkGray: #444444;
-$ligthGray: #CCCCCC;
-
 /* Font*/
-@mixin mainFont {
-  font-family: "Open-Sans", sans-serif;
-      -webkit-font-smoothing: antialiased;
-}
-
 /* Setting Background Image*/
-@mixin bgimg {
-  background-size: cover;
-  -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-}
-
 /* BoxShadow Prefix*/
-
-@mixin boxShadow {
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
 /* Sign Up Button*/
-
-@mixin signupButton {
-  padding: 0.6em 2em;
-  font-size: 20px;
-  line-height: 1.5;
-  background-color: $mainColor1;
-  border: 1px solid $mainColor1;
-  text-shadow: none;
-  box-shadow: none;
-}
-
 /* Mobile Menu*/
-@mixin mobileMenuClose {
-  display: none;
-}
-
-
-
 /* BODY*/
 /* ----------------------------------------------- */
-@mixin body {
-  font-family: "Open-Sans", sans-serif;
-      -webkit-font-smoothing: antialiased;
-      font-size: 16px;
-      color: $darkGray;
-      background-color: #FFFFFF;
-}
 a {
-  color: $mainColor1;
-}
+  color: #8cc640; }
 
 /* NAV-BAR*/
 /* ----------------------------------------------- */
 #logo {
   width: 90%;
-  padding-top: 17px;
-}
+  padding-top: 17px; }
+
 .navbar {
-  @include boxShadow;
-}
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
+
 .navbar-inverse {
   position: fixed;
   z-index: 100 !important;
   width: 100%;
-  background-color: rgba(255,255,255,0.9);
-  border-bottom: none;
-}
+  background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: none; }
+
 .navbar-inverse .navbar-nav > li > a {
-  color: $mainColor1;
-  text-shadow: none;
-}
+  color: #8cc640;
+  text-shadow: none; }
+
 .account-wrapper {
-  padding-top: 80px;
-}
+  padding-top: 80px; }
+
 .navbar-inverse .navbar-nav > li > a:hover {
   background-color: transparent;
-  color: darken($mainColor1, 20%);
-}
-.navbar-collapse.in {
-  background-color: $mainColor3;
+  color: #567b25; }
 
-}
+.navbar-collapse.in {
+  background-color: #1b2846; }
+
 /*.navbar-inverse .navbar-nav > li.active > a,
 .navbar-inverse .navbar-nav > li.active > a:hover,
 .navbar-inverse .navbar-nav > li.active > a:active,
@@ -103,85 +53,102 @@ a {
 .navbar-inverse .navbar-nav > .open > a:focus {
   background-color: #8CC640;
 }*/
-
 /* Account SignUp*/
 /* ----------------------------------------------- */
 #account-signup {
-  background: url(../img/photos/pianoteacher.jpg) center top no-repeat;
-  @include bgimg;
-}
+  background: url(photos/pianoteacher.jpg) center top no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; }
+
 #account-login {
-  background: url(../img/photos/working.jpg) center top no-repeat;
-  @include bgimg;
-}
+  background: url(photos/working.jpg) center top no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; }
+
 #reset-password {
-  background: url(../img/photos/personaltrainer.jpg) center top no-repeat;
-  @include bgimg;
-}
+  background: url(photos/personaltrainer.jpg) center top no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; }
+
 #social-login {
-  background: url(../img/photos/makeup-artist.jpg) center top no-repeat;
-  @include bgimg;
-}
+  background: url(photos/makeup-artist.jpg) center top no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; }
+
 .account-or-social {
-  color: $darkGray;
-}
+  color: #444444; }
+
 .account-wrapper {
-  padding-bottom: 0;
-}
+  padding-bottom: 0; }
+
 .account-body {
-  background-color: rgba(255,255,255,0.2);
-  border: 0;
-}
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 0; }
+
 .account-body h3 {
   color: #FFFFFF;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4)
-}
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); }
+
 #account-login .account-body h5 {
-  color: $mainColor2;
-}
+  color: #f48a1f; }
+
 #reset-password .account-body {
-  top: 13em;
-}
+  top: 13em; }
+
 #reset-password .account-body h2 {
-  color: #FFFFFF;
-}
+  color: #FFFFFF; }
+
 #reset-password .form-group a {
-  color: $mainColor3;
-  font-size: 14px;
-}
+  color: #1b2846;
+  font-size: 14px; }
+
 .account-body h5 {
-  color: $mainColor3;
-}
+  color: #1b2846; }
+
 #account-login .account-footer p {
-  color: $mainColor3;
-}
+  color: #1b2846; }
+
 #account-login .account-footer p a {
-  color: $mainColor1;
-}
+  color: #8cc640; }
+
 .account-footer p {
   color: #FFFFFF;
-  font-size: 16px;
-}
+  font-size: 16px; }
+
 .account-footer p a {
-  color: $mainColor2;
+  color: #f48a1f;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  font-size: 16px;
-}
+  font-size: 16px; }
+
 .btn-primary,
 .btn-secondary {
-  @include signupButton;
-}
+  padding: 0.6em 2em;
+  font-size: 20px;
+  line-height: 1.5;
+  background-color: #8cc640;
+  border: 1px solid #8cc640;
+  text-shadow: none;
+  box-shadow: none; }
+
 .btn-secondary,
 .btn-primary {
-  background-color: $mainColor1;
+  background-color: #8cc640;
   border: 1px solid #FFFFFF;
-  color: #FFFFFF;
-}
+  color: #FFFFFF; }
+
 .btn-secondary:hover,
 .btn-primary:hover {
-  background-color: $mainColor2;
-  border: 1px solid #FFFFFF;
-}
+  background-color: #f48a1f;
+  border: 1px solid #FFFFFF; }
+
 /*input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus {
   background-color: rgba(255,255,255,0.6);
   box-shadow: 0 0 5px rgba(140, 198, 64, 0.8);
@@ -191,105 +158,100 @@ a {
 }*/
 .checkbox-inline input[type=submit]:focus,
 .form-group button[type=submit]:focus {
-  outline: none;
-}
+  outline: none; }
+
 .checkbox-inline {
-  color: $mainColor3;
-}
+  color: #1b2846; }
+
 .checkbox-inline a {
-  color: $mainColor3;
-}
+  color: #1b2846; }
+
 .checkbox-inline a:hover {
-  color: $mainColor1;
-}
+  color: #8cc640; }
+
 #back-to-top {
-  background-color: rgba(140, 198, 64, 0.6);
-}
+  background-color: rgba(140, 198, 64, 0.6); }
+
 #back-to-top:hover {
-  background-color: $mainColor1;
-}
+  background-color: #8cc640; }
+
 .pull-left small {
   color: #FFFFFF;
-  font-size: 13px;
-}
+  font-size: 13px; }
+
 .pull-right small a {
-  color: $mainColor1;
-  font-size: 13px;
-}
+  color: #8cc640;
+  font-size: 13px; }
+
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle.is-open {
-  background-color: $mainColor1;
-}
+  background-color: #8cc640; }
 
 .btn-twitter {
   background-color: #1e87bd;
-  border: 1px solid darken(#1e87bd, 10%);
-}
+  border: 1px solid #176891; }
 
 /* Form Validation*/
 /* ----------------------------------------------- */
 .mainnav {
   padding-top: 5em;
-  background-color: $mainColor3;
-}
+  background-color: #1b2846; }
+
 .badge {
-  background-color: $mainColor2;
-}
+  background-color: #f48a1f; }
+
 .fa-search {
-  color: $mainColor1;
-}
+  color: #8cc640; }
+
 .noticebar-empty-title {
-  color: $mainColor2;
-}
+  color: #f48a1f; }
+
 .btn-danger {
-  background-color: $mainColor2;
+  background-color: #f48a1f;
   border-radius: 0;
-  border-color: $mainColor2;
-}
+  border-color: #f48a1f; }
+
 .btn-danger:hover {
-  background-color: darken( $mainColor2, 10% );
-  border-color: darken( $mainColor2, 10% );
-}
+  background-color: #d6700a;
+  border-color: #d6700a; }
+
 .copyright {
-  color: $mainColor1;
-}
+  color: #8cc640; }
+
 .footer {
-  background-color: $mainColor3;
-  border-top: 0;
-}
+  background-color: #1b2846;
+  border-top: 0; }
+
 .mainnav-collapse input[type=text]:focus {
   background-color: #FFFFFF;
   width: 100%;
   padding: 3px 10px 3px 5px;
-  margin: 0;
-}
+  margin: 0; }
+
 .text-primary {
-  color: $mainColor2;
-}
+  color: #f48a1f; }
+
 .error-details .input-group .form-control:first-child {
   border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
-}
+  border-top-right-radius: 4px; }
+
 .error-details .input-group .btn-secondary {
   margin-left: 5px;
   padding: 2px 20px;
   vertical-align: middle;
-  border-radius: 20px;
-}
-.error-details .input-group .btn-secondary .fa-search {
-  color: #FFFFFF;
-}
+  border-radius: 20px; }
 
+.error-details .input-group .btn-secondary .fa-search {
+  color: #FFFFFF; }
 
 /* Admin - Index - Main Dashboard*/
 /* ----------------------------------------------- */
-
 .fa-home {
-  font-size: 1.2em;
-}
+  font-size: 1.2em; }
+
 .nav li a.hello {
-  font-size: 1.3em;
-}
+  font-size: 1.3em; }
+
 .message-content,
 .newmessage-content,
 .profile-content,
@@ -298,292 +260,290 @@ a {
 .dashboard-content,
 .appt-content,
 .error-content {
-  padding-top: 10em;
-}
+  padding-top: 10em; }
+
 .message-content h3 u,
 .appt-content h3 u {
   font-size: 1.5em;
-  @include mainFont;
-  font-weight: 700;
-}
+  font-family: "Open-Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 700; }
+
 .thumbnail {
   width: 80px;
   height: 80px;
-  margin: auto;
-}
+  margin: auto; }
+
 .sender {
   padding: 3px 0;
-  text-align: center;
-}
+  text-align: center; }
+
 td {
-  height: 110px;
-}
+  height: 110px; }
+
 .message-action .btn-primary,
-.message-action .btn-secondary{
-  padding: 0.15em 0.55em;
-}
+.message-action .btn-secondary {
+  padding: 0.15em 0.55em; }
 
 .btn-secondary:hover,
 .btn-secondary:focus,
 .btn-secondary:active,
 .btn-secondary.active {
-  background-color: $mainColor2;
-  border-color: $mainColor2;
-}
+  background-color: #f48a1f;
+  border-color: #f48a1f; }
+
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active {
-  background-color: darken($mainColor1, 10%);
-  border-color: darken($mainColor1, 10%);
-}
+  background-color: #71a330;
+  border-color: #71a330; }
+
 #chaticon,
 #appticon {
   width: 100px;
-  padding-right: 1em;
-}
+  padding-right: 1em; }
+
 .content-title {
-  border-bottom: 0;
-}
+  border-bottom: 0; }
+
 a.new-ms {
   padding: 0.4em 2em;
-  border: 1px solid $mainColor1;
-  background-color: $mainColor1;
-}
+  border: 1px solid #8cc640;
+  background-color: #8cc640; }
+
 .new-chat {
   font-size: 18px;
   font-weight: 700;
-  padding: 1.2em;
-}
+  padding: 1.2em; }
+
 .new-chat a {
-  color: #FFFFFF;
-}
+  color: #FFFFFF; }
+
 .new-chat a:hover {
-  background-color: lighten($mainColor1, 30%);
-  color: darken($mainColor1, 20%);
-}
+  background-color: #d3e9b6;
+  color: #567b25; }
+
 .send-button {
   padding: 0.3em 6em;
   font-size: 16px;
-  background-color: $mainColor2;
+  background-color: #f48a1f;
   /*border: 1px solid $mainColor2;*/
   color: #FFFFFF;
-  text-shadow: 0 0 0;
-}
+  text-shadow: 0 0 0; }
+
 .valign-middle {
-  padding-left: 5px;
-}
+  padding-left: 5px; }
+
 #newbiz-btn,
 #newcustomer-btn {
   font-size: 16px;
-  padding: 0.3em 1em;
-}
+  padding: 0.3em 1em; }
+
 .pagination {
-  list-style: none;
-}
+  list-style: none; }
+
 .page-right {
-  padding-right: 10px;
-}
+  padding-right: 10px; }
+
 .pagination > li > a:hover,
 .pagination > li > a:active {
-  background-color: $mainColor1;
-}
+  background-color: #8cc640; }
 
 /* Appointments Page*/
 /* ----------------------------------------------- */
 .appt-title {
-  padding-top: 1.2em;
-}
+  padding-top: 1.2em; }
+
 .appt-title u {
-  border-bottom: 1px solid $mainColor2;
-}
+  border-bottom: 1px solid #f48a1f; }
+
 .alert-success {
-  background-color: darken($mainColor1, 5%);
-  border: 1px solid darken($mainColor1, 5%);
-  font-size: 15px;
-}
+  background-color: #7fb636;
+  border: 1px solid #7fb636;
+  font-size: 15px; }
+
 .appt-tomorrow {
-  background-color: darken($ligthGray, 10%);
-  border: 1px solid darken($ligthGray, 10%);
-}
+  background-color: #b3b3b3;
+  border: 1px solid #b3b3b3; }
+
 a.appt-biz,
 a.appt-edit {
   color: #FFFFFF;
-  padding-left: 10px;
-}
+  padding-left: 10px; }
+
 a.appt-biz:hover,
 a.appt-edit:hover {
-  color: $mainColor3;
-}
-.fa-calendar-o {
-  padding-right: 5px;
-}
-.fa-usd {
-  padding-left: 10px;
-}
+  color: #1b2846; }
 
+.fa-calendar-o {
+  padding-right: 5px; }
+
+.fa-usd {
+  padding-left: 10px; }
 
 /* Error Page*/
 /* ----------------------------------------------- */
 .error-page {
   background: url(../img/photos/berries.jpg) center top no-repeat;
-  @include bgimg;
-}
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; }
+
 .error-details {
-  padding-top: 20px;
-}
+  padding-top: 20px; }
+
 .error-code {
   font-size: 60px;
-  color: $mainColor3;
+  color: #1b2846;
   line-height: 1.2;
   font-weight: 700;
-  @include mainFont;
-}
-.error-message {
-  font-size: 1.2em;
-}
-.pocketsoho-home {
-  color: darken($mainColor1, 20%);
+  font-family: "Open-Sans", sans-serif;
+  -webkit-font-smoothing: antialiased; }
 
-}
+.error-message {
+  font-size: 1.2em; }
+
+.pocketsoho-home {
+  color: #567b25; }
+
 .pocketsoho-home:hover {
-  color: lighten($mainColor2, 20%);
-}
+  color: #f9bd80; }
+
 .oops {
-  color: $mainColor2;
-  font-size: 2.2em;
-}
+  color: #f48a1f;
+  font-size: 2.2em; }
 
 /* Admin - User Setting Page - Main Dashboard*/
 /* ----------------------------------------------- */
 .nav-layout-sidebar > .active > a {
-  color: $mainColor2;
-}
+  color: #f48a1f; }
+
 .nav-layout-sidebar > .active > a:hover {
-  color: $mainColor1;
-}
+  color: #8cc640; }
+
 #sidebar-menu {
-  z-index: 1;
-}
+  z-index: 1; }
+
 #save-change,
 #save-change1,
 #save-change2 {
-  padding: 0.4em 1.4em;
-}
+  padding: 0.4em 1.4em; }
+
 #cancel-change,
 #cancel-change1,
 #cancel-change2 {
-  padding: 0.9em 4.4em;
-}
-.pricing-plan-amount {
-  color: $mainColor1;
-}
-.btn-primary.disabled {
-  background-color: $mainColor2;
-  border-color: $mainColor2;
-}
-.pricing-plan-ribbon-secondary {
-  background-color: $mainColor2;
-}
-.pricing-header {
-  background-color: $mainColor3;
-}
-.brief-instr {
-  font-size: 12px;
-}
+  padding: 0.9em 4.4em; }
 
+.pricing-plan-amount {
+  color: #8cc640; }
+
+.btn-primary.disabled {
+  background-color: #f48a1f;
+  border-color: #f48a1f; }
+
+.pricing-plan-ribbon-secondary {
+  background-color: #f48a1f; }
+
+.pricing-header {
+  background-color: #1b2846; }
+
+.brief-instr {
+  font-size: 12px; }
 
 @media (max-width: 767px) {
   #logo2,
   #logo3 {
-    width: 40px;
-  }
+    width: 40px; }
+
   #logo3 {
-    display: none;
-  }
+    display: none; }
+
   .navbar-inverse .navbar-toggle:hover {
-    background-color: rgba(255,255,255,0.9);
-  }
+    background-color: rgba(255, 255, 255, 0.9); }
 
   .navbar-inverse .navbar-toggle.is-open {
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255, 255, 255, 0.9); }
 
-  }
   .mainnav-form {
     border-top: 0;
-    border-bottom: 0;
-  }
+    border-bottom: 0; }
+
   #logo {
     width: 50%;
-    padding-top: 20px;
-  }
+    padding-top: 20px; }
+
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
     cursor: pointer;
-    color: lighten($mainColor2, 10%);
-  }
-  .avatar-img {
-    width: 60px !important;
-  }
-  .table-responsive>.table>thead>tr>th,
-   .table-responsive>.table>tbody>tr>th,
-   .table-responsive>.table>tfoot>tr>th,
-   .table-responsive>.table>thead>tr>td,
-   .table-responsive>.table>tbody>tr>td,
-   .table-responsive>.table>tfoot>tr>td {
-    white-space: normal;
-   }
-}
+    color: #f6a350; }
 
+  .avatar-img {
+    width: 60px !important; }
+
+  .table-responsive > .table > thead > tr > th,
+  .table-responsive > .table > tbody > tr > th,
+  .table-responsive > .table > tfoot > tr > th,
+  .table-responsive > .table > thead > tr > td,
+  .table-responsive > .table > tbody > tr > td,
+  .table-responsive > .table > tfoot > tr > td {
+    white-space: normal; } }
 
 @media (max-width: 480px) {
   .navbar-header a {
-    width: 230px;
-  }
+    width: 230px; }
+
   #logo {
     width: 50%;
-    padding-top: 20px;
-  }
+    padding-top: 20px; }
+
   .account-body h3 {
-    font-size: 20px;
-  }
+    font-size: 20px; }
+
   .account-footer p,
   .account-footer p a {
-    font-size: 12px;
-  }
+    font-size: 12px; }
+
   .checkbox-inline a {
-    font-size: 12px;
-  }
+    font-size: 12px; }
+
   .btn-primary,
   .btn-secondary {
-    padding: 0.3em 2em;
-  }
+    padding: 0.3em 2em; }
+
   #account-login .account-footer p {
-    color: $ligthGray;
-  }
+    color: #cccccc; }
+
   #account-signup {
     background: url(../img/photos/mobile-piano.jpg) center top no-repeat;
-    @include bgimg;
-  }
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; }
 
   #account-login {
     background: url(../img/photos/mobile-working.jpg) center top no-repeat;
-    @include bgimg;
-  }
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; }
 
   #reset-password {
     background: url(../img/photos/mobile-trainer.jpg) center top no-repeat;
-    @include bgimg;
-  }
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; }
+
   #social-login {
     background: url(../img/photos/makeup-mobile.jpg) center top no-repeat;
-    @include bgimg;
-  }
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; }
 
   #reset-password .account-body {
-    top: 7em;
-  }
-  .dropdown-menu>li>a {
-  color: $ligthGray;
-  }
+    top: 7em; }
 
-}
+  .dropdown-menu > li > a {
+    color: #cccccc; } }

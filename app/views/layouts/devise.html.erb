@@ -21,9 +21,9 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
   <!-- App CSS -->
-  <link rel="stylesheet" href="./css/mvpready-admin.css">
-  <link rel="stylesheet" href="./css/mvpready-flat.css">
-   <link href="./css/custom.css" rel="stylesheet">
+  <%= stylesheet_link_tag    "mvpready-admin"%>
+  <%= stylesheet_link_tag    "mvpready-flat"%>
+  <%= stylesheet_link_tag    "custom"%>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./img/ico/favicon.png">
@@ -45,19 +45,21 @@
       <div class="navbar-header">
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
-          <img id="logo2" src="./img/mobilemenu-logo.svg" alt="pocketSOHO">
-          <img id="logo3" src="./img/mobilemenu-logo1.svg" alt="pocketSOHO">
+          <%= image_tag "mobilemenu-logo.svg", alt: 'pocketSOHO', id: "logo2"%>
+          <%= image_tag "mobilemenu-logo1.svg", alt: 'pocketSOHO', id: "logo3"%>
         </button>
 
         <a href="http://www.pocketsoho.com" class="navbar-brand navbar-brand-img">
-          <img id="logo" src="./img/logo.svg" alt="pocketSOHO">
+          <%= image_tag "logo.svg", alt: 'pocketSOHO', id: "logo"%>
         </a>
       </div> <!-- /.navbar-header -->
 
       <nav class="collapse navbar-collapse" role="navigation">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="../landing/index.html"><i class="fa fa-angle-double-left"></i> &nbsp;Back to Home</a>
+            <%= link_to root_path do %>
+              <i class="fa fa-angle-double-left"></i> &nbsp;Back to Home</a>
+              <% end %>
           </li>
         </ul>
       </nav>
@@ -96,7 +98,7 @@
 
       <span class="account-or-social text-muted">OR, SIGN IN BELOW</span>
 
-      <form class="form account-form" method="POST" action="./index.html">
+      <form class="form account-form" method="POST" action="/">
 
         <div class="form-group">
           <label for="login-username" class="placeholder-hidden">Username</label>
@@ -140,18 +142,18 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Core JS -->
-<script src="./js/libs/jquery-1.10.2.min.js"></script>
-<script src="./js/libs/bootstrap.min.js"></script>
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" %>
+<%= javascript_include_tag "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" %>
 
 <!--[if lt IE 9]>
 <script src="./js/libs/excanvas.compiled.js"></script>
 <![endif]-->
 <!-- App JS -->
-<script src="./js/mvpready-core.js"></script>
-<script src="./js/mvpready-admin.js"></script>
+<%= javascript_include_tag "mvpready-core" %>
+<%= javascript_include_tag "mvpready-admin" %>
 
 <!-- Plugin JS -->
-<script src="./js/mvpready-account.js"></script>
+<%= javascript_include_tag "mvpready-account" %>
 
 
 

@@ -18,16 +18,16 @@ var mvpready_core = function () {
 
   var getLayoutColors = function () {
     var colors
-
+    
     colors = ['#D74B4B', '#475F77', '#BCBCBC', '#777777', '#6685a4', '#E68E8E'] // Slate
-    //colors = ['#2980b9', '#7CB268', '#A9A9A9', '#888888', '#74B5E0', '#B3D1A7'] // Belize
+    //colors = ['#2980b9', '#7CB268', '#A9A9A9', '#888888', '#74B5E0', '#B3D1A7'] // Belize    
     //colors = ['#6B5C93', '#444444', '#569BAA', '#AFB7C2', '#A89EC2', '#A9CCD3'] // Square
     //colors = ['#e74c3c', '#444444', '#569BAA', '#AFB7C2', '#F2A299', '#A9CBD3'] // Pom
     //colors = ['#3498DB', '#2c3e50', '#569BAA', '#AFB7C2', '#ACCDD5', '#6487AA'] // Royal
     //colors = ['#E5723F', '#67B0DE', '#373737', '#BCBCBC', '#F2BAA2', '#267BAE'] // Carrot
 
     return colors
-  }
+  }   
 
   var isLayoutCollapsed = function () {
     return $('.navbar-toggle').css ('display') == 'block'
@@ -42,7 +42,7 @@ var mvpready_core = function () {
             container: function (element, isRadioOrCheckbox) {
               if (element.parents ('form').is ('.form-horizontal')) {
                 return element.parents ("*[class^='col-']")
-              }
+              }             
               return element.parents ('.form-group')
             }
           }
@@ -194,14 +194,14 @@ var mvpready_core = function () {
     }
   }
 
-  return {
+  return {    
     navEnhancedInit: navEnhancedInit,
     navHoverInit: navHoverInit,
 
-    initAccordions: initAccordions,
+    initAccordions: initAccordions,   
     initFormValidation: initFormValidation,
     initTooltips: initTooltips,
-    initBackToTop: initBackToTop,
+    initBackToTop: initBackToTop,    
     initLightbox: initLightbox,
     isLayoutCollapsed: isLayoutCollapsed,
 
