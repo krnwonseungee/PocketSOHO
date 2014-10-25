@@ -94,13 +94,13 @@
         <ul class="nav navbar-nav navbar-right">
 
            <li>
-            <a class="hello" href="#">Hello, Janet</a>
+            <a class="hello" href="#">Hello, <%= @user.first_name %></a>
           </li>
 
           <li class="dropdown navbar-profile">
             <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
-              <%= image_tag "avatars/janet-xs.jpg", alt: '', class: "navbar-profile-avatar" %>
-              <span class="navbar-profile-label">janet@janet.me &nbsp;</span>
+              <%= image_tag @user.image_url, alt: '', class: "navbar-profile-avatar" %>
+              <span class="navbar-profile-label"><%= @user.email %> &nbsp;</span>
               <i class="fa fa-caret-down"></i>
             </a>
 

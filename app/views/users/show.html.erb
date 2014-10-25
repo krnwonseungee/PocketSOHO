@@ -7,42 +7,8 @@
         <div class="col-md-3 col-sm-5">
 
           <div class="profile-avatar">
-            <%= image_tag "avatars/janet-lg.jpg", alt: 'Profile Image', class: 'profile-avatar-img thumbnail' %>
+            <%= image_tag @profile_user.image_url, alt: 'Profile Image', class: 'profile-avatar-img thumbnail' %>
           </div> <!-- /.profile-avatar -->
-
-          <!-- <div class="list-group">
-
-            <a href="javascript:;" class="list-group-item">
-              <i class="fa fa-asterisk text-primary"></i> &nbsp;&nbsp;Activity Feed
-
-              <i class="fa fa-chevron-right list-group-chevron"></i>
-            </a>
-
-            <a href="javascript:;" class="list-group-item">
-              <i class="fa fa-book text-primary"></i> &nbsp;&nbsp;Projects
-
-              <i class="fa fa-chevron-right list-group-chevron"></i>
-              <span class="badge">3</span>
-            </a>
-
-            <a href="javascript:;" class="list-group-item">
-              <i class="fa fa-envelope text-primary"></i> &nbsp;&nbsp;Messages
-
-              <i class="fa fa-chevron-right list-group-chevron"></i>
-            </a>
-
-            <a href="javascript:;" class="list-group-item">
-              <i class="fa fa-group text-primary"></i> &nbsp;&nbsp;Friends
-
-              <i class="fa fa-chevron-right list-group-chevron"></i>
-            </a>
-
-            <a href="javascript:;" class="list-group-item">
-              <i class="fa fa-cog text-primary"></i> &nbsp;&nbsp;Settings
-
-              <i class="fa fa-chevron-right list-group-chevron"></i>
-            </a>
-          </div> --> <!-- /.list-group -->
 
         </div> <!-- /.col -->
 
@@ -50,31 +16,41 @@
 
         <div class="col-md-6 col-sm-7">
 
-          <h3>Janet Yi</h3>
+          <h3><%= @profile_user.first_name %> <%= @profile_user.last_name %></h3>
 
-          <h5 class="text-muted">Software Engineer</h5>
+          <h5 class="text-muted">
+            <%= @profile_user.type %>
+            <% if @profile_user.id == @user.id  %>
+                  <%= render partial: 'edit_button' %>
+            <% end %>
+          </h5>
 
           <hr>
 
-          <p>
             <!-- <a href="javascript:;" class="btn btn-primary">Follow Janet</a>
             &nbsp;&nbsp; -->
-            <a href="javascript:;" class="btn btn-secondary">Send Message</a>
-          </p>
+            <% if @profile_user != @user %>
+              <%= link_to user_conversation_path(@user, @conversation), class: 'btn btn-secondary' do %>
+                Send Message
+              <% end %>
+            <% end %>
 
           <hr>
 
           <ul class="icons-list">
-            <li><i class="icon-li fa fa-envelope"></i> support@jumpstartthemes.com</li>
-            <li><i class="icon-li fa fa-heart"></i> Member Since October 2014</li>
-            <li><i class="icon-li fa fa-map-marker"></i> San Francisco, CA</li>
+            <li>
+              <i class="icon-li fa fa-envelope"></i>
+              <%= @profile_user.email %>
+            </li>
+            <li>
+              <i class="icon-li fa fa-heart"></i>
+              Member Since <%= @profile_user.created_at.strftime("%B %Y") %>
+            </li>
+            <li>
+              <i class="icon-li fa fa-map-marker"></i>
+              <%= @profile_user.city %>, <%= @profile_user.state %>
+            </li>
           </ul>
-
-          <br>
-
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</p>
-
-
           </div> <!-- /.col -->
 
 
