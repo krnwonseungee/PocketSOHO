@@ -1,4 +1,4 @@
-app = angular.module('pocketSOHO', ['ui.bootstrap', 'app.filter']);
+app = angular.module('pocketSOHO', ['ui.bootstrap']);
 
 // $('a[href^=#]').on('click',function(e) {
 //     e.preventDefault();
