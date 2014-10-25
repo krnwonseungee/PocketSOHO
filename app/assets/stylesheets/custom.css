@@ -113,6 +113,10 @@ a {
 .account-body h5 {
   color: #1b2846; }
 
+.account-form .select label {
+  color: #98999B;
+}
+
 #account-login .account-footer p {
   color: #1b2846; }
 
