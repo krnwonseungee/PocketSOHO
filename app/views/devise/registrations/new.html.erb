@@ -6,27 +6,23 @@
 
       <h5>Sign up in 30 seconds. No credit card required.</h5>
 
-      <form class="form account-form" method="POST" action="./index.html">
+      <%= simple_form_for(resource, as: resource_name, html: { class: 'form account-form' }, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-group">
+          <%= f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' } %>
+        </div>
 
         <div class="form-group">
-          <label for="signup-email" class="placeholder-hidden">Email Address</label>
-          <input type="text" class="form-control" id="signup-email" placeholder="Your Email" tabindex="1">
-        </div> <!-- /.form-group -->
+          <%= f.input :password, required: true, autofocus: true, input_html: { class: 'form-control' } %>
+        </div>
 
         <div class="form-group">
-          <label for="signup-fullname" class="placeholder-hidden">Your Name</label>
-          <input type="text" class="form-control" id="signup-fullname" placeholder="Your Name" tabindex="2">
-        </div> <!-- /.form-group -->
+          <%= f.input :password_confirmation, required: true, autofocus: true, input_html: { class: 'form-control' } %>
+        </div>
 
         <div class="form-group">
-          <label for="signup-username" class="placeholder-hidden">Username</label>
-          <input type="text" class="form-control" id="signup-username" placeholder="Username" tabindex="3">
-        </div> <!-- /.form-group -->
-
-        <div class="form-group">
-          <label for="login-password" class="placeholder-hidden">Password</label>
-          <input type="password" class="form-control" id="login-password" placeholder="Password" tabindex="4">
-        </div> <!-- /.form-group -->
+          <%= f.input :type, collection: ["BusinessOwner", "Customer"], input_html: { class: 'form-control' }  %>
+        </div>
 
         <div class="form-group">
           <label class="checkbox-inline">
@@ -40,7 +36,7 @@
           </button>
         </div> <!-- /.form-group -->
 
-      </form>
+      <% end %>
 
     </div> <!-- /.account-body -->
 
