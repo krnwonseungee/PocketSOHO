@@ -59,26 +59,27 @@
 
                       </div> <!-- /.table-responsive -->
 
-            <div class="pagination">
-              <ul class="paging">
-                  <li ng-class="{ disabled: prevPageDisabled() }">
-                  <a href ng-click="firstPage()" ng-class="{ disabled: prevPageDisabled() }">« First</a>
-                </li>
-                <li>
-                  <a href ng-click="prevPage()" ng-class="{ disabled: prevPageDisabled() }">Prev</a>
-                </li>
-                <li ng-repeat="n in range()" ng-class="{active: n == currentPage}" ng-click="setPage(n)">
-                  <a href="#">{{n+1}}</a>
-                </li>
-                <li ng-class="{ disabled: nextPageDisabled() }">
-                  <a href ng-click="nextPage()" ng-class="{ disabled: nextPageDisabled() }">Next</a>
-                </li>
-                <li ng-class="{ disabled: nextPageDisabled() }">
-                  <a href ng-click="lastPage()" ng-class="{ disabled: nextPageDisabled() }">Last »</a>
-                </li>
-              </ul>
+            <div class="row">
+              <div class="pull-right page-right">
+                <ul class="pagination">
+                    <li ng-class="{ disabled: prevPageDisabled() }">
+                    <a href ng-click="firstPage()" ng-class="{ disabled: prevPageDisabled() }">« First</a>
+                  </li>
+                  <li>
+                    <a href ng-click="prevPage()" ng-class="{ disabled: prevPageDisabled() }">Prev</a>
+                  </li>
+                  <li ng-repeat="n in range()" ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+                    <a href="#">{{n+1}}</a>
+                  </li>
+                  <li ng-class="{ disabled: nextPageDisabled() }">
+                    <a href ng-click="nextPage()" ng-class="{ disabled: nextPageDisabled() }">Next</a>
+                  </li>
+                  <li ng-class="{ disabled: nextPageDisabled() }">
+                    <a href ng-click="lastPage()" ng-class="{ disabled: nextPageDisabled() }">Last »</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-
 
         </div> <!-- /.col -->
 
