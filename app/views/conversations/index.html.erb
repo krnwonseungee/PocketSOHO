@@ -18,9 +18,6 @@
         </form>
         </div>
 
-         <div data-pagination="" data-num-pages="numPages()" data-current-page="currentPage" data-max-size="maxPageRange" data-boundary-links="true"></div>
-
-
       </div>
       <div id='no-messages-wrapper' style="text-align: center">
         <div id="no-messages" ng-style=" { 'display': noResults((messages | filter: searchWords).length) }">No Messages. Click <%= link_to "here", new_user_conversation_path(@user.id) %> to create a message. </div>
@@ -41,7 +38,7 @@
                         </tr>
                   </thead>
                     <tbody>
-                        <tr class="msg-row" ng-repeat="message in messages | filter: searchWords" ng-style="{ 'font-weight': getReadStatus(message) }">
+                        <tr class="msg-row" ng-repeat="message in messages | filter: searchWords | offset: currentPage*itemsPerPage | limitTo: itemsPerPage " ng-style="{ 'font-weight': getReadStatus(message) }">
                               <td class="valign-middle">
                               <div class="thumbnail">
                                   <img ng-src="{{message.sender_image}}" width="125" alt="Gallery Image" />
@@ -62,33 +59,25 @@
 
                       </div> <!-- /.table-responsive -->
 
-                      <div class="row">
-                        <div class="pull-right page-right">
-                          <ul class="pagination">
-                            <li>
-                                <a href="#">Previous</a>
-                            </li>
-                            <li>
-                                <a href="#">1</a>
-                            </li>
-                            <li>
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">4</a>
-                            </li>
-                            <li>
-                                <a href="#">5</a>
-                            </li>
-                            <li>
-                                <a href="#">Next</a>
-                            <li>
-                          </ul>
-                        </div>
-                      </div>
+            <div class="pagination">
+              <ul class="paging">
+                  <li ng-class="{ disabled: prevPageDisabled() }">
+                  <a href ng-click="firstPage()" ng-class="{ disabled: prevPageDisabled() }">« First</a>
+                </li>
+                <li>
+                  <a href ng-click="prevPage()" ng-class="{ disabled: prevPageDisabled() }">Prev</a>
+                </li>
+                <li ng-repeat="n in range()" ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+                  <a href="#">{{n+1}}</a>
+                </li>
+                <li ng-class="{ disabled: nextPageDisabled() }">
+                  <a href ng-click="nextPage()" ng-class="{ disabled: nextPageDisabled() }">Next</a>
+                </li>
+                <li ng-class="{ disabled: nextPageDisabled() }">
+                  <a href ng-click="lastPage()" ng-class="{ disabled: nextPageDisabled() }">Last »</a>
+                </li>
+              </ul>
+            </div>
 
 
         </div> <!-- /.col -->
