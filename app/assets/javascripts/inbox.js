@@ -92,7 +92,7 @@ app.controller('inboxController', ['$scope', '$http', function($scope, $http){
 
         $scope.pageCount = function() {
           // debugger
-          return Math.ceil($scope.messages.length/$scope.itemsPerPage)-1;
+          return Math.ceil($scope.filtered.length/$scope.itemsPerPage)-1;
         };
 
         $scope.nextPage = function() {

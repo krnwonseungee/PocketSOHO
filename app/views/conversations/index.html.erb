@@ -38,7 +38,7 @@
                         </tr>
                   </thead>
                     <tbody>
-                        <tr class="msg-row" ng-repeat="message in messages | filter: searchWords | offset: currentPage*itemsPerPage | limitTo: itemsPerPage " ng-style="{ 'font-weight': getReadStatus(message) }">
+                        <tr class="msg-row" ng-repeat="message in filtered = (messages | filter: searchWords) | offset: currentPage*itemsPerPage | limitTo: itemsPerPage " ng-style="{ 'font-weight': getReadStatus(message) }">
                               <td class="valign-middle">
                               <div class="thumbnail">
                                   <img ng-src="{{message.sender_image}}" width="125" alt="Gallery Image" />
