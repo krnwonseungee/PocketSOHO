@@ -117,6 +117,10 @@ a {
   color: #98999B;
 }
 
+.account-form .user_remember_me label {
+  padding-left: 5px;
+}
+
 #account-login .account-footer p {
   color: #1b2846; }
 
@@ -521,28 +525,28 @@ a.appt-edit:hover {
     color: #cccccc; }
 
   #account-signup {
-    background: url(../img/photos/mobile-piano.jpg) center top no-repeat;
+    background: url(photos/mobile-piano.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; }
 
   #account-login {
-    background: url(../img/photos/mobile-working.jpg) center top no-repeat;
+    background: url(photos/mobile-working.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; }
 
   #reset-password {
-    background: url(../img/photos/mobile-trainer.jpg) center top no-repeat;
+    background: url(photos/mobile-trainer.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; }
 
   #social-login {
-    background: url(../img/photos/makeup-mobile.jpg) center top no-repeat;
+    background: url(photos/makeup-mobile.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;

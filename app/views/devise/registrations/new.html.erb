@@ -21,7 +21,7 @@
         </div>
 
         <div class="form-group">
-          <%= f.input :type, collection: ["BusinessOwner", "Customer"], input_html: { class: 'form-control' }, label: 'Please choose the account type:'  %>
+          <%= f.input :type, collection: ["BusinessOwner", "Customer"], input_html: { class: 'form-control' }, label: 'Please choose the account'  %>
         </div>
 
         <div class="form-group">
@@ -43,7 +43,7 @@
     <div class="account-footer">
       <p>
       Already have an account? &nbsp;
-      <a href="./account-login.html" class="">Login to your Account!</a>
+      <a href="/users/sign_in" class="">Login to your Account!</a>
       </p>
     </div> <!-- /.account-footer -->
 
