@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   scope :business_owners, -> { where(type: 'Business Owner') }
   scope :customers, -> { where(type: 'Customer') }
 
-  has_many :businesses
+  has_and_belongs_to_many :businesses, join_table: 'users_businesses'
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
