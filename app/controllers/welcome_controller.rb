@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
         return ""
       end
       @unread_conversations = Array.new
-      @invoices = Invoice.where("business_id = ? AND due_date = ?", @user.business_id, Date.new(Date.today.year, Date.today.month, -1))
+      @invoices = Invoice.where("business_id = ? AND due_date = ?", @user.businesses.first, Date.new(Date.today.year, Date.today.month, -1))
       @invoice_dates = @invoices.pluck( :due_date )
 
       if @user.type == "BusinessOwner"
@@ -22,7 +22,7 @@ class WelcomeController < ApplicationController
 
 
       else
-        @businesses = Business.where( "id = ?", @user.business_id ) # change for multiple businesses
+        @businesses = Business.where( "id = ?", @user.businesses.first.id ) # change for multiple businesses
         Conversation.where("customer_id = ? AND seen_by_customer = ?", @user.id, false ).each do |thread|
           @unread_conversations << thread.messages.last
         end

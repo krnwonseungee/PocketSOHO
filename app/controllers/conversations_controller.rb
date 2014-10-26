@@ -40,7 +40,7 @@ class ConversationsController < ApplicationController
   def new
     @new_message = Message.new
     @recipient_list = {}
-    @business_id = @user.business_id
+    @business_id = @user.businesses.first.id
     if @user.type == "BusinessOwner"
       recipient_first_names = Customer.where( "business_id =?", @business_id ).pluck(:first_name)
       recipient_last_names = Customer.where( "business_id =?", @business_id ).pluck(:last_name)
@@ -61,7 +61,7 @@ class ConversationsController < ApplicationController
   def create
     puts "CREATE!! #{params}"
     puts "SESSION IN CREATE!! #{session[:conversation_id]}"
-    @current_business = Business.find(@user.business_id)
+    @current_business = Business.find(@user.businesses.id)
     if params[:message][:customer_id]
       customer_name = params[:message][:customer_id].split(" ")
       @recipient = Customer.find_by_first_name_and_last_name(customer_name[0], customer_name[1])

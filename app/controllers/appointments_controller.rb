@@ -13,7 +13,7 @@ class AppointmentsController < ApplicationController
   def new
     @appointment = Appointment.new
     @appt_person_list = {}
-    @business_id = @user.business_id
+    @business_id = @user.businesses.id
       recipient_first_names = Customer.where( "business_id =?", @business_id ).pluck(:first_name)
       recipient_last_names = Customer.where( "business_id =?", @business_id ).pluck(:last_name)
       recipient_first_names.each_with_index do |val, i|
