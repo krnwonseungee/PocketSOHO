@@ -113,10 +113,4 @@ class ConversationsController < ApplicationController
     Conversation.where( "business_owner_id = ? OR customer_id", business_owner_id, customer_id )
     render :json => MessageSearcher.new.retrieve_relevant_messages(params["search_term"])
   end
-
-  private
-
-  def set_user
-    @user = current_user
-  end
 end

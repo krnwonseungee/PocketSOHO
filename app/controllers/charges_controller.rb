@@ -1,4 +1,6 @@
 class ChargesController < ApplicationController
+  before_filter :set_user
+
   def new
   end
 

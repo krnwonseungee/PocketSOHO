@@ -36,10 +36,6 @@ class BusinessesController < ApplicationController
 
   private
 
-  def set_user
-    @user = current_user
-  end
-
   def business_params
     params.require(:business).permit(:name, :location, :slogan, :image_url, :city, :state, :description)
   end

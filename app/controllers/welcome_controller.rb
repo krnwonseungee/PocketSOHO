@@ -1,9 +1,9 @@
 class WelcomeController < ApplicationController
-  before_action :authenticate_user!, only: [:settings]
-  before_filter :set_user
+  before_action :set_user, only: [:settings]
 
   def index
     if user_signed_in?
+      @user = current_user
       if current_user.first_name == nil && current_user.last_name == nil
         redirect_to edit_user_path(current_user)
         return ""
@@ -38,11 +38,5 @@ class WelcomeController < ApplicationController
 
   def settings
     @businesses = Business.all #change to find_by_user_id
-  end
-
-private
-
-  def set_user
-    @user = current_user
   end
 end

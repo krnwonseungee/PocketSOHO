@@ -40,12 +40,6 @@ class UsersController < ApplicationController
 
   private
 
-  def set_user
-    @user = current_user
-    puts "USER SET! #{@user}"
-    redirect_to root_path if @user.nil?
-  end
-
   # def user_params
   #   params.require(:user).permit(:first_name, :last_name, :city, :state, :email, :image_url, :phone)
   # end

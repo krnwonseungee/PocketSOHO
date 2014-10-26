@@ -18,4 +18,14 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :type) }
   end
+
+  def set_user
+    if current_user
+      @user = current_user
+    else
+      redirect_to new_user_session_path
+      flash[:error] = "You must be logged in to view this page."
+    end
+
+  end
 end

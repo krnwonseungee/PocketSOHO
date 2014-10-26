@@ -74,11 +74,6 @@ class AppointmentsController < ApplicationController
   end
 
 private
-
-  def set_user
-    @user = current_user
-  end
-
   def appointment_params
     params.require(:appointment).permit(:customer_id, :business_owner_id, :business_id, :notes, :time)
   end
