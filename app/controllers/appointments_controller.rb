@@ -13,9 +13,9 @@ class AppointmentsController < ApplicationController
   def new
     @appointment = Appointment.new
     @appt_person_list = {}
-    @business_id = @user.businesses.id
-      recipient_first_names = Customer.where( "business_id =?", @business_id ).pluck(:first_name)
-      recipient_last_names = Customer.where( "business_id =?", @business_id ).pluck(:last_name)
+    @business_id = @user.businesses.first.id
+      recipient_first_names = Customer.first.businesses.find(@business_id ).pluck(:first_name)
+      recipient_last_names = Customer.first.businesses.find(@business_id ).pluck(:first_name)
       recipient_first_names.each_with_index do |val, i|
         full_name = recipient_first_names[i] + " " + recipient_last_names[i]
         @appt_person_list[ full_name ] = Customer.where( "business_id =?", @business_id )[i]
