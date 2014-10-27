@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
   def index
     if user_signed_in?
       @user = current_user
-      if current_user.first_name == nil && current_user.last_name == nil
+      if current_user.business_id == ("" || nil) || current_user.type == ("" || nil) || (current_user.first_name == nil && current_user.last_name == nil)
         redirect_to edit_user_path(current_user)
         return ""
       end
@@ -38,5 +38,18 @@ class WelcomeController < ApplicationController
 
   def settings
     @businesses = Business.all #change to find_by_user_id
+  end
+
+  def search_businesses
+    @biz_str_array = []
+    biz_string = ""
+    Business.all.each do |b|
+      @biz_str_array.push("#{b.name} - #{b.id}")
+    end
+    respond_to do |format|
+      format.html
+      format.any(:json) { render request.format.to_sym => @biz_str_array }
+    end
+
   end
 end

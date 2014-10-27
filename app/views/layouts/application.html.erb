@@ -10,24 +10,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
   <meta name="description" content="PocketSOHO: My Dashboard - User Profile">
 
-  <!-- Google Font: Open Sans -->
+  <!-- Google Fonts -->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300,700">
 
-  <!-- Font Awesome CSS -->
+  <!-- Font Awesome  -->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap  -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
   <!-- App CSS -->
   <%= stylesheet_link_tag    "mvpready-admin"%>
   <%= stylesheet_link_tag    "mvpready-flat"%>
   <%= stylesheet_link_tag    "custom"%>
+  <%= stylesheet_link_tag    "custom"%>
 
 <!-- jQuery & Angular  -->
   <%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" %>
-<%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js" %>
+  <%= javascript_include_tag "http://code.jquery.com/ui/1.11.2/jquery-ui.js" %>
+  <%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js" %>
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="./img/ico/favicon.png">
@@ -173,6 +175,7 @@
 <!-- App JS -->
 <%= javascript_include_tag "mvpready-core" %>
 <%= javascript_include_tag "mvpready-admin" %>
+<%= javascript_include_tag "welcome" %>
 <%= javascript_include_tag "chart" %>
 
 </body>

@@ -48,7 +48,7 @@ app.controller('inboxController', ['$scope', '$http', function($scope, $http){
     }
   }
 
-      $scope.itemsPerPage = 2;
+      $scope.itemsPerPage = 4;
       $scope.currentPage = 0;
 
       $scope.range = function() {

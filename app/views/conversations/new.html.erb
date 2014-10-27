@@ -13,23 +13,17 @@
             </h2>
 
             <div class="portlet-body">
-
-              <form id="demo-validation" action="./components-validation.html" data-validate="parsley" class="form parsley-form">
+              <%= form_for @new_message, url: {action: "create"}, html: {id: "demo-validation", class: 'form parsley-form'} do |f| %>
                  <div class="form-group">
-                  <label for="validateSelect">Recipient</label>
-                  <select id="validateSelect" name="validateSelect" class="form-control parsley-validated" data-required="true">
-                    <option value="">Please Select</option>
-                    <option value="Rosa Choi">Rosa Choi</option>
-                    <option value="Sumi Levy">Sumi Levy</option>
-                    <option value="Ben Levy">pocketSOHO</option>
-                    <option value="Jane Doe">Jane Doe</option>
-                    <option value="John Smith">John Smith</option>
-                  </select>
+                  <% if @user.type =="BusinessOwner" %>
+                    <p><label>Recipient:</label><%= f.select :customer_id, @recipient_list.keys, {}, { :class => 'form-control' }  %></p>
+                  <% else %>
+                    <p><label>Recipient:</label><%= f.select :business_owner_id, @recipient_list.keys, {}, { :class => 'form-control' }  %></p>
+                    <% end %>
                 </div> <!-- /.form-group -->
 
                 <div class="form-group">
-                  <label for="textarea-input">Textarea</label>
-                  <textarea data-required="true" data-minlength="5" name="textarea-input" id="textarea-input" cols="10" rows="8" class="form-control parsley-validated"></textarea>
+                  <%= f.text_area :text, size: "60x12", class: 'form-control' %>
                 </div> <!-- /.form-group -->
 
                 <div class="form-group">
@@ -37,6 +31,7 @@
                 </div> <!-- /.form-group -->
 
               </form>
+              <% end %>
 
             </div> <!-- /.portlet-body -->
 

@@ -6,6 +6,8 @@ PocketSOHO::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root 'welcome#index'
 
+  get 'search_businesses', to: 'welcome#search_businesses'
+
   # resources :sessions, only: [:create, :destroy]
   get '/settings', to: 'users#settings', as: :user_settings
   # get '/log_in', to: 'sessions#new'
