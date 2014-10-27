@@ -1,6 +1,7 @@
 class AppointmentsController < ApplicationController
   before_filter :set_user
 
+
   def index
       if @user.type == "BusinessOwner"
           @appointments = Appointment.where( "business_owner_id = ?", @user.id )
@@ -11,6 +12,10 @@ class AppointmentsController < ApplicationController
   end
 
   def new
+    if @user.type == "Customer"
+        redirect_to appointments_path
+        flash[:error] = 'You must be a Business Owner to access this page.'
+    end
     @appointment = Appointment.new
     @appt_person_list = {}
     @business_id = @user.business_id

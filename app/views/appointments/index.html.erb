@@ -5,9 +5,15 @@
 			<%= link_to "Calendar View", appointments_calendar_path %>
 		</div>
 			<% if @appointments.length == 0 %>
+				<% if @user.type == "BusinessOwner" %>"
 				<div id="no-appts">
 					<p>You have no appointments scheduled right now. Click <%= link_to "here", new_appointment_path %> to schedule one. :) </p>
 				</div>
+				<% else %>
+				<div id="no-appts">
+					<p>You have no appointments scheduled right now. :) </p>
+				</div>
+				<% end %>
 			<% end %>
 
 			<% @appointment_dates.each do |date| %>
