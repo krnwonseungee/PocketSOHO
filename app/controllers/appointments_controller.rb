@@ -42,6 +42,10 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
+    if @user.type == "Customer"
+        redirect_to appointments_path
+        flash[:error] = 'You must be a Business Owner to access this page.'
+    end
     @appointment = Appointment.find(params[:id])
     @appt_person = Customer.find( @appointment.customer_id )
   end
@@ -73,7 +77,7 @@ class AppointmentsController < ApplicationController
   end
 
   def calendar
-    @business = @user.businesses.first #fix to be for multiple businesses/by business
+    @business = @user.business
     @appointments_by_date = Appointment.where("business_id=?", @business.id).group_by(&:date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end

@@ -2,6 +2,10 @@ class BusinessesController < ApplicationController
   before_filter :set_user
 
   def new
+    if @user.type == "Customer"
+        redirect_to appointments_path
+        flash[:error] = 'You must be a Business Owner to access this page.'
+    end
     @new_business = @user.businesses.new
   end
 
@@ -12,6 +16,10 @@ class BusinessesController < ApplicationController
   end
 
   def edit
+    if @user.type == "Customer"
+        redirect_to appointments_path
+        flash[:error] = 'You must be a Business Owner to access this page.'
+    end
     @business = Business.find(params[:id])
   end
 
