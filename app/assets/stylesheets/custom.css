@@ -497,11 +497,16 @@ a.appt-edit:hover {
 
 #validateSelect.year,
 #validateSelect.month,
-#validateSelect.day {
+#validateSelect.day,
+.appt-time {
   width: 90px; }
 
-#demo-validation #validateSelect {
-  display: inline; }
+#demo-validation #validateSelect,
+.appt-time {
+  display: inline;
+  font-size: 10px;
+  margin: 4px;
+}
 
 #update-appt,
 #delete-appt {

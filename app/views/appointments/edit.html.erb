@@ -1,12 +1,42 @@
-<div id="appt-edit">
-  <h1>Edit Appointment with <%= @appt_person.first_name %> <%= @appt_person.last_name %></h1>
-    <%= simple_form_for @appointment, url: { action: "update"} do |f| %>
-      <%= f.input :notes %>
-      <%= f.input :time %>
-      <%= f.button :submit %>
-      <%= link_to "Delete Appointment", appointment_path(@appointment.id), method: :delete, data: { confirm: 'You sure?' } %>
-      <% end %>
+<div class="newmessage-content content">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 ">
+
+          <div class="portlet">
+
+            <h2 class="portlet-title">
+              <u>Edit Appointment with <%= @appt_person.first_name %> <%= @appt_person.last_name %></u>
+            </h2>
+
+            <div class="portlet-body">
+
+              <div class="form-group">
+
+                <%= simple_form_for @appointment, url: { action: "update"} do |f| %>
+                  <label>Note: </label>
+                  <%= f.input :notes, label: false, input_html: {class: 'form-control', cols: '10', rows: '5'}, wrapper_html: { class: 'form-group' } %>
+                  <%= f.input :time, input_html: {class: 'form-control appt-time'}, wrapper_html: { class: 'form-group' }  %>
+                  <div class="form-group">
+                    <%= f.button :submit, class: 'btn btn-primary', id: 'update-appt' %>
+                    <%= link_to "Delete Appointment", appointment_path(@appointment.id), method: :delete, data: { confirm: 'You sure?' }, class: 'btn btn-default', id: 'delete-appt' %>
+                  </div>
+                <% end %>
+              </div> <!-- /.form-group -->
+
+            </div> <!-- /.portlet-body -->
+
+          </div> <!-- /.portlet -->
+
+        </div> <!-- /.col -->
+
+      </div> <!-- /.row -->
+
+    </div> <!-- /.container -->
 
 
-</div>
 
+  </div> <!-- .content -->
