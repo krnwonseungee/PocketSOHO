@@ -77,7 +77,7 @@ class AppointmentsController < ApplicationController
   end
 
   def calendar
-    @business = @user.business
+    @business = @user.businesses.first
     @appointments_by_date = Appointment.where("business_id=?", @business.id).group_by(&:date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end

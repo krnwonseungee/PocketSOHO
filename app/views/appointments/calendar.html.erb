@@ -1,15 +1,53 @@
-<h2 id="month">
-	<%= link_to "<", date: @date.prev_month %>
-	<%= @date.strftime("%B %Y") %>
-	<%= link_to ">", date: @date.next_month %>
-</h2>
-<%= calendar @date do |date| %>
-	  <%= date.day %>
-      <% if @appointments_by_date[date] %>
-	      <ul>
-	        <% @appointments_by_date[date].each do |appt| %>
-		          <li><%= link_to "Appt", appointment_path( appt.id ) %></li>
-	        <% end %>
-	      </ul>
-      <% end %>
-<% end %>
+<div class="appt-content content">
+
+    <div class="container">
+      <h3 class="content-title"><%= image_tag "schedule02.svg", alt: 'Scheduling Icon', id: "appticon"%><u>My Appointments</u></h3>
+
+      <section class="main">
+        <div class="custom-calendar-wrap">
+          <div id="custom-inner" class="custom-inner">
+            <div class="custom-header clearfix">
+              <nav>
+
+                <span id="custom-prev" class="custom-prev">
+                <%= link_to date: @date.prev_month do %>
+                  <span></span>
+                <% end %>
+                </span>
+
+                <span id="custom-next" class="custom-next">
+                <%= link_to date: @date.next_month do %>
+                  <span></span>
+                <% end %>
+              </span>
+
+              </nav>
+              <h2 id="custom-month" class="custom-month"><%= @date.strftime("%B") %></h2>
+              <h3 id="custom-year" class="custom-year"><%= @date.strftime("%Y") %></h3>
+          </div>
+
+          <div id="calendar">
+            <div class="fc-calendar fc-five-rows">
+
+              <%= calendar @date do |date| %>
+                <%= date.day %>
+                <% if @appointments_by_date[date] %>
+                  <ul>
+                    <% @appointments_by_date[date].each do |appt| %>
+                      <li>
+                        <%= link_to appointment_path( appt.id ) do %>
+                          <%= appt.business.name %> | <%= appt.time.strftime("%I:%M%p") %>
+                        <% end %>
+                      </li>
+                    <% end %>
+                 </ul>
+                <% end %>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div> <!-- /.container -->
+
+  </div> <!-- .content -->
