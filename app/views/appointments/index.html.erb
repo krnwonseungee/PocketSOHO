@@ -1,44 +1,126 @@
-<div id="appointments-list">
-	<div class="user-content">
-		<div class="banner">
-			<h1>My Appointments</h1>
-			<%= link_to "Calendar View", appointments_calendar_path %>
-		</div>
-			<% if @appointments.length == 0 %>
-				<% if @user.type == "BusinessOwner" %>"
-				<div id="no-appts">
-					<p>You have no appointments scheduled right now. Click <%= link_to "here", new_appointment_path %> to schedule one. :) </p>
-				</div>
-				<% else %>
-				<div id="no-appts">
-					<p>You have no appointments scheduled right now. :) </p>
-				</div>
-				<% end %>
-			<% end %>
+<div class="appt-content content">
 
-			<% @appointment_dates.each do |date| %>
-				<h3><%= date.strftime("%A, %b %d %y") %></h3>
-					<table>
-					  <% @appointments.where( "date = ?", DateTime.new( date.year, date.month, date.day) ).each do |appt| %>
-					  <tr class="appt-row">
-					    <td class="appt-date-col"><%= appt.time.strftime("%m/%d/%Y") %>@<%= appt.time.strftime("%I:%M%p") %></td>
-					    <td class="appt-time-col">$<%= number_with_precision(appt.amount, precision: 2, delimter: ',') %></td>
-					    <td class="appt-details-col">
-					      <%= link_to appointment_path( appt.id ) do %>
-					      Appointment with <%= Business.find( appt.business_id ).name %>
-					      (
-					      <% if @user.type == "BusinessOwner" %>
-					        <%= Customer.find( appt.customer_id ).first_name %> <%= Customer.find( appt.customer_id ).last_name %>
-					      <% else %>
-					        <%= BusinessOwner.find( appt.business_owner_id ).first_name %> <%= BusinessOwner.find( appt.business_owner_id ).last_name %>
-					        <% end %>
-					      )
-					      <% end %>
-					    </td>
-					    <td class="appt-edit-col"><%= link_to 'Edit', edit_appointment_path(appt.id)  %></td>
-					  </tr>
-					  <% end %>
-					</table>
-			<% end %>
-	</div>
-</div>
+    <div class="container">
+            <h3 class="content-title"><%= image_tag "schedule02.svg", alt: 'Scheduling Icon', id: "appticon"%><u>My Appointments</u></h3>
+
+      <div class="new-chat row">
+          <div class="col-md-8 col-sm-push-3 col-sm-8 col-sm-push-2">
+        <!-- <div class="col-md-8"> -->
+            <%= link_to appointments_calendar_path, class: 'new-ms'  do %>
+              <i class="fa fa-calendar"> Calendar View</i>
+            <% end %>
+          </div>
+          <div class="col-md-8 col-sm-push-3 col-sm-8 col-sm-push-2">
+          <!-- <div class="col-md-8"> -->
+            <form class="mainnav-form pull-right" role="search">
+            <input type="text" class="form-control input-md mainnav-search-query" placeholder="Search names">
+            <button class="btn btn-sm mainnav-form-btn"><i class="fa fa-search"></i></button>
+        </form>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+         <!-- <div class="col-md-8"> -->
+         <div class="col-md-8 col-sm-push-3 col-sm-8 col-sm-push-2">
+
+            <section class="demo-section">
+              <% @appointment_dates.each do |date| %>
+                <h4 class="appt-title content-title">
+                  <u><%= date.strftime("%A, %b %d %y") %></u>
+                </h4>
+                  <div class="portlet">
+                    <div class="portlet-body">
+                      <table class="table table-striped table-bordered" id="table-2">
+                        <% @appointments.where( "date = ?", DateTime.new( date.year, date.month, date.day) ).each do |appt| %>
+                          <thead>
+                            <tr>
+                              <th style="width: 15%">Date</th>
+                              <th style="width: 15%">Time</th>
+                              <th style="width: 40%">Clients</th>
+                              <th style="width: 15%">Rate</th>
+                              <th style="width: 15%">Edit</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                              <tr>
+                                  <td>
+                                   <div class="date-appt"><%= appt.time.strftime("%m/%d/%Y") %></div>
+                                 </td>
+                                 <td>
+                                   <div class="time-appt"><%= appt.time.strftime("%I:%M%p") %></div>
+                                 </td>
+                                 <td>
+                                   <div class="client-appt">
+                                      <%= link_to appointment_path( appt.id ) do %>
+                                        Appointment with <%= Business.find( appt.business_id ).name %>
+                                        |
+                                       <% if @user.type == "BusinessOwner" %>
+                                        <%= Customer.find( appt.customer_id ).first_name %> <%= Customer.find( appt.customer_id ).last_name %>
+                                       <% else %>
+                                        <%= BusinessOwner.find( appt.business_owner_id ).first_name %> <%= BusinessOwner.find( appt.business_owner_id ).last_name %>
+                                       <% end %>
+                                      <% end %>
+                                   </div>
+                                 </td>
+                                 <td>
+                                   <div class="rate-appt">$<%= number_with_precision(appt.amount, precision: 2, delimter: ',') %></div>
+                                 </td>
+                                 <td>
+                                   <div class="edit-appt">
+                                        <%= link_to edit_appointment_path(appt.id) do %>
+                                          <i class="fa fa-edit"><strong>EDIT</strong></i>
+                                        <% end %>
+                                  </div>
+                                 </td>
+                              </tr>
+                          </tbody>
+                        <% end %>
+
+
+                      </table>
+                    </div>
+                  </div>
+              <% end %>
+            </section> <!-- /.demo-section -->
+
+                <div class="row">
+                  <div class="pull-right page-right">
+                    <ul class="pagination">
+                      <li>
+                        <a href="#">Previous</a>
+                      </li>
+                      <li>
+                        <a href="#">1</a>
+                      </li>
+                      <li>
+                        <a href="#">2</a>
+                      </li>
+                      <li>
+                        <a href="#">3</a>
+                      </li>
+                      <li>
+                        <a href="#">4</a>
+                      </li>
+                      <li>
+                        <a href="#">5</a>
+                      </li>
+                      <li>
+                        <a href="#">Next</a>
+                      <li>
+                    </ul>
+                  </div>
+                </div>
+
+        </div> <!-- /.col -->
+
+      </div> <!-- /.row -->
+
+      <br><br>
+
+
+    </div> <!-- /.container -->
+
+  </div> <!-- .content -->
