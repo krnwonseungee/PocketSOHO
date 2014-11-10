@@ -1,27 +1,80 @@
-<div id="show-convo">
-	<div class="user-content">
-	  <div class="banner">
-	  	<h3>
-	  		Conversation with <%= link_to user_path( @recipient_user.id ) do  %>
-	  		<%= @recipient_name %> <%= image_tag( @recipient_user.image_url, :class => 'user-img' ) %>
-	  		<% end %>
-	  	</h3>
-	  </div>
-	  <table>
-	    <% @conversation_messages.each do |message| %>
-	      <% if message.sender_id == @user.id %>
-	        <tr style="background-color: ghostwhite" class="msg-row" >
-	      <% else %>
-	        <tr style="background-color: #E8E8ED" class="msg-row" >
-	      <% end %>
-	        <td class="msg-sender-col"><%= User.find( message.sender_id ).first_name %> <%= User.find( message.sender_id ).last_name %></td>
-	        <td class="msg-date-col">(<%= message.created_at.strftime("%m/%d/%Y %I:%M%p") %>)</td>
-	        <td class="msg-text-col"><%= message.text %></td>
-	        </td>
-	      </tr>
-	    <% end %>
-	  </table>
-	<%= render :partial => 'new_thread_msg' %>
+<div class="newmessage-content content">
 
-	</div>
-</div>
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 ">
+
+          <div class="portlet">
+
+            <h2 class="portlet-title">
+              <u>Conversations with <%= link_to user_path( @recipient_user.id ) do  %>
+        <%= @recipient_name %> <% end %></u>
+            </h2>
+
+            <div class="portlet-body">
+
+                <% @conversation_messages.each do |message| %>
+
+                    <% if message.sender_id == @user.id %>
+                      <div class="message-box owner" >
+                    <% else %>
+                      <div class="message-box" >
+                    <% end %>
+                      <ul>
+                        <li><%= User.find( message.sender_id ).first_name %> <%= User.find( message.sender_id ).last_name %></li>
+                        <li><a href="javascript:;" title=""><strong><%= message.created_at.strftime("%m/%d/%Y %I:%M%p") %></strong></a></li>
+                        <li><%= message.text %></li>
+                      </ul>
+                    </div>
+                <% end %>
+
+                <div class="form-group">
+                  <label for="textarea-input">Reply to <%= @recipient_user.first_name %> <%= @recipient_user.last_name %></label>
+                    <%= form_for @new_thread_msg, url: {action: "create"}, html: {class: "new_message"} do |f| %>
+                      <p><%= f.text_area :text, cols: 10, rows: 8, class: 'form-control' %></p>
+                      <p><%= f.submit "SEND", class: 'send-button btn btn-danger' %></p>
+                    <% end %>
+                </div> <!-- /.form-group -->
+
+            </div> <!-- /.portlet-body -->
+
+          </div> <!-- /.portlet -->
+
+        </div> <!-- /.col -->
+
+      </div> <!-- /.row -->
+
+    </div> <!-- /.container -->
+    <div class="row">
+      <div class="pull-right page-right">
+        <ul class="pagination">
+          <li>
+              <a href="#">Previous</a>
+          </li>
+          <li>
+              <a href="#">1</a>
+          </li>
+          <li>
+              <a href="#">2</a>
+          </li>
+          <li>
+              <a href="#">3</a>
+          </li>
+          <li>
+              <a href="#">4</a>
+          </li>
+          <li>
+              <a href="#">5</a>
+          </li>
+          <li>
+              <a href="#">Next</a>
+          <li>
+        </ul>
+      </div>
+    </div>
+
+
+
+  </div> <!-- .content -->

@@ -56,28 +56,28 @@ a {
 /* Account SignUp*/
 /* ----------------------------------------------- */
 #account-signup {
-  background: url(../img/photos/pianoteacher.jpg) center top no-repeat;
+  background: url(photos/pianoteacher.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; }
 
 #account-login {
-  background: url(../img/photos/working.jpg) center top no-repeat;
+  background: url(photos/working.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; }
 
 #reset-password {
-  background: url(../img/photos/personaltrainer.jpg) center top no-repeat;
+  background: url(photos/personaltrainer.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; }
 
 #social-login {
-  background: url(../img/photos/makeup-artist.jpg) center top no-repeat;
+  background: url(photos/makeup-artist.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -387,7 +387,7 @@ a.appt-edit:hover {
 /* Error Page*/
 /* ----------------------------------------------- */
 .error-page {
-  background: url(../img/photos/berries.jpg) center top no-repeat;
+  background: url(photos/berries.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -692,28 +692,28 @@ a.appt-edit:hover {
     color: #CCCCCC; }
 
   #account-signup {
-    background: url(../img/photos/mobile-piano.jpg) center top no-repeat;
+    background: url(photos/mobile-piano.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; }
 
   #account-login {
-    background: url(../img/photos/mobile-working.jpg) center top no-repeat;
+    background: url(photos/mobile-working.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; }
 
   #reset-password {
-    background: url(../img/photos/mobile-trainer.jpg) center top no-repeat;
+    background: url(photos/mobile-trainer.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; }
 
   #social-login {
-    background: url(../img/photos/makeup-mobile.jpg) center top no-repeat;
+    background: url(photos/makeup-mobile.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
