@@ -1,0 +1,53 @@
+<div id="indiv-appt">
+  <div class="user-content">
+    <div class="banner">
+      <div class="appt-header">
+        <h3>Appointment with <%= @appt_person.first_name %> <%= @appt_person.last_name %></h3>
+      </div>
+      <%= render partial: 'edit_button'  if@user.type == "BusinessOwner" %>
+      <h5><%= link_to( @business.name, business_path(@business) ) %></h5>
+    </div>    
+
+    <div class="appt-details">
+      <table>
+        <div class="appt-text">
+          <tr>
+            <%= render partial: 'message_user_button' %>
+                    <td><span class='note-attr'>Time: </span><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> @<%= @appointment.time.strftime("%I:%M%p") %></td>
+          </tr>
+              <tr>
+                <td><div id="appt-notes"><span class='note-attr'>Notes: </span><%= @appointment.notes %></div></td>
+              </tr>
+        </div>
+      </table>
+      <div class="appt-pic">
+        <%= link_to user_path(@appt_person.id) do %>
+        <%= image_tag(@img_url, :class => 'appt-img') %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="upcoming-appts">
+      <h3>Other Upcoming Appointments:</h3>
+      <div id="links">
+      <table>
+          <% @upcoming_appts.each do |appt|  %>
+            <tr><td>
+              <% if appt.id != @appointment.id %>
+                <%= link_to appointment_path( appt.id) do  %>
+                  <%= appt.time.strftime("%m/%d/%Y (%a)") %> @<%= appt.time.strftime("%I:%M%p") %>
+                <% end %>
+              <% else  %>
+                <%= appt.time.strftime("%m/%d/%Y (%a)") %> @<%= appt.time.strftime("%I:%M%p") %>
+              <% end %>
+            </td></tr>
+          <% end %>
+      </table>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+[]

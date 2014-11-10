@@ -7,7 +7,7 @@
 /* BODY*/
 /* ----------------------------------------------- */
 a {
-  color: #8cc640; }
+  color: #8CC640; }
 
 /* NAV-BAR*/
 /* ----------------------------------------------- */
@@ -29,7 +29,7 @@ a {
   border-bottom: none; }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #8cc640;
+  color: #8CC640;
   text-shadow: none; }
 
 .account-wrapper {
@@ -40,7 +40,7 @@ a {
   color: #567b25; }
 
 .navbar-collapse.in {
-  background-color: #1b2846; }
+  background-color: #1B2846; }
 
 /*.navbar-inverse .navbar-nav > li.active > a,
 .navbar-inverse .navbar-nav > li.active > a:hover,
@@ -56,28 +56,28 @@ a {
 /* Account SignUp*/
 /* ----------------------------------------------- */
 #account-signup {
-  background: url(photos/pianoteacher.jpg) center top no-repeat;
+  background: url(../img/photos/pianoteacher.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; }
 
 #account-login {
-  background: url(photos/working.jpg) center top no-repeat;
+  background: url(../img/photos/working.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; }
 
 #reset-password {
-  background: url(photos/personaltrainer.jpg) center top no-repeat;
+  background: url(../img/photos/personaltrainer.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; }
 
 #social-login {
-  background: url(photos/makeup-artist.jpg) center top no-repeat;
+  background: url(../img/photos/makeup-artist.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -98,7 +98,7 @@ a {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); }
 
 #account-login .account-body h5 {
-  color: #f48a1f; }
+  color: #F48A1F; }
 
 #reset-password .account-body {
   top: 13em; }
@@ -107,32 +107,24 @@ a {
   color: #FFFFFF; }
 
 #reset-password .form-group a {
-  color: #1b2846;
+  color: #1B2846;
   font-size: 14px; }
 
 .account-body h5 {
-  color: #1b2846; }
-
-.account-form .select label {
-  color: #98999B;
-}
-
-.account-form .user_remember_me label {
-  padding-left: 5px;
-}
+  color: #1B2846; }
 
 #account-login .account-footer p {
-  color: #1b2846; }
+  color: #1B2846; }
 
 #account-login .account-footer p a {
-  color: #8cc640; }
+  color: #8CC640; }
 
 .account-footer p {
   color: #FFFFFF;
   font-size: 16px; }
 
 .account-footer p a {
-  color: #f48a1f;
+  color: #F48A1F;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   font-size: 16px; }
 
@@ -141,59 +133,52 @@ a {
   padding: 0.6em 2em;
   font-size: 20px;
   line-height: 1.5;
-  background-color: #8cc640;
-  border: 1px solid #8cc640;
+  background-color: #8CC640;
+  border: 1px solid #8CC640;
   text-shadow: none;
   box-shadow: none; }
 
 .btn-secondary,
 .btn-primary {
-  background-color: #8cc640;
+  background-color: #8CC640;
   border: 1px solid #FFFFFF;
   color: #FFFFFF; }
 
 .btn-secondary:hover,
 .btn-primary:hover {
-  background-color: #f48a1f;
+  background-color: #F48A1F;
   border: 1px solid #FFFFFF; }
 
-/*input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, textarea:focus {
-  background-color: rgba(255,255,255,0.6);
-  box-shadow: 0 0 5px rgba(140, 198, 64, 0.8);
-  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid rgba(140, 198, 64, 0.8);
-}*/
 .checkbox-inline input[type=submit]:focus,
 .form-group button[type=submit]:focus {
   outline: none; }
 
 .checkbox-inline {
-  color: #1b2846; }
+  color: #1B2846; }
 
 .checkbox-inline a {
-  color: #1b2846; }
+  color: #1B2846; }
 
 .checkbox-inline a:hover {
-  color: #8cc640; }
+  color: #8CC640; }
 
 #back-to-top {
   background-color: rgba(140, 198, 64, 0.6); }
 
 #back-to-top:hover {
-  background-color: #8cc640; }
+  background-color: #8CC640; }
 
 .pull-left small {
   color: #FFFFFF;
   font-size: 13px; }
 
 .pull-right small a {
-  color: #8cc640;
+  color: #8CC640;
   font-size: 13px; }
 
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle.is-open {
-  background-color: #8cc640; }
+  background-color: #8CC640; }
 
 .btn-twitter {
   background-color: #1e87bd;
@@ -203,31 +188,31 @@ a {
 /* ----------------------------------------------- */
 .mainnav {
   padding-top: 5em;
-  background-color: #1b2846; }
+  background-color: #1B2846; }
 
 .badge {
-  background-color: #f48a1f; }
+  background-color: #F48A1F; }
 
 .fa-search {
-  color: #8cc640; }
+  color: #8CC640; }
 
 .noticebar-empty-title {
-  color: #f48a1f; }
+  color: #F48A1F; }
 
 .btn-danger {
-  background-color: #f48a1f;
+  background-color: #F48A1F;
   border-radius: 0;
-  border-color: #f48a1f; }
+  border-color: #F48A1F; }
 
 .btn-danger:hover {
   background-color: #d6700a;
   border-color: #d6700a; }
 
 .copyright {
-  color: #8cc640; }
+  color: #8CC640; }
 
 .footer {
-  background-color: #1b2846;
+  background-color: #1B2846;
   border-top: 0; }
 
 .mainnav-collapse input[type=text]:focus {
@@ -237,7 +222,7 @@ a {
   margin: 0; }
 
 .text-primary {
-  color: #f48a1f; }
+  color: #F48A1F; }
 
 .error-details .input-group .form-control:first-child {
   border-bottom-right-radius: 4px;
@@ -267,7 +252,8 @@ a {
 .pricing-content,
 .dashboard-content,
 .appt-content,
-.error-content {
+.error-content,
+.newappt-content {
   padding-top: 10em; }
 
 .message-content h3 u,
@@ -283,13 +269,11 @@ a {
   margin: auto; }
 
 .sender {
-  width: 80px;
-  padding: 3px 0 0;
-  font-size: 11px;
+  padding: 3px 0;
   text-align: center; }
 
 td {
-  height: 120px; }
+  height: 110px; }
 
 .message-action .btn-primary,
 .message-action .btn-secondary {
@@ -299,8 +283,8 @@ td {
 .btn-secondary:focus,
 .btn-secondary:active,
 .btn-secondary.active {
-  background-color: #f48a1f;
-  border-color: #f48a1f; }
+  background-color: #F48A1F;
+  border-color: #F48A1F; }
 
 .btn-primary:hover,
 .btn-primary:focus,
@@ -319,8 +303,8 @@ td {
 
 a.new-ms {
   padding: 0.4em 2em;
-  border: 1px solid #8cc640;
-  background-color: #8cc640; }
+  border: 1px solid #8CC640;
+  background-color: #8CC640; }
 
 .new-chat {
   font-size: 18px;
@@ -337,7 +321,7 @@ a.new-ms {
 .send-button {
   padding: 0.3em 6em;
   font-size: 16px;
-  background-color: #f48a1f;
+  background-color: #F48A1F;
   /*border: 1px solid $mainColor2;*/
   color: #FFFFFF;
   text-shadow: 0 0 0; }
@@ -358,7 +342,10 @@ a.new-ms {
 
 .pagination > li > a:hover,
 .pagination > li > a:active {
-  background-color: #8cc640; }
+  background-color: #8CC640; }
+
+.dashboard-content .icons-list > li {
+  padding-left: 0; }
 
 /* Appointments Page*/
 /* ----------------------------------------------- */
@@ -366,7 +353,7 @@ a.new-ms {
   padding-top: 1.2em; }
 
 .appt-title u {
-  border-bottom: 1px solid #f48a1f; }
+  border-bottom: 1px solid #F48A1F; }
 
 .alert-success {
   background-color: #7fb636;
@@ -384,7 +371,7 @@ a.appt-edit {
 
 a.appt-biz:hover,
 a.appt-edit:hover {
-  color: #1b2846; }
+  color: #1B2846; }
 
 .fa-calendar-o {
   padding-right: 5px; }
@@ -395,7 +382,7 @@ a.appt-edit:hover {
 /* Error Page*/
 /* ----------------------------------------------- */
 .error-page {
-  background: url(photos/berries.jpg) center top no-repeat;
+  background: url(../img/photos/berries.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -406,7 +393,7 @@ a.appt-edit:hover {
 
 .error-code {
   font-size: 60px;
-  color: #1b2846;
+  color: #1B2846;
   line-height: 1.2;
   font-weight: 700;
   font-family: "Open-Sans", sans-serif;
@@ -422,16 +409,20 @@ a.appt-edit:hover {
   color: #f9bd80; }
 
 .oops {
-  color: #f48a1f;
+  color: #F48A1F;
   font-size: 2.2em; }
+
+#calendar {
+  width: 100%;
+  margin: 0 auto; }
 
 /* Admin - User Setting Page - Main Dashboard*/
 /* ----------------------------------------------- */
 .nav-layout-sidebar > .active > a {
-  color: #f48a1f; }
+  color: #F48A1F; }
 
 .nav-layout-sidebar > .active > a:hover {
-  color: #8cc640; }
+  color: #8CC640; }
 
 #sidebar-menu {
   z-index: 1; }
@@ -447,20 +438,187 @@ a.appt-edit:hover {
   padding: 0.9em 4.4em; }
 
 .pricing-plan-amount {
-  color: #8cc640; }
+  color: #8CC640; }
 
 .btn-primary.disabled {
-  background-color: #f48a1f;
-  border-color: #f48a1f; }
+  background-color: #F48A1F;
+  border-color: #F48A1F; }
 
 .pricing-plan-ribbon-secondary {
-  background-color: #f48a1f; }
+  background-color: #F48A1F; }
 
 .pricing-header {
-  background-color: #1b2846; }
+  background-color: #1B2846; }
 
 .brief-instr {
   font-size: 12px; }
+
+.recipient:hover {
+  color: #F48A1F; }
+
+.message-box {
+  padding: 1.5em 0;
+  background-color: #EEEEEE;
+  margin-bottom: 1.5em; }
+
+.message-box.owner {
+  background-color: #ebf5dd; }
+
+.message-box ul {
+  list-style: none;
+  font-size: 16px;
+  line-height: 1.5;
+  padding-right: 10px; }
+
+.newbiz #save-change,
+.editbiz #save-change {
+  padding: 0.4em 2.4em; }
+
+.newcust #save-change,
+.editbiz #save-change {
+  font-size: 17px;
+  margin-bottom: 2em;
+  margin-right: 2em; }
+
+.newcust #cancel-change {
+  padding: 0.6em 10.4em; }
+
+.editbiz #cancel-change {
+  padding: 0.6em 4em; }
+
+.bizprofile.profile-avatar-img {
+  margin-left: 0; }
+
+.icons-list .client-name a {
+  font-size: 16px; }
+
+.chat-btn.btn-secondary {
+  font-size: 16px; }
+
+#validateSelect.year,
+#validateSelect.month,
+#validateSelect.day {
+  width: 90px; }
+
+#demo-validation #validateSelect {
+  display: inline; }
+
+#update-appt,
+#delete-appt {
+  font-size: 15px;
+  padding: 6px 10px; }
+
+.portlet {
+  margin-bottom: 1.5em; }
+
+.dashboard-content .content-title.my-appt {
+  margin-top: 3em; }
+
+/* Admin - Feature 2: APPOINTMENTS*/
+/* ----------------------------------------------- */
+.appt-with a:hover {
+  color: #F48A1F;
+  text-decoration: none; }
+
+.appt-with .btn {
+  font-size: 16px;
+  padding: 0.7em 3em; }
+
+.appt-with .btn:hover {
+  color: #FFFFFF; }
+
+.appt-with ul {
+  padding-left: 0; }
+
+.appt-with ul li {
+  display: inline-block;
+  padding: 0 10px; }
+
+.appt-with .form-horizontal {
+  margin-top: 4em; }
+
+#sam-biz {
+  font-size: 1.2em; }
+
+.fa-envelope,
+.fa-clock-o,
+.fa-pencil-square {
+  padding-right: 10px; }
+
+.appt-form-group ul li {
+  font-size: 14px;
+  font-weight: 400; }
+
+.appt-form-group a,
+.appt-form-group span {
+  padding-left: 10px; }
+
+#customer-pic {
+  padding-left: 0; }
+
+.accordion-caret:before {
+  color: #F48A1F; }
+
+#appt-list li {
+  font-size: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+#appt-list li {
+  display: inline-block;
+  font-size: 14px;
+  padding-right: 10px;
+}
+
+#appt-list li a {
+  color: #444444; }
+
+#appt-list li a:hover {
+  color: #F48A1F; }
+
+#table-2 th {
+  background-color: #F48A1F;
+  color: #FFFFFF; }
+
+#table-3 th,
+#table-4 th {
+  background-color: #5e5e5e;
+  color: #FFFFFF; }
+
+#table-2 td,
+#table-3 td,
+#table-4 td {
+  height: 50px; }
+
+.edit-appt a {
+  color: #F48A1F; }
+
+.edit-appt a:hover {
+  color: #1B2846;
+  text-decoration: none; }
+
+#newappt-btn {
+  width: 160px;
+  font-size: 16px;
+  padding: 0.4em 0;
+  background-color: #F48A1F; }
+
+#newappt-btn:hover {
+  background-color: #df760b;
+  border-color: #df760b; }
+
+.newappt-content label.bizlabel {
+  padding-left: 0; }
+
+/* Admin - Feature 3: FINANCES*/
+/* ----------------------------------------------- */
+.finance-td #table-2 th {
+  background-color: #8CC640;
+  color: #FFFFFF; }
+
+.finance-td {
+  margin-top: 4em; }
 
 @media (max-width: 767px) {
   #logo2,
@@ -498,7 +656,6 @@ a.appt-edit:hover {
   .table-responsive > .table > tbody > tr > td,
   .table-responsive > .table > tfoot > tr > td {
     white-space: normal; } }
-
 @media (max-width: 480px) {
   .navbar-header a {
     width: 230px; }
@@ -522,31 +679,31 @@ a.appt-edit:hover {
     padding: 0.3em 2em; }
 
   #account-login .account-footer p {
-    color: #cccccc; }
+    color: #CCCCCC; }
 
   #account-signup {
-    background: url(photos/mobile-piano.jpg) center top no-repeat;
+    background: url(../img/photos/mobile-piano.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; }
 
   #account-login {
-    background: url(photos/mobile-working.jpg) center top no-repeat;
+    background: url(../img/photos/mobile-working.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; }
 
   #reset-password {
-    background: url(photos/mobile-trainer.jpg) center top no-repeat;
+    background: url(../img/photos/mobile-trainer.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; }
 
   #social-login {
-    background: url(photos/makeup-mobile.jpg) center top no-repeat;
+    background: url(../img/photos/makeup-mobile.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -556,4 +713,6 @@ a.appt-edit:hover {
     top: 7em; }
 
   .dropdown-menu > li > a {
-    color: #cccccc; } }
+    color: #CCCCCC; } }
+
+/*# sourceMappingURL=custom.css.map */

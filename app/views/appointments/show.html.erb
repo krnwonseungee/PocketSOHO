@@ -1,52 +1,92 @@
-<div id="indiv-appt">
-	<div class="user-content">
-		<div class="banner">
-			<div class="appt-header">
-				<h3>Appointment with <%= @appt_person.first_name %> <%= @appt_person.last_name %></h3>
-			</div>
-			<%= render partial: 'edit_button'  if@user.type == "BusinessOwner" %>
-			<h5><%= link_to( @business.name, business_path(@business) ) %></h5>
-		</div>    
+<div class="setting-content content">
 
-		<div class="appt-details">
-			<table>
-				<div class="appt-text">
-					<tr>
-						<%= render partial: 'message_user_button' %>
-				            <td><span class='note-attr'>Time: </span><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> @<%= @appointment.time.strftime("%I:%M%p") %></td>
-					</tr>
-				      <tr>
-				      	<td><div id="appt-notes"><span class='note-attr'>Notes: </span><%= @appointment.notes %></div></td>
-				      </tr>
-				</div>
-			</table>
-			<div class="appt-pic">
-				<%= link_to user_path(@appt_person.id) do %>
-				<%= image_tag(@img_url, :class => 'appt-img') %>
-				<% end %>
-			</div>
-		</div>
+    <div class="container">
 
-		<div class="upcoming-appts">
-			<h3>Other Upcoming Appointments:</h3>
-			<div id="links">
-			<table>
-					<% @upcoming_appts.each do |appt|  %>
-						<tr><td>
-							<% if appt.id != @appointment.id %>
-								<%= link_to appointment_path( appt.id) do  %>
-									<%= appt.time.strftime("%m/%d/%Y (%a)") %> @<%= appt.time.strftime("%I:%M%p") %>
-								<% end %>
-							<% else  %>
-								<%= appt.time.strftime("%m/%d/%Y (%a)") %> @<%= appt.time.strftime("%I:%M%p") %>
-							<% end %>
-						</td></tr>
-					<% end %>
-			</table>
-			</div>
-		</div>
+      <div class="layout layout-main-right layout-stack-sm">
+
+        <div class="col-md-8 col-sm-push-3 col-sm-8 col-sm-push-2">
+        <!-- <div class="col-md-9 col-sm-8 layout-main"> -->
+
+          <div id="settings-content" class="tab-content stacked-content">
+
+            <div class="appt-with tab-pane fade in active" id="profile-tab">
+
+              <ul>
+                <li><h3 class="content-title"><u>Appointment with Twin Young</u></h3></li>
+                <% if@user.type == "BusinessOwner"  %>
+                  <li><%= link_to "Edit", edit_appointment_path(@appointment), class: 'btn btn-secondary' %></li>
+                <% end %>
+              </ul>
+
+              <%= link_to( @business.name, business_path(@business), id: 'sam-biz' ) %>
+
+              <br><br>
+
+              <form action="./page-settings.html" class="form-horizontal">
+
+                <div class="form-group appt-form-group">
+
+                  <label class="col-md-4">
+                    <ul class="icons-list">
+                      <li>
+                        <i class="icon-li fa fa-envelope"></i>
+                        <%= link_to user_conversation_path(@user, @conversation ) do %>
+                           Message <%= @appt_person.first_name %>
+                        <% end %>
+                      </li>
+                      <li><i class="icon-li fa fa-clock-o"></i><span><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> <%= @appointment.time.strftime("%I:%M%p") %></span></li>
+                      <li><i class="icon-li fa fa-pencil-square"></i><span><%= @appointment.notes %></span></li>
+                    </ul>
+                  </label>
+
+                  <div class="col-md-7">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                      <div class="fileupload-new thumbnail" style="width: 180px; height: 180px;">
+                        <%= link_to user_path(@appt_person.id), id: 'customer-pic' do %>
+                          <%= image_tag(@img_url, :class => 'appt-img') %>
+                        <% end %>
+                      </div>
+
+                    </div> <!-- /.fileupload -->
+
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
 
 
 
-	</div>
-</div>
+                <div class="form-group">
+                  <div class="col-md-7">
+                    <h4 class="content-title"><u>Other Upcoming Appointments:</u></h4>
+                    <ul id="appt-list">
+                      <% @upcoming_appts.each do |appt|  %>
+                        <li>
+                          <% if appt.id != @appointment.id %>
+                            <%= link_to appointment_path( appt.id) do  %>
+                            <%= appt.time.strftime("%m/%d/%Y (%a)") %> @<%= appt.time.strftime("%I:%M%p") %>
+                            <% end %>
+                          <% else  %>
+                            <%= appt.time.strftime("%m/%d/%Y (%a)") %> @<%= appt.time.strftime("%I:%M%p") %>
+                          <% end %>
+                        </li>
+                      <% end %>
+                    </ul>
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+              </form>
+
+
+            </div> <!-- /.tab-pane -->
+
+          </div> <!-- /.tab-content -->
+
+        </div> <!-- /.col -->
+
+      </div> <!-- /.row -->
+
+
+    </div> <!-- /.container -->
+
+  </div> <!-- .content -->

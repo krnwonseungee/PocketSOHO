@@ -34,15 +34,15 @@ var mvpready_admin = function () {
 		init: function () {
 			// Layouts
 			mvpready_core.navEnhancedInit ()
-			mvpready_core.navHoverInit ({ delay: { show: 250, hide: 350 } })      
+			mvpready_core.navHoverInit ({ delay: { show: 250, hide: 350 } })
 			initLayoutToggles ()
 			initNoticeBar ()
 
 			// Components
-			mvpready_core.initAccordions ()		
+			mvpready_core.initAccordions ()
 			mvpready_core.initFormValidation ()
 			mvpready_core.initTooltips ()
-			mvpready_core.initBackToTop ()		
+			mvpready_core.initBackToTop ()
 			mvpready_core.initLightbox ()
 		}
 	}
