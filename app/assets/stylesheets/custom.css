@@ -266,7 +266,12 @@ a {
 .thumbnail {
   width: 80px;
   height: 80px;
-  margin: auto; }
+  margin: auto;
+}
+
+.biz-owner-img {
+  margin-left: 15px;
+}
 
 .sender {
   padding: 3px 0;

@@ -1,20 +1,54 @@
-<div id="biz-profile">
-	<div class="user-content">
-		<br><br>
-		<div class="biz-title"><h1><%= @business.name %></h1></div>
+<div class="setting-content content">
 
-		<%= image_tag( @business.image_url, :class => 'biz-img' ) %>
+    <div class="container">
 
-		<div class="location"><p><%= @business.city %>, <%= @business.state %></p></div>
-		<div class="description"><p><%= @business.description %></p></div>
-
-		<p>Owner(s):</p><%= link_to user_path( @biz_owner.id ) do %>
-		<%= image_tag( @biz_owner.image_url, :class => 'biz-owner-img' ) %>
-		<p><%= @biz_owner.first_name %> <%= @biz_owner.last_name %> <%=  "(you)" if @biz_owner.id == @user.id %><% end %></p>
-		<% if @user.type == "Customer" && ( @user.id != @business.business_owner_id ) %>
-			<%= render partial: 'message_biz_button' %>
-		<% end %>
+      <div class="layout layout-main-right layout-stack-sm">
 
 
-	</div>
-</div>
+
+
+        <div class="col-md-9 col-sm-8 layout-main">
+
+          <div id="settings-content" class="tab-content stacked-content">
+
+            <div class="tab-pane fade in active" id="profile-tab">
+
+              <h3 class="content-title"><u><%= @business.name %></u></h3>
+
+              <br><br>
+
+              <form action="./page-settings.html" class="form-horizontal">
+
+                <div class="form-group">
+
+                  <div class="col-md-7">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                        <%= image_tag( @business.image_url, class: 'biz-owner-img') %>
+                    </div> <!-- /.fileupload -->
+
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+                <ul class="icons-list">
+                  <li><i class="icon-li fa fa-map-marker"></i><%= @business.city %>, <%= @business.state %></li>
+                  <li>  <p><%= @business.description %></p></li>
+                  <li><i class="icon-li fa fa-heart"></i> Owner(S)</li>
+                  <li><%= link_to user_path( @biz_owner.id ) do %><%= image_tag( @biz_owner.image_url, :class => 'bizprofile profile-avatar-img thumbnail' ) %><% end %></li>
+                  <li><%= link_to user_path( @biz_owner.id ) do %>Janet Yi <%=  "(you)" if @biz_owner.id == @user.id %><% end %></li>
+                </ul>
+
+              </form>
+
+            </div> <!-- /.tab-pane -->
+
+          </div> <!-- /.tab-content -->
+
+        </div> <!-- /.col -->
+
+      </div> <!-- /.row -->
+
+
+    </div> <!-- /.container -->
+
+  </div> <!-- .content -->
