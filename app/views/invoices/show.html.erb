@@ -1,29 +1,52 @@
-<div id="show-invoice">
-  <div class="user-content">
-    <br><br>
-    <div class="invoice-title"><h1>Invoice Due <%= @invoice.due_date.strftime('%_m/%-d/%Y') %></h1>
-      <p><%= @invoice.business.name %></p>
-    </div>
+<div class="profile-content content">
 
-    <table>
-      <tr><td>Customer: <%= @invoice.customer.first_name %> <%= @invoice.customer.last_name %></td></tr>
-      <tr><td>Location: <%= @invoice.customer.city %>, <%= @invoice.customer.state %></td></tr>
-      <tr><td>E-mail: <%= @invoice.customer.email %></td></tr>
-    </table>
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-6 col-sm-7">
+
+          <h1>Invoice Due <%= @invoice.due_date.strftime('%m/%d/%Y') %></h1>
+
+          <h5 class="text-muted"><%= @invoice.business.name %></h5>
+
+          <hr>
+
+          <ul class="icons-list">
+            <li><i class="icon-li fa fa-smile-o"></i>Client: <%= @invoice.customer.first_name %> <%= @invoice.customer.last_name %></li>
+            <li><i class="icon-li fa fa-map-marker"></i> <%= @invoice.customer.city %>, <%= @invoice.customer.state %></li>
+            <li><i class="icon-li fa fa-envelope"></i> <%= @invoice.customer.email %></li>
+            <li><i class="icon-li fa fa-credit-card"></i> Total Due: $<%= number_with_precision(@invoice.amount, delimiter: ',', precision: 2 ) %></li>
+          </ul>
+
+          <br>
+
+          <hr>
+
+          <p>
+            <!-- <a href="javascript:;" class="btn btn-primary">Follow Janet</a>
+            &nbsp;&nbsp; -->
+
+          <form action="" method="POST">
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="sk_test_ojiObsvjs0jA6zt5Dh99Ku5m Roll Key"
+              data-amount="2000"
+              data-name="PocketSOHO"
+              data-description="Monthly Invoice"
+              data-image="/assets/payment01.svg">
+            </script>
+          </form>
+
+            <!-- <a href="javascript:;" class="btn btn-secondary">Pay with card</a> -->
+          </p>
+          </div> <!-- /.col -->
 
 
-    <div id="total-due">Total Due: $<%= number_with_precision(@invoice.amount, delimiter: ',', precision: 2 ) %></div>
+        </div> <!-- /.row -->
 
-  </div>
+        <br><br>
 
-  <form action="" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="sk_test_ojiObsvjs0jA6zt5Dh99Ku5m Roll Key"
-    data-amount="2000"
-    data-name="PocketSOHO"
-    data-description="Monthly Invoice"
-    data-image="/assets/payment01.svg">
-  </script>
-</form>
-</div>
+    </div> <!-- /.container -->
+
+  </div> <!-- .content -->

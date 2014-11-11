@@ -1,0 +1,29 @@
+<div id="show-invoice">
+  <div class="user-content">
+    <br><br>
+    <div class="invoice-title"><h1>Invoice Due <%= @invoice.due_date.strftime('%_m/%-d/%Y') %></h1>
+      <p><%= @invoice.business.name %></p>
+    </div>
+
+    <table>
+      <tr><td>Customer: <%= @invoice.customer.first_name %> <%= @invoice.customer.last_name %></td></tr>
+      <tr><td>Location: <%= @invoice.customer.city %>, <%= @invoice.customer.state %></td></tr>
+      <tr><td>E-mail: <%= @invoice.customer.email %></td></tr>
+    </table>
+
+
+    <div id="total-due">Total Due: $<%= number_with_precision(@invoice.amount, delimiter: ',', precision: 2 ) %></div>
+
+  </div>
+
+  <form action="" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="sk_test_ojiObsvjs0jA6zt5Dh99Ku5m Roll Key"
+    data-amount="2000"
+    data-name="PocketSOHO"
+    data-description="Monthly Invoice"
+    data-image="/assets/payment01.svg">
+  </script>
+</form>
+</div>
