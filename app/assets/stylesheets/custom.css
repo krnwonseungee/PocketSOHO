@@ -303,6 +303,14 @@ td {
   width: 100px;
   padding-right: 1em; }
 
+.biz-img {
+  display: block;
+  margin: auto;
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+}
+
 .content-title {
   border-bottom: 0; }
 

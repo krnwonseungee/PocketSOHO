@@ -1,0 +1,32 @@
+<div id="welcome-home">
+  <div class="user-content">
+    <div class="banner"><h1>PocketSOHO</h1></div>
+
+    <div id="user-home-categories">
+      <h3>My New Messages</h3>
+      <% if @unread_conversations.empty? %>
+        <p>You have no new messages! Click <%= link_to "here", user_conversations_path(@user.id) %> to view your inbox.</p>
+      <% else %>
+        <%= render partial: 'unread_messages' %>
+      <% end %>
+
+      <% if @user.type == "BusinessOwner" %>
+        <%= render :partial => 'businesses' %>
+      <% else %>
+        <%= render :partial => 'services' %>
+      <% end %>
+
+    <div class="appts-scroll"><%= render partial: 'appointments' %></div>
+
+      <h3>My Finances</h3>
+      <p>(Graph)</p>
+      <% if @invoices.empty? %>
+        <p>You have no new invoices. </p>
+      <% else %>
+        <%= render partial: 'invoices/graph' %>
+        <%= render partial: 'invoices' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= javascript_include_tag "finance_graph" %>
