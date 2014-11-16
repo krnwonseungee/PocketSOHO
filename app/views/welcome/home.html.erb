@@ -170,8 +170,10 @@
               <li>
                 <strong><%= @user.businesses.first.name %></strong>
                 <br>
-                  <%= image_tag @user.businesses.first.image_url, class: 'biz-img', id: 'chaticon', alt: 'Chat Icon' %>
-                <%= @user.businesses.first.description[0..100] %>...
+                  <%= link_to business_path( @user.businesses.first.id ) do %>
+                    <%= image_tag @user.businesses.first.image_url, class: 'biz-img', id: 'chaticon', alt: 'Chat Icon' %>
+                    <% end %>
+                  <%= @user.businesses.first.description[0..100] %>...
               </li>
             </ul>
           </div>
