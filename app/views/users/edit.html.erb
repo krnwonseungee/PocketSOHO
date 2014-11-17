@@ -1,23 +1,45 @@
-<div id="user-edit">
-      <h1>Edit Your Info</h1>
-      <%= simple_form_for @user, url: { action: "update"} do |f| %>
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :city %>
-      <%= f.input :state %>
-      <%= f.input :email %>
-      <%= f.input :type, collection: ['BusinessOwner', 'Customer'] %>
-      <%= f.input :image_url %>
-      <%= f.input :phone %>
-      <br>
-      <% if @user.business_id == nil %>
-            <h4>Which Business Are You Signing Up With?</h4>
-            <label>Search for Name (please type exactly):</label>
-            <input id="business_name">
-            <%= f.input :business_id, label: 'Business ID:' %>
-            <br>
-      <% end %>
-      <%= f.button :submit %>
-      <%= link_to "Cancel Account", user_path(@user.id), method: :delete, data: { confirm: 'You sure?' } %>
-      <% end %>
-</div>
+<div class="newmessage-content content">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 ">
+
+          <div class="portlet">
+
+            <h2 class="portlet-title">
+              <u>Edit User Info</u>
+            </h2>
+
+            <div class="portlet-body">
+
+              <div class="form-group">
+
+                <%= simple_form_for @user, url: { action: "update"} do |f| %>
+                  <%= f.input :first_name, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
+                  <%= f.input :last_name, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
+                  <%= f.input :city, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
+                  <%= f.input :state, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
+                  <%= f.input :email, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
+                  <%= f.input :type, collection: ['BusinessOwner', 'Customer'], input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }%>
+                  <%= f.input :image_url, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
+                  <div class="form-group">
+                    <%= f.button :submit, class: 'btn btn-primary', id: 'update-appt' %>
+                  </div>
+                <% end %>
+              </div> <!-- /.form-group -->
+
+            </div> <!-- /.portlet-body -->
+
+          </div> <!-- /.portlet -->
+
+        </div> <!-- /.col -->
+
+      </div> <!-- /.row -->
+
+    </div> <!-- /.container -->
+
+
+
+  </div> <!-- .content -->
