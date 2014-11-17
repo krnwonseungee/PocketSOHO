@@ -13,14 +13,14 @@
           <div class="col-md-8 col-sm-push-3 col-sm-8 col-sm-push-2">
           <!-- <div class="col-md-8"> -->
             <form class="mainnav-form pull-right" role="search">
-            <input type="text" class="form-control input-md mainnav-search-query" placeholder="Search names"  id="inbox-searchbar" ng-model="searchWords">
+            <input type="text" class="form-control input-md mainnav-search-query" placeholder="Search names"  id="inbox-searchbar" ng-model="inboxSearchWords">
             <button class="btn btn-sm mainnav-form-btn"><i class="fa fa-search"></i></button>
         </form>
         </div>
 
       </div>
       <div id='no-messages-wrapper' style="text-align: center">
-        <div id="no-messages" ng-style=" { 'display': noResults((messages | filter: searchWords).length) }">No Messages. Click <%= link_to "here", new_user_conversation_path(@user.id) %> to create a message. </div>
+        <div id="no-messages" ng-style=" { 'display': noResults((messages | filter: inboxSearchWords).length) }">No Messages. Click <%= link_to "here", new_user_conversation_path(@user.id) %> to create a message. </div>
       </div>
 
       <div class="row">
@@ -28,7 +28,7 @@
          <!-- <div class="col-md-8"> -->
          <div class="col-md-8 col-sm-push-3 col-sm-8 col-sm-push-2">
 
-          <div class="table-responsive" ng-style=" { 'display': results((messages | filter: searchWords).length) }">
+          <div class="table-responsive" ng-style=" { 'display': results((messages | filter: inboxSearchWords).length) }">
 
           <table class="table table-striped table-bordered thumbnail-table">
                   <thead>
@@ -38,7 +38,7 @@
                         </tr>
                   </thead>
                     <tbody>
-                        <tr class="msg-row" ng-repeat="message in filtered = (messages | filter: searchWords) | offset: currentPage*itemsPerPage | limitTo: itemsPerPage " ng-style="{ 'font-weight': getReadStatus(message) }">
+                        <tr class="msg-row" ng-repeat="message in filtered = (messages | filter: inboxSearchWords) | offset: currentPage*itemsPerPage | limitTo: itemsPerPage " ng-style="{ 'font-weight': getReadStatus(message) }">
                               <td class="valign-middle">
                               <div class="thumbnail">
                                   <img ng-src="{{message.sender_image}}" width="125" alt="Gallery Image" />

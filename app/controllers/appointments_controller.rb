@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  include ActionView::Helpers::NumberHelper
   before_filter :set_user
 
 
@@ -8,7 +9,31 @@ class AppointmentsController < ApplicationController
       else
           @appointments = Appointment.where( "customer_id = ?", @user.id )
       end
+      @new_appts = []
+      @appointments.each do |appt|
+        appt_hash = appt.attributes
+       if @user.type == "BusinessOwner"
+        appt_hash['client_name'] = "#{Customer.find( appt.customer_id ).first_name}  #{Customer.find( appt.customer_id ).last_name}"
+       else
+        appt_hash['client_name'] =  "#{BusinessOwner.find( appt.business_owner_id ).first_name}  #{BusinessOwner.find( appt.business_owner_id ).last_name}"
+       end
+
+        appt_hash['biz_name'] = Business.find(appt.business_id).name
+        appt_hash['amt'] = number_with_precision(appt.amount, precision: 2, delimter: ',')
+        appt_hash['formatted_time'] = appt.time.strftime("%I:%M%p")
+        appt_hash['formatted_date'] = appt.time.strftime("%m/%d/%Y")
+        appt_hash['readable_date'] = appt.date.strftime("%A, %b %d %y")
+        @new_appts.push(appt_hash)
+      end
       @appointment_dates = @appointments.pluck( :time ).sort
+      @new_appt_dates = @appointment_dates.map do |date|
+        date = date.strftime("%A, %b %d %y")
+      end
+
+      respond_to do |format|
+        format.html
+        format.any(:json) { render request.format.to_sym => [@new_appts, @new_appt_dates] }
+      end
   end
 
   def new

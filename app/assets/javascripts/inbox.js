@@ -19,7 +19,7 @@ app.controller('inboxController', ['$scope', '$http', function($scope, $http){
     console.log(b=$scope.messages)
   });
 
-  $scope.searchWords = "";
+  $scope.inboxSearchWords = "";
 
   $scope.getReadStatus = function(message){
     if(message.read_by_current_user == false){
