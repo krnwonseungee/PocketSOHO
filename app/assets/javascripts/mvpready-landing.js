@@ -94,21 +94,3 @@ var mvpready_landing = function () {
   }
 
 } ()
-
-$(function () {
-  mvpready_landing.init ()
-})
-
-//Snap to each pages
-var FAST_SCROLL = 600
-
-$('#main-nav ul li').click(mainNavClicked);
-function mainNavClicked() {
-  event. preventDefault();
-  // console.log('mainNavClicked');
-  var targetId = $(this).find('a').attr('data-target-id');
-  // console.log(targetId);
-  var targetY = $('#' + targetId).offset().top;
-  $('body, html').animate({scrollTop: targetY}, FAST_SCROLL);
-
-};
