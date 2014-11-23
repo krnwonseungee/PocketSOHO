@@ -30,7 +30,7 @@
             </h4>
             <div class="portlet">
               <div class="portlet-body">
-                <table class="table table-striped table-bordered" id="table-2">
+                <table class="table table-striped table-bordered" id="table-2" ng-style=" { 'display': noResults(date, apptSearchWords) }">
                   <thead>
                     <tr>
                       <th style="width: 15%">Date</th>
@@ -39,7 +39,7 @@
                       <th style="width: 15%">Rate</th>
                       <th style="width: 15%">Edit</th>
                     </tr>
-                    <tbody ng-repeat="appt in appointments">
+                    <tbody ng-repeat="appt in appointments | filter: apptSearchWords ">
                         <tr ng-if="appt.readable_date == date ">
                             <td>
                              <div class="date-appt">{{appt.formatted_date}}</div>
