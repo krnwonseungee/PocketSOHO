@@ -58,10 +58,11 @@ class AppointmentsController < ApplicationController
       @appointment = Appointment.create(
       customer_id: @appt_person.id,
       business_owner_id: @user.id,
-      business_id: params["appointment"]["business_id"].to_i,
+      business_id: @user.business_id,
       notes: params["appointment"]["notes"],
-      date: Date.new(Date.today.year, params["monthList"].to_i, params["dateList"].to_i),
-      time: DateTime.new(Date.today.year, params["monthList"].to_i, params["dateList"].to_i, params["hourList"].to_i, params["minutesList"].to_i)
+      date: Date.new(params["yearList"].to_i, params["monthList"].to_i, params["dateList"].to_i),
+      time: DateTime.new(Date.today.year, params["monthList"].to_i, params["dateList"].to_i, params["hourList"].to_i, params["minutesList"].to_i),
+      amount: params["appointment"]["amount"],
       )
     redirect_to appointments_path
   end
@@ -102,8 +103,12 @@ class AppointmentsController < ApplicationController
   end
 
   def calendar
-    @business = @user.businesses.first
-    @appointments_by_date = Appointment.where("business_id=?", @business.id).group_by(&:date)
+    @business = Business.find(@user.business_id)
+    if @user.type == "BusinessOwner"
+      @appointments_by_date = Appointment.where("business_id=? AND business_owner_id = ?", @business.id, @user.id).group_by(&:date)
+    else
+      @appointments_by_date = Appointment.where("business_id=? AND customer_id = ?", @business.id, @user.id).group_by(&:date)
+    end
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 

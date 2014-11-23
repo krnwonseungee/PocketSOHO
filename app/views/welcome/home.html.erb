@@ -11,6 +11,9 @@
             <h3 class="content-title"><%= image_tag "chat_icon.svg", id: 'chaticon', alt: 'Chat Icon' %><u>My Messages</u></h3>
 
              <div class="portlet-body">
+                <% if @unread_conversations.length == 0 %>
+                  <h6 style="margin-left: 80px;">Click <%= link_to "here", new_user_conversation_path(@user.id) %> to create a message.</h6>
+                <% else %>
                 <table class="table table-striped table-bordered thumbnail-table">
                   <thead>
                         <tr>
@@ -46,12 +49,16 @@
                           <% end %>
                         </tbody>
                        </table>
+                       <% end %>
               </div>
               <div class="portlet">
                 <h3 class="content-title my-appt"><%= image_tag "schedule02.svg", alt: 'Scheduling Icon', id: "appticon"%><u>My Appointments</u></h3>
                 <% if @user.type == "BusinessOwner" %>
                   <%= link_to "Create New", new_appointment_path, id: 'newappt-btn', class: 'btn btn-primary btn-jumbo btn-block' %>
               <% end %>
+              <% if @appointments.length == 0 %>
+                  <h6 style="margin-left: 80px;">No appointments yet.</h6>
+              <% else %>
                 <br>
                 <div class="portlet-body">
                   <table class="table table-striped table-bordered" id="table-2">
@@ -103,6 +110,7 @@
 
 
                       </table>
+                    <% end %>
                 </div>
               </div>
 
@@ -162,13 +170,6 @@
 
         <div class="col-sm-5 col-md-4 layout-sidebar">
           <h4>My Business</h4>
-          <div class="portlet">
-            <% if @user.type == "BusinessOwner" %>
-              <%= link_to "Create New", new_business_path, class: 'btn btn-primary btn-jumbo btn-block', id: 'newbiz-btn' %>
-            <% end %>
-            <br>
-            <!-- <a href="./page-newcustomer.html" id="newcustomer-btn" class="btn btn-secondary btn-lg btn-block ">Add New Customers</a> -->
-          </div>
           <div class="well">
             <ul class="icons-list text-md" style="text-align: center;">
               <li>

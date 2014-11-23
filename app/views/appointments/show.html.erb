@@ -12,7 +12,7 @@
             <div class="appt-with tab-pane fade in active" id="profile-tab">
 
               <ul>
-                <li><h3 class="content-title"><u>Appointment with Twin Young</u></h3></li>
+                <li><h3 class="content-title"><u>Appointment with <%= @appt_person.first_name %> <%= @appt_person.last_name %></u></h3></li>
                 <% if@user.type == "BusinessOwner"  %>
                   <li><%= link_to "Edit", edit_appointment_path(@appointment), class: 'btn btn-secondary' %></li>
                 <% end %>

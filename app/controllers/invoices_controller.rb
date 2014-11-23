@@ -18,8 +18,11 @@ class InvoicesController < ApplicationController
   end
 
   def show
-    # debugger
     @invoice = Invoice.find(params[:id])
+    if (@user.type == "BusinessOwner" && @invoice.business_id != @user.business_id) || (@user.type == "Customer" && @invoice.customer_id != @user.id)
+      redirect_to root_path
+      flash[:error] = 'You cannot access this page.'
+    end
     session[:invoice_id] = @invoice.id
   end
 

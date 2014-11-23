@@ -36,7 +36,13 @@
                     <% @appointments_by_date[date].each do |appt| %>
                       <li>
                         <%= link_to appointment_path( appt.id ) do %>
-                          <%= appt.business.name %> | <%= appt.time.strftime("%I:%M%p") %>
+                          <% if @user.type == "BusinessOwner" %>
+                            <%- customer = Customer.find(appt.customer_id) -%>
+                            <%- customer_name = "#{customer.first_name} #{customer.last_name}" -%>
+                            <%=  customer_name  %> | <%= appt.time.strftime("%I:%M%p") %>
+                          <% else %>
+                            <%= appt.business.name %> | <%= appt.time.strftime("%I:%M%p") %>
+                          <% end %>
                         <% end %>
                       </li>
                     <% end %>
