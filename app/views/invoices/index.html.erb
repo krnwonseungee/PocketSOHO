@@ -19,7 +19,11 @@
             </div>
             <div class="finance-td portlet-body">
               <h4 class="appt-title content-title"><u>My Invoices</u></h4>
-              <table class="table table-striped table-bordered" id="table-2">
+              <ul class="invoice-types">
+                <li><button class="btn btn-primary unpaid">Unpaid</a></li>
+                <li><button class="btn btn-primary paid">Paid</a></li>
+              </ul>
+              <table class="table table-striped table-bordered paid-invoices" id="table-2">
                 <thead>
                   <tr>
                     <th style="width: 20%">Date</th>
@@ -28,7 +32,40 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <% @invoices.each do |invoice| %>
+                  <% @paid_invoices.each do |invoice| %>
+                    <tr>
+                      <td>
+                        <div class="date-appt"><%= invoice.due_date.strftime("%m/%d/%Y") %></div>
+                      </td>
+                      <td>
+                        <div class="client-appt">
+                          <%= link_to invoice_path( invoice.id ) do %>
+                            <% if @user.type == 'BusinessOwner' %>
+                              <%= Customer.find( invoice.customer_id ).first_name %> <%= Customer.find( invoice.customer_id ).last_name %>
+                            <% else %>
+                              <%= Business.find( invoice.business_id ).name %>
+                            <% end %>
+                          <% end %>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="rate-appt">$<%= number_with_precision( invoice.amount, precision: 2, delimiter: ',') %></div>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+
+              <table class="table table-striped table-bordered unpaid-invoices" id="table-2">
+                <thead>
+                  <tr>
+                    <th style="width: 20%">Date</th>
+                    <th style="width: 60%">Clients</th>
+                    <th style="width: 20%">Invoice Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @unpaid_invoices.each do |invoice| %>
                     <tr>
                       <td>
                         <div class="date-appt"><%= invoice.due_date.strftime("%m/%d/%Y") %></div>
@@ -91,3 +128,4 @@
   </div> <!-- .content -->
 
   <%= javascript_include_tag "finance_graph" %>
+  <%= javascript_include_tag "invoices" %>

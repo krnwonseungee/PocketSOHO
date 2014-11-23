@@ -644,6 +644,29 @@ a.appt-edit:hover {
 
 /* Admin - Feature 3: FINANCES*/
 /* ----------------------------------------------- */
+
+.invoice-types {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.invoice-types button {
+  padding: 5px;
+  margin-right:10px;
+  font-size: 15px;
+  width: 90px;
+}
+
+.invoice-types li {
+  display: inline;
+}
+
+.paid-invoices {
+  display: none;
+}
+
 .finance-td #table-2 th {
   background-color: #8CC640;
   color: #FFFFFF; }

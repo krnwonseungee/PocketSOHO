@@ -3,12 +3,12 @@ class InvoicesController < ApplicationController
 
   def index
       if @user.type == "BusinessOwner"
-        ##FIX
-          @invoices = Invoice.where( "business_id = ?", @user.business_id )
+          @paid_invoices = Invoice.where( "business_id = ? AND paid = ?", @user.business_id, true )
+          @unpaid_invoices = Invoice.where( "business_id = ? AND paid = ?", @user.business_id, false )
       else
-          @invoices = Invoice.where( "customer_id = ?", @user.id )
+          @paid_invoices = Invoice.where( "customer_id = ? AND paid = ?", @user.id, true )
+          @unpaid_invoices = Invoice.where( "customer_id = ? AND paid = ?", @user.business_id, false )
       end
-      @invoice_dates = @invoices.pluck( :due_date )
   end
 
   def create
