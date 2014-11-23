@@ -32,11 +32,15 @@ class UsersController < ApplicationController
   end
 
   def update
-
     user_params = params[@user.class.name.underscore.downcase.to_sym]
     user_params.permit!
     @user.update( user_params )
-    redirect_to user_path(@user)
+    @user.save
+    if @user.business_id == nil
+      redirect_to new_business_path
+    else
+      redirect_to user_path(@user)
+    end
   end
 
   def destroy

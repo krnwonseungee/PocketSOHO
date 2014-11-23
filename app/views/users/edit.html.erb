@@ -23,6 +23,9 @@
                   <%= f.input :state, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
                   <%= f.input :email, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
                   <%= f.input :type, collection: ['BusinessOwner', 'Customer'], input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }%>
+                  <% if @user.type == "Customer" %>
+                    <%= f.input :business_id, input_html: {class: 'form-control', id: 'business_name'}, wrapper_html: { class: 'form-group' }  %>
+                  <% end %>
                   <%= f.input :image_url, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
                   <div class="form-group">
                     <%= f.button :submit, class: 'btn btn-primary', id: 'update-appt' %>

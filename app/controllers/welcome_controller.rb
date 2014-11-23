@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
   def index
     if user_signed_in?
       @user = current_user
-      if current_user.business_id == ("" || nil) || current_user.type == ("" || nil) || (current_user.first_name == nil && current_user.last_name == nil)
+      if @user.business_id == nil || current_user.type == ("" || nil) || (current_user.first_name == nil && current_user.last_name == nil)
         redirect_to edit_user_path(current_user)
         return ""
       end

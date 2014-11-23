@@ -26,17 +26,18 @@
           <p>
             <!-- <a href="javascript:;" class="btn btn-primary">Follow Janet</a>
             &nbsp;&nbsp; -->
-
-          <form action="/charges" method="POST">
-            <script
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="pk_test_lIB9TNJoEz7jDH3BJ7Hs7glO"
-              data-amount="<%= number_with_precision((@invoice.amount * 100), precision: 0, delimter: ',') %>"
-              data-name="PocketSOHO"
-              data-description="Monthly Invoice"
-              data-image="/assets/payment01.svg">
-            </script>
-          </form>
+            <% if @user.type == "Customer" %>
+              <form action="/charges" method="POST">
+                <script
+                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="pk_test_lIB9TNJoEz7jDH3BJ7Hs7glO"
+                  data-amount="<%= number_with_precision((@invoice.amount * 100), precision: 0, delimter: ',') %>"
+                  data-name="PocketSOHO"
+                  data-description="Monthly Invoice"
+                  data-image="/assets/payment01.svg">
+                </script>
+              </form>
+          <% end %>
 
             <!-- <a href="javascript:;" class="btn btn-secondary">Pay with card</a> -->
           </p>

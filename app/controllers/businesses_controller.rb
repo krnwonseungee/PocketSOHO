@@ -6,12 +6,13 @@ class BusinessesController < ApplicationController
         redirect_to appointments_path
         flash[:error] = 'You must be a Business Owner to access this page.'
     end
-    @new_business = @user.businesses.new
+    @new_business = Business.new(business_owner_id: current_user.id)
   end
 
   def create
-    @new_business = @user.businesses.create(business_params)
+    @new_business = Business.create(business_params)
     @new_business.update( business_owner_id: @user.id )
+    current_user.update(business_id: @new_business.id)
     redirect_to root_path
   end
 
