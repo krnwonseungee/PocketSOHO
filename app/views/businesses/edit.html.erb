@@ -24,7 +24,6 @@
                   <%= f.input :state, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
                   <div class="form-group">
                     <%= f.button :submit, class: 'btn btn-primary', id: 'update-appt' %>
-                    <%= link_to "Delete Business", business_path(@business.id), method: :delete, data: { confirm: 'You sure?' }, class: 'btn btn-default', id: 'delete-appt' %>
                   </div>
                 <% end %>
               </div> <!-- /.form-group -->

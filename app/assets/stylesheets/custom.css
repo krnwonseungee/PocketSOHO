@@ -392,6 +392,19 @@ a.appt-edit:hover {
 .fa-usd {
   padding-left: 10px; }
 
+.appt-time-table td {
+  height: 60px;
+  padding-right:15px;
+}
+
+#date {
+  width: 300px;
+}
+
+#time {
+  width: 230px;
+}
+
 /* Error Page*/
 /* ----------------------------------------------- */
 .error-page {

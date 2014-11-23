@@ -9,22 +9,19 @@
             <div class="custom-header clearfix">
               <nav>
 
-                <span id="custom-prev" class="custom-prev">
                 <%= link_to date: @date.prev_month do %>
-                  <span></span>
+                  <i class="fa fa-arrow-circle-left" style="position:relative; top:30px; float:left; font-size: 20px"></i>
                 <% end %>
-                </span>
 
-                <span id="custom-next" class="custom-next">
-                <%= link_to date: @date.next_month do %>
-                  <span></span>
-                <% end %>
-              </span>
 
               </nav>
               <h2 id="custom-month" class="custom-month"><%= @date.strftime("%B") %></h2>
               <h3 id="custom-year" class="custom-year"><%= @date.strftime("%Y") %></h3>
           </div>
+
+          <%= link_to date: @date.next_month do %>
+            <i class="fa fa-arrow-circle-right" style="position:relative; bottom:30px; float:right; font-size: 20px"></i>
+          <% end %>
 
           <div id="calendar">
             <div class="fc-calendar fc-five-rows">
