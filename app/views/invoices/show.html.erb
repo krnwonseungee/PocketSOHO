@@ -17,6 +17,7 @@
             <li><i class="icon-li fa fa-map-marker"></i> <%= @invoice.customer.city %>, <%= @invoice.customer.state %></li>
             <li><i class="icon-li fa fa-envelope"></i> <%= @invoice.customer.email %></li>
             <li><i class="icon-li fa fa-credit-card"></i> Total Due: $<%= number_with_precision(@invoice.amount, delimiter: ',', precision: 2 ) %></li>
+            <li><i class="icon-li fa fa-clock-o"></i> Paid: <%= @invoice.paid %></li>
           </ul>
 
           <br>
