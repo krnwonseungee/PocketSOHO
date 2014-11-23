@@ -1,9 +1,51 @@
-app.controller('appointmentsController', ['$scope', '$http', function($scope, $http){
-  $http.get("/appointments.json").success(function(data){
-    $scope.appointments = data[0];
-    $scope.apptDates = data[1];
-    console.log(data)
-  });
+$(document).ready(function(){
+  bindInvoiceTypeEvents()
+})
 
-  $scope.apptSearchWords = "";
-}])
+function bindInvoiceTypeEvents () {
+  $('.today').click(function () {
+    colorOrange('.today')
+    colorGreen('.tomorrow')
+    colorGreen('.all')
+
+    render('.appts-today')
+    disappear('.appts-tomorrow')
+    disappear('.appts-all')
+  })
+
+  $('.tomorrow').click(function () {
+    colorOrange('.tomorrow')
+    colorGreen('.today')
+    colorGreen('.all')
+
+    render('.appts-tomorrow')
+    disappear('.appts-today')
+    disappear('.appts-all')
+  })
+
+  $('.all').click(function () {
+    colorOrange('.all')
+    colorGreen('.today')
+    colorGreen('.tomorrow')
+
+    render('.appts-all')
+    disappear('.appts-today')
+    disappear('.appts-tomorrow')
+  })
+}
+
+function colorOrange (btnClass) {
+  $(btnClass).css("background-color", "#F48A1F")
+}
+
+function colorGreen (btnClass) {
+  $(btnClass).css("background-color", "#8CC640")
+}
+
+function disappear (tableClass) {
+  $(tableClass).css("display", "none")
+}
+
+function render (tableClass) {
+  $(tableClass).css("display", "block")
+}

@@ -442,6 +442,35 @@ a.appt-edit:hover {
   width: 100%;
   margin: 0 auto; }
 
+.appointment-types {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.appointment-types button {
+  padding: 5px;
+  margin-right:5px;
+  font-size: 12px;
+  width: 70px;
+  position: relative;
+  top: 20px;
+}
+
+.appointment-types .today {
+  background-color: #F48A1F;
+}
+
+.appointment-types li {
+  display: inline;
+}
+
+.appts-tomorrow, .appts-all {
+  display: none;
+}
+
+
 /* Admin - User Setting Page - Main Dashboard*/
 /* ----------------------------------------------- */
 .nav-layout-sidebar > .active > a {
@@ -661,6 +690,10 @@ a.appt-edit:hover {
 
 .invoice-types li {
   display: inline;
+}
+
+.invoice-types .unpaid {
+  background-color: #F48A1F;
 }
 
 .paid-invoices {
