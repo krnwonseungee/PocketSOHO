@@ -8,27 +8,24 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="PocketSOHO: The best business app for small office\home office">
 
-  <!-- Favicon -->
-  <%= favicon_link_tag 'favicon.ico' %>
 
   <!-- Google Font: Open Sans -->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300,700">
 
   <!-- Font Awesome CSS -->
-  <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' %>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- Bootstrap CSS -->
-  <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
   <!-- App CSS -->
-  <%= stylesheet_link_tag 'mvpready-landing' %>
-  <%= stylesheet_link_tag 'mvpready-flat' %>
-  <%= stylesheet_link_tag 'animate' %>
-   <%= stylesheet_link_tag 'custom' %>
+  <%= stylesheet_link_tag    "mvpready-landing"%>
+  <%= stylesheet_link_tag    "mvpready-flat"%>
+  <%= stylesheet_link_tag    "animate"%>
+   <%= stylesheet_link_tag    "landing/custom"%>
 
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -37,7 +34,7 @@
   <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
   <![endif]-->
 
-
+  <link rel="shortcut icon" href="./img/ico/favicon32x32.png">
 </head>
 
 <body class=" ">
@@ -49,98 +46,46 @@
     <div class="container">
 
       <div class="navbar-header">
-        <a href="http://www.pocketsoho.com/" class="navbar-brand navbar-brand-img">
-          <%= image_tag("logo1.svg", alt: "pocketSOHO", id: "logo") %>
-          <!-- <img id="logo" src="./img/logo1.svg" alt="pocketSOHO"> -->
-        </a>
-
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
-          <i class="fa fa-bars"></i>
+          <%= image_tag "landing/mobilemenu-logo.svg", alt: 'pocketSOHO', id: "logo2"%>
+          <%= image_tag "landing/mobilemenu-logo1.svg", alt: 'pocketSOHO', id: "logo3"%>
         </button>
+        <a href="index.html" class="navbar-brand navbar-brand-img">
+          <%= image_tag "logo.svg", alt: 'pocketSOHO', id: "logo"%>
+        </a>
       </div> <!-- /.navbar-header -->
 
 
-      <nav class="collapse navbar-collapse" role="navigation">
+      <nav id="main-nav" class="collapse navbar-collapse" role="navigation">
 
         <ul class="nav navbar-nav navbar-right mainnav-menu">
 
           <li class="active">
-            <a href="./index.html">Home</a>
+            <a href="index.html">Home</a>
           </li>
 
           <li class="">
-            <a href="#">About</a>
+            <a data-target-id="about" href="#">About</a>
           </li>
 
           <li class="">
-            <a href="#">Team</a>
+            <a data-target-id="team" href="#">Team</a>
           </li>
 
-          <li class="">
-            <a href="#">Pricing</a>
-          </li>
-
-          <li class="">
-            <a href="#">Contact</a>
-          </li>
-
-          <!-- <li class="dropdown">
-
-            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
-            Dropdown
-            <i class="mainnav-caret"></i>
-            </a>
-
-            <ul class="dropdown-menu" role="menu">
-              <li>
-                <a href="./page-notifications.html">
-                <i class="fa fa-bell"></i>
-                &nbsp;&nbsp;Notifications
-                </a>
-              </li>
-
-              <li>
-                <a href="./components-icons.html">
-                <i class="fa fa-smile-o"></i>
-                &nbsp;&nbsp;Font Icons
-                </a>
-              </li>
-
-            </ul>
-
+          <!-- <li class="">
+            <a data-target-id="pricing" href="#">Pricing</a>
           </li> -->
+
+          <li class="">
+            <a data-target-id="contactus" href="#">Contact</a>
+          </li>
 
           <li>
             <%= link_to "Login", new_user_session_path %>
           </li>
 
         </ul>
-
-        <!-- <ul class="nav navbar-nav navbar-social navbar-left">
-
-          <li>
-            <a href="javascript:;" class="ui-tooltip" title="Facebook" data-placement="bottom">
-              <i class="fa fa-facebook"></i>
-              <span class="navbar-social-label">Facebook</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="javascript:;" class="ui-tooltip" title="Twitter" data-placement="bottom">
-              <i class="fa fa-twitter"></i>
-              <span class="navbar-social-label">Twitter</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="javascript:;" class="ui-tooltip" title="Google+" data-placement="bottom">
-              <i class="fa fa-google-plus"></i>
-              <span class="navbar-social-label">Google+</span>
-            </a>
-          </li>
-
-        </ul> -->
 
       </nav>
 
@@ -164,62 +109,25 @@
 
                 <div class="col-md-6 masthead-text animated fadeInDownBig">
                   <h1 class="masthead-title">Introducing pocketSOHO</h1>
-
                   <p class="masthead-">
-                  Your Small Office & Home Office has become easier than ever before. A brief summary of pocketSOHO should be stated here.
+                  Small and Home Business Owner Super Hero! <br/>
+                  Love being your own boss but hate the admin part?
                   </p>
-
                   <br>
 
                   <div class="masthead-actions">
-                   <!--  <a href="./page-features.html" class="btn btn-transparent btn-jumbo">
-                    Learn More
-                    </a> -->
-
-                    <a href="../admin/account-signup.html" id="signup" class="btn btn-primary btn-jumbo">
-                    Get Started
+                    <%= link_to "Start Your Free Trial", new_user_path, {class: 'btn btn-primary btn-jumbo'} %>
                     </a>
                   </div> <!-- /.masthead-actions -->
                 </div> <!-- /.masthead-text -->
 
-                <!-- <div class="col-md-6 masthead-img animated fadeInUpBig">
-                  <img src="img/masthead/mobile.png" alt="slide2" class="img-responsive" />
-                </div>  --><!-- /.masthead-img -->
-
-              </div> <!-- /.row -->
-
-            </div> <!-- /.item -->
-
-            <div class="item">
-
-              <div class="row">
-
-                <div class="col-md-6 masthead-text animated fadeInLeftBig">
-                  <h1 class="masthead-title">Send message to your clients.</h1>
-
-                  <p class="masthead-">
-                  A brief description of scheduling feasture's benefit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi ut aliquip ex ea commodo consequat.
-                  </p>
-
-                  <br>
-
-                  <div class="masthead-actions">
-                    <!-- <a href="./page-features.html" class="btn btn-transparent btn-jumbo">
-                    Learn More
-                    </a> -->
-
-                    <a href="../admin/account-signup.html" class="btn btn-primary btn-jumbo">
-                    Create an Account
-                    </a>
-                  </div> <!-- /.masthead-actions -->
-                </div> <!-- /.masthead-text -->
-
-                <div class="col-md-6 masthead-img animated fadeInRightBig">
+                <div id="form-animated" class="col-md-6 masthead-img animated fadeInRightBig">
                   <form class="form masthead-form well">
 
                     <h3 class="text-center">Start Your Free Trial!</h3>
 
-                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, earum.</p>
+                    <p class="text-center">Be your own boss. <br/>
+                     Stop wasting time on scheduling and payment.</p>
 
                     <br>
 
@@ -239,7 +147,7 @@
                     </div> <!-- /.form-group -->
 
                     <div class="form-group">
-                      <button type="submit" ic="formsubmit" class="btn btn-secondary btn-jumbo btn-block">Get Started Today!</button>
+                      <button type="submit" id="start-today" class="btn btn-secondary btn-jumbo btn-block"><a href="../admin/account-signup.html">Get Started Today!</a></button>
                     </div> <!-- /.form-group -->
 
                   </form>
@@ -247,41 +155,62 @@
 
               </div> <!-- /.row -->
 
-            </div> <!-- /.item -->
+            </div> <!-- slide1 end -->
 
-            <div class="item">
+            <div id="slide2" class="item">
 
               <div class="row">
 
-                <div class="col-md-6 masthead-text animated fadeInUpBig">
-                  <h1 class="masthead-title">Schedule Your Appointments With Ease.</h1>
+                <div class="col-md-6 masthead-text animated fadeInLeftBig">
+                  <h1 class="masthead-title">Real Time Messaging!</h1>
 
                   <p class="masthead-">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi ut aliquip ex ea commodo consequat.
+                  Our In-App Messenger allows you to communicate with your customers 24/7.
                   </p>
 
                   <br>
 
                   <div class="masthead-actions">
-                    <!-- <a href="./page-features.html" class="btn btn-transparent btn-jumbo">
-                    Learn More
-                    </a> -->
-
-                    <a href="../admin/account-signup.html" class="btn btn-primary btn-jumbo">
-                    Create an Account
-                    </a>
+                    <%= link_to "Start Your Free Trial", new_user_path, {class: 'btn btn-primary btn-jumbo'} %>
                   </div> <!-- /.masthead-actions -->
                 </div> <!-- /.masthead-text -->
 
-                <div class="col-md-6 masthead-img animated pulse">
-                	<%= image_tag "ipad.png", alt: "slide2", class: "img-responsive" %>
+                <div id="instant-chat-feature" class="col-md-6 masthead-img animated fadeInUpBig">
+                  <%= image_tag "landing/mobile_1.png", alt: 'slide2', class: "img-responsive"%>
                 </div> <!-- /.masthead-img -->
 
               </div> <!-- /.row -->
 
             </div> <!-- /.item -->
 
-            <div class="item">
+            <div id="slide3" class="item">
+
+              <div class="row">
+
+                <div class="col-md-6 masthead-text animated fadeInUpBig">
+                  <h1 class="masthead-title">Instant (re)Scheduling!</h1>
+
+                  <p class="masthead-">
+                  See all your appointments at a glance.  Manage, schedule and re-schedule with ease.
+                  </p>
+
+                  <br>
+
+                  <div class="masthead-actions">
+                    <%= link_to "Start Your Free Trial", new_user_path, {class: 'btn btn-primary btn-jumbo'} %>
+                    </a>
+                  </div> <!-- /.masthead-actions -->
+                </div> <!-- /.masthead-text -->
+
+                <div id="instant-appt-feature" class="col-md-6 masthead-img animated pulse">
+                  <%= image_tag "landing/ipad_appt.png", alt: 'slide2', class: 'img-responsive' %>
+                </div> <!-- /.masthead-img -->
+
+              </div> <!-- /.row -->
+
+            </div> <!-- /.item -->
+
+            <div id="slide4" class="item">
 
               <div class="row">
 
@@ -289,28 +218,21 @@
                   <h1 class="masthead-title">Get paid on time.</h1>
 
                   <p class="masthead-">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi ut aliquip ex ea commodo consequat.
+                  Easy invoicing, online payment and reporting for tax time.
                   </p>
 
                   <br>
 
                   <div class="masthead-actions">
-                    <!-- <a href="./page-features.html" class="btn btn-transparent btn-jumbo">
-                    Learn More
-                    </a> -->
 
-                    <a href="../admin/account-signup.html" class="btn btn-primary btn-jumbo">
-                    Create an Account
-                    </a>
+                    <%= link_to "Start Your Free Trial", new_user_path, {class: 'btn btn-primary btn-jumbo'} %>
                   </div> <!-- /.masthead-actions -->
                 </div> <!-- /.masthead-text -->
-                <div class="col-md-6 masthead-img animated fadeInUpBig">
-                	<%= image_tag "mobile.png", alt: "slide2", class: "img-responsive" %>
-                </div>  <!-- /.masthead-img-->
-                <!-- <div class="col-md-6 masthead-img animated fadeInUpBig">
-                  <iframe src="http://player.vimeo.com/video/57175742?title=0&amp;byline=0&amp;portrait=0&amp;color=e2007a" style="width: 85%; height: 325px;"></iframe>
 
-                </div> --> <!-- /.masthead-img -->
+                <div id="instant-payment-feature" class="col-md-6 masthead-img animated fadeInUpBig">
+                  <%= image_tag "landing/ipad_1.png", style: "width: 85%; height: 325px;" %>
+
+                </div> <!-- /.masthead-img -->
 
               </div> <!-- /.row -->
 
@@ -332,12 +254,12 @@
 
 
 
-    <div class="content">
+    <div id="about" class="content">
 
       <div class="container">
 
         <h4 class="content-title">
-          <span class="about">Meet pocket<em class="soho">SOHO</em></span>
+          <span class="features">Meet pocketSOHO</span>
         </h4>
 
         <br>
@@ -345,77 +267,43 @@
         <div class="row">
 
           <div class="mini-feature">
-          	<%= image_tag "schedule01.svg", class: "pocketfeature" %>
-            <!-- <i class="fa fa-globe mini-feature-icon text-secondary"></i> -->
+            <%= image_tag "chat_icon.svg", alt: 'Messaging', class:"pocketfeature" %>
+            <div class="extra-img"></div>
 
             <div class="mini-feature-text">
-              <h5 class="mini-feature-title">Schedule Appointments</h5>
-              <p>Our themes are designed to display well on most modern devices, including desktops, tablets, and mobile devices. </p>
+              <h5 class="mini-feature-title">Real Time Messaging</h5>
+              <p>Our in-app messenger allows you to communicate with your customers 24/7 because we know how important it is for your business. pochetSOHO consolidate all your communication, scheduling and payment in one simple app.</p>
             </div>
           </div> <!-- /.mini-feature -->
 
           <div class="mini-feature">
-          	<%= image_tag "message01.svg", class: "pocketfeature" %>
-            <!-- <i class="fa fa-dashboard mini-feature-icon text-secondary"></i> -->
+            <%= image_tag "schedule02.svg", alt: 'Messaging', class:"pocketfeature" %>
+            <div class="extra-img-b"></div>
 
             <div class="mini-feature-text">
-              <h5 class="mini-feature-title">Instant Communication with Clients</h5>
+              <h5 class="mini-feature-title">Instant (re)Scheduling</h5>
 
-              <p>Our themes are designed to display well on most modern devices, including desktops, tablets, and mobile devices. </p>
+              <p>Scheduling, rescheduling and keeping track of appointments are often a headache for small business owners. See all your appointments at a glance, manage, schedule and re-schedule with just a few clicks.</p>
             </div>
           </div> <!-- /.mini-feature -->
 
           <div class="mini-feature">
-            <%= image_tag "payment01.svg", class: "pocketfeature", alt: "Payment" %>
-            <!-- <i class="fa fa-html5 mini-feature-icon text-secondary"></i> -->
+            <%= image_tag "payment02.svg", alt: 'Messaging', class:"pocketfeature" %>
+            <div class="extra-img-c"></div>
 
             <div class="mini-feature-text">
-              <h5 class="mini-feature-title">Send Invoices and Get Paid</h5>
+              <h5 class="mini-feature-title">Get paid on time</h5>
 
-              <p>Built using HTML5 and CSS3, our themes can be integrated with multiple platforms including Ruby On Rails, PHP, Django, and many others.</p>
+              <p>Because getting paid for your hard work should not be such a hassle, pochetSOHO designed a very simple in-app payment application allowing you to invoice, track payments, remind your customers and even helps you with reporting during tax time.</p>
             </div>
-          </div>
+          </div> <!-- /.mini-feature -->
 
         </div> <!-- /.row -->
-
-        <!-- <div class="row">
-
-          <div class="mini-feature">
-            <i class="fa fa-globe mini-feature-icon text-secondary"></i>
-
-            <div class="mini-feature-text">
-              <h5 class="mini-feature-title">Wide Browser Support</h5>
-              <p>Our themes are designed to display well on most modern devices, including desktops, tablets, and mobile devices. </p>
-            </div>
-          </div>
-
-          <div class="mini-feature">
-            <i class="fa fa-dashboard mini-feature-icon text-secondary"></i>
-
-            <div class="mini-feature-text">
-              <h5 class="mini-feature-title">Dashboard Layouts</h5>
-
-              <p>Our themes are designed to display well on most modern devices, including desktops, tablets, and mobile devices. </p>
-            </div>
-          </div>
-
-          <div class="mini-feature">
-            <i class="fa fa-html5 mini-feature-icon text-secondary"></i>
-
-            <div class="mini-feature-text">
-              <h5 class="mini-feature-title">HTML5 &amp; CSS3</h5>
-
-              <p>Built using HTML5 and CSS3, our themes can be integrated with multiple platforms including Ruby On Rails, PHP, Django, and many others.</p>
-            </div>
-          </div>
-
-        </div>  -->
-
 
         <div class="row-divider"></div> <!-- /.row-divider -->
 
 
-        <div id="inside-bg" class="row">
+        <div class="row">
 
           <div class="col-sm-6 col-sm-push-6">
 
@@ -423,24 +311,22 @@
               <span class="feature-description">What's Inside</span>
             </h4>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, autem, quos, dicta, tempora omnis beatae aspernatur repellat aperiam fugit enim animi temporibus magnam tempore quae impedit velit voluptatum consequuntur cupiditate.</p>
-
-            <br>
+            <p>pocketSOHO helps SMALL or HOME Business owners run their business smoothly and efficiently. We bring together and simplify the repetitive task that sucks most of you time so you can enjoy spending more time doing what you love and making money!</p>
 
             <div class="row">
               <div class="col-sm-6">
                 <ul class="icons-list">
                   <li>
                     <i class="icon-li fa fa-check text-primary"></i>
-                    Custom Header Images
+                    Instant Message Customers
                   </li>
                   <li>
                     <i class="icon-li fa fa-check text-primary"></i>
-                    Unlimited Portfolios & Blogs
+                    Schedule appointments
                   </li>
                   <li>
                     <i class="icon-li fa fa-check text-primary"></i>
-                    Millions Of Page Combinations
+                     Send Invoices & Track Payments
                   </li>
                 </ul>
               </div>
@@ -449,25 +335,25 @@
                 <ul class="icons-list">
                   <li>
                     <i class="icon-li fa fa-check text-primary"></i>
-                    Custom Header Images
+                    Integrated & Secured Online Payment
                   </li>
                   <li>
                     <i class="icon-li fa fa-check text-primary"></i>
-                    Unlimited Portfolios & Blogs
+                    Track & Visual Income
                   </li>
                   <li>
                     <i class="icon-li fa fa-check text-primary"></i>
-                    Millions Of Page Combinations
+                    Speed-up Tax Reporting
                   </li>
                 </ul>
               </div>
             </div>
 
-            <br>
+            <br/>
+            <p>Easiest way of combining the most needed 3 features to run a small office, home office, individual service business such as piano teacher, therapist, tutor, yoga teacher, nanny, and dog walker.</p>
+            <br/>
 
-            <a href="../admin/account-signup.html" class="smallbtn btn btn-default">Sign Up Today</a>
-
-            <br><br><br>
+            <%= link_to "Start Your Free Trial", new_user_path, {class: 'smallbtn btn btn-default'} %>
 
           </div> <!-- /.col -->
 
@@ -476,7 +362,7 @@
           <div class="col-sm-6 col-sm-pull-6 text-center">
 
             <br><br>
-            <%= image_tag "macbook.png", class: "img-responsive", alt: "Macbook" %>
+            <%= image_tag "landing/browser.png", alt: 'Macbook', class: 'img-responsive' %>
 
           </div> <!-- /.col -->
 
@@ -486,113 +372,12 @@
 
         <div class="row-divider"></div> <!-- /.row-divider -->
 
-
-
-        <!-- <div class="row">
-
-          <div class="col-sm-6">
-
-            <h4 class="content-title">
-              <span>Latest News</span>
-            </h4>
-
-            <div class="recent-news">
-
-              <div class="recent-news-item clearfix"><div class="recent-news-item-date">13<span>Jan</span></div>
-                <div class="recent-news-item-description">
-                  <h5 class="recent-news-item-title"><a href="http://inovado.mintithemes.com/this-is-a-standard-post/" title="This is a Standard Post">This is a Standard Post</a></h5>
-                  <span class="recent-news-item-comments">7 Comments</span>
-                  <div class="recent-news-item-excerpt">Praesent augue arcu, ornare ut tincidunt eu, mattis a libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames... <a href="http://inovado.mintithemes.com/this-is-a-standard-post/" class="recent-news-item-more">Read More →</a></div>
-                </div>
-              </div>
-
-              <div class="recent-news-item clearfix"><div class="recent-news-item-date">04<span>Jan</span></div>
-                <div class="recent-news-item-description">
-                  <h5 class="recent-news-item-title"><a href="http://inovado.mintithemes.com/this-is-a-standard-post/" title="This is a Standard Post">This is a Standard Post</a></h5>
-                  <span class="recent-news-item-comments">2 Comments</span>
-                  <div class="recent-news-item-excerpt">Praesent augue arcu, ornare ut tincidunt eu, mattis a libero. Pellentesque habitant morbi tristique senectus et netus et malesuada fames... <a href="http://inovado.mintithemes.com/this-is-a-standard-post/" class="recent-news-item-more">Read More →</a></div>
-                </div>
-              </div>
-
-            </div>
-
-            <br class="visible-xs">
-
-          </div>  -->
-
-
-
-         <!--  <div class="col-sm-6">
-
-            <h4 class="content-title">
-              <span>Testimonials</span>
-
-              <a class="btn btn-default btn-sm carousel-prev" href="#clients-carousel" data-slide="prev">&lsaquo;</a>
-              <a class="btn btn-default btn-sm carousel-next" href="#clients-carousel" data-slide="next">&rsaquo;</a>
-            </h4>
-
-            <div id="clients-carousel" class="carousel slide" data-interval="0">
-              <div class="carousel-inner">
-
-                <div class="item active">
-
-                  <div class="testimonial">
-
-                    <p class="testimonial-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, sed, nulla, provident porro quaerat aperiam eum tempore fugiat dicta obcaecati itaque adipisci perspiciatis unde voluptatibus architecto vitae reiciendis distinctio incidunt! Tempore quae impedit velit voluptatum consequuntur cupiditate.
-                    </p>
-
-                    <div class="testimonials-arrow"></div>
-
-                    <div class="testimonial-author">
-                      <div class="testimonial-image"><img alt="" src="./img/avatars/avatar-1-lg.jpg"></div>
-
-                      <div class="testimonial-author-info">
-                        <h5><a href="#">Rod Howard</a></h5> Jumpstart Themes
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="item">
-
-                  <div class="testimonial">
-
-                    <p class="testimonial-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, sed, nulla, provident porro quaerat aperiam eum tempore fugiat dicta obcaecati itaque adipisci perspiciatis unde voluptatibus architecto vitae reiciendis distinctio incidunt! Tempore quae impedit velit voluptatum consequuntur cupiditate.
-                    </p>
-
-                    <div class="testimonials-arrow"></div>
-
-                    <div class="testimonial-author">
-                      <div class="testimonial-image"><img alt="" src="./img/avatars/avatar-2-lg.jpg"></div>
-
-                      <div class="testimonial-author-info">
-                        <h5><a href="#">Nikita Williams</a></h5> Nikita Chanel
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div> -->
-
-
-
-        <!-- <div class="row-divider"></div>  -->
-        <div class="content">
+        <div id="team" class="content">
 
           <div class="container">
 
             <h4 class="content-title">
-              <span class="about">Meet Our Team</span>
+              <span class="features">Meet Our Team</span>
             </h4>
 
             <br>
@@ -603,8 +388,10 @@
                  <!-- <i class="fa fa-globe mini-feature-icon text-secondary"></i> -->
 
                   <div class="mini-feature-text">
-                    <h5 class="mini-feature-title">Sumi Levy | </h5>
-                    <p>Our themes are designed to display well on most modern devices, including desktops, tablets, and mobile devices. </p>
+                    <%= image_tag "landing/sumi.png", alt: 'Sumi Lee Levy', class: 'pocketfeature' %>
+                    <h5 class="team-member">Sumi Levy</h5>
+                    <h6 class="team-member-title">Chief “Can-Do” Officer | @sumi_sv</h6>
+                    <p>Sumi is a momtrepreneur with 20 years of experience as a small business owner: private piano instructor, opera accompanist, Korean immersion pre-school Director and event floral designer. Passionate about education, edtech, startups, music and art.</p>
                   </div>
               </div> <!-- /.mini-feature -->
 
@@ -612,10 +399,10 @@
                 <!-- <i class="fa fa-dashboard mini-feature-icon text-secondary"></i> -->
 
               <div class="mini-feature-text">
-                <%= image_tag "janet.png", class: "pocketfeature", alt: "Janet Yi" %>
+                <%= image_tag "landing/janet.png", alt: 'Janet Yi', class: 'pocketfeature' %>
                 <h5 class="team-member">Janet Yi</h5>
-                <h6 class="team-member-title">Front-End Developer | @RosaCodie</h6>
-                <p>Our themes are designed to display well on most modern devices, including desktops, tablets, and mobile devices. </p>
+                <h6 class="team-member-title">Developer | janetyi.com</h6>
+                <p>Janet is a Software Engineer, Bay Area native, and world traveler. Having an extensive background working with startups, she is thrilled to be working on a product that will help small businesses owners/freelancers far and wide!</p>
               </div>
           </div> <!-- /.mini-feature -->
 
@@ -623,331 +410,26 @@
             <!-- <i class="fa fa-html5 mini-feature-icon text-secondary"></i> -->
 
             <div class="mini-feature-text">
-              <%= image_tag "rosa.png", class: "pocketfeature", alt: "Rosa Choi" %>
+              <%= image_tag "landing/rosa.png", alt: 'Rosa Choi', class: 'pocketfeature' %>
               <h5 class="team-member">Rosa Choi</h5>
               <h6 class="team-member-title">Front-End Developer | @RosaCodie</h6>
-              <p>Built using HTML5 and CSS3, our themes can be integrated with multiple platforms including Ruby On Rails, PHP, Django, and many others.</p>
+              <p>Rosa is a designer turned developer. Web design and development are her true passions, followed closely by art, and travel. She merges art and technology to create a refined digital experience that works seamlessly across all devices.</p>
             </div>
           </div>
 
         </div>
       </div>
-
-
-        <!-- <div class="carousel-container">
-        <div class="row">
-
-          <div class="col-sm-12">
-
-            <h4 class="content-title">
-              <span>See Our Clients</span>
-
-              <a class="btn btn-default btn-sm carousel-prev" href="#" data-slide="prev">&lsaquo;</a>
-              <a class="btn btn-default btn-sm carousel-next" href="#" data-slide="next">&rsaquo;</a>
-            </h4>
-
-            <ul class="clients-list">
-              <li>
-                <img src="./img/clients/logo1-grayscale.png" class="img-responsive" alt="Client Logo">
-              </li>
-              <li>
-                <img src="./img/clients/logo2-grayscale.png" class="img-responsive" alt="Client Logo">
-              </li>
-              <li>
-                <img src="./img/clients/logo3-grayscale.png" class="img-responsive" alt="Client Logo">
-              </li>
-              <li>
-                <img src="./img/clients/logo4-grayscale.png" class="img-responsive" alt="Client Logo">
-              </li>
-              <li>
-                <img src="./img/clients/logo5-grayscale.png" class="img-responsive" alt="Client Logo">
-              </li>
-              <li>
-                <img src="./img/clients/logo6-grayscale.png" class="img-responsive" alt="Client Logo">
-              </li>
-            </ul>
-
-
-
-          </div>
-
-        </div>
-        </div>  -->
-        <div class="content">
-
-      <div class="container">
-          <h4 class="content-title">
-              <span class="about">Pricing</span>
-            </h4>
-
-            <br>
-
-        <div class="text-center">
-          <h2 class="30days">Start your 30-day free trial today!</h2>
-          <h4 class="trial">No sign-up fees. No credit card required. No long-term commitments.</h4>
-
-          <br>
-
-          <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-default active" style="width: 125px;">
-                <input type="radio" name="options" id="option1"> Monthly
-              </label>
-              <label class="btn btn-default" style="width: 125px;">
-                <input type="radio" name="options" id="option2"> Yearly <small>(15% off)</small>
-              </label>
-            </div>
-
-          <br><br><br><br>
-        </div>
-
-        <div class="row">
-
-            <div class="col-sm-12 col-md-10 col-md-offset-1">
-
-              <div class="row">
-
-                <div class="col-sm-4">
-
-                  <div class="pricing-plan">
-
-                    <div class="pricing-header">
-                      <h3 class="pricing-plan-title">Starter</h3>
-                      <p class="pricing-plan-label">For Individuals</p>
-                    </div>
-
-                    <div class="pricing-plan-price">
-                      <span class="pricing-plan-amount">$9</span> / month
-                    </div>
-
-                    <ul class="pricing-plan-details">
-                      <li><strong>10 GB</strong> Disk Space</li>
-                      <li><strong>5</strong> Sub Domains</li>
-                      <li><strong>10</strong> MySQL Databases</li>
-                      <li><strong>1</strong> User</li>
-                    </ul>
-
-                    <a href="../admin/account-signup.html" class="choosebtn btn btn-primary">Choose Plan</a>
-
-                  </div> <!-- /.pricing-plan -->
-
-                </div> <!-- /.col -->
-
-
-                <div class="col-sm-4">
-
-                  <div class="pricing-plan">
-
-                    <div class="pricing-header">
-                      <h3 class="pricing-plan-title">Basic</h3>
-                      <p class="pricing-plan-label">For blogs &amp; small business</p>
-                    </div>
-
-                    <div class="pricing-plan-price">
-                      <span class="pricing-plan-amount">$24</span> / month
-                    </div>
-
-                    <ul class="pricing-plan-details">
-                      <li><strong>20 GB</strong> Disk Space</li>
-                      <li><strong>10</strong> Sub Domains</li>
-                      <li><strong>50</strong> MySQL Databases</li>
-                      <li><strong>Unlimited</strong> Users</li>
-                    </ul>
-
-                    <a href="../admin/account-signup.html" class="choosebtn btn btn-primary">Choose Plan</a>
-
-                  </div> <!-- /.pricing-plan -->
-
-                </div> <!-- /.col -->
-
-
-                <div class="col-sm-4">
-                  <div class="pricing-plan">
-
-                    <div class="pricing-plan-ribbon-secondary ui-tooltip" title="" data-original-title="Best Value!">
-                      <i class="fa fa-star"></i>
-                    </div>
-
-                    <div class="pricing-header">
-                      <h3 class="pricing-plan-title">Pro</h3>
-                      <p class="pricing-plan-label">For consultants</p>
-                    </div>
-
-                    <div class="pricing-plan-price">
-                      <span class="pricing-plan-amount">$49</span> / month
-                    </div>
-
-                    <ul class="pricing-plan-details">
-                      <li><span class="pricing-plan-help" title="" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." data-original-title="What's a user?"><strong>40 GB</strong> Disk Space</span></li>
-                      <li><span class="pricing-plan-help" title="" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." data-original-title="What's a project?"><strong>20</strong> Sub Domains</span></li>
-                      <li><span class="pricing-plan-help" title="" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." data-original-title="What's storage for?"><strong>80</strong> MySQL Databases</span></li>
-                      <li><span class="pricing-plan-help" title="" data-content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." data-original-title="What's storage for?"><strong>Unlimited</strong> Users</span></li>
-                    </ul>
-
-                    <a href="../admin/account-signup.html" class="choosebtn btn btn-primary">Choose Plan</a>
-
-                  </div> <!-- /.pricing-plan -->
-
-                </div> <!-- /.col -->
-
-              </div> <!-- /.row -->
-
-            </div> <!-- /.col -->
-
-          </div> <!-- /.row -->
-
-          <br>
-
-          <!-- <h4 class="text-center">
-            Need More?
-            <span>We offer larger plans for companies with even more contacts.</span>
-            <a href="javascript:;">Learn More &nbsp;<i class="fa fa-external-link"></i></a>
-          </h4> -->
-
-          <br><br><br><br>
-
-          <div class="row">
-
-            <div class="col-md-12">
-              <h3 class="content-title">
-                <span>All Plans Come With</span>
-              </h3>
-            </div> <!-- /.row -->
-
-          <div class="col-md-3 col-sm-6">
-            <ul class="icons-list">
-              <li>
-                <i class="icon-li fa fa-check-square"></i>
-
-                Free Setup
-              </li>
-
-              <li>
-                <i class="icon-li fa fa-check-square"></i>
-
-                SSL Protection
-              </li>
-
-              <li>
-                <i class="icon-li fa fa-check-square"></i>
-
-                Unlimited Downloads
-              </li>
-
-              <li>
-                <i class="icon-li fa fa-check-square"></i>
-
-                Unlimited Pushes
-              </li>
-            </ul>
-          </div><!-- /.col -->
-
-          <div class="col-md-3 col-sm-6">
-            <ul class="icons-list">
-
-              <li>
-              <i class="icon-li fa fa-check-square"></i>
-
-                Over the Air Install and Update
-              </li>
-
-              <li>
-              <i class="icon-li fa fa-check-square"></i>
-
-                Realtime Dashboard
-              </li>
-
-              <li>
-              <i class="icon-li fa fa-check-square"></i>
-
-                Package History Archive
-              </li>
-
-              <li>
-              <i class="icon-li fa fa-check-square"></i>
-
-                Easy to Use Interface
-              </li>
-           </ul>
-          </div><!-- /.col -->
-
-          <div class="col-md-3 col-sm-6">
-            <ul class="icons-list">
-
-              <li>
-              <i class="icon-li fa fa-check-square"></i>
-
-                Full Featured
-              </li>
-
-              <li>
-              <i class="icon-li fa fa-check-square"></i>
-
-                Crash Reporting (with SDK)
-              </li>
-
-              <li>
-              <i class="icon-li fa fa-check-square"></i>
-
-                Custom Event Logging
-              </li>
-
-              <li>
-              <i class="icon-li fa fa-check-square"></i>
-
-                Commandline Tools
-              </li>
-            </ul>
-          </div><!-- /.col -->
-
-          <div class="col-md-3 col-sm-6">
-            <ul class="icons-list">
-
-              <li>
-              <i class="icon-li fa fa-check-square"></i>
-
-                Over the Air Install and Update
-              </li>
-
-              <li>
-              <i class="icon-li fa fa-check-square"></i>
-
-                Realtime Dashboard
-              </li>
-
-              <li>
-              <i class="icon-li fa fa-check-square"></i>
-
-                Package History Archive
-              </li>
-
-              <li>
-              <i class="icon-li fa fa-check-square"></i>
-
-                Easy to Use Interface
-              </li>
-            </ul>
-          </div><!-- /.col -->
-
-        </div> <!-- /.row -->
 
       </div> <!-- /.container -->
 
     </div> <!-- /.content -->
 
 
-
-      </div>
-
-    </div>
-
-
-
-
 </div> <!-- /#wrapper -->
 
-<footer id="contactus" class="footer">
+<footer id = "contactus" class="footer">
 
-	<div class="container">
+  <div class="container">
 
       <div class="row">
 
@@ -958,62 +440,51 @@
           <ul class="icons-list">
               <li>
                 <i class="icon-li fa fa-map-marker"></i>
-                123 Northwest Way <br>
-                San Francisco, CA 94183
+                543 Howard Street, 5th Floor<br>
+                San Francisco, CA 94105
               </li>
 
               <li>
                 <i class="icon-li fa fa-phone"></i>
-                +1 415 123 4567
+                +1 415 787 0117
               </li>
 
               <li>
                 <i class="icon-li fa fa-envelope"></i>
-                <a href="mailto:info@pocketsoho.com">info@pocketsoho.com</a>
+                <a href="mailto:team@pocketSOHO.com">team@pocketSOHO.com</a>
               </li>
             </ul>
-        </div> <!-- /.col -->
+        </div>
 
+      <div class="col-sm-4">
 
-        <!-- <div class="col-sm-3">
+        <h4 class="content-title">
+          <span>Stay Connected</span>
+        </h4>
 
-          <h4 class="content-title">
-            <span>Twitter Feed</span>
-          </h4>
+        <p> You are awesome. Please contact us!</p>
 
-          <div id="tweets"></div>
-        </div>  -->
+        <br>
 
+        <ul class="footer-social-link">
+          <li>
+            <a href="https://www.facebook.com/pages/pocketSOHO/1462585254012308" target="_blank" class="ui-tooltip" title="Facebook" data-placement="bottom">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/PocketSOHO" target="_blank" class="ui-tooltip" title="Twitter" data-placement="bottom">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="ui-tooltip" title="LinkedIn" data-placement="bottom">
+              <i class="fa fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
 
-        <div class="col-sm-4">
-
-          <h4 class="content-title">
-            <span>Stay Connected</span>
-          </h4>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, nam quae veniam optio sunt exercitationem.</p>
-
-          <br>
-
-          <ul class="footer-social-link">
-            <li>
-              <a href="javascript:;" class="ui-tooltip" title="Facebook" data-placement="bottom">
-                <i class="fa fa-facebook"></i>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;" class="ui-tooltip" title="Twitter" data-placement="bottom">
-                <i class="fa fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;" class="ui-tooltip" title="Google+" data-placement="bottom">
-                <i class="fa fa-google-plus"></i>
-              </a>
-            </li>
-          </ul>
-
-        </div> <!-- /.col -->
+      </div> <!-- /.col -->
 
 
         <div class="col-sm-4">
@@ -1041,14 +512,14 @@
 
       </div> <!-- /.row -->
 
-	</div> <!-- /.container -->
+  </div> <!-- /.container -->
 
 </footer>
 
 <footer class="copyright">
   <div class="container">
 
-    <div class="row">
+    <div class="footer-row row">
 
       <div class="col-sm-12">
         <p>Copyright &copy; 2014 pocketSOHO.</p>
@@ -1065,8 +536,9 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" %>
 <%= javascript_include_tag "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" %>
-<%= javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js" %>
-<%= javascript_include_tag "tweetable.jquery.min" %>
+
+<%= javascript_include_tag "jquery.timeago.js" %>
+<%= javascript_include_tag "tweetable.jquery.min.js" %>
 
 <!--[if lt IE 9]>
 <script src="./js/libs/excanvas.compiled.js"></script>
@@ -1074,7 +546,7 @@
 
 
 <!-- Plugin JS -->
-<%= javascript_include_tag "jquery.carouFredSel-6.2.1-packed" %>
+<%= javascript_include_tag "jquery.carouFredSel-6.2.1-packed.js" %>
 
   <!-- App JS -->
 <%= javascript_include_tag "mvpready-core" %>
