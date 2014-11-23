@@ -27,11 +27,11 @@
             <!-- <a href="javascript:;" class="btn btn-primary">Follow Janet</a>
             &nbsp;&nbsp; -->
 
-          <form action="" method="POST">
+          <form action="/charges" method="POST">
             <script
               src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="sk_test_ojiObsvjs0jA6zt5Dh99Ku5m Roll Key"
-              data-amount="2000"
+              data-key="pk_test_lIB9TNJoEz7jDH3BJ7Hs7glO"
+              data-amount="<%= number_with_precision((@invoice.amount * 100), precision: 0, delimter: ',') %>"
               data-name="PocketSOHO"
               data-description="Monthly Invoice"
               data-image="/assets/payment01.svg">

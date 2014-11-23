@@ -4,7 +4,7 @@ class InvoicesController < ApplicationController
   def index
       if @user.type == "BusinessOwner"
         ##FIX
-          @invoices = Invoice.where( "business_id = ?", @user.businesses.first.id )
+          @invoices = Invoice.where( "business_id = ?", @user.business_id )
       else
           @invoices = Invoice.where( "customer_id = ?", @user.id )
       end
@@ -18,7 +18,9 @@ class InvoicesController < ApplicationController
   end
 
   def show
+    # debugger
     @invoice = Invoice.find(params[:id])
+    session[:invoice_id] = @invoice.id
   end
 
   def edit
