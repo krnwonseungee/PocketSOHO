@@ -76,6 +76,7 @@ a {
   -moz-background-size: cover;
   -o-background-size: cover; }
 
+
 #social-login {
   background: url(photos/makeup-artist.jpg) center top no-repeat;
   background-size: cover;
@@ -453,13 +454,17 @@ a.appt-edit:hover {
   margin-bottom: 30px;
 }
 
-.appointment-types button {
+.change-password,.appointment-types button {
   padding: 5px;
   margin-right:5px;
   font-size: 12px;
   width: 70px;
   position: relative;
   top: 20px;
+}
+
+.change-password {
+  width: 115px;
 }
 
 .appointment-types .today {

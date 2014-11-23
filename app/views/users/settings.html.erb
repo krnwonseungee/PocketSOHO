@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#business_owner_password').addClass('form-control')
+  })
+</script>
+
 <div class="setting-content content">
 
     <div class="container">
@@ -67,158 +73,31 @@
 
               <h3 class="content-title"><u>Change Password</u></h3>
 
-              <p>Change your password - Passwords are case-sensitive and must be at least 8 characters. A good password should contain a mix of capital and lower-case letters, numbers and symbols.</p>
+              <p>Change your password - Passwords are case-sensitive. A good password should contain a mix of capital and lower-case letters, numbers and symbols.</p>
 
               <br><br>
 
-              <form action="./page-settings.html" class="form-horizontal">
-
-                <div class="form-group">
-
-                  <label class="col-md-3">Old Password</label>
-
-                  <div class="col-md-7">
-                    <input type="password" name="old-password" class="form-control" />
-                  </div> <!-- /.col -->
-
-                </div> <!-- /.form-group -->
-
-
-                <hr>
-
-
-                <div class="form-group">
-
-                  <label class="col-md-3">New Password</label>
-
-                  <div class="col-md-7">
-                    <input type="password" name="new-password-1" class="form-control" />
-                  </div> <!-- /.col -->
-
-                </div> <!-- /.form-group -->
-
-
-                <div class="form-group">
-
-                  <label class="col-md-3">New Password Confirm</label>
-
-                  <div class="col-md-7">
-                    <input type="password" name="new-password-2" class="form-control" />
-                  </div> <!-- /.col -->
-
-                </div> <!-- /.form-group -->
-
-
-                <div class="form-group">
-
-                  <div class="col-md-7 col-md-push-3">
-                    <button id="save-change1" type="submit" class="btn btn-primary">Save Changes</button>
-                    &nbsp;
-                    <button id="cancel-change1"type="reset" class="btn btn-default">Cancel</button>
-                  </div> <!-- /.col -->
-
-                </div> <!-- /.form-group -->
-
-              </form>
+              <%= form_for(@user, :url => { :action => "update_password" } ) do |f| %>
+                <div class="field">
+                    <div class="field">
+                    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+                    <%= f.password_field :current_password, { class: "form-control"}  %>
+                  </div>
+                  <%= f.label :password, "Password" %><br />
+                  <%= f.password_field :password, :autocomplete => "off"  %>
+                </div>
+                <div class="field">
+                  <%= f.label :password_confirmation %><br />
+                  <%= f.password_field :password_confirmation, { class: "form-control"}  %>
+                </div>
+                <%= button_tag(type: 'submit', class: "btn btn-primary change-password") do %>
+                   Update Password
+                <% end %>
+                </div>
+              <% end %>
 
             </div> <!-- /.tab-pane -->
 
-
-
-            <div class="tab-pane fade" id="messaging">
-
-              <h3 class="content-title"><u>Notification Settings</u></h3>
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-
-              <br><br>
-
-              <form action="./page-settings.html" class="form form-horizontal">
-
-                <div class="form-group">
-
-                  <label class="col-md-3">Toggle Notifications</label>
-
-                  <div class="col-md-7">
-
-                    <div class="checkbox">
-                      <label>
-                      <input value="" type="checkbox" checked>
-                      Send me security emails
-                      </label>
-                    </div> <!-- /.checkbox -->
-
-                    <div class="checkbox">
-                      <label>
-                      <input value="" type="checkbox" checked>
-                      Send system emails
-                      </label>
-                    </div> <!-- /.checkbox -->
-
-                    <div class="checkbox">
-                      <label>
-                      <input value="" type="checkbox">
-                      Lorem ipsum dolor sit amet
-                      </label>
-                    </div> <!-- /.checkbox -->
-
-                    <div class="checkbox">
-                      <label>
-                      <input value="" type="checkbox">
-                      Laborum, quam iure quibusdam
-                      </label>
-                    </div> <!-- /.checkbox -->
-
-                  </div> <!-- /.col -->
-
-                </div> <!-- /.form-group -->
-
-
-                <div class="form-group">
-
-                  <label class="col-md-3">Email for Notifications</label>
-
-                  <div class="col-md-7">
-                    <select name="email_notifications" class="form-control">
-                      <option value="1">john@mvpready.com</option>
-                      <option value="2">mary@mvpready.com</option>
-                      <option value="3">chris@mvpready.com</option>
-                    </select>
-                  </div> <!-- /.col -->
-
-                </div> <!-- /.form-group -->
-
-
-                <div class="form-group">
-
-                  <div class="col-md-7 col-md-push-3">
-                    <button id="save-change2" type="submit" class="btn btn-primary">Save Changes</button>
-                    &nbsp;
-                    <button id="cancel-change2" type="reset" class="btn btn-default">Cancel</button>
-                  </div> <!-- /.col -->
-
-                </div> <!-- /.form-group -->
-
-              </form>
-
-            </div> <!-- /.tab-pane -->
-
-
-            <div class="tab-pane fade" id="payments">
-
-              <h3 class="content-title"><u>Payments Settings</u></h3>
-              <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-
-            </div> <!-- /.tab-pane -->
-
-            <div class="tab-pane fade" id="reports">
-              <h3 class="content-title"><u>Reports Settings</u></h3>
-              <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-            </div> <!-- /.tab-pane -->
 
           </div> <!-- /.tab-content -->
 

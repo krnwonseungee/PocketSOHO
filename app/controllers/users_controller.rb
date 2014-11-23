@@ -51,9 +51,25 @@ class UsersController < ApplicationController
     @businesses = Business.where("business_owner_id = ?", @user.id )
   end
 
+   def update_password
+    @user = User.find(current_user.id)
+    if @user.type == "BusinessOwner"
+      user_params = params["business_owner"]
+    else
+      user_params = params["customer"]
+    end
+    if @user.update_with_password(user_params)
+      # Sign in the user by passing validation in case their password changed
+      sign_in @user, :bypass => true
+      redirect_to root_path
+    else
+      render "edit"
+    end
+  end
+
   private
 
   # def user_params
-  #   params.require(:user).permit(:first_name, :last_name, :city, :state, :email, :image_url, :phone)
+  #   params.require(:user).permit(:first_name, :last_name, :city, :state, :email, :image_url, :phone, :password, :password_confirmation, :current_password)
   # end
 end
