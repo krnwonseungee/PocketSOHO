@@ -1,6 +1,6 @@
-<div class="appt-content content" data-ng-app="pocketSOHO">
+<div class="appt-content content">
 
-    <div class="container" ng-controller="appointmentsController">
+    <div class="container">
             <h3 class="content-title"><%= image_tag "schedule02.svg", alt: 'Scheduling Icon', id: "appticon"%><u>My Appointments</u></h3>
 
       <div class="new-chat row">
@@ -13,7 +13,7 @@
           <div class="col-md-8 col-sm-push-3 col-sm-8 col-sm-push-2">
           <!-- <div class="col-md-8"> -->
             <form class="mainnav-form pull-right" role="search">
-            <input type="text" class="form-control input-md mainnav-search-query" placeholder="Search names"  ng-model="apptSearchWords">
+            <input type="text" class="form-control input-md mainnav-search-query" placeholder="Search names">
             <button class="btn btn-sm mainnav-form-btn"><i class="fa fa-search"></i></button>
         </form>
         </div>
@@ -24,54 +24,67 @@
 
          <!-- <div class="col-md-8"> -->
          <div class="col-md-8 col-sm-push-3 col-sm-8 col-sm-push-2">
-          <section class="demo-section" ng-repeat="date in apptDates">
-            <h4 class="appt-title content-title">
-                  <u>{{date}}</u>
-            </h4>
-            <div class="portlet">
-              <div class="portlet-body">
-                <table class="table table-striped table-bordered" id="table-2">
-                  <thead>
-                    <tr>
-                      <th style="width: 15%">Date</th>
-                      <th style="width: 15%">Time</th>
-                      <th style="width: 40%">Clients</th>
-                      <th style="width: 15%">Rate</th>
-                      <th style="width: 15%">Edit</th>
-                    </tr>
-                    <tbody ng-repeat="appt in appointments">
-                        <tr ng-if="appt.readable_date == date ">
-                            <td>
-                             <div class="date-appt">{{appt.formatted_date}}</div>
-                           </td>
-                           <td>
-                             <div class="time-appt">{{appt.formatted_time}}</div>
-                           </td>
-                           <td>
-                             <div class="client-appt">
-                                <a href="/appointments/{{appt.id}}">
-                                  Appointment with {{appt.biz_name}} | {{appt.client_name}}
-                                </a>
-                             </div>
-                           </td>
-                           <td>
-                             <div class="rate-appt">${{appt.amt}}</div>
-                           </td>
-                           <td>
-                             <div class="edit-appt">
-                                  <a href="/appointments/{{appt.id}}/edit">
-                                    <i class="fa fa-edit"><strong>EDIT</strong></i>
-                                  </a>
-                            </div>
-                           </td>
-                        </tr>
-                    </tbody>
-                  </thead>
-                </table>
-              </div>
-            </div>
 
-          </section>
+            <section class="demo-section">
+              <% @appointment_dates.each do |date| %>
+                <h4 class="appt-title content-title">
+                  <u><%= date.strftime("%A, %b %d %y") %></u>
+                </h4>
+                  <div class="portlet">
+                    <div class="portlet-body">
+                      <table class="table table-striped table-bordered" id="table-2">
+                        <% @appointments.where( "date = ?", DateTime.new( date.year, date.month, date.day) ).each do |appt| %>
+                          <thead>
+                            <tr>
+                              <th style="width: 15%">Date</th>
+                              <th style="width: 15%">Time</th>
+                              <th style="width: 40%">Clients</th>
+                              <th style="width: 15%">Rate</th>
+                              <th style="width: 15%">Edit</th>
+                            </tr>
+                          </thead>
+
+                          <tbody>
+                              <tr>
+                                  <td>
+                                   <div class="date-appt"><%= appt.time.strftime("%m/%d/%Y") %></div>
+                                 </td>
+                                 <td>
+                                   <div class="time-appt"><%= appt.time.strftime("%I:%M%p") %></div>
+                                 </td>
+                                 <td>
+                                   <div class="client-appt">
+                                      <%= link_to appointment_path( appt.id ) do %>
+                                        Appointment with <%= Business.find( appt.business_id ).name %>
+                                        |
+                                       <% if @user.type == "BusinessOwner" %>
+                                        <%= Customer.find( appt.customer_id ).first_name %> <%= Customer.find( appt.customer_id ).last_name %>
+                                       <% else %>
+                                        <%= BusinessOwner.find( appt.business_owner_id ).first_name %> <%= BusinessOwner.find( appt.business_owner_id ).last_name %>
+                                       <% end %>
+                                      <% end %>
+                                   </div>
+                                 </td>
+                                 <td>
+                                   <div class="rate-appt">$<%= number_with_precision(appt.amount, precision: 2, delimter: ',') %></div>
+                                 </td>
+                                 <td>
+                                   <div class="edit-appt">
+                                        <%= link_to edit_appointment_path(appt.id) do %>
+                                          <i class="fa fa-edit"><strong>EDIT</strong></i>
+                                        <% end %>
+                                  </div>
+                                 </td>
+                              </tr>
+                          </tbody>
+                        <% end %>
+
+
+                      </table>
+                    </div>
+                  </div>
+              <% end %>
+            </section> <!-- /.demo-section -->
 
                 <div class="row">
                   <div class="pull-right page-right">
@@ -111,6 +124,3 @@
     </div> <!-- /.container -->
 
   </div> <!-- .content -->
-
-  <%= javascript_include_tag "main", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "appointments", "data-turbolinks-track" => true %>

@@ -25,7 +25,9 @@ class AppointmentsController < ApplicationController
         appt_hash['readable_date'] = appt.date.strftime("%A, %b %d %y")
         @new_appts.push(appt_hash)
       end
-      @appointment_dates = @appointments.pluck( :time ).sort
+      @appointment_dates = @appointments.pluck( :date ).sort.uniq
+      puts "**************************************************************"
+      puts @appointment_dates
       @new_appt_dates = @appointment_dates.map do |date|
         date = date.strftime("%A, %b %d %y")
       end
