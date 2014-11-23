@@ -213,7 +213,11 @@ a {
 
 .footer {
   background-color: #1B2846;
-  border-top: 0; }
+  border-top: 0;
+  position: relative;
+  width: 100%;
+  bottom: -90px;
+}
 
 .mainnav-collapse input[type=text]:focus {
   background-color: #FFFFFF;
