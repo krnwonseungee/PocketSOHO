@@ -47,5 +47,5 @@ function disappear (tableClass) {
 }
 
 function render (tableClass) {
-  $(tableClass).css("display", "block")
+  $(tableClass).css("display", "table")
 }
