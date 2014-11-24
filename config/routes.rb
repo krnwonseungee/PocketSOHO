@@ -5,11 +5,11 @@ PocketSOHO::Application.routes.draw do
   # end
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  resource :user, only: [:edit] do
-  collection do
-    patch 'update_password'
-  end
-end
+#   resource :user, only: [:edit] do
+#   collection do
+#     patch 'update_password'
+#   end
+# end
 
   root 'welcome#index'
 
