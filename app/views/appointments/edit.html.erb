@@ -22,7 +22,6 @@
                   <%= f.input :time, input_html: {class: 'form-control appt-time'}, wrapper_html: { class: 'form-group' }  %>
                   <div class="form-group">
                     <%= f.button :submit, class: 'btn btn-primary', id: 'update-appt' %>
-                    <%= link_to "Delete Appointment", appointment_path(@appointment.id), method: :delete, data: { confirm: 'You sure?' }, class: 'btn btn-default', id: 'delete-appt' %>
                   </div>
                 <% end %>
               </div> <!-- /.form-group -->
