@@ -29,13 +29,24 @@
                   <label class="col-md-4">
                     <ul class="icons-list">
                       <li>
+                        <% if @conversation %>
                         <i class="icon-li fa fa-envelope"></i>
-                        <%= link_to user_conversation_path(@user, @conversation ) do %>
-                           Message <%= @appt_person.first_name %>
+                          <%= link_to user_conversation_path(@user.id, @conversation.id ) do %>
+                             Message <%= @appt_person.first_name %>
+                          <% end %>
                         <% end %>
                       </li>
                       <li><i class="icon-li fa fa-clock-o"></i><span><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> <%= @appointment.time.strftime("%I:%M%p") %></span></li>
-                      <li><i class="icon-li fa fa-pencil-square"></i><span><%= @appointment.notes %></span></li>
+                      <li>
+                        <i class="icon-li fa fa-pencil-square"></i>
+                        <span>
+                          <% if @appointment.notes.empty? %>
+                            <em>No notes</em>
+                          <% else %>
+                            <%= @appointment.notes %>
+                          <% end %>
+                        </span>
+                      </li>
                     </ul>
                   </label>
 
@@ -58,6 +69,9 @@
                 <div class="form-group">
                   <div class="col-md-7">
                     <h4 class="content-title"><u>Other Upcoming Appointments:</u></h4>
+                    <% if @upcoming_appts.empty? %>
+                      <em>No other appointments.</em>
+                    <% else %>
                     <ul id="appt-list">
                       <% @upcoming_appts.each do |appt|  %>
                         <li>
@@ -71,6 +85,7 @@
                         </li>
                       <% end %>
                     </ul>
+                    <% end %>
                   </div> <!-- /.col -->
 
                 </div> <!-- /.form-group -->

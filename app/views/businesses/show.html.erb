@@ -33,9 +33,9 @@
                 <ul class="icons-list">
                   <li><i class="icon-li fa fa-map-marker"></i><%= @business.city %>, <%= @business.state %></li>
                   <li>  <p><%= @business.description %></p></li>
-                  <li><i class="icon-li fa fa-heart"></i> Owner(s)</li>
+                  <li><i class="icon-li fa fa-heart"></i> Owner</li>
                   <li><%= link_to user_path( @biz_owner.id ) do %><%= image_tag( @biz_owner.image_url, :class => 'bizprofile profile-avatar-img thumbnail' ) %><% end %></li>
-                  <li><%= link_to user_path( @biz_owner.id ) do %>Janet Yi <%=  "(you)" if @biz_owner.id == @user.id %><% end %></li>
+                  <li><%= link_to user_path( @biz_owner.id ) do %><%= @biz_owner.first_name %> <%= @biz_owner.last_name %><%=  "(you)" if @biz_owner.id == @user.id %><% end %></li>
                 </ul>
 
               </form>

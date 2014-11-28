@@ -176,7 +176,7 @@
                 <strong><%= Business.find(@user.business_id).name %></strong>
                 <br>
                   <%= link_to business_path( Business.find(@user.business_id) ) do %>
-                    <%= image_tag Business.find(@user.business_id).image_url, class: 'biz-img', id: 'chaticon', alt: 'Chat Icon' %>
+                    <%= image_tag Business.find(@user.business_id).image_url, class: 'biz-img', id: 'chaticon', alt: 'Business Image' %>
                     <% end %>
                   <%= Business.find(@user.business_id).description[0..100] %>...
               </li>

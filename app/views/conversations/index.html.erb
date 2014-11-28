@@ -42,8 +42,8 @@
                               <td class="valign-middle">
                               <div class="thumbnail">
                                   <img ng-src="{{message.sender_image}}" width="125" alt="Gallery Image" />
-                                  <p class="sender">{{message.sender_name}}</p>
                               </div> <!-- /.thumbnail -->
+                              <p class="sender">{{message.sender_name}}</p>
                               </td>
                               <td class="valign-middle">
                                   <a href="/users/{{message.sender_id}}/conversations/{{message.conversation_id}}" title="">{{message.formatted_updated_at}}</a>
@@ -90,7 +90,7 @@
 
 
     </div> <!-- /.container -->
-    <%= javascript_include_tag "main", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "inbox", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "main" %>
+    <%= javascript_include_tag "inbox" %>
 
   </div> <!-- .content -->
