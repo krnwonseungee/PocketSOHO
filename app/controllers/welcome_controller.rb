@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
   def index
     if user_signed_in?
       @user = current_user
-      if @user.business_id == nil || current_user.type == ("" || nil) || (current_user.first_name == nil && current_user.last_name == nil)
+      if (!current_user.first_name.present?&& !current_user.last_name.present?) || !@user.business_id.present? || !current_user.type.present?
         redirect_to edit_user_path(current_user)
         return ""
       end
@@ -39,6 +39,8 @@ class WelcomeController < ApplicationController
   end
 
   def search_businesses
+    puts "**********************************************"
+    puts "SEARCHING"
     @biz_str_array = []
     biz_string = ""
     Business.all.each do |b|

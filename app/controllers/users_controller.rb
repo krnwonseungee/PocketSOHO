@@ -35,6 +35,10 @@ class UsersController < ApplicationController
     user_params = params[@user.class.name.underscore.downcase.to_sym]
     user_params.permit!
     @user.update( user_params )
+    biz_id = params["business_id"].split(' ').last.to_i
+    if biz_id != 0
+      @user.update(business_id: biz_id)
+    end
     @user.save
     if @user.business_id == nil
       redirect_to new_business_path

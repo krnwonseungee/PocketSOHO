@@ -808,7 +808,15 @@ a.appt-edit:hover {
   #reset-password .account-body {
     top: 7em; }
 
-  .dropdown-menu > li > a {
-    color: #CCCCCC; } }
+.dropdown-menu > li > a {
+color: #CCCCCC; } }
+
+.customer_business_id {
+  display:none;
+}
+
+.ui-autocomplete {
+  list-style-type: none;
+}
 
 /*# sourceMappingURL=custom.css.map */

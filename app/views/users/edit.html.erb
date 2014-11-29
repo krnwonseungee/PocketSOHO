@@ -24,9 +24,13 @@
                   <%= f.input :email, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
                   <%= f.input :type, collection: ['BusinessOwner', 'Customer'], input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }%>
                   <% if @user.type == "Customer" %>
-                    <%= f.input :business_id, input_html: {class: 'form-control', id: 'business_name'}, wrapper_html: { class: 'form-group' }  %>
+                    <div class="form-group">
+                      <label>Which Business? (Search by Business Name or ID)</label>
+                      <input id="business_name" class="form-control" name="business_id"></input>
+                      <%= f.input :business_id, input_html: {class: 'form-control', id: 'orig-biz-id'}, wrapper_html: { class: 'form-group' } %>
+                    </div>
                   <% end %>
-                  <%= f.input :image_url, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
+                  <%= f.input :image_url, input_html: {class: 'form-control orig-biz-input'}, wrapper_html: { class: 'form-group' }  %>
                   <div class="form-group">
                     <%= f.button :submit, class: 'btn btn-primary', id: 'update-appt' %>
                   </div>
@@ -46,3 +50,4 @@
 
 
   </div> <!-- .content -->
+  <% javascript_include_tag "welcome" %>
