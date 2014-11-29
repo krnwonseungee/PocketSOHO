@@ -1,33 +1,44 @@
 <h1>Create New Business</h1>
+<div class="newmessage-content content">
 
-<%= form_for @new_business, url: {action: "create"}, html: {class: "new_business"} do |f| %>
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :city %><br />
-      <%= f.text_field :city %>
-    </div>
-    <div class="field">
-      <%= f.label :state %><br />
-      <%= f.text_field :state %>
-    </div>
-    <div class="field">
-      <%= f.label :slogan %><br />
-      <%= f.text_field :slogan %>
-    </div>
-    <div class="field">
-      <%= f.label :image_url %><br />
-      <%= f.text_field :image_url %>
-    </div>
-    <div class="field">
-      <%= f.label :description %><br />
-      <%= f.text_area :description %>
-    </div>
-    <div class="actions">
-      <p><%= f.submit "Create" %></p>
-    </div>
-<% end %>
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 ">
+
+          <div class="portlet">
+
+            <h2 class="portlet-title">
+              <u>New Business Info</u>
+            </h2>
+
+            <div class="portlet-body">
+
+              <div class="form-group">
+
+                <%= simple_form_for @new_business, url: { action: "create"} do |f| %>
+                  <%= f.input :name, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' } %>
+                  <%= f.input :city, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' } %>
+                  <%= f.input :state, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' } %>
+                  <%= f.input :image_url, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' } %>
+                  <%= f.input :description, hint: "60 characters or less", input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' } %>
+                  <div class="form-group">
+                    <%= f.button :submit, class: 'btn btn-primary', id: 'update-appt' %>
+                  </div>
+                <% end %>
+              </div> <!-- /.form-group -->
+
+            </div> <!-- /.portlet-body -->
+
+          </div> <!-- /.portlet -->
+
+        </div> <!-- /.col -->
+
+      </div> <!-- /.row -->
+
+    </div> <!-- /.container -->
 
 
+
+  </div> <!-- .content -->

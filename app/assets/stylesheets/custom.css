@@ -671,7 +671,10 @@ a.appt-edit:hover {
   width: 160px;
   font-size: 16px;
   padding: 0.4em 0;
-  background-color: #F48A1F; }
+  background-color: #F48A1F;
+  margin-left: 79px;
+  margin-bottom: 20px;
+}
 
 #newappt-btn:hover {
   background-color: #df760b;
