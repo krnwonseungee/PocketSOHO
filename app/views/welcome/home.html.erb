@@ -8,50 +8,7 @@
 
           <div class="portlet">
 
-            <h3 class="content-title"><%= image_tag "chat_icon.svg", id: 'chaticon', alt: 'Chat Icon' %><u>My Messages</u></h3>
-
-             <div class="portlet-body">
-                <% if @unread_conversations.length == 0 %>
-                  <h5 style="margin-left: 80px;">Click <%= link_to "here", new_user_conversation_path(@user.id) %> to create a message.</h5>
-                <% else %>
-                <table class="table table-striped table-bordered thumbnail-table">
-                  <thead>
-                        <tr>
-                              <th class="avatar-img" style="width: 150px">From</th>
-                              <th class="mes-space">Message</th>
-                        </tr>
-                  </thead>
-                    <tbody>
-                      <% @unread_conversations.each do |message| %>
-                          <tr class="msg-row">
-                                <td class="valign-middle">
-                                <div class="thumbnail">
-                                    <%= image_tag User.find(message.sender_id).image_url %>
-                                    <p class="sender">
-                                      <%= User.find(message.sender_id).first_name %> <%= User.find(message.sender_id).last_name %>
-                                    </p>
-                                </div> <!-- /.thumbnail -->
-                                </td>
-                                <td class="valign-middle">
-                                    <%= link_to user_conversation_path(@user, message.conversation_id) do %>
-                                      <%= message.updated_at.strftime("%m/%d/%Y @%I:%M%p") %>
-                                    <% end %>
-                                    <p><%= message.text[0...40] %></p>
-                                    <div class ="message-action text-left valign-middle">
-
-                                        <%= link_to user_conversation_path(@user, message.conversation_id), class: 'btn btn-secondary' do %><i class="fa fa-pencil"></i><% end %>
-
-
-<!--                                         <a href="/users/{{message.sender_id}}/conversations/{{message.conversation_id}}" method="delete" class="btn btn-xs btn-secondary"><i class="fa fa-times"></i></a> -->
-                                    </div>
-                                </td>
-                          </tr>
-                          <% end %>
-                        </tbody>
-                       </table>
-                       <% end %>
-              </div>
-              <div class="portlet">
+            <div class="portlet-body">
                 <h3 class="content-title my-appt"><%= image_tag "schedule02.svg", alt: 'Scheduling Icon', id: "appticon"%><u>My Appointments</u></h3>
                 <% if @user.type == "BusinessOwner" %>
                   <%= link_to "Create New", new_appointment_path, id: 'newappt-btn', class: 'btn btn-primary btn-jumbo btn-block' %>
@@ -112,6 +69,51 @@
                       </table>
                     <% end %>
                 </div>
+              </div>
+
+            <h3 class="content-title"><%= image_tag "chat_icon.svg", id: 'chaticon', alt: 'Chat Icon' %><u>My Messages</u></h3>
+
+             <div class="portlet-body">
+                <% if @unread_conversations.length == 0 %>
+                  <%= link_to "Create New", new_user_conversation_path(@user.id), id: 'newmsg-btn', class: 'btn btn-secondary btn-jumbo btn-block' %>
+                  <h5 style="margin-left: 80px;">Click <%= link_to "here", new_user_conversation_path(@user.id) %> to create a message.</h5>
+                <% else %>
+                <table class="table table-striped table-bordered thumbnail-table">
+                  <thead>
+                        <tr>
+                              <th class="avatar-img" style="width: 150px">From</th>
+                              <th class="mes-space">Message</th>
+                        </tr>
+                  </thead>
+                    <tbody>
+                      <% @unread_conversations.each do |message| %>
+                          <tr class="msg-row">
+                                <td class="valign-middle">
+                                <div class="thumbnail">
+                                    <%= image_tag User.find(message.sender_id).image_url %>
+                                    <p class="sender">
+                                      <%= User.find(message.sender_id).first_name %> <%= User.find(message.sender_id).last_name %>
+                                    </p>
+                                </div> <!-- /.thumbnail -->
+                                </td>
+                                <td class="valign-middle">
+                                    <%= link_to user_conversation_path(@user, message.conversation_id) do %>
+                                      <%= message.updated_at.strftime("%m/%d/%Y @%I:%M%p") %>
+                                    <% end %>
+                                    <p><%= message.text[0...40] %></p>
+                                    <div class ="message-action text-left valign-middle">
+
+                                        <%= link_to user_conversation_path(@user, message.conversation_id), class: 'btn btn-secondary' do %><i class="fa fa-pencil"></i><% end %>
+
+
+<!--                                         <a href="/users/{{message.sender_id}}/conversations/{{message.conversation_id}}" method="delete" class="btn btn-xs btn-secondary"><i class="fa fa-times"></i></a> -->
+                                    </div>
+                                </td>
+                          </tr>
+                          <% end %>
+                        </tbody>
+                       </table>
+                       <% end %>
               </div>
 
             <div class="portlet-body">
@@ -175,9 +177,6 @@
               <li>
                 <strong><%= Business.find(@user.business_id).name %></strong>
                 <br>
-                  <%= link_to business_path( Business.find(@user.business_id) ) do %>
-                    <%= image_tag Business.find(@user.business_id).image_url, class: 'biz-img', id: 'chaticon', alt: 'Business Image' %>
-                    <% end %>
                   <%= Business.find(@user.business_id).description[0..100] %>...
               </li>
             </ul>
