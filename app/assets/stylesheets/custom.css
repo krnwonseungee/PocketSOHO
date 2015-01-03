@@ -3,8 +3,12 @@
 /* Setting Background Image*/
 /* BoxShadow Prefix*/
 /* Sign Up Button*/
+/* Mobile Menu*/
 /* BODY*/
 /* ----------------------------------------------- */
+a {
+  color: #8CC640; }
+
 /* NAV-BAR*/
 /* ----------------------------------------------- */
 #logo {
@@ -17,267 +21,597 @@
   -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
 
-/*Masthead - Main Splash Image Section*/
+.navbar-inverse {
+  position: fixed;
+  z-index: 100 !important;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-bottom: none; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #8CC640;
+  text-shadow: none; }
+
+.account-wrapper {
+  padding-top: 80px; }
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  background-color: transparent;
+  color: #567b25; }
+
+.navbar-collapse.in {
+  background-color: #1B2846; }
+
+/*.navbar-inverse .navbar-nav > li.active > a,
+.navbar-inverse .navbar-nav > li.active > a:hover,
+.navbar-inverse .navbar-nav > li.active > a:active,
+.navbar-inverse .navbar-nav > li.active > a:focus {
+  background-color: #8CC640;
+}
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #8CC640;
+}*/
+/* Account SignUp*/
 /* ----------------------------------------------- */
-.row,
-#about-container {
-  margin-top: 180px; }
-
-.row-a {
-  margin-top: 80px; }
-
-.masthead {
-  height: 700px;
-  padding-top: 3em;
-  box-shadow: none;
-  background: url(../img/masthead/landing-bg.jpg) center top no-repeat;
+#account-signup {
+  background: url(../img/photos/pianoteacher.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; }
 
-.masthead1 {
-  height: 700px;
-  padding-top: 3em;
-  box-shadow: none;
-  background: url(../img/masthead/masthead2-bg.jpg) center top no-repeat;
+#account-login {
+  background: url(../img/photos/working.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
-  border-bottom: 7px solid #fff; }
+  -o-background-size: cover; }
 
-.masthead2 {
-  height: 700px;
-  padding-top: 3em;
-  box-shadow: none;
-  background: url(../img/masthead/masthead3-bg.jpg) center top no-repeat;
+#reset-password {
+  background: url(../img/photos/personaltrainer.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
-  border-bottom: 7px solid #fff; }
+  -o-background-size: cover; }
 
-.masthead3 {
-  height: 700px;
-  padding-top: 3em;
-  box-shadow: none;
-  background: url(../img/masthead/masthead1-bg.jpg) center top no-repeat;
+#social-login {
+  background: url(../img/photos/makeup-artist.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
-  border-bottom: 7px solid #fff; }
+  -o-background-size: cover; }
 
-.masthead-text {
-  margin-top: 8.5em;
+.account-or-social {
+  color: #444444; }
+
+.account-wrapper {
+  padding-bottom: 0; }
+
+.account-body {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 0; }
+
+.account-body h3 {
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); }
+
+#account-login .account-body h5 {
+  color: #F48A1F; }
+
+#reset-password .account-body {
+  top: 13em; }
+
+#reset-password .account-body h2 {
+  color: #FFFFFF; }
+
+#reset-password .form-group a {
   color: #1B2846;
-  height: 300px; }
+  font-size: 14px; }
 
-.masthead-text p {
-  color: #1B2846;
-  font-size: 16px;
-  text-shadow: none; }
+.account-body h5 {
+  color: #1B2846; }
 
-.whats-inside {
-  background-color: #FFFFFF;
-  margin-top: 180px; }
+#account-login .account-footer p {
+  color: #1B2846; }
 
-#nav-login-button,
-.masthead-actions .btn-primary,
+#account-login .account-footer p a {
+  color: #8CC640; }
+
+.account-footer p {
+  color: #FFFFFF;
+  font-size: 16px; }
+
+.account-footer p a {
+  color: #F48A1F;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  font-size: 16px; }
+
+.btn-primary,
 .btn-secondary {
   padding: 0.6em 2em;
   font-size: 20px;
   line-height: 1.5;
   background-color: #8CC640;
   border: 1px solid #8CC640;
-  border-radius: 0;
   text-shadow: none;
   box-shadow: none; }
 
-#nav-login-button {
-  border-radius: 5px;
-  padding: 0.4em 2em;
-  top: 6px; }
-
-.btn-secondary {
-  background-color: transparent;
-  border: 2px solid #F48A1F;
-  color: #F48A1F; }
-
-.btn-secondary:hover {
-  background-color: #F48A1F;
-  border: 2px solid #F48A1F;
+.btn-secondary,
+.btn-primary {
+  background-color: #8CC640;
+  border: 1px solid #FFFFFF;
   color: #FFFFFF; }
 
-.masthead-actions .btn-primary:hover {
-  background-color: transparent;
-  border: 2px solid #1B2846;
+.btn-secondary:hover,
+.btn-primary:hover {
+  background-color: #F48A1F;
+  border: 1px solid #FFFFFF; }
+
+.checkbox-inline input[type=submit]:focus,
+.form-group button[type=submit]:focus {
+  outline: none; }
+
+.checkbox-inline {
   color: #1B2846; }
 
-.masthead-carousel .carousel-control.left,
-.masthead-carousel .carousel-control.right {
+.checkbox-inline a {
+  color: #1B2846; }
+
+.checkbox-inline a:hover {
+  color: #8CC640; }
+
+#back-to-top {
+  background-color: rgba(140, 198, 64, 0.6); }
+
+#back-to-top:hover {
   background-color: #8CC640; }
 
-/*Masthead /Slide 1 - Sign Up Form*/
-#slide1-left-box,
-#slide2-box,
-#slide3-box,
-#slide4-box {
-  background-color: rgba(255, 255, 255, 0.4);
-  padding: 2em;
-  padding-left: 3em;
-  width: 500px; }
+.pull-left small {
+  color: #FFFFFF;
+  font-size: 13px; }
 
-h3.text-center {
-  text-transform: uppercase;
-  color: #1B2846; }
+.pull-right small a {
+  color: #8CC640;
+  font-size: 13px; }
 
-p.text-center {
-  font-size: 14px;
-  color: #1B2846; }
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle.is-open {
+  background-color: #8CC640; }
 
-.form-control,
-.well {
-  color: #444444;
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 1px solid #F48A1F;
-  border-radius: 0; }
+.btn-twitter {
+  background-color: #1e87bd;
+  border: 1px solid #176891; }
 
-input[type=text]:focus, input[type=email]:focus, textarea:focus {
-  background-color: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 5px rgba(244, 138, 31, 0.8);
-  padding: 3px 0px 3px 3px;
-  margin: 5px 1px 3px 0px;
-  border: 1px solid rgba(244, 138, 31, 0.8); }
+/* Form Validation*/
+/* ----------------------------------------------- */
+.mainnav {
+  padding-top: 5em;
+  background-color: #1B2846; }
 
-#start-today a {
+.badge {
+  background-color: #F48A1F; }
+
+.fa-search {
+  color: #8CC640; }
+
+.noticebar-empty-title {
   color: #F48A1F; }
 
-#start-today a:hover,
-#start-today:hover {
+.btn-danger {
+  background-color: #F48A1F;
+  border-radius: 0;
+  border-color: #F48A1F; }
+
+.btn-danger:hover {
+  background-color: #d6700a;
+  border-color: #d6700a; }
+
+.copyright {
+  color: #8CC640; }
+
+.footer {
+  background-color: #1B2846;
+  border-top: 0; }
+
+.mainnav-collapse input[type=text]:focus {
+  background-color: #FFFFFF;
+  width: 100%;
+  padding: 3px 10px 3px 5px;
+  margin: 0; }
+
+.text-primary {
+  color: #F48A1F; }
+
+.error-details .input-group .form-control:first-child {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px; }
+
+.error-details .input-group .btn-secondary {
+  margin-left: 5px;
+  padding: 2px 20px;
+  vertical-align: middle;
+  border-radius: 20px; }
+
+.error-details .input-group .btn-secondary .fa-search {
   color: #FFFFFF; }
 
-/*About Section*/
+/* Admin - Index - Main Dashboard*/
 /* ----------------------------------------------- */
-#info-btn1,
-#info-btn2,
-#info-btn3 {
-  background-color: #8CC640;
-  border-color: #71a330;
-  margin-top: 2em; }
+.fa-home {
+  font-size: 1.2em; }
 
-#info-btn1:hover,
-#info-btn2:hover,
-#info-btn3:hover {
-  background-color: #71a330; }
+.nav li a.hello {
+  font-size: 1.3em; }
 
-.row-a {
-  padding-bottom: 2em; }
+.message-content,
+.newmessage-content,
+.profile-content,
+.setting-content,
+.pricing-content,
+.dashboard-content,
+.appt-content,
+.error-content,
+.newappt-content {
+  padding-top: 10em; }
 
-.content-title span {
-  border-bottom: 1px solid #8CC640; }
-
-.features {
-  padding-top: 1.5em;
-  font-size: 2.5em;
+.message-content h3 u,
+.appt-content h3 u {
+  font-size: 1.5em;
   font-family: "Open-Sans", sans-serif;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  font-weight: 700; }
 
-.pocketfeature {
-  width: 70%;
-  margin-bottom: 2.2em; }
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  margin: auto; }
 
-.mini-feature {
+.sender {
+  padding: 3px 0;
   text-align: center; }
 
-.mini-feature-title {
-  text-transform: uppercase;
+td {
+  height: 110px; }
+
+.message-action .btn-primary,
+.message-action .btn-secondary {
+  padding: 0.15em 0.55em; }
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary.active {
+  background-color: #F48A1F;
+  border-color: #F48A1F; }
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #71a330;
+  border-color: #71a330; }
+
+#chaticon,
+#appticon {
+  width: 100px;
+  padding-right: 1em; }
+
+.content-title {
+  border-bottom: 0; }
+
+a.new-ms {
+  padding: 0.4em 2em;
+  border: 1px solid #8CC640;
+  background-color: #8CC640; }
+
+.new-chat {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 1.2em; }
+
+.new-chat a {
+  color: #FFFFFF; }
+
+.new-chat a:hover {
+  background-color: #d3e9b6;
+  color: #567b25; }
+
+.send-button {
+  padding: 0.3em 6em;
+  font-size: 16px;
+  background-color: #F48A1F;
+  /*border: 1px solid $mainColor2;*/
+  color: #FFFFFF;
+  text-shadow: 0 0 0; }
+
+.valign-middle {
+  padding-left: 5px; }
+
+#newbiz-btn,
+#newcustomer-btn {
+  font-size: 16px;
+  padding: 0.3em 1em; }
+
+.pagination {
+  list-style: none; }
+
+.page-right {
+  padding-right: 10px; }
+
+.pagination > li > a:hover,
+.pagination > li > a:active {
+  background-color: #8CC640; }
+
+.dashboard-content .icons-list > li {
+  padding-left: 0; }
+
+/* Appointments Page*/
+/* ----------------------------------------------- */
+.appt-title {
+  padding-top: 1.2em; }
+
+.appt-title u {
+  border-bottom: 1px solid #F48A1F; }
+
+.alert-success {
+  background-color: #7fb636;
+  border: 1px solid #7fb636;
+  font-size: 15px; }
+
+.appt-tomorrow {
+  background-color: #b3b3b3;
+  border: 1px solid #b3b3b3; }
+
+a.appt-biz,
+a.appt-edit {
+  color: #FFFFFF;
+  padding-left: 10px; }
+
+a.appt-biz:hover,
+a.appt-edit:hover {
+  color: #1B2846; }
+
+.fa-calendar-o {
+  padding-right: 5px; }
+
+.fa-usd {
+  padding-left: 10px; }
+
+/* Error Page*/
+/* ----------------------------------------------- */
+.error-page {
+  background: url(../img/photos/berries.jpg) center top no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; }
+
+.error-details {
+  padding-top: 20px; }
+
+.error-code {
+  font-size: 60px;
   color: #1B2846;
-  font-size: 19px;
+  line-height: 1.2;
   font-weight: 700;
   font-family: "Open-Sans", sans-serif;
   -webkit-font-smoothing: antialiased; }
 
-.mini-feature-text p {
+.error-message {
+  font-size: 1.2em; }
+
+.pocketsoho-home {
+  color: #567b25; }
+
+.pocketsoho-home:hover {
+  color: #f9bd80; }
+
+.oops {
+  color: #F48A1F;
+  font-size: 2.2em; }
+
+#calendar {
+  width: 100%;
+  margin: 0 auto; }
+
+/* Admin - User Setting Page - Main Dashboard*/
+/* ----------------------------------------------- */
+.nav-layout-sidebar > .active > a {
+  color: #F48A1F; }
+
+.nav-layout-sidebar > .active > a:hover {
+  color: #8CC640; }
+
+#sidebar-menu {
+  z-index: 1; }
+
+#save-change,
+#save-change1,
+#save-change2 {
+  padding: 0.4em 1.4em; }
+
+#cancel-change,
+#cancel-change1,
+#cancel-change2 {
+  padding: 0.9em 4.4em; }
+
+.pricing-plan-amount {
+  color: #8CC640; }
+
+.btn-primary.disabled {
+  background-color: #F48A1F;
+  border-color: #F48A1F; }
+
+.pricing-plan-ribbon-secondary {
+  background-color: #F48A1F; }
+
+.pricing-header {
+  background-color: #1B2846; }
+
+.brief-instr {
+  font-size: 12px; }
+
+.recipient:hover {
+  color: #F48A1F; }
+
+.message-box {
+  padding: 1.5em 0;
+  background-color: #EEEEEE;
+  margin-bottom: 1.5em; }
+
+.message-box.owner {
+  background-color: #ebf5dd; }
+
+.message-box ul {
+  list-style: none;
+  font-size: 16px;
+  line-height: 1.5;
+  padding-right: 10px; }
+
+.newbiz #save-change,
+.editbiz #save-change {
+  padding: 0.4em 2.4em; }
+
+.newcust #save-change,
+.editbiz #save-change {
+  font-size: 17px;
+  margin-bottom: 2em;
+  margin-right: 2em; }
+
+.newcust #cancel-change {
+  padding: 0.6em 10.4em; }
+
+.editbiz #cancel-change {
+  padding: 0.6em 4em; }
+
+.bizprofile.profile-avatar-img {
+  margin-left: 0; }
+
+.icons-list .client-name a {
+  font-size: 16px; }
+
+.chat-btn.btn-secondary {
+  font-size: 16px; }
+
+#validateSelect.year,
+#validateSelect.month,
+#validateSelect.day {
+  width: 90px; }
+
+#demo-validation #validateSelect {
+  display: inline; }
+
+#update-appt,
+#delete-appt {
   font-size: 15px;
-  padding: 1.15em; }
+  padding: 6px 10px; }
 
-.feature-description {
-  font-size: 2em;
-  color: #8CC640; }
+.portlet {
+  margin-bottom: 1.5em; }
 
-.col-sm-6 p {
-  font-size: 15px; }
+.dashboard-content .content-title.my-appt {
+  margin-top: 3em; }
 
-.text-primary {
-  color: #8CC640; }
+/* Admin - Feature 2: APPOINTMENTS*/
+/* ----------------------------------------------- */
+.appt-with a:hover {
+  color: #F48A1F;
+  text-decoration: none; }
 
-.smallbtn {
-  border: 1px solid #8CC640;
-  text-shadow: none;
-  box-shadow: none;
-  border-radius: 0;
-  font-size: 20px; }
+.appt-with .btn {
+  font-size: 16px;
+  padding: 0.7em 3em; }
 
-.smallbtn:hover {
+.appt-with .btn:hover {
+  color: #FFFFFF; }
+
+.appt-with ul {
+  padding-left: 0; }
+
+.appt-with ul li {
+  display: inline-block;
+  padding: 0 10px; }
+
+.appt-with .form-horizontal {
+  margin-top: 4em; }
+
+#sam-biz {
+  font-size: 1.2em; }
+
+.fa-envelope,
+.fa-clock-o,
+.fa-pencil-square {
+  padding-right: 10px; }
+
+.appt-form-group ul li {
+  font-size: 14px;
+  font-weight: 400; }
+
+.appt-form-group a,
+.appt-form-group span {
+  padding-left: 10px; }
+
+#customer-pic {
+  padding-left: 0; }
+
+.accordion-caret:before {
+  color: #F48A1F; }
+
+#appt-list li {
+  font-size: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #EEEEEE; }
+
+#appt-list li a {
+  color: #444444; }
+
+#appt-list li a:hover {
+  color: #F48A1F; }
+
+#table-2 th {
+  background-color: #F48A1F;
+  color: #FFFFFF; }
+
+#table-3 th,
+#table-4 th {
+  background-color: #5e5e5e;
+  color: #FFFFFF; }
+
+#table-2 td,
+#table-3 td,
+#table-4 td {
+  height: 50px; }
+
+.edit-appt a {
+  color: #F48A1F; }
+
+.edit-appt a:hover {
+  color: #1B2846;
+  text-decoration: none; }
+
+#newappt-btn {
+  width: 160px;
+  font-size: 16px;
+  padding: 0.4em 0;
+  background-color: #F48A1F; }
+
+#newappt-btn:hover {
+  background-color: #df760b;
+  border-color: #df760b; }
+
+.newappt-content label.bizlabel {
+  padding-left: 0; }
+
+/* Admin - Feature 3: FINANCES*/
+/* ----------------------------------------------- */
+.finance-td #table-2 th {
   background-color: #8CC640;
   color: #FFFFFF; }
 
-/*Team members Section*/
-/* ----------------------------------------------- */
-.team-member {
-  font-size: 18px;
-  font-family: "Open-Sans", sans-serif;
-  -webkit-font-smoothing: antialiased; }
-
-.team-member-title {
-  color: #8CC640;
-  font-size: 16px; }
-
-/*Contact US Section*/
-/* ----------------------------------------------- */
-#contactus {
-  background: url(../img/masthead/softbg6.jpg) center top no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  border-top: none; }
-
-#back-to-top:hover {
-  background-color: #74a138; }
-
-.footer a {
-  color: #8CC640; }
-
-.footer-social-link li a {
-  color: #8CC640; }
-
-.copyright {
-  background-color: #f4f2f3;
-  color: #8CC640;
-  font-size: 15px; }
-
-.copyright .footer-row {
-  margin-top: 0; }
-
-.footer .content-title {
-  border-bottom-color: rgba(255, 255, 255, 0.2); }
-
-.masthead .btn-transparent, .footer .btn-transparent {
-  background-color: rgba(0, 0, 0, 0.3); }
-
-.masthead .btn-transparent:hover, .footer .btn-transparent:hover {
-  color: #000;
-  background-color: #ffffff;
-  border: 1px solid #ffffff; }
-
-#contactus .content-title span {
-  color: #ffffff; }
-
-#newsletter_email {
-  border-color: #8CC640; }
+.finance-td {
+  margin-top: 4em; }
 
 @media (max-width: 767px) {
   #logo2,
@@ -287,47 +621,35 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
   #logo3 {
     display: none; }
 
+  .navbar-inverse .navbar-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.9); }
+
+  .navbar-inverse .navbar-toggle.is-open {
+    background-color: rgba(255, 255, 255, 0.9); }
+
+  .mainnav-form {
+    border-top: 0;
+    border-bottom: 0; }
+
   #logo {
     width: 50%;
     padding-top: 20px; }
 
-  .masthead-carousel .carousel-controls {
-    top: 450px; }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+    cursor: pointer;
+    color: #f6a350; }
 
-  #form-animated,
-  #instant-chat-feature,
-  #instant-appt-feature,
-  #instant-payment-feature {
-    display: none; }
+  .avatar-img {
+    width: 60px !important; }
 
-  #about .mini-feature .extra-img {
-    height: 450px;
-    background: url(../img/masthead/mobile_1.png) center top no-repeat; }
-
-  #about .mini-feature .extra-img-b {
-    height: 450px;
-    background: url(../img/masthead/ipad_appt.png) center top no-repeat; }
-
-  #about .mini-feature .extra-img-c {
-    height: 450px;
-    background: url(../img/masthead/ipad_1.png) center top no-repeat; }
-
-  #about .mini-feature .pocketfeature {
-    width: 40%; }
-
-  .row-b {
-    text-align: center; } }
+  .table-responsive > .table > thead > tr > th,
+  .table-responsive > .table > tbody > tr > th,
+  .table-responsive > .table > tfoot > tr > th,
+  .table-responsive > .table > thead > tr > td,
+  .table-responsive > .table > tbody > tr > td,
+  .table-responsive > .table > tfoot > tr > td {
+    white-space: normal; } }
 @media (max-width: 480px) {
-  .masthead {
-    background: url(../img/masthead/landing-bg-mobile.jpg) center top no-repeat;
-    height: 600px;
-    padding-top: 3em;
-    box-shadow: none;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; }
-
   .navbar-header a {
     width: 230px; }
 
@@ -335,33 +657,53 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
     width: 50%;
     padding-top: 20px; }
 
-  #about .mini-feature .extra-img,
-  #about .mini-feature .extra-img-b,
-  #about .mini-feature .extra-img-c {
-    display: none; }
+  .account-body h3 {
+    font-size: 20px; }
 
-  #slide1-left-box,
-  #slide2-box,
-  #slide3-box,
-  #slide4-box {
-    background-color: rgba(255, 255, 255, 0.4);
-    padding: 1em 1em;
-    width: 310px;
-    height: 330px; }
+  .account-footer p,
+  .account-footer p a {
+    font-size: 12px; }
 
-  #slide1-left-box {
-    position: relative;
-    top: -100px; }
+  .checkbox-inline a {
+    font-size: 12px; }
 
-  #slide2-button,
-  #slide3-button {
-    position: relative;
-    top: -20px; }
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.3em 2em; }
 
-  .masthead2 {
-    background: url(../img/masthead/mobile-piano.jpg) center top no-repeat; }
+  #account-login .account-footer p {
+    color: #CCCCCC; }
 
-  .masthead3 {
-    background: url(../img/masthead/makeup-mobile.jpg) center top no-repeat; } }
+  #account-signup {
+    background: url(../img/photos/mobile-piano.jpg) center top no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; }
 
-/*# sourceMappingURL=custom.css.map */
+  #account-login {
+    background: url(../img/photos/mobile-working.jpg) center top no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; }
+
+  #reset-password {
+    background: url(../img/photos/mobile-trainer.jpg) center top no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; }
+
+  #social-login {
+    background: url(../img/photos/makeup-mobile.jpg) center top no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; }
+
+  #reset-password .account-body {
+    top: 7em; }
+
+  .dropdown-menu > li > a {
+    color: #CCCCCC; } }
