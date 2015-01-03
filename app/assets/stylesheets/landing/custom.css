@@ -19,11 +19,15 @@
 
 /*Masthead - Main Splash Image Section*/
 /* ----------------------------------------------- */
-.row {
+.row,
+#about-container {
+  margin-top: 180px; }
+
+.row-a {
   margin-top: 80px; }
 
 .masthead {
-  height: 600px;
+  height: 700px;
   padding-top: 3em;
   box-shadow: none;
   background: url(landing-bg.jpg) center top no-repeat;
@@ -32,15 +36,54 @@
   -moz-background-size: cover;
   -o-background-size: cover; }
 
+.masthead1 {
+  height: 700px;
+  padding-top: 3em;
+  box-shadow: none;
+  background: url(masthead2-bg.jpg) center top no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  border-bottom: 7px solid #fff; }
+
+.masthead2 {
+  height: 700px;
+  padding-top: 3em;
+  box-shadow: none;
+  background: url(masthead3-bg.jpg) center top no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  border-bottom: 7px solid #fff; }
+
+.masthead3 {
+  height: 700px;
+  padding-top: 3em;
+  box-shadow: none;
+  background: url(masthead1-bg.jpg) center top no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  border-bottom: 7px solid #fff; }
+
 .masthead-text {
   margin-top: 8.5em;
   color: #1B2846;
   height: 300px; }
 
 .masthead-text p {
+  color: #1B2846;
   font-size: 16px;
   text-shadow: none; }
 
+.whats-inside {
+  background-color: #FFFFFF;
+  margin-top: 180px; }
+
+#nav-login-button,
 .masthead-actions .btn-primary,
 .btn-secondary {
   padding: 0.6em 2em;
@@ -51,6 +94,11 @@
   border-radius: 0;
   text-shadow: none;
   box-shadow: none; }
+
+#nav-login-button {
+  border-radius: 5px;
+  padding: 0.4em 2em;
+  top: 6px; }
 
 .btn-secondary {
   background-color: transparent;
@@ -72,6 +120,15 @@
   background-color: #8CC640; }
 
 /*Masthead /Slide 1 - Sign Up Form*/
+#slide1-left-box,
+#slide2-box,
+#slide3-box,
+#slide4-box {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 2em;
+  padding-left: 3em;
+  width: 500px; }
+
 h3.text-center {
   text-transform: uppercase;
   color: #1B2846; }
@@ -103,12 +160,27 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
 
 /*About Section*/
 /* ----------------------------------------------- */
+#info-btn1,
+#info-btn2,
+#info-btn3 {
+  background-color: #8CC640;
+  border-color: #71a330;
+  margin-top: 2em; }
+
+#info-btn1:hover,
+#info-btn2:hover,
+#info-btn3:hover {
+  background-color: #71a330; }
+
+.row-a {
+  padding-bottom: 2em; }
+
 .content-title span {
   border-bottom: 1px solid #8CC640; }
 
 .features {
   padding-top: 1.5em;
-  font-size: 3em;
+  font-size: 2.5em;
   font-family: "Open-Sans", sans-serif;
   -webkit-font-smoothing: antialiased; }
 
@@ -176,11 +248,6 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
 #back-to-top:hover {
   background-color: #74a138; }
 
-.footer {
-  position: relative;
-  top: 80px;
-}
-
 .footer a {
   color: #8CC640; }
 
@@ -246,7 +313,10 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
     background: url(ipad_1.png) center top no-repeat; }
 
   #about .mini-feature .pocketfeature {
-    width: 40%; } }
+    width: 40%; }
+
+  .row-b {
+    text-align: center; } }
 @media (max-width: 480px) {
   .masthead {
     background: url(landing-bg-mobile.jpg) center top no-repeat;
@@ -268,6 +338,30 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
   #about .mini-feature .extra-img,
   #about .mini-feature .extra-img-b,
   #about .mini-feature .extra-img-c {
-    display: none; } }
+    display: none; }
+
+  #slide1-left-box,
+  #slide2-box,
+  #slide3-box,
+  #slide4-box {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 1em 1em;
+    width: 310px;
+    height: 330px; }
+
+  #slide1-left-box {
+    position: relative;
+    top: -100px; }
+
+  #slide2-button,
+  #slide3-button {
+    position: relative;
+    top: -20px; }
+
+  .masthead2 {
+    background: url(mobile-piano.jpg) center top no-repeat; }
+
+  .masthead3 {
+    background: url(makeup-mobile.jpg) center top no-repeat; } }
 
 /*# sourceMappingURL=custom.css.map */

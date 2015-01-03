@@ -50,6 +50,9 @@ class WelcomeController < ApplicationController
       format.html
       format.any(:json) { render request.format.to_sym => @biz_str_array }
     end
+  end
 
+  def about
+    render "about", layout: false
   end
 end
