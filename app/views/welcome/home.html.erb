@@ -4,7 +4,7 @@
 
       <div class="layout layout-stack-sm layout-main-left">
 
-        <div class="col-sm-7 col-md-8 layout-main">
+        <div class="col-sm-7 col-md-8 layout-main" style="padding-top: 0px">
 
           <div class="portlet">
 
@@ -76,7 +76,7 @@
              <div class="portlet-body">
                 <% if @unread_conversations.length == 0 %>
                   <%= link_to "Create New", new_user_conversation_path(@user.id), id: 'newmsg-btn', class: 'btn btn-secondary btn-jumbo btn-block' %>
-                  <h5 style="margin-left: 80px;">Click <%= link_to "here", new_user_conversation_path(@user.id) %> to create a message.</h5>
+                  <h5 style="margin-top: 20px;">Click <%= link_to "here", new_user_conversation_path(@user.id) %> to create a message.</h5>
                 <% else %>
                 <table class="table table-striped table-bordered thumbnail-table">
                   <thead>
@@ -169,6 +169,7 @@
             </div>
 
           </div>
+        </div>
 
         <div class="col-sm-5 col-md-4 layout-sidebar">
           <h4>My Business</h4>
