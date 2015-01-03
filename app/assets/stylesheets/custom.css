@@ -56,28 +56,29 @@ a {
 /* Account SignUp*/
 /* ----------------------------------------------- */
 #account-signup {
-  background: url(../img/photos/pianoteacher.jpg) center top no-repeat;
+  background: url(photos/pianoteacher.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; }
 
 #account-login {
-  background: url(../img/photos/working.jpg) center top no-repeat;
+  background: url(photos/working.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; }
 
 #reset-password {
-  background: url(../img/photos/personaltrainer.jpg) center top no-repeat;
+  background: url(photos/personaltrainer.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; }
 
+
 #social-login {
-  background: url(../img/photos/makeup-artist.jpg) center top no-repeat;
+  background: url(photos/makeup-artist.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -213,7 +214,11 @@ a {
 
 .footer {
   background-color: #1B2846;
-  border-top: 0; }
+  border-top: 0;
+  position: relative;
+  width: 100%;
+  bottom: -90px;
+}
 
 .mainnav-collapse input[type=text]:focus {
   background-color: #FFFFFF;
@@ -266,7 +271,12 @@ a {
 .thumbnail {
   width: 80px;
   height: 80px;
-  margin: auto; }
+  margin: auto;
+}
+
+.biz-owner-img {
+  margin-left: 15px;
+}
 
 .sender {
   padding: 3px 0;
@@ -297,6 +307,14 @@ td {
 #appticon {
   width: 100px;
   padding-right: 1em; }
+
+.biz-img {
+  display: block;
+  margin: auto;
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+}
 
 .content-title {
   border-bottom: 0; }
@@ -379,10 +397,23 @@ a.appt-edit:hover {
 .fa-usd {
   padding-left: 10px; }
 
+.appt-time-table td {
+  height: 60px;
+  padding-right:15px;
+}
+
+#date {
+  width: 300px;
+}
+
+#time {
+  width: 230px;
+}
+
 /* Error Page*/
 /* ----------------------------------------------- */
 .error-page {
-  background: url(../img/photos/berries.jpg) center top no-repeat;
+  background: url(photos/berries.jpg) center top no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -415,6 +446,39 @@ a.appt-edit:hover {
 #calendar {
   width: 100%;
   margin: 0 auto; }
+
+.appointment-types {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.change-password,.appointment-types button {
+  padding: 5px;
+  margin-right:5px;
+  font-size: 12px;
+  width: 70px;
+  position: relative;
+  top: 20px;
+}
+
+.change-password {
+  width: 115px;
+}
+
+.appointment-types .today {
+  background-color: #F48A1F;
+}
+
+.appointment-types li {
+  display: inline;
+}
+
+.appts-tomorrow, .appts-all {
+  display: none;
+}
+
 
 /* Admin - User Setting Page - Main Dashboard*/
 /* ----------------------------------------------- */
@@ -497,11 +561,16 @@ a.appt-edit:hover {
 
 #validateSelect.year,
 #validateSelect.month,
-#validateSelect.day {
+#validateSelect.day,
+.appt-time {
   width: 90px; }
 
-#demo-validation #validateSelect {
-  display: inline; }
+#demo-validation #validateSelect,
+.appt-time {
+  display: inline;
+  font-size: 10px;
+  margin: 4px;
+}
 
 #update-appt,
 #delete-appt {
@@ -562,7 +631,14 @@ a.appt-edit:hover {
 #appt-list li {
   font-size: 16px;
   padding: 10px 0;
-  border-bottom: 1px solid #EEEEEE; }
+  border-bottom: 1px solid #EEEEEE;
+}
+
+#appt-list li {
+  display: inline-block;
+  font-size: 14px;
+  padding-right: 10px;
+}
 
 #appt-list li a {
   color: #444444; }
@@ -606,6 +682,33 @@ a.appt-edit:hover {
 
 /* Admin - Feature 3: FINANCES*/
 /* ----------------------------------------------- */
+
+.invoice-types {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.invoice-types button {
+  padding: 5px;
+  margin-right:10px;
+  font-size: 15px;
+  width: 90px;
+}
+
+.invoice-types li {
+  display: inline;
+}
+
+.invoice-types .unpaid {
+  background-color: #F48A1F;
+}
+
+.paid-invoices {
+  display: none;
+}
+
 .finance-td #table-2 th {
   background-color: #8CC640;
   color: #FFFFFF; }
@@ -675,28 +778,28 @@ a.appt-edit:hover {
     color: #CCCCCC; }
 
   #account-signup {
-    background: url(../img/photos/mobile-piano.jpg) center top no-repeat;
+    background: url(photos/mobile-piano.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; }
 
   #account-login {
-    background: url(../img/photos/mobile-working.jpg) center top no-repeat;
+    background: url(photos/mobile-working.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; }
 
   #reset-password {
-    background: url(../img/photos/mobile-trainer.jpg) center top no-repeat;
+    background: url(photos/mobile-trainer.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; }
 
   #social-login {
-    background: url(../img/photos/makeup-mobile.jpg) center top no-repeat;
+    background: url(photos/makeup-mobile.jpg) center top no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -707,3 +810,5 @@ a.appt-edit:hover {
 
   .dropdown-menu > li > a {
     color: #CCCCCC; } }
+
+/*# sourceMappingURL=custom.css.map */
