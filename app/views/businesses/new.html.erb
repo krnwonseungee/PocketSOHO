@@ -1,4 +1,3 @@
-<h1>Create New Business</h1>
 <div class="newmessage-content content">
 
     <div class="container">
@@ -18,11 +17,11 @@
               <div class="form-group">
 
                 <%= simple_form_for @new_business, url: { action: "create"} do |f| %>
-                  <%= f.input :name, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' } %>
+                  <%= f.input :name, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }, label: 'Business Name' %>
+                  <%= f.input :description, hint: "60 characters or less", input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' } %>
                   <%= f.input :city, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' } %>
                   <%= f.input :state, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' } %>
-                  <%= f.input :image_url, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' } %>
-                  <%= f.input :description, hint: "60 characters or less", input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' } %>
+                  <%= f.input :zipcode, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' } %>
                   <div class="form-group">
                     <%= f.button :submit, class: 'btn btn-primary', id: 'update-appt' %>
                   </div>

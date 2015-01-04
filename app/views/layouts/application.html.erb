@@ -59,9 +59,9 @@
           <%= image_tag "mobilemenu-logo1.svg", alt: 'pocketSOHO', id: "logo3"%>
         </button>
 
-          <a href="https://www.pocketsoho.com" class="navbar-brand navbar-brand-img">
-          <%= image_tag "logo.svg", alt: 'pocketSOHO', id: "logo"%>
-        </a>
+          <%= link_to root_path, {class: 'navbar-brand navbar-brand-img'} do %>
+            <%= image_tag "logo.svg", alt: 'pocketSOHO', id: "logo"%>
+          <% end %>
       </div> <!-- /.navbar-header -->
 
 

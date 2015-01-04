@@ -350,7 +350,9 @@ a.new-ms {
 #newbiz-btn,
 #newcustomer-btn {
   font-size: 16px;
-  padding: 0.3em 1em; }
+  padding: 0.3em 1em;
+  margin-bottom:20px;
+}
 
 .pagination {
   list-style: none; }
@@ -671,7 +673,9 @@ a.appt-edit:hover {
   width: 160px;
   font-size: 16px;
   padding: 0.4em 0;
-  background-color: #F48A1F; }
+  background-color: #F48A1F;
+  margin-left: 80px;
+}
 
 #newappt-btn:hover {
   background-color: #df760b;
@@ -684,11 +688,14 @@ a.appt-edit:hover {
   width: 160px;
   font-size: 16px;
   padding: 0.4em 0;
-  background-color: #8CC640; }
+  background-color: #8CC640;
+  margin-left: 80px;
+}
 
   #newmsg-btn:hover {
   background-color: #8CC640;
-  border-color: #8CC640; }
+  border-color: #8CC640;
+}
 
 /* Admin - Feature 3: FINANCES*/
 /* ----------------------------------------------- */

@@ -38,19 +38,19 @@ class WelcomeController < ApplicationController
     @businesses = Business.all #change to find_by_user_id
   end
 
-  def search_businesses
-    puts "**********************************************"
-    puts "SEARCHING"
-    @biz_str_array = []
-    biz_string = ""
-    Business.all.each do |b|
-      @biz_str_array.push("#{b.name} - #{b.id}")
-    end
-    respond_to do |format|
-      format.html
-      format.any(:json) { render request.format.to_sym => @biz_str_array }
-    end
-  end
+  # def search_businesses
+  #   puts "**********************************************"
+  #   puts "SEARCHING"
+  #   @biz_str_array = []
+  #   biz_string = ""
+  #   Business.all.each do |b|
+  #     @biz_str_array.push("#{b.name} - #{b.id}")
+  #   end
+  #   respond_to do |format|
+  #     format.html
+  #     format.any(:json) { render request.format.to_sym => @biz_str_array }
+  #   end
+  # end
 
   def about
     render "about", layout: false

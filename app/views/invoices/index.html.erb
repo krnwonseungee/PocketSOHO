@@ -6,7 +6,7 @@
       <div class="layout layout-stack-sm layout-main-left">
 
         <div class="col-sm-7 col-md-8 layout-main">
-
+          <% if @paid_invoices.length != 0 && @unpaid_invoices.length != 0 %>
             <div class="portlet-body">
                 <div>
                   <section>
@@ -17,6 +17,7 @@
                   </section>
               </div>
             </div>
+            <% end %>
             <div class="finance-td portlet-body">
               <h4 class="appt-title content-title"><u>My Invoices</u></h4>
               <ul class="invoice-types">
