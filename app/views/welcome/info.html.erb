@@ -82,7 +82,45 @@
                   </div>
                 </div>
                 <div id="form-animated" class="col-md-6 masthead-img animated fadeInRightBig">
-                  <form class="form masthead-form well">
+                  <%= simple_form_for(@user, html: { class: 'form masthead-form well', style: 'position: relative; bottom: 130px' }, url: user_registration_path(@user)) do |f| %>
+                    <h3 class="text-center">Start Your Free Trial!</h3>
+                    <p class="text-center">Be your own boss. <br/>
+                     Stop wasting time on scheduling and payment.</p>
+                     <br>
+
+                    <div class="form-group">
+                      <%= f.input :email, required: true, label: false, placeholder: 'Your Email', input_html: { class: 'form-control' } %>
+                    </div>
+
+                    <div class="form-group">
+                      <%= f.input :password, required: true, label: false, placeholder: 'Password', input_html: { class: 'form-control' } %>
+                    </div>
+
+                    <div class="form-group">
+                      <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Password Confirmation', input_html: { class: 'form-control' } %>
+                    </div>
+
+                    <div class="form-group">
+                      <%= f.input :type, collection: ["BusinessOwner", "Customer"], input_html: { class: 'form-control' }, label: 'Please choose the account'  %>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="checkbox-inline">
+                      <input type="checkbox" class="" value="" tabindex="5"> I agree to the <a href="javascript:;" target="_blank">Terms of Service</a> &amp; <a href="javascript:;" target="_blank">Privacy Policy</a>
+                      </label>
+                    </div> <!-- /.form-group -->
+
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-secondary btn-block btn-lg" tabindex="6">
+                      Create My Account &nbsp; <i class="fa fa-play-circle"></i>
+                      </button>
+                    </div> <!-- /.form-group -->
+
+
+
+
+                  <% end %>
+                  <!-- <form class="form masthead-form well">
                     <h3 class="text-center">Start Your Free Trial!</h3>
                     <p class="text-center">Be your own boss. <br/>
                      Stop wasting time on scheduling and payment.</p>
@@ -103,7 +141,7 @@
                     <div class="form-group">
                       <button type="submit" id="start-today" class="btn btn-secondary btn-jumbo btn-block"><a href="../admin/account-signup.html">Get Started Today!</a></button>
                     </div>
-                  </form>
+                  </form> -->
                 </div>
               </div>
             </div>

@@ -359,7 +359,11 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
     top: -20px; }
 
   .masthead2 {
-    background: url(mobile-piano.jpg) center top no-repeat; }
+    background: url(mobile-piano.jpg) center top no-repeat;
+    background-size: 100%;
+  }
 
   .masthead3 {
-    background: url(makeup-mobile.jpg) center top no-repeat; } }
+    background: url(makeup-mobile.jpg) center top no-repeat;
+    background-size: 100%;
+  }

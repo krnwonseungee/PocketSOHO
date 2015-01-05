@@ -2,6 +2,7 @@ class WelcomeController < ApplicationController
   before_action :set_user, only: [:settings, :add_customer]
 
   def index
+    @user = User.new
     if user_signed_in?
       @user = current_user
       if (!current_user.first_name.present?&& !current_user.last_name.present?) || !@user.business_id.present? || !current_user.type.present? || (@user.type == "Customer" && @user.sign_in_count == 1)
