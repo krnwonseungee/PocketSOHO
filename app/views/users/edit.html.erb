@@ -9,12 +9,12 @@
           <div class="portlet">
 
             <h2 class="portlet-title">
-              <% if @user.type == "Customer" && @user.sign_in_count == 1 %>
-                <u>Please Change Your Password</u>
-              <% else %>
                 <u>Edit Your Info</u>
-              <% end %>
             </h2>
+
+            <% if @user.type == "Customer" && @user.sign_in_count == 1 %>
+              <h5>Please Change Your Password</h5>
+            <% end %>
 
             <div class="portlet-body">
 
