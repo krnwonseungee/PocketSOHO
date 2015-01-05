@@ -74,7 +74,7 @@
              <div class="portlet-body">
                 <%= link_to "Create New", new_user_conversation_path(@user.id), id: 'newmsg-btn', class: 'btn btn-secondary btn-jumbo btn-block' %>
                 <% if @unread_conversations.length != 0 %>
-                <table class="table table-striped table-bordered thumbnail-table">
+                <table class="table table-striped table-bordered thumbnail-table" style: "margin-top: 20px">
                   <thead>
                         <tr>
                               <th class="avatar-img" style="width: 150px">From</th>

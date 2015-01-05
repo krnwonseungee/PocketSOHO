@@ -20,10 +20,6 @@ class UsersController < ApplicationController
 
   def show
     @profile_user = User.find(params[:id])
-    if @user.business_id != @profile_user.business_id
-      redirect_to root_path
-      flash[:error] = "You cannot access this page"
-    end
     if @user.type == "BusinessOwner" && @profile_user.type == "Customer"
       @conversation = Conversation.where( "business_owner_id = ? AND customer_id = ?", @user.id, @profile_user.id ).first
     else
