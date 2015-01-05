@@ -14,6 +14,12 @@
 
             <div class="portlet-body">
               <%= form_for @appointment, url: {action: "create"}, html: {id: "demo-validation", class: 'form parsley-form'} do |f| %>
+
+                <div class="form-group">
+                  <%= f.label :subject %><br />
+                  <%= f.text_field :subject, { class: "form-control"}  %>
+                </div>
+
                 <div class="form-group">
                   <%= f.label :customer_id, as: 'Appointment with' %><br />
                   <%= f.select :customer_id, @appt_person_list.keys, {}, { class: "form-control"} %><br />

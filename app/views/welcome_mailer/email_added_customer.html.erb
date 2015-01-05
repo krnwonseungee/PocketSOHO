@@ -1,8 +1,12 @@
-Hello <%= @customer_name %>,
+<p>Hello <%= @customer_name %>,</p>
+<br>
 
-Here's your password: <%= @generated_password %>.
+<p>Here's your password: <%= @generated_password %>.</p>
+<br>
 
-Welcome to PocketSOHO!
+<p>Welcome to PocketSOHO!</p>
+<p>Click <%= link_to("here", new_user_session_path) %> to sign in. :)</p>
+<br>
 
-Sincerely,
-Team PocketSOHO
+<p>Sincerely,</p>
+<p>Team PocketSOHO</p>

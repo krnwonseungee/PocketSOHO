@@ -7,6 +7,6 @@ class WelcomeMailer < ActionMailer::Base
     @email = customer.email
     @customer_name = customer.first_name
     @generated_password = password
-    mail(to: @email, subject: 'Reminder for your Appointment')
+    mail(to: @email, subject: 'Welcome to PocketSOHO!')
   end
 end

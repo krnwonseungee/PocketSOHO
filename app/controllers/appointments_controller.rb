@@ -65,6 +65,7 @@ class AppointmentsController < ApplicationController
       date: Date.new(params["yearList"].to_i, params["monthList"].to_i, params["dateList"].to_i),
       time: DateTime.new(Date.today.year, params["monthList"].to_i, params["dateList"].to_i, params["hourList"].to_i, params["minutesList"].to_i),
       amount: params["appointment"]["amount"],
+      subject: params["appointment"]["subject"],
       )
     redirect_to appointments_path
   end
@@ -116,6 +117,6 @@ class AppointmentsController < ApplicationController
 
 private
   def appointment_params
-    params.require(:appointment).permit(:customer_id, :business_owner_id, :business_id, :notes, :time)
+    params.require(:appointment).permit(:customer_id, :business_owner_id, :business_id, :notes, :time, :subject)
   end
 end

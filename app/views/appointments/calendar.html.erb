@@ -34,9 +34,13 @@
                       <li>
                         <%= link_to appointment_path( appt.id ) do %>
                           <% if @user.type == "BusinessOwner" %>
+                            <% if appt.subject %>
+                              <%=  appt.subject  %> | <%= appt.time.strftime("%I:%M%p") %>
+                            <% else %>
                             <%- customer = Customer.find(appt.customer_id) -%>
                             <%- customer_name = "#{customer.first_name} #{customer.last_name}" -%>
                             <%=  customer_name  %> | <%= appt.time.strftime("%I:%M%p") %>
+                            <% end %>
                           <% else %>
                             <%= appt.business.name %> | <%= appt.time.strftime("%I:%M%p") %>
                           <% end %>

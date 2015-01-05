@@ -163,7 +163,9 @@
               </table>
               <% end %>
             </div>
-          </div>
+          <% if @user.type == "BusinessOwner"  %>
+            </div>
+          <% end %>
           </div>
 
         <div class="col-sm-5 col-md-4 layout-sidebar">
