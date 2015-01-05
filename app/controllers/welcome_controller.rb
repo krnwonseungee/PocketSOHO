@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  before_action :set_user, only: [:settings]
+  before_action :set_user, only: [:settings, :add_customer]
 
   def index
     if user_signed_in?
@@ -54,5 +54,26 @@ class WelcomeController < ApplicationController
 
   def about
     render "about", layout: false
+  end
+
+  def add_customer
+    @customer = Customer.new
+  end
+
+  def create_customer
+    puts "******************************"
+    puts "CREATING CUSTOMER"
+    @generated_password = Devise.friendly_token.first(8)
+    @customer = Customer.create(customer_params)
+    @customer.update(password: @generated_password, business_id: current_user.business_id)
+    @customer.save!
+    WelcomeMailer.email_added_customer(@customer, @generated_password).deliver
+    redirect_to add_customer_path
+  end
+
+  private
+
+  def customer_params
+    params.require(:customer).permit(:first_name, :last_name, :city, :state, :email, :phone)
   end
 end

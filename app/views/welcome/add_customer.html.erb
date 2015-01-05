@@ -1,0 +1,58 @@
+ <div class="setting-content content">
+
+    <div class="container">
+
+      <div class="layout layout-main-right layout-stack-sm">
+
+        <div class="col-md-9 col-sm-8 layout-main">
+
+          <div id="settings-content" class="tab-content stacked-content">
+
+            <div class="tab-pane fade in active" id="profile-tab">
+
+              <h3 class="content-title"><u>Create New Customer</u></h3>
+
+              <br><br>
+
+
+                  <%= simple_form_for @customer, url: { action: "create_customer"} do |f| %>
+
+                    <label class="col-md-3">First Name</label>
+                    <%= f.input :first_name, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group col-md-7' }, label: false %>
+
+                    <label class="col-md-3">Last Name</label>
+                    <%= f.input :last_name, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group col-md-7' }, label: false %>
+
+                    <label class="col-md-3">City</label>
+                    <%= f.input :city, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group col-md-7' }, label: false %>
+
+                    <label class="col-md-3">State</label>
+                    <%= f.input :state, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group col-md-7' }, label: false %>
+
+                    <label class="col-md-3">Email</label>
+                    <%= f.input :email, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group col-md-7' }, label: false %>
+
+                    <label class="col-md-3">Phone Number</label>
+                    <%= f.input :phone, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group col-md-7' }, label: false %>
+                    <div class="form-group">
+                      <div class="newcust col-md-7 col-md-push-3">
+                        <%= f.button :submit, "Create New Customer & Send Invite", class: 'btn btn-primary', id: 'save-change' %>
+                        <a  href="/add_customer" id="cancel-change" type="reset" class="btn btn-default">Reset</a>
+                      </div>
+                    </div>
+
+                <% end %>
+
+
+            </div> <!-- /.tab-pane -->
+
+          </div> <!-- /.tab-content -->
+
+        </div> <!-- /.col -->
+
+      </div> <!-- /.row -->
+
+
+    </div> <!-- /.container -->
+
+  </div> <!-- .content -->

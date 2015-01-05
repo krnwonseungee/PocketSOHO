@@ -163,13 +163,13 @@
               </table>
               <% end %>
             </div>
-
+          </div>
           </div>
 
         <div class="col-sm-5 col-md-4 layout-sidebar">
           <h4>My Business</h4>
           <% if @user.type == "BusinessOwner" %>
-            <%= link_to "Add New Customers",  edit_business_path(Business.find(@user.business_id)), id: 'newcustomer-btn', class: 'btn btn-secondary btn-lg btn-block' %>
+            <%= link_to "Add New Customers",  add_customer_path, id: 'newcustomer-btn', class: 'btn btn-secondary btn-lg btn-block' %>
           <% end %>
           <div class="well">
             <ul class="icons-list text-md" style="text-align: center;">

@@ -2697,6 +2697,10 @@ body {
   padding-bottom: 8px;
   margin-bottom: 1.25em;
 }
+
+.account-form label, .account-form a, .account-form a:hover {
+  color: #fcfbf9 !important;
+}
 .account-body {
   position: relative;
   padding: 35px 30px 10px;

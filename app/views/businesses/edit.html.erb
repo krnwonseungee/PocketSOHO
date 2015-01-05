@@ -19,7 +19,6 @@
                 <%= simple_form_for @business, url: { action: "update"} do |f| %>
                   <label>Description: </label>
                   <%= f.input :description, label: false, input_html: {class: 'form-control', cols: '10', rows: '5'}, wrapper_html: { class: 'form-group' } %>
-                  <%= f.input :image_url, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
                   <%= f.input :city, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
                   <%= f.input :state, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
                   <div class="form-group">
