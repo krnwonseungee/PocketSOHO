@@ -22,7 +22,7 @@ class WelcomeController < ApplicationController
 
 
       else
-        @invoices = Invoice.where("business_id = ? AND due_date = ? AND customer_id", @user.business_id, Date.new(Date.today.year, Date.today.month, -1), @user.id)
+        @invoices = Invoice.where("business_id = ? AND due_date = ? AND customer_id = ?", @user.business_id, Date.new(Date.today.year, Date.today.month, -1), @user.id)
         @businesses = Business.where( "id = ?", @user.business_id ) # change for multiple businesses
         Conversation.where("customer_id = ? AND seen_by_customer = ?", @user.id, false ).each do |thread|
           @unread_conversations << thread.messages.last
