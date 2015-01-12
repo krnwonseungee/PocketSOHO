@@ -81,7 +81,7 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find( params[:id])
-    if @appointment.business_id !== @user.business_id
+    if @appointment.business_id != @user.business_id
       redirect_to root_path
     end
     @business = Business.find(@appointment.business_id)
