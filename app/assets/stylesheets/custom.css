@@ -697,6 +697,10 @@ a.appt-edit:hover {
   border-color: #8CC640;
 }
 
+div#no-messages #newappt-btn {
+  margin: 0 auto;
+}
+
 /* Admin - Feature 3: FINANCES*/
 /* ----------------------------------------------- */
 

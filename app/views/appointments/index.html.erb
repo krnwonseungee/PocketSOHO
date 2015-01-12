@@ -97,7 +97,14 @@
                     <div class="appts-today">
                       <% if @appointments.where("date = ?", Date.today).length == 0 %>
                             <div id='no-messages-wrapper' style="text-align: center">
-                              <div id="no-messages">No appointments today!</div>
+                              <div id="no-messages">
+                                No appointments today!
+                                <% if @user.type == "BusinessOwner" %>
+                                  <br><br>
+                                  <%= link_to "Create New", new_appointment_path, id: 'newappt-btn', class: 'btn btn-primary btn-jumbo btn-block'%>
+                                <% end %>
+
+                              </div>
                           </div>
                       <% else %>
                       <table class="table table-striped table-bordered" id="table-2">

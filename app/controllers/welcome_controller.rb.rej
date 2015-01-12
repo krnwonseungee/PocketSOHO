@@ -1,0 +1,8 @@
+diff a/app/controllers/welcome_controller.rb b/app/controllers/welcome_controller.rb	(rejected hunks)
+@@ -1,5 +1,6 @@
+ class WelcomeController < ApplicationController
+   before_action :set_user, only: [:settings, :add_customer]
++  #test patch
+ 
+   def index
+     @user = User.new

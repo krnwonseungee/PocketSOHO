@@ -13,18 +13,12 @@
 
             <div class="tab-pane fade in active" id="profile-tab">
 
-              <h3 class="content-title"><u><%= @business.name %></u></h3>
+              <h3 class="content-title" style: "margin-left:"><u><%= @business.name %></u></h3>
 
-              <br><br>
 
               <form action="./page-settings.html" class="form-horizontal">
 
                 <div class="form-group">
-
-                  <div class="col-md-7">
-                    <div class="fileupload fileupload-new" data-provides="fileupload">
-                        <%= image_tag( @business.image_url, class: 'biz-owner-img') %>
-                    </div> <!-- /.fileupload -->
 
                   </div> <!-- /.col -->
 
@@ -32,7 +26,7 @@
 
                 <ul class="icons-list">
                   <li><i class="icon-li fa fa-map-marker"></i><%= @business.city %>, <%= @business.state %></li>
-                  <li>  <p><%= @business.description %></p></li>
+                  <li> <i class="icon-li fa fa-pencil"></i><p><%= @business.description %></p></li>
                   <li><i class="icon-li fa fa-heart"></i> Owner</li>
                   <li><%= link_to user_path( @biz_owner.id ) do %><%= image_tag( @biz_owner.image_url, :class => 'bizprofile profile-avatar-img thumbnail' ) %><% end %></li>
                   <li><%= link_to user_path( @biz_owner.id ) do %><%= @biz_owner.first_name %> <%= @biz_owner.last_name %><%=  "(you)" if @biz_owner.id == @user.id %><% end %></li>

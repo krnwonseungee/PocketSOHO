@@ -81,6 +81,9 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find( params[:id])
+    if @appointment.business_id !== @user.business_id
+      redirect_to root_path
+    end
     @business = Business.find(@appointment.business_id)
     if @user.type == "BusinessOwner"
       @appt_person = Customer.find( @appointment.customer_id )
@@ -91,7 +94,6 @@ class AppointmentsController < ApplicationController
       @appt_person = BusinessOwner.find( @appointment.business_owner_id )
       @conversation = Conversation.find_by_customer_id_and_business_owner_id( @user.id, @appt_person)
       @upcoming_appts = Appointment.where( "business_owner_id = ? AND date > ?", @appointment.business_owner_id,  Date.today )
-      @img_url = @business.image_url
     end
   end
 

@@ -12,7 +12,7 @@
             <div class="appt-with tab-pane fade in active" id="profile-tab">
 
               <ul>
-                <li><h3 class="content-title"><u>Appointment with <%= @appt_person.first_name %> <%= @appt_person.last_name %></u></h3></li>
+                <li style="padding-left: 0px"><h3 class="content-title"><u>Appointment with <%= @appt_person.first_name %> <%= @appt_person.last_name %></u></h3></li>
                 <% if@user.type == "BusinessOwner"  %>
                   <li><%= link_to "Edit", edit_appointment_path(@appointment), class: 'btn btn-secondary' %></li>
                 <% end %>
@@ -28,15 +28,16 @@
 
                   <label class="col-md-4">
                     <ul class="icons-list">
-                      <li>
-                        <% if @conversation %>
-                        <i class="icon-li fa fa-envelope"></i>
-                          <%= link_to user_conversation_path(@user.id, @conversation.id ) do %>
-                             Message <%= @appt_person.first_name %>
-                          <% end %>
+                      <% if @conversation %>
+                        <li>
+                          <i class="icon-li fa fa-envelope"></i>
+                            <%= link_to user_conversation_path(@user.id, @conversation.id ) do %>
+                               Message <%= @appt_person.first_name %>
+                            <% end %>
                         <% end %>
                       </li>
                       <li><i class="icon-li fa fa-clock-o"></i><span><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> <%= @appointment.time.strftime("%I:%M%p") %></span></li>
+                      <br>
                       <li>
                         <i class="icon-li fa fa-pencil-square"></i>
                         <span>
@@ -50,13 +51,13 @@
                     </ul>
                   </label>
 
-                  <div class="col-md-7">
+<!--                   <div class="col-md-7">
                     <div class="fileupload fileupload-new" data-provides="fileupload">
                       <div class="fileupload-new thumbnail" style="width: 180px; height: 180px;">
                         <%= link_to user_path(@appt_person.id), id: 'customer-pic' do %>
                           <%= image_tag(@img_url, :class => 'appt-img') %>
                         <% end %>
-                      </div>
+                      </div> -->
 
                     </div> <!-- /.fileupload -->
 

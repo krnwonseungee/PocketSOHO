@@ -7,7 +7,7 @@ class InvoicesController < ApplicationController
           @unpaid_invoices = Invoice.where( "business_id = ? AND paid = ?", @user.business_id, false )
       else
           @paid_invoices = Invoice.where( "customer_id = ? AND paid = ?", @user.id, true )
-          @unpaid_invoices = Invoice.where( "customer_id = ? AND paid = ?", @user.business_id, false )
+          @unpaid_invoices = Invoice.where( "customer_id = ? AND paid = ?", @user.id, false )
       end
   end
 
