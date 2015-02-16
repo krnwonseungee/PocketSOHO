@@ -53,6 +53,15 @@ class UsersController < ApplicationController
     @businesses = Business.where("business_owner_id = ?", @user.id )
   end
 
+  # def change_password
+  #   @user = current_user
+  # end
+
+  # def update_password
+  #   @user = current_user
+  #   redirect_to root_path
+  # end
+
    def update_password
     @user = User.find(current_user.id)
     if @user.type == "BusinessOwner"

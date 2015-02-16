@@ -15,14 +15,17 @@ PocketSOHO::Application.routes.draw do
 
   get 'search_businesses', to: 'welcome#search_businesses'
 
-  # resources :sessions, only: [:create, :destroy]
+  resources :sessions, only: [:create, :destroy]
   get '/settings', to: 'users#settings', as: :user_settings
+  get '/change_password', to: 'users#change_password', as: :change_password
+  patch '/update_password', to: 'users#update_password', as: :update_password
   get '/about', to: 'welcome#about'
   get 'add_customer', to: 'welcome#add_customer'
   post 'create_customer', to: 'welcome#create_customer'
   # get '/log_in', to: 'sessions#new'
-  # get '/log_out', to: 'sessions#log_out', as: :delete_session
+  delete '/sign_out', to: 'sessions#destroy', as: :delete_session
   get '/appointments/calendar', to: 'appointments#calendar'
+  post 'sessions/user', to: 'sessions#redirect'
 
   resources :businesses, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :appointments

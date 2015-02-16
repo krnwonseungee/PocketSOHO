@@ -5,6 +5,7 @@ class WelcomeMailer < ActionMailer::Base
     puts "*************************"
     puts "SENDING MAIL"
     @email = customer.email
+    @business_name = customer.business.name
     @customer_name = customer.first_name
     @generated_password = password
     mail(to: @email, subject: 'Welcome to PocketSOHO!')

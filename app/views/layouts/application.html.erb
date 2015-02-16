@@ -20,6 +20,8 @@
   <!-- Bootstrap  -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
+  <%= csrf_meta_tags %>
+
   <!-- App CSS -->
   <%= stylesheet_link_tag    "mvpready-admin"%>
   <%= stylesheet_link_tag    "mvpready-flat"%>
@@ -28,6 +30,7 @@
   <%= stylesheet_link_tag    "custom_2"%>
 
 <!-- jQuery & Angular  -->
+  <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" %>
   <%= javascript_include_tag "https://code.jquery.com/ui/1.11.2/jquery-ui.js" %>
   <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js" %>
@@ -136,7 +139,7 @@
               <li class="divider"></li>
 
               <li>
-                <%= link_to  destroy_user_session_path, :method => :delete do  %>
+                <%= link_to  delete_session_path, :method => :delete do  %>
                   <i class="fa fa-sign-out"></i>
                   &nbsp;&nbsp;Logout
                 <% end %>
