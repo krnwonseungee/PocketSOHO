@@ -9,7 +9,7 @@
           <div class="portlet">
 
             <div class="portlet-body">
-                <h3 class="content-title my-appt"><%= image_tag "schedule02.svg", alt: 'Scheduling Icon', id: "appticon"%><u>My Appointments</u></h3>
+                <h3 class="content-title my-appt"><%= image_tag "schedule02.svg", alt: 'Scheduling Icon', id: "appticon"%><u>Appointments</u></h3>
                 <% if @user.type == "BusinessOwner" %>
                   <%= link_to "Create New", new_appointment_path, id: 'newappt-btn', class: 'btn btn-primary btn-jumbo btn-block' %>
               <% end %>
@@ -69,7 +69,7 @@
                 </div>
               </div>
 
-            <h3 class="content-title"><%= image_tag "chat_icon.svg", id: 'chaticon', alt: 'Chat Icon' %><u>My Messages</u></h3>
+            <h3 class="content-title"><%= image_tag "chat_icon.svg", id: 'chaticon', alt: 'Chat Icon' %><u>Messages</u></h3>
 
              <div class="portlet-body">
                 <%= link_to "Create New", new_user_conversation_path(@user.id), id: 'newmsg-btn', class: 'btn btn-secondary btn-jumbo btn-block' %>
@@ -113,7 +113,7 @@
               </div>
 
             <div class="portlet-body">
-              <h3 class="content-title my-appt"><%= image_tag "payment02.svg", id: 'chaticon', alt: 'Chat Icon' %><u>My Finances</u></h3>
+              <h3 class="content-title my-appt"><%= image_tag "payment02.svg", id: 'chaticon', alt: 'Chat Icon' %><u>Finances</u></h3>
 
 
             </div>
@@ -168,7 +168,7 @@
           </div>
 
         <div class="col-sm-5 col-md-4 layout-sidebar">
-          <h4>My Business</h4>
+          <h4>Business</h4>
           <% if @user.type == "BusinessOwner" %>
             <%= link_to "Add New Customers",  add_customer_path, id: 'newcustomer-btn', class: 'btn btn-secondary btn-lg btn-block' %>
           <% end %>
