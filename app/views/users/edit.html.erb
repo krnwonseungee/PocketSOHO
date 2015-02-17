@@ -11,18 +11,15 @@
             <h2 class="portlet-title">
                 <u>Edit Your Info</u>
             </h2>
-
-            <% if @user.type == "Customer" && @user.sign_in_count == 1 %>
-              <h5>Please Change Your Password</h5>
-            <% end %>
+              <label style="font-weight: 600">Password</label>
+              <p>To change your password, click <%= link_to "here", change_password_path %>.</p>
+              <br>
 
             <div class="portlet-body">
 
               <div class="form-group">
 
                 <%= simple_form_for @user, url: { action: "update"} do |f| %>
-                  <%= f.input :password, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
-                  <%= f.input :password_confirmation, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
                   <%= f.input :first_name, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
                   <%= f.input :last_name, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
                   <%= f.input :city, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>

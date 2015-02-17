@@ -11,7 +11,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if params[:id].to_i != @user.id && @user.type == "Customer"
+    if @user.sign_in_count == 0
+      redirect_to change_password_path
+    elsif params[:id].to_i != @user.id && @user.type == "Customer"
       redirect_to root_path
       flash[:error] = 'You cannot access this page.'
     end
@@ -53,20 +55,34 @@ class UsersController < ApplicationController
     @businesses = Business.where("business_owner_id = ?", @user.id )
   end
 
-   def update_password
-    @user = User.find(current_user.id)
+  #  def update_password
+  #   @user = User.find(current_user.id)
+  #   if @user.type == "BusinessOwner"
+  #     user_params = params["business_owner"]
+  #   else
+  #     user_params = params["customer"]
+  #   end
+  #   if @user.update_with_password(user_params)
+  #     # Sign in the user by passing validation in case their password changed
+  #     sign_in @user, :bypass => true
+  #     redirect_to root_path
+  #   else
+  #     render "edit"
+  #   end
+  # end
+
+  def change_password
+  end
+
+  def update_password
     if @user.type == "BusinessOwner"
-      user_params = params["business_owner"]
+      user_params = params["business_owner"].permit!
     else
-      user_params = params["customer"]
+      user_params = params["customer"].permit!
     end
-    if @user.update_with_password(user_params)
-      # Sign in the user by passing validation in case their password changed
-      sign_in @user, :bypass => true
-      redirect_to root_path
-    else
-      render "edit"
-    end
+    debugger
+    @user.update(user_params)
+    redirect_to root_path
   end
 
   private

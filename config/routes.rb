@@ -17,6 +17,8 @@ PocketSOHO::Application.routes.draw do
 
   # resources :sessions, only: [:create, :destroy]
   get '/settings', to: 'users#settings', as: :user_settings
+  get '/change_password', to: 'users#change_password', as: :change_password
+  patch '/update_password', to: 'users#update_password', as: :update_password
   get '/about', to: 'welcome#about'
   get 'add_customer', to: 'welcome#add_customer'
   post 'create_customer', to: 'welcome#create_customer'
