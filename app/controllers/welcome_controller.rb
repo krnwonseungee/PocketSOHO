@@ -14,7 +14,7 @@ class WelcomeController < ApplicationController
       if @user.type == "BusinessOwner"
         @invoices = Invoice.where("business_id = ? AND due_date = ?", @user.business_id, Date.new(Date.today.year, Date.today.month, -1))
         @businesses = Business.where( "business_owner_id = ?", @user.id )
-        @appointments = Appointment.where( "business_owner_id = ?", @user.id ).limit(3)
+        @appointments = Appointment.where( "business_owner_id = ?", @user.id ).limit(10)
 
         Conversation.where("business_owner_id = ? AND seen_by_business_owner = ?", @user.id, false ).each do |thread|
           @unread_conversations << thread.messages.last
