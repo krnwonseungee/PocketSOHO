@@ -163,8 +163,7 @@
               </table>
               <% end %>
             </div>
-          <% if @user.type == "BusinessOwner"  %>
-          <% end %>
+          <%= render partial: 'invoices/graph' %>
           </div>
 
         <div class="col-sm-5 col-md-4 layout-sidebar">
