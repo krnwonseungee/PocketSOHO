@@ -23,9 +23,14 @@
                   <label>Note: </label>
                   <%= f.input :notes, label: false, input_html: {class: 'form-control', cols: '10', rows: '5'}, wrapper_html: { class: 'form-group' } %>
                   <%= f.input :time, input_html: {class: 'form-control appt-time'}, wrapper_html: { class: 'form-group' }  %>
+
                   <div class="form-group">
                     <%= f.button :submit, class: 'btn btn-primary', id: 'update-appt' %>
+                    &nbsp;
+                    <%= button_to("Delete Appointment", @appointment, {:onclick => "return confirm('Are you sure?')", :method => :delete, :remote => true, id: 'delete-appt', class: 'btn btn-default'}) %>
+
                   </div>
+
                 <% end %>
               </div> <!-- /.form-group -->
 
