@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
       @user = current_user
     else
       redirect_to new_user_session_path
-      flash[:error] = "You must be logged in to view this page."
+      flash[:'alert-info'] = "You must be logged in to view this page."
     end
 
   end

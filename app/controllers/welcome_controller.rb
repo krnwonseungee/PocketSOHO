@@ -66,7 +66,7 @@ class WelcomeController < ApplicationController
     puts "CREATING CUSTOMER"
     @generated_password = Devise.friendly_token.first(8)
     @customer = Customer.create(customer_params)
-    @customer.update(password: @generated_password, business_id: current_user.business_id)
+    @customer.update(password: @generated_password, business_id: current_user.business_id, invited: true)
     @customer.save!
     WelcomeMailer.email_added_customer(@customer, @generated_password).deliver
     redirect_to add_customer_path

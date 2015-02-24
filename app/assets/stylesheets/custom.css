@@ -375,10 +375,17 @@ a.new-ms {
 .appt-title u {
   border-bottom: 1px solid #F48A1F; }
 
-.alert-success {
-  background-color: #7fb636;
-  border: 1px solid #7fb636;
-  font-size: 15px; }
+.alert-info {
+  margin-top: 60px;
+  position: absolute;
+  background-color: #ffd400;
+  border: 1px solid #ffd400;
+  font-size: 15px;
+  height: 33px;
+  width: 100%;
+  z-index: 90;
+  text-align: center;
+ }
 
 .appt-tomorrow {
   background-color: #b3b3b3;

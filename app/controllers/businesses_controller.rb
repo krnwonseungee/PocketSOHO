@@ -4,11 +4,11 @@ class BusinessesController < ApplicationController
   def new
     if @user.type == "Customer"
         redirect_to appointments_path
-        flash[:error] = 'You must be a Business Owner to access this page.'
+        flash[:'alert-info'] = 'You must be a Business Owner to access this page.'
     else
         if @user.business_id != nil
           redirect_to root_path
-          flash[:error] = 'You can only have 1 business per account.'
+          flash[:'alert-info'] = 'You can only have 1 business per account.'
         end
     end
     @new_business = Business.new(business_owner_id: current_user.id)
@@ -24,7 +24,7 @@ class BusinessesController < ApplicationController
   def edit
     if @user.type == "Customer"
         redirect_to appointments_path
-        flash[:error] = 'You must be a Business Owner to access this page.'
+        flash[:'alert-info'] = 'You must be a Business Owner to access this page.'
     end
     @business = Business.find(params[:id])
   end

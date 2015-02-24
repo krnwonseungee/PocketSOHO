@@ -822,13 +822,13 @@ fieldset[disabled] .btn-twitter.active {
 }
 .alert-info {
   color: #ffffff;
-  background-color: #35b1d6;
-  background-image: -webkit-linear-gradient(top, #57bedd 0%, #3db5d8 100%);
-  background-image: linear-gradient(to bottom, #57bedd 0%, #3db5d8 100%);
+  background-color: #ffd400;
+  background-image: -webkit-linear-gradient(top, #ffd400 0%, #d6be0e 100%);
+  background-image: linear-gradient(to bottom, #ffd400 0%, #d6be0e 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff57bedd', endColorstr='#ff3db5d8', GradientType=0);
-  border-color: #28a1c5;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  border-color: #ffd400;
+  text-shadow: 1px 1px 1px #ffd400;
 }
 .alert-warning {
   color: #ffffff;

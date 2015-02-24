@@ -41,7 +41,7 @@ class AppointmentsController < ApplicationController
   def new
     if @user.type == "Customer"
         redirect_to appointments_path
-        flash[:error] = 'You must be a Business Owner to access this page.'
+        flash[:'alert-info'] = 'You must be a Business Owner to access this page.'
     end
     @appointment = Appointment.new
     @appt_person_list = {}
@@ -73,7 +73,7 @@ class AppointmentsController < ApplicationController
   def edit
     if @user.type == "Customer"
         redirect_to appointments_path
-        flash[:error] = 'You must be a Business Owner to access this page.'
+        flash[:'alert-info'] = 'You must be a Business Owner to access this page.'
     end
     @appointment = Appointment.find(params[:id])
     @appt_person = Customer.find( @appointment.customer_id )

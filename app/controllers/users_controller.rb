@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       redirect_to change_password_path
     elsif params[:id].to_i != @user.id && @user.type == "Customer"
       redirect_to root_path
-      flash[:error] = 'You cannot access this page.'
+      flash[:'alert-info'] = 'You cannot access this page.'
     end
 
   end
