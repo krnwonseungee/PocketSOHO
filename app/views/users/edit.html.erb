@@ -25,12 +25,17 @@
                   <%= f.input :city, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
                   <%= f.input :state, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
                   <%= f.input :email, input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }  %>
-                  <%= f.input :type, collection: ['BusinessOwner', 'Customer'], input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' }%>
+                  <%= f.input :type, collection: ['BusinessOwner', 'Customer'], input_html: {class: 'form-control'}, wrapper_html: { class: 'form-group' } %>
                   <% if @user.type == "Customer" %>
                     <div class="form-group">
                       <label>Which Business? (Search by Business Name or ID)</label>
-                      <input id="business_name" class="form-control" name="business_id"></input>
-                      <%= f.input :business_id, input_html: {class: 'form-control', id: 'orig-biz-id'}, wrapper_html: { class: 'form-group' } %>
+                      <% if @user.invited %>
+                      <input id="business_name" class="form-control" name="business_id" readonly></input>
+                      <%= f.input :business_id, input_html: {class: 'form-control', id: 'orig-biz-id'}, wrapper_html: { class: 'form-group' }, readonly: true %>
+                      <% else %>
+                        <input id="business_name" class="form-control" name="business_id"></input>
+                        <%= f.input :business_id, input_html: {class: 'form-control', id: 'orig-biz-id'}, wrapper_html: { class: 'form-group' }, readonly: false %>
+                      <% end %>
                     </div>
                   <% end %>
                   <%= f.input :image_url, input_html: {class: 'form-control orig-biz-input'}, wrapper_html: { class: 'form-group' }  %>
