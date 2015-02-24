@@ -31,10 +31,10 @@
                           <tbody>
                               <tr>
                                   <td>
-                                   <div class="date-appt"><%= appt.time.strftime("%m/%d/%Y") %></div>
+                                   <div class="date-appt"><%= appt.time.to_time.localtime.strftime("%m/%d/%Y") %></div>
                                  </td>
                                  <td>
-                                   <div class="time-appt"><%= appt.time.strftime("%I:%M%p") %></div>
+                                   <div class="time-appt"><%= appt.time.to_time.localtime.strftime("%I:%M%p") %></div>
                                  </td>
                                  <td>
                                    <div class="client-appt">
@@ -95,7 +95,7 @@
                                 </td>
                                 <td class="valign-middle">
                                     <%= link_to user_conversation_path(@user, message.conversation_id) do %>
-                                      <%= message.updated_at.strftime("%m/%d/%Y @%I:%M%p") %>
+                                      <%= message.updated_at.to_time.localtime.strftime("%m/%d/%Y @%I:%M%p") %>
                                     <% end %>
                                     <p><%= message.text[0...40] %></p>
                                     <div class ="message-action text-left valign-middle">

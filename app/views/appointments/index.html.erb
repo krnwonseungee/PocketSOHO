@@ -56,10 +56,10 @@
                         <% @appointments.each do |appt| %>
                               <tr>
                                   <td>
-                                   <div class="date-appt"><%= appt.time.strftime("%m/%d/%Y") %></div>
+                                   <div class="date-appt"><%= appt.time.to_time.localtime.strftime("%m/%d/%Y") %></div>
                                  </td>
                                  <td>
-                                   <div class="time-appt"><%= appt.time.strftime("%I:%M%p") %></div>
+                                   <div class="time-appt"><%= appt.time.to_time.localtime.strftime("%I:%M%p") %></div>
                                  </td>
                                  <td>
                                    <div class="client-appt">
@@ -121,10 +121,10 @@
                         <% @appointments.where("date = ?", Date.today).each do |appt| %>
                               <tr>
                                   <td>
-                                   <div class="date-appt"><%= appt.time.strftime("%m/%d/%Y") %></div>
+                                   <div class="date-appt"><%= appt.time.to_time.localtime.strftime("%m/%d/%Y") %></div>
                                  </td>
                                  <td>
-                                   <div class="time-appt"><%= appt.time.strftime("%I:%M%p") %></div>
+                                   <div class="time-appt"><%= appt.time.to_time.localtime.strftime("%I:%M%p") %></div>
                                  </td>
                                  <td>
                                    <div class="client-appt">
@@ -179,10 +179,10 @@
                         <% @appointments.where("date = ?", Date.today + 1.day).each do |appt| %>
                               <tr>
                                   <td>
-                                   <div class="date-appt"><%= appt.time.strftime("%m/%d/%Y") %></div>
+                                   <div class="date-appt"><%= appt.time.to_time.localtime.strftime("%m/%d/%Y") %></div>
                                  </td>
                                  <td>
-                                   <div class="time-appt"><%= appt.time.strftime("%I:%M%p") %></div>
+                                   <div class="time-appt"><%= appt.time.to_time.localtime.strftime("%I:%M%p") %></div>
                                  </td>
                                  <td>
                                    <div class="client-appt">

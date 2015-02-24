@@ -24,7 +24,7 @@
                     <% end %>
                       <ul>
                         <li><%= User.find( message.sender_id ).first_name %> <%= User.find( message.sender_id ).last_name %></li>
-                        <li><a href="javascript:;" title=""><strong><%= message.created_at.strftime("%m/%d/%Y %I:%M%p") %></strong></a></li>
+                        <li><a href="javascript:;" title=""><strong><%= message.created_at.to_time.localtime.strftime("%m/%d/%Y %I:%M%p") %></strong></a></li>
                         <li><%= message.text %></li>
                       </ul>
                     </div>

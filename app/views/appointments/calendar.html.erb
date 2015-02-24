@@ -15,8 +15,8 @@
 
 
               </nav>
-              <h2 id="custom-month" class="custom-month"><%= @date.strftime("%B") %></h2>
-              <h3 id="custom-year" class="custom-year"><%= @date.strftime("%Y") %></h3>
+              <h2 id="custom-month" class="custom-month"><%= @date.to_time.localtime.strftime("%B") %></h2>
+              <h3 id="custom-year" class="custom-year"><%= @date.to_time.localtime.strftime("%Y") %></h3>
           </div>
 
           <%= link_to date: @date.next_month do %>
@@ -35,14 +35,14 @@
                         <%= link_to appointment_path( appt.id ) do %>
                           <% if @user.type == "BusinessOwner" %>
                             <% if appt.subject %>
-                              <%=  appt.subject  %> | <%= appt.time.strftime("%I:%M%p") %>
+                              <%=  appt.subject  %> | <%= appt.time.to_time.localtime.strftime("%I:%M%p") %>
                             <% else %>
                             <%- customer = Customer.find(appt.customer_id) -%>
                             <%- customer_name = "#{customer.first_name} #{customer.last_name}" -%>
-                            <%=  customer_name  %> | <%= appt.time.strftime("%I:%M%p") %>
+                            <%=  customer_name  %> | <%= appt.time.to_time.localtime.strftime("%I:%M%p") %>
                             <% end %>
                           <% else %>
-                            <%= appt.business.name %> | <%= appt.time.strftime("%I:%M%p") %>
+                            <%= appt.business.name %> | <%= appt.time.to_time.localtime.strftime("%I:%M%p") %>
                           <% end %>
                         <% end %>
                       </li>

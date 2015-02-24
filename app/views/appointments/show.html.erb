@@ -36,7 +36,7 @@
                             <% end %>
                         <% end %>
                       </li>
-                      <li><i class="icon-li fa fa-clock-o"></i><span><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> <%= @appointment.time.strftime("%I:%M%p") %></span></li>
+                      <li><i class="icon-li fa fa-clock-o"></i><span><%= @appointment.time.strftime("%m/%d/%Y (%a)") %> <%= @appointment.time.to_time.localtime.strftime("%I:%M%p") %></span></li>
                       <br>
                       <li>
                         <i class="icon-li fa fa-pencil-square"></i>
@@ -78,10 +78,10 @@
                         <li>
                           <% if appt.id != @appointment.id %>
                             <%= link_to appointment_path( appt.id) do  %>
-                            <%= appt.time.strftime("%m/%d/%Y (%a)") %> @<%= appt.time.strftime("%I:%M%p") %>
+                            <%= appt.time.to_time.localtime.strftime("%m/%d/%Y (%a)") %> @<%= appt.time.to_time.localtime.strftime("%I:%M%p") %>
                             <% end %>
                           <% else  %>
-                            <%= appt.time.strftime("%m/%d/%Y (%a)") %> @<%= appt.time.strftime("%I:%M%p") %>
+                            <%= appt.time.to_time.localtime.strftime("%m/%d/%Y (%a)") %> @<%= appt.time.to_time.localtime.strftime("%I:%M%p") %>
                           <% end %>
                         </li>
                       <% end %>
