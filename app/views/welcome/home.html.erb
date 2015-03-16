@@ -89,15 +89,15 @@
                                 <div class="thumbnail">
                                     <%= image_tag User.find(message.sender_id).image_url %>
                                     <p class="sender">
-                                      <%= User.find(message.sender_id).first_name %> <%= User.find(message.sender_id).last_name %>
+                                      <strong><%= User.find(message.sender_id).first_name %> <%= User.find(message.sender_id).last_name %></strong>
                                     </p>
                                 </div> <!-- /.thumbnail -->
                                 </td>
                                 <td class="valign-middle">
                                     <%= link_to user_conversation_path(@user, message.conversation_id) do %>
-                                      <%= message.updated_at.to_time.localtime.strftime("%m/%d/%Y @%I:%M%p") %>
+                                      <strong><%= message.updated_at.to_time.localtime.strftime("%m/%d/%Y @%I:%M%p") %></strong>
                                     <% end %>
-                                    <p><%= message.text[0...40] %></p>
+                                    <strong><p><%= message.text[0...40] %></p></strong>
                                     <div class ="message-action text-left valign-middle">
 
                                         <%= link_to user_conversation_path(@user, message.conversation_id), class: 'btn btn-secondary' do %><i class="fa fa-reply"></i><% end %>

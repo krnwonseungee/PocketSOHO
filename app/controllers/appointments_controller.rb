@@ -4,6 +4,7 @@ class AppointmentsController < ApplicationController
 
 
   def index
+      @time_difference = Time.now.utc.hour - Time.now.localtime.hour
       if @user.type == "BusinessOwner"
           @appointments = Appointment.where( "business_owner_id = ?", @user.id )
       else
@@ -57,13 +58,16 @@ class AppointmentsController < ApplicationController
   def create
       customer_name = params[:appointment][:customer_id].split(" ")
       @appt_person = Customer.find_by_first_name_and_last_name(customer_name[0], customer_name[1])
+
+      @time_difference = Time.now.utc.hour - Time.now.localtime.hour
+      appt_time = DateTime.new(Date.today.year, params["monthList"].to_i, params["dateList"].to_i, params["hourList"].to_i, params["minutesList"].to_i) + @time_difference.hour
       @appointment = Appointment.create(
       customer_id: @appt_person.id,
       business_owner_id: @user.id,
       business_id: @user.business_id,
       notes: params["appointment"]["notes"],
       date: Date.new(params["yearList"].to_i, params["monthList"].to_i, params["dateList"].to_i),
-      time: DateTime.new(Date.today.year, params["monthList"].to_i, params["dateList"].to_i, params["hourList"].to_i, params["minutesList"].to_i),
+      time: appt_time,
       amount: params["appointment"]["amount"],
       subject: params["appointment"]["subject"],
       )
@@ -75,7 +79,9 @@ class AppointmentsController < ApplicationController
         redirect_to appointments_path
         flash[:'alert-info'] = 'You must be a Business Owner to access this page.'
     end
-    @appointment = Appointment.find(params[:id])
+    debugger
+    @appointment = Appointment.find(params[:id]).dup
+    @appointment.time = @appointment.time.localtime
     @appt_person = Customer.find( @appointment.customer_id )
   end
 

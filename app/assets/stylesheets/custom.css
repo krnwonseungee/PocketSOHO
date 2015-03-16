@@ -838,3 +838,7 @@ div#no-messages #newappt-btn {
 
   .dropdown-menu > li > a {
     color: #CCCCCC; } }
+
+#edit_customer_2 > div:nth-child(8) > div {
+  margin-top: 30px;
+}
