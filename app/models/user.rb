@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   scope :business_owners, -> { where(type: 'Business Owner') }
   scope :customers, -> { where(type: 'Customer') }
 
+  validates :email, uniqueness: true
+
   has_many :businesses
 
   def self.from_omniauth(auth)
